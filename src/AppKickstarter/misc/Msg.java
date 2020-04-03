@@ -69,7 +69,7 @@ public class Msg {
      * @return the msg as a formatted String
      */
     public String toString() {
-	return sender + " (" + type + ") -- " + details;
+	return sender + " (" + type + ") -- {" + details+"}";
     } // toString
 
 
@@ -95,5 +95,26 @@ public class Msg {
 	/** Toggling Gate Emulator AutoOpen */	GateEmulatorAutoOpenToggle,
 	/** Toggling Gate Emulator AutoClose */	GateEmulatorAutoCloseToggle,
 	/** Toggling Gate Emulator AutoPoll */	GateEmulatorAutoPollToggle,
+
+    /** Toggling Collector Emulator AutoClose */	CollectorValidRequest,
+    /** Toggling Collector Emulator AutoClose */	CollectorPositive,
+    /** Toggling Collector Emulator AutoPoll */	CollectorNegative,
+    /** Toggling Collector Emulator AutoClose */	CollectorSolveProblem,
+    /** Loading Ticket request*/       TicketRequest,
+    /** Send the Ticket Info */ TicketFee,
+    /** Payment Finished successfully*/ PaymentACK,
+
+
+
+    /** Vacanncy Receive Update Request*/                        VancancyDisUpdateRequest,
+    /** Vacanncy Send Update Reply */                        VancancyDisUpdateReply,
     } // Type
+
+    public static String quoteString(String message){
+        return "{"+message+"}";
+    }
+
+    public static String bracketString(String message){
+        return "["+message+"]";
+    }
 } // Msg
