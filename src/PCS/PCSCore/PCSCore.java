@@ -13,7 +13,8 @@ public class PCSCore extends AppThread {
     private MBox entranceGateBox;
     private MBox exitGateBox;
     private MBox collectorMbox;
-    private MBox payMBox;
+//    private MBox payMBox;
+    private ArrayList<MBox> payMBox = new ArrayList<MBox>();
     private final int pollTime;
     private final int PollTimerID=1;
     private final int openCloseGateTime;		// for demo only!!!
@@ -59,7 +60,8 @@ public class PCSCore extends AppThread {
 	entranceGateBox = appKickstarter.getThread("EntranceGateHandler").getMBox();
 	exitGateBox=appKickstarter.getThread("ExitGateHandler").getMBox();
 	collectorMbox = appKickstarter.getThread("CollectorHandler").getMBox();
-	payMBox = appKickstarter.getThread("PayMachineHandler").getMBox();
+	for(int i = 0; i < 3; i ++)
+		payMBox.add(appKickstarter.getThread("PayMachineHandler" + Integer.toString(i)).getMBox());
 	for (boolean quit = false; !quit;) {
 	    Msg msg = mbox.receive();
 
@@ -139,7 +141,9 @@ public class PCSCore extends AppThread {
 	}
 	public void SendTicketFee(String TicketID){
     	int z = FindTicketByID(Integer.parseInt(TicketID));
-    	payMBox.send(new Msg(id,mbox,Msg.Type.TicketFee,TicketID + "," + Float.toString(ticketList.get(z).calculateFee(5)) + "," + Long.toString(ticketList.get(z).getEnterTime())));
+    	for(int i = 0; i < 3; i ++)
+			payMBox.get(i).send(new Msg(id,mbox,Msg.Type.TicketFee,TicketID + "," + Float.toString(ticketList.get(z).calculateFee(5)) + "," + Long.toString(ticketList.get(z).getEnterTime())));
+
 	}
 
 	public void handleCollectorValidRequest(Msg msg){

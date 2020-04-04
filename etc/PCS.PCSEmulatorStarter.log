@@ -1,27 +1,263 @@
-200404-16:53:32 [INFO] -- 
-200404-16:53:32 [INFO] -- 
-200404-16:53:32 [INFO] -- ============================================================
-200404-16:53:32 [INFO] -- PCSStarter: Application Starting...
-200404-16:53:32 [FINE] -- PCSStarter: registering timer
-200404-16:53:32 [FINE] -- timer: created!
-200404-16:53:32 [FINE] -- PCSStarter: registering PCSCore
-200404-16:53:32 [FINE] -- PCSCore: created!
-200404-16:53:32 [FINE] -- PCSStarter: registering CollectorHandler
-200404-16:53:32 [FINE] -- CollectorHandler: created!
-200404-16:53:32 [FINE] -- PCSStarter: registering EntranceGateHandler
-200404-16:53:32 [FINE] -- EntranceGateHandler: created!
-200404-16:53:32 [FINE] -- PCSStarter: registering ExitGateHandler
-200404-16:53:32 [FINE] -- ExitGateHandler: created!
-200404-16:53:32 [FINE] -- PCSStarter: registering PayMachineHandler
-200404-16:53:32 [FINE] -- PayMachineHandler: created!
-200404-16:53:33 [INFO] -- timer: starting...
-200404-16:53:33 [INFO] -- PCSCore: starting...
-200404-16:53:33 [INFO] -- EntranceGateHandler: starting...
-200404-16:53:33 [INFO] -- ExitGateHandler: starting...
-200404-16:53:33 [INFO] -- PayMachineHandler: starting...
-200404-16:53:33 [INFO] -- CollectorHandler: starting...
-200404-16:53:38 [FINE] -- PayMachineHandler: message received: [PayMachineHandler (TicketRequest) -- {2}].
-200404-16:53:38 [FINE] -- PCSCore: message received: [PayMachineHandler (TicketRequest) -- {2}].
-200404-16:53:38 [INFO] -- PCSCore:PCS Sent the fee already
-200404-16:53:38 [FINE] -- PayMachineHandler: message received: [PCSCore (TicketFee) -- {2,30.0,1585990412424}].
-200404-16:53:38 [FINE] -- PayMachineHandlerEmulator: 2,30.0,1585990412424
+200404-17:51:56 [INFO] -- 
+200404-17:51:56 [INFO] -- 
+200404-17:51:56 [INFO] -- ============================================================
+200404-17:51:56 [INFO] -- PCSStarter: Application Starting...
+200404-17:51:57 [FINE] -- PCSStarter: registering timer
+200404-17:51:57 [FINE] -- timer: created!
+200404-17:51:57 [FINE] -- PCSStarter: registering PCSCore
+200404-17:51:57 [FINE] -- PCSCore: created!
+200404-17:51:57 [FINE] -- PCSStarter: registering CollectorHandler
+200404-17:51:57 [FINE] -- CollectorHandler: created!
+200404-17:51:57 [FINE] -- PCSStarter: registering EntranceGateHandler
+200404-17:51:57 [FINE] -- EntranceGateHandler: created!
+200404-17:51:57 [FINE] -- PCSStarter: registering ExitGateHandler
+200404-17:51:57 [FINE] -- ExitGateHandler: created!
+200404-17:51:57 [FINE] -- PCSStarter: registering PayMachineHandler0
+200404-17:51:57 [FINE] -- PayMachineHandler0: created!
+200404-17:51:57 [FINE] -- PCSStarter: registering PayMachineHandler1
+200404-17:51:57 [FINE] -- PayMachineHandler1: created!
+200404-17:51:57 [FINE] -- PCSStarter: registering PayMachineHandler2
+200404-17:51:57 [FINE] -- PayMachineHandler2: created!
+200404-17:51:59 [INFO] -- timer: starting...
+200404-17:51:59 [INFO] -- PCSCore: starting...
+200404-17:51:59 [INFO] -- EntranceGateHandler: starting...
+200404-17:51:59 [INFO] -- ExitGateHandler: starting...
+200404-17:51:59 [INFO] -- CollectorHandler: starting...
+200404-17:51:59 [INFO] -- PayMachineHandler0: starting...
+200404-17:51:59 [INFO] -- PayMachineHandler1: starting...
+200404-17:51:59 [INFO] -- PayMachineHandler2: starting...
+200404-17:52:13 [FINE] -- PayMachineHandler0: message received: [PayMachineHandler0 (TicketRequest) -- {2}].
+200404-17:52:13 [FINE] -- PCSCore: message received: [PayMachineHandler0 (TicketRequest) -- {2}].
+200404-17:52:13 [INFO] -- PCSCore:PCS Sent the fee already
+200404-17:52:13 [FINE] -- PayMachineHandler0: message received: [PCSCore (TicketFee) -- {2,75.0,1585993917316}].
+200404-17:52:13 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {2,75.0,1585993917316}].
+200404-17:52:13 [FINE] -- PayMachineHandler2: message received: [PCSCore (TicketFee) -- {2,75.0,1585993917316}].
+200404-17:52:13 [FINE] -- PayMachineHandler0Emulator: 2,75.0,1585993917316
+200404-17:52:13 [FINE] -- PayMachineHandler2Emulator: 2,75.0,1585993917316
+200404-17:52:13 [FINE] -- PayMachineHandler1Emulator: 2,75.0,1585993917316
+200404-17:52:17 [FINE] -- PayMachineHandler0: message received: [PayMachineHandler0 (TicketRequest) -- {2}].
+200404-17:52:17 [FINE] -- PCSCore: message received: [PayMachineHandler0 (TicketRequest) -- {2}].
+200404-17:52:17 [INFO] -- PCSCore:PCS Sent the fee already
+200404-17:52:17 [FINE] -- PayMachineHandler2: message received: [PCSCore (TicketFee) -- {2,95.0,1585993917316}].
+200404-17:52:17 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {2,95.0,1585993917316}].
+200404-17:52:17 [FINE] -- PayMachineHandler2Emulator: 2,95.0,1585993917316
+200404-17:52:17 [FINE] -- PayMachineHandler0: message received: [PCSCore (TicketFee) -- {2,95.0,1585993917316}].
+200404-17:52:17 [FINE] -- PayMachineHandler0Emulator: 2,95.0,1585993917316
+200404-17:52:17 [FINE] -- PayMachineHandler1Emulator: 2,95.0,1585993917316
+200404-17:52:19 [FINE] -- PayMachineHandler0: message received: [PayMachineHandler0 (TicketRequest) -- {2}].
+200404-17:52:19 [FINE] -- PCSCore: message received: [PayMachineHandler0 (TicketRequest) -- {2}].
+200404-17:52:19 [INFO] -- PCSCore:PCS Sent the fee already
+200404-17:52:19 [FINE] -- PayMachineHandler0: message received: [PCSCore (TicketFee) -- {2,110.0,1585993917316}].
+200404-17:52:19 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {2,110.0,1585993917316}].
+200404-17:52:19 [FINE] -- PayMachineHandler0Emulator: 2,110.0,1585993917316
+200404-17:52:19 [FINE] -- PayMachineHandler1Emulator: 2,110.0,1585993917316
+200404-17:52:19 [FINE] -- PayMachineHandler2: message received: [PCSCore (TicketFee) -- {2,110.0,1585993917316}].
+200404-17:52:19 [FINE] -- PayMachineHandler2Emulator: 2,110.0,1585993917316
+200404-17:52:24 [FINE] -- PayMachineHandler0: message received: [PayMachineHandler0 (PaymentACK) -- {2}].
+200404-17:52:24 [FINE] -- PayMachineHandler0Emulator:ticket2Paid already.
+200404-17:52:24 [FINE] -- PCSCore: message received: [PayMachineHandler0Emulator (PaymentACK) -- {2}].
+200404-17:52:24 [INFO] -- PCSCore:Payment ACK received
+200404-17:52:24 [FINE] -- PCSCore:Payment Updated
+200404-17:52:24 [FINE] -- PCSCore: message received: [PayMachineHandler0Emulator (TicketRequest) -- {2}].
+200404-17:52:24 [INFO] -- PCSCore:PCS Sent the fee already
+200404-17:52:24 [FINE] -- PayMachineHandler0: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:24 [FINE] -- PayMachineHandler2: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:24 [FINE] -- PayMachineHandler0Emulator: 2,0.0,1585993917316
+200404-17:52:24 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:24 [FINE] -- PayMachineHandler1Emulator: 2,0.0,1585993917316
+200404-17:52:24 [FINE] -- PayMachineHandler2Emulator: 2,0.0,1585993917316
+200404-17:52:27 [FINE] -- PayMachineHandler0: message received: [PayMachineHandler0 (PaymentACK) -- {2}].
+200404-17:52:27 [FINE] -- PayMachineHandler0Emulator:ticket2Paid already.
+200404-17:52:27 [FINE] -- PCSCore: message received: [PayMachineHandler0Emulator (PaymentACK) -- {2}].
+200404-17:52:27 [INFO] -- PCSCore:Payment ACK received
+200404-17:52:27 [FINE] -- PCSCore:Payment Updated
+200404-17:52:27 [FINE] -- PCSCore: message received: [PayMachineHandler0Emulator (TicketRequest) -- {2}].
+200404-17:52:27 [INFO] -- PCSCore:PCS Sent the fee already
+200404-17:52:27 [FINE] -- PayMachineHandler0: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:27 [FINE] -- PayMachineHandler0Emulator: 2,0.0,1585993917316
+200404-17:52:27 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:27 [FINE] -- PayMachineHandler2: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:27 [FINE] -- PayMachineHandler1Emulator: 2,0.0,1585993917316
+200404-17:52:27 [FINE] -- PayMachineHandler2Emulator: 2,0.0,1585993917316
+200404-17:52:27 [FINE] -- PayMachineHandler0: message received: [PayMachineHandler0 (PaymentACK) -- {2}].
+200404-17:52:27 [FINE] -- PayMachineHandler0Emulator:ticket2Paid already.
+200404-17:52:27 [FINE] -- PCSCore: message received: [PayMachineHandler0Emulator (PaymentACK) -- {2}].
+200404-17:52:27 [INFO] -- PCSCore:Payment ACK received
+200404-17:52:27 [FINE] -- PCSCore:Payment Updated
+200404-17:52:27 [FINE] -- PCSCore: message received: [PayMachineHandler0Emulator (TicketRequest) -- {2}].
+200404-17:52:27 [INFO] -- PCSCore:PCS Sent the fee already
+200404-17:52:27 [FINE] -- PayMachineHandler2: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:27 [FINE] -- PayMachineHandler0: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:27 [FINE] -- PayMachineHandler2Emulator: 2,0.0,1585993917316
+200404-17:52:27 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:27 [FINE] -- PayMachineHandler0Emulator: 2,0.0,1585993917316
+200404-17:52:27 [FINE] -- PayMachineHandler1Emulator: 2,0.0,1585993917316
+200404-17:52:28 [FINE] -- PayMachineHandler0: message received: [PayMachineHandler0 (PaymentACK) -- {2}].
+200404-17:52:28 [FINE] -- PayMachineHandler0Emulator:ticket2Paid already.
+200404-17:52:28 [FINE] -- PCSCore: message received: [PayMachineHandler0Emulator (PaymentACK) -- {2}].
+200404-17:52:28 [INFO] -- PCSCore:Payment ACK received
+200404-17:52:28 [FINE] -- PCSCore:Payment Updated
+200404-17:52:28 [FINE] -- PCSCore: message received: [PayMachineHandler0Emulator (TicketRequest) -- {2}].
+200404-17:52:28 [INFO] -- PCSCore:PCS Sent the fee already
+200404-17:52:28 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:28 [FINE] -- PayMachineHandler0: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:28 [FINE] -- PayMachineHandler2: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:28 [FINE] -- PayMachineHandler0Emulator: 2,0.0,1585993917316
+200404-17:52:28 [FINE] -- PayMachineHandler1Emulator: 2,0.0,1585993917316
+200404-17:52:28 [FINE] -- PayMachineHandler2Emulator: 2,0.0,1585993917316
+200404-17:52:28 [FINE] -- PayMachineHandler0: message received: [PayMachineHandler0 (PaymentACK) -- {2}].
+200404-17:52:28 [FINE] -- PayMachineHandler0Emulator:ticket2Paid already.
+200404-17:52:28 [FINE] -- PCSCore: message received: [PayMachineHandler0Emulator (PaymentACK) -- {2}].
+200404-17:52:28 [INFO] -- PCSCore:Payment ACK received
+200404-17:52:28 [FINE] -- PCSCore:Payment Updated
+200404-17:52:28 [FINE] -- PCSCore: message received: [PayMachineHandler0Emulator (TicketRequest) -- {2}].
+200404-17:52:28 [INFO] -- PCSCore:PCS Sent the fee already
+200404-17:52:28 [FINE] -- PayMachineHandler2: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:28 [FINE] -- PayMachineHandler0: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:28 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:28 [FINE] -- PayMachineHandler0Emulator: 2,0.0,1585993917316
+200404-17:52:28 [FINE] -- PayMachineHandler2Emulator: 2,0.0,1585993917316
+200404-17:52:28 [FINE] -- PayMachineHandler1Emulator: 2,0.0,1585993917316
+200404-17:52:28 [FINE] -- PayMachineHandler0: message received: [PayMachineHandler0 (PaymentACK) -- {2}].
+200404-17:52:28 [FINE] -- PayMachineHandler0Emulator:ticket2Paid already.
+200404-17:52:28 [FINE] -- PCSCore: message received: [PayMachineHandler0Emulator (PaymentACK) -- {2}].
+200404-17:52:28 [INFO] -- PCSCore:Payment ACK received
+200404-17:52:28 [FINE] -- PCSCore:Payment Updated
+200404-17:52:28 [FINE] -- PCSCore: message received: [PayMachineHandler0Emulator (TicketRequest) -- {2}].
+200404-17:52:28 [INFO] -- PCSCore:PCS Sent the fee already
+200404-17:52:28 [FINE] -- PayMachineHandler0: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:28 [FINE] -- PayMachineHandler2: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:28 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:28 [FINE] -- PayMachineHandler0Emulator: 2,0.0,1585993917316
+200404-17:52:28 [FINE] -- PayMachineHandler2Emulator: 2,0.0,1585993917316
+200404-17:52:28 [FINE] -- PayMachineHandler1Emulator: 2,0.0,1585993917316
+200404-17:52:28 [FINE] -- PayMachineHandler0: message received: [PayMachineHandler0 (PaymentACK) -- {2}].
+200404-17:52:28 [FINE] -- PayMachineHandler0Emulator:ticket2Paid already.
+200404-17:52:28 [FINE] -- PCSCore: message received: [PayMachineHandler0Emulator (PaymentACK) -- {2}].
+200404-17:52:28 [INFO] -- PCSCore:Payment ACK received
+200404-17:52:28 [FINE] -- PCSCore:Payment Updated
+200404-17:52:28 [FINE] -- PCSCore: message received: [PayMachineHandler0Emulator (TicketRequest) -- {2}].
+200404-17:52:28 [INFO] -- PCSCore:PCS Sent the fee already
+200404-17:52:28 [FINE] -- PayMachineHandler2: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:28 [FINE] -- PayMachineHandler0: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:28 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:28 [FINE] -- PayMachineHandler2Emulator: 2,0.0,1585993917316
+200404-17:52:28 [FINE] -- PayMachineHandler1Emulator: 2,0.0,1585993917316
+200404-17:52:28 [FINE] -- PayMachineHandler0Emulator: 2,0.0,1585993917316
+200404-17:52:28 [FINE] -- PayMachineHandler0: message received: [PayMachineHandler0 (PaymentACK) -- {2}].
+200404-17:52:28 [FINE] -- PayMachineHandler0Emulator:ticket2Paid already.
+200404-17:52:28 [FINE] -- PCSCore: message received: [PayMachineHandler0Emulator (PaymentACK) -- {2}].
+200404-17:52:28 [INFO] -- PCSCore:Payment ACK received
+200404-17:52:28 [FINE] -- PCSCore:Payment Updated
+200404-17:52:28 [FINE] -- PCSCore: message received: [PayMachineHandler0Emulator (TicketRequest) -- {2}].
+200404-17:52:28 [INFO] -- PCSCore:PCS Sent the fee already
+200404-17:52:28 [FINE] -- PayMachineHandler2: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:28 [FINE] -- PayMachineHandler0: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:28 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:28 [FINE] -- PayMachineHandler0Emulator: 2,0.0,1585993917316
+200404-17:52:28 [FINE] -- PayMachineHandler2Emulator: 2,0.0,1585993917316
+200404-17:52:28 [FINE] -- PayMachineHandler1Emulator: 2,0.0,1585993917316
+200404-17:52:28 [FINE] -- PayMachineHandler0: message received: [PayMachineHandler0 (PaymentACK) -- {2}].
+200404-17:52:28 [FINE] -- PayMachineHandler0Emulator:ticket2Paid already.
+200404-17:52:28 [FINE] -- PCSCore: message received: [PayMachineHandler0Emulator (PaymentACK) -- {2}].
+200404-17:52:28 [INFO] -- PCSCore:Payment ACK received
+200404-17:52:28 [FINE] -- PCSCore:Payment Updated
+200404-17:52:28 [FINE] -- PCSCore: message received: [PayMachineHandler0Emulator (TicketRequest) -- {2}].
+200404-17:52:28 [INFO] -- PCSCore:PCS Sent the fee already
+200404-17:52:28 [FINE] -- PayMachineHandler0: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:28 [FINE] -- PayMachineHandler2: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:28 [FINE] -- PayMachineHandler0Emulator: 2,0.0,1585993917316
+200404-17:52:28 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:28 [FINE] -- PayMachineHandler2Emulator: 2,0.0,1585993917316
+200404-17:52:28 [FINE] -- PayMachineHandler1Emulator: 2,0.0,1585993917316
+200404-17:52:28 [FINE] -- PayMachineHandler0: message received: [PayMachineHandler0 (PaymentACK) -- {2}].
+200404-17:52:28 [FINE] -- PayMachineHandler0Emulator:ticket2Paid already.
+200404-17:52:28 [FINE] -- PCSCore: message received: [PayMachineHandler0Emulator (PaymentACK) -- {2}].
+200404-17:52:28 [INFO] -- PCSCore:Payment ACK received
+200404-17:52:28 [FINE] -- PCSCore:Payment Updated
+200404-17:52:28 [FINE] -- PCSCore: message received: [PayMachineHandler0Emulator (TicketRequest) -- {2}].
+200404-17:52:28 [INFO] -- PCSCore:PCS Sent the fee already
+200404-17:52:28 [FINE] -- PayMachineHandler2: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:28 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:28 [FINE] -- PayMachineHandler0: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:28 [FINE] -- PayMachineHandler2Emulator: 2,0.0,1585993917316
+200404-17:52:28 [FINE] -- PayMachineHandler0Emulator: 2,0.0,1585993917316
+200404-17:52:28 [FINE] -- PayMachineHandler1Emulator: 2,0.0,1585993917316
+200404-17:52:29 [FINE] -- PayMachineHandler0: message received: [PayMachineHandler0 (PaymentACK) -- {2}].
+200404-17:52:29 [FINE] -- PayMachineHandler0Emulator:ticket2Paid already.
+200404-17:52:29 [FINE] -- PCSCore: message received: [PayMachineHandler0Emulator (PaymentACK) -- {2}].
+200404-17:52:29 [INFO] -- PCSCore:Payment ACK received
+200404-17:52:29 [FINE] -- PCSCore:Payment Updated
+200404-17:52:29 [FINE] -- PCSCore: message received: [PayMachineHandler0Emulator (TicketRequest) -- {2}].
+200404-17:52:29 [INFO] -- PCSCore:PCS Sent the fee already
+200404-17:52:29 [FINE] -- PayMachineHandler2: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:29 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:29 [FINE] -- PayMachineHandler0: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:29 [FINE] -- PayMachineHandler2Emulator: 2,0.0,1585993917316
+200404-17:52:29 [FINE] -- PayMachineHandler0Emulator: 2,0.0,1585993917316
+200404-17:52:29 [FINE] -- PayMachineHandler1Emulator: 2,0.0,1585993917316
+200404-17:52:29 [FINE] -- PayMachineHandler0: message received: [PayMachineHandler0 (PaymentACK) -- {2}].
+200404-17:52:29 [FINE] -- PayMachineHandler0Emulator:ticket2Paid already.
+200404-17:52:29 [FINE] -- PCSCore: message received: [PayMachineHandler0Emulator (PaymentACK) -- {2}].
+200404-17:52:29 [INFO] -- PCSCore:Payment ACK received
+200404-17:52:29 [FINE] -- PCSCore:Payment Updated
+200404-17:52:29 [FINE] -- PCSCore: message received: [PayMachineHandler0Emulator (TicketRequest) -- {2}].
+200404-17:52:29 [INFO] -- PCSCore:PCS Sent the fee already
+200404-17:52:29 [FINE] -- PayMachineHandler2: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:29 [FINE] -- PayMachineHandler0: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:29 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:29 [FINE] -- PayMachineHandler2Emulator: 2,0.0,1585993917316
+200404-17:52:29 [FINE] -- PayMachineHandler0Emulator: 2,0.0,1585993917316
+200404-17:52:29 [FINE] -- PayMachineHandler1Emulator: 2,0.0,1585993917316
+200404-17:52:29 [FINE] -- PayMachineHandler0: message received: [PayMachineHandler0 (PaymentACK) -- {2}].
+200404-17:52:29 [FINE] -- PayMachineHandler0Emulator:ticket2Paid already.
+200404-17:52:29 [FINE] -- PCSCore: message received: [PayMachineHandler0Emulator (PaymentACK) -- {2}].
+200404-17:52:29 [INFO] -- PCSCore:Payment ACK received
+200404-17:52:29 [FINE] -- PCSCore:Payment Updated
+200404-17:52:29 [FINE] -- PCSCore: message received: [PayMachineHandler0Emulator (TicketRequest) -- {2}].
+200404-17:52:29 [INFO] -- PCSCore:PCS Sent the fee already
+200404-17:52:29 [FINE] -- PayMachineHandler2: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:29 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:29 [FINE] -- PayMachineHandler2Emulator: 2,0.0,1585993917316
+200404-17:52:29 [FINE] -- PayMachineHandler0: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:29 [FINE] -- PayMachineHandler1Emulator: 2,0.0,1585993917316
+200404-17:52:29 [FINE] -- PayMachineHandler0Emulator: 2,0.0,1585993917316
+200404-17:52:29 [FINE] -- PayMachineHandler0: message received: [PayMachineHandler0 (PaymentACK) -- {2}].
+200404-17:52:29 [FINE] -- PayMachineHandler0Emulator:ticket2Paid already.
+200404-17:52:29 [FINE] -- PCSCore: message received: [PayMachineHandler0Emulator (PaymentACK) -- {2}].
+200404-17:52:29 [INFO] -- PCSCore:Payment ACK received
+200404-17:52:29 [FINE] -- PCSCore:Payment Updated
+200404-17:52:29 [FINE] -- PCSCore: message received: [PayMachineHandler0Emulator (TicketRequest) -- {2}].
+200404-17:52:29 [INFO] -- PCSCore:PCS Sent the fee already
+200404-17:52:29 [FINE] -- PayMachineHandler2: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:29 [FINE] -- PayMachineHandler0: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:29 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:29 [FINE] -- PayMachineHandler0Emulator: 2,0.0,1585993917316
+200404-17:52:29 [FINE] -- PayMachineHandler1Emulator: 2,0.0,1585993917316
+200404-17:52:29 [FINE] -- PayMachineHandler2Emulator: 2,0.0,1585993917316
+200404-17:52:29 [FINE] -- PayMachineHandler0: message received: [PayMachineHandler0 (PaymentACK) -- {2}].
+200404-17:52:29 [FINE] -- PayMachineHandler0Emulator:ticket2Paid already.
+200404-17:52:29 [FINE] -- PCSCore: message received: [PayMachineHandler0Emulator (PaymentACK) -- {2}].
+200404-17:52:29 [INFO] -- PCSCore:Payment ACK received
+200404-17:52:29 [FINE] -- PCSCore:Payment Updated
+200404-17:52:29 [FINE] -- PCSCore: message received: [PayMachineHandler0Emulator (TicketRequest) -- {2}].
+200404-17:52:29 [INFO] -- PCSCore:PCS Sent the fee already
+200404-17:52:29 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:29 [FINE] -- PayMachineHandler0: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:29 [FINE] -- PayMachineHandler2: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:29 [FINE] -- PayMachineHandler0Emulator: 2,0.0,1585993917316
+200404-17:52:29 [FINE] -- PayMachineHandler1Emulator: 2,0.0,1585993917316
+200404-17:52:29 [FINE] -- PayMachineHandler2Emulator: 2,0.0,1585993917316
+200404-17:52:29 [FINE] -- PayMachineHandler0: message received: [PayMachineHandler0 (PaymentACK) -- {2}].
+200404-17:52:29 [FINE] -- PayMachineHandler0Emulator:ticket2Paid already.
+200404-17:52:29 [FINE] -- PCSCore: message received: [PayMachineHandler0Emulator (PaymentACK) -- {2}].
+200404-17:52:29 [INFO] -- PCSCore:Payment ACK received
+200404-17:52:29 [FINE] -- PCSCore:Payment Updated
+200404-17:52:29 [FINE] -- PCSCore: message received: [PayMachineHandler0Emulator (TicketRequest) -- {2}].
+200404-17:52:29 [INFO] -- PCSCore:PCS Sent the fee already
+200404-17:52:29 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:29 [FINE] -- PayMachineHandler2: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:29 [FINE] -- PayMachineHandler0: message received: [PCSCore (TicketFee) -- {2,0.0,1585993917316}].
+200404-17:52:29 [FINE] -- PayMachineHandler1Emulator: 2,0.0,1585993917316
+200404-17:52:29 [FINE] -- PayMachineHandler2Emulator: 2,0.0,1585993917316
+200404-17:52:29 [FINE] -- PayMachineHandler0Emulator: 2,0.0,1585993917316

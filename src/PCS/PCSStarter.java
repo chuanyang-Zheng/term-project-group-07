@@ -12,6 +12,8 @@ import PCS.PayMachineHandler.Emulator.PayMachineEmulator;
 import PCS.PayMachineHandler.PayMachineHandler;
 import javafx.application.Platform;
 
+import java.util.ArrayList;
+
 
 //======================================================================
 // PCSStarter
@@ -20,7 +22,8 @@ public class PCSStarter extends AppKickstarter {
     protected PCSCore pcsCore;
     protected GateHandler gateHandler;
     protected CollectorHandler collectorHandler;
-    protected PayMachineHandler payHandler;
+//    protected PayMachineHandler payHandler1,payHandler2,payHandler3;
+    protected ArrayList<PayMachineHandler> PML = new ArrayList<PayMachineHandler>();
 
     //------------------------------------------------------------
     // main
@@ -58,7 +61,13 @@ public class PCSStarter extends AppKickstarter {
 	    pcsCore = new PCSCore("PCSCore", this);
 	    gateHandler = new GateHandler("GateHandler", this);
 	    collectorHandler=new CollectorHandler("CollectorHandler",this);
-	    payHandler = new PayMachineHandler("PayMachineHandler",this);
+//		payHandler1 = new PayMachineHandler("PayMachineHandler 1",this);
+//		payHandler2 = new PayMachineHandler("PayMachineHandler 2",this);
+//		payHandler3 = new PayMachineHandler("PayMachineHandler 3",this);
+//		PML.add(payHandler1); PML.add(payHandler2); PML.add(payHandler3);
+		for(int i = 0; i < 3; i++)
+			PML.add(new PayMachineHandler("PayMachineHandler " + Integer.toString(i),this));
+
 
 
 	} catch (Exception e) {
@@ -71,8 +80,13 @@ public class PCSStarter extends AppKickstarter {
 	new Thread(timer).start();
 	new Thread(pcsCore).start();
 	new Thread(gateHandler).start();
-	new Thread(payHandler).start();
-    } // startHandlers
+//	new Thread(payHandler1).start();
+//	new Thread(payHandler2).start();
+//	new Thread(payHandler3).start();
+	for(int i = 0; i < 3; i++)
+			new Thread(PML.get(i)).start();
+
+	} // startHandlers
 
 
     //------------------------------------------------------------
