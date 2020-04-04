@@ -104,7 +104,7 @@ public class PCSCore extends AppThread {
 					break;
 				case PaymentACK:
 					log.info(id + ":Payment ACK received");
-					PayStateUpdate(msg.getDetails());
+					PayStateUpdate(0,msg.getDetails());
 					break;
 				default:
 					log.warning(id + ": unknown message type: [" + msg + "]");
@@ -132,10 +132,12 @@ public class PCSCore extends AppThread {
 		}
     	return true;
 	}
-	public void PayStateUpdate(String TicketID){
+	public void PayStateUpdate(int PID,String TicketID){
     	int z = FindTicketByID(Integer.parseInt(TicketID));
-    	ticketList.get(z).setParkingFee(0);
+    	ticketList.get(z).setPayMachineID(PID);
+    	ticketList.get(z).calculateFee(5);
     	log.fine(id+ ":Payment Updated");
+    	log.info("Paymachine is " + Integer.toString(ticketList.get(z).getPayMachineID()));
 	}
 	public void SendTicketFee(String TicketID){
     	int z = FindTicketByID(Integer.parseInt(TicketID));
