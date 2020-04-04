@@ -55,7 +55,7 @@ public class PayMachineController {
                 if(ticket_id == null || ticket_id.isEmpty())
                     new Alert(Alert.AlertType.ERROR, "Please input valid ID :(", new ButtonType[]{ButtonType.OK}).show();
                 else {
-                    payMBox.send(new Msg(id, null, Msg.Type.TicketRequest, ticket_id));
+                    payMBox.send(new Msg(id, null, Msg.Type.TicketRequest, id + "," + ticket_id));
 
                 }
                 break;

@@ -67,7 +67,8 @@ public class PayMachineHandler extends AppThread {
 // Push FEE
     protected void SendRequest(String mymsg){
         pcsCore.send(new Msg(id, mbox, Msg.Type.TicketRequest, mymsg));
-        TicketFee = Float.parseFloat(mymsg);
+        String []tmp = mymsg.split(",");
+        TicketFee = Float.parseFloat(tmp[1]);
     }
     protected void FeeReceive(String mymsg){
         String []str = mymsg.split(",");

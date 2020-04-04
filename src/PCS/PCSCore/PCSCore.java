@@ -139,10 +139,11 @@ public class PCSCore extends AppThread {
 		ticketList.get(z).setPayMachineID(PID);
     	log.fine(id+ ":Payment Updated");
 	}
-	public void SendTicketFee(String TicketID){
-    	int z = FindTicketByID(Integer.parseInt(TicketID));
+	public void SendTicketFee(String msg){
+    	String []tmp = msg.split(",");
+    	int z = FindTicketByID(Integer.parseInt(tmp[1]));
     	for(int i = 0; i < 3; i ++)
-			payMBox.get(i).send(new Msg(id,mbox,Msg.Type.TicketFee,TicketID + "," + Float.toString(ticketList.get(z).calculateFee(5)) + "," + Long.toString(ticketList.get(z).getEnterTime())));
+			payMBox.get(i).send(new Msg(id,mbox,Msg.Type.TicketFee, tmp[0] + "," + tmp[1] + "," + Float.toString(ticketList.get(z).calculateFee(5)) + "," + Long.toString(ticketList.get(z).getEnterTime())));
 
 	}
 

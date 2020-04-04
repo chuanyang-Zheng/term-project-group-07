@@ -73,15 +73,18 @@ public class PayMachineEmulator extends PayMachineHandler {
     @Override
     protected void FeeReceive(String mymsg){
         String []str = mymsg.split(",");
-        float fee = Float.parseFloat(str[1]);
-        Date nowT = new Date(Long.parseLong(str[2]));
+        String currentid = str[0];
+        if(!str[0].equals(super.id))
+            return;
+        float fee = Float.parseFloat(str[2]);
+        Date nowT = new Date(Long.parseLong(str[3]));
         SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
         String timestr = sdf.format(nowT);
-        Long parkedTime = (System.currentTimeMillis() - Long.parseLong(str[2])) / 1000;
+        Long parkedTime = (System.currentTimeMillis() - Long.parseLong(str[3])) / 1000;
 
         PayMachineController.appendTextArea("You have parked " + Long.toString(parkedTime) + "s and you need to pay $" + fee + "  ($5/s)");
         log.fine(id + ": " + mymsg);
-        PayMachineController.updateTicket(str[0],str[1],timestr);
+        PayMachineController.updateTicket(str[1],str[2],timestr);
     }
     protected void SendPaymentACK(String mymsg){
         log.fine(id+ ":ticket"+ mymsg + "Paid already.");
