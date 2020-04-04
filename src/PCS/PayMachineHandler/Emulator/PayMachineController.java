@@ -48,16 +48,15 @@ public class PayMachineController {
         switch (btn.getText()) {
             case "Insert the ticket":
                 TextInputDialog dialog = new TextInputDialog("0");
-                dialog.setTitle("Please Input Ticket ID");
+                dialog.setTitle("Inserting Ticket....");
+                dialog.setContentText("Please Input Ticket ID:");
                 Optional<String> result = dialog.showAndWait();
                 if (result.isPresent())
                     ticket_id = result.get();
                 if(ticket_id == null || ticket_id.isEmpty())
                     new Alert(Alert.AlertType.ERROR, "Please input valid ID :(", new ButtonType[]{ButtonType.OK}).show();
-                else {
+                else
                     payMBox.send(new Msg(id, null, Msg.Type.TicketRequest, id + "," + ticket_id));
-
-                }
                 break;
             case "Pay by Oct":
                 if(ticket_id == null || ticket_id.isEmpty())

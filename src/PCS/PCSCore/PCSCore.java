@@ -13,7 +13,6 @@ public class PCSCore extends AppThread {
     private MBox entranceGateBox;
     private MBox exitGateBox;
     private MBox collectorMbox;
-//    private MBox payMBox;
     private ArrayList<MBox> payMBox = new ArrayList<MBox>();
     private final int pollTime;
     private final int PollTimerID=1;

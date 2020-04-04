@@ -58,7 +58,7 @@ public class PayMachineEmulator extends PayMachineHandler {
         String fxmlName = "PayMachineEmulator.fxml";
         loader.setLocation(PayMachineEmulator.class.getResource(fxmlName));
         root = loader.load();
-        PayMachineController = (PayMachineController) loader.getController();
+        PayMachineController = loader.getController();
         PayMachineController.initialize(super.id, pcsStarter, log, this);
         myStage.initStyle(StageStyle.DECORATED);
         myStage.setScene(new Scene(root, 420, 470));
@@ -73,17 +73,14 @@ public class PayMachineEmulator extends PayMachineHandler {
     @Override
     protected void FeeReceive(String mymsg){
         String []str = mymsg.split(",");
-        String currentid = str[0];
-        if(!str[0].equals(super.id))
-            return;
+        if(!str[0].equals(super.id)) return;
         float fee = Float.parseFloat(str[2]);
         Date nowT = new Date(Long.parseLong(str[3]));
         SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
         String timestr = sdf.format(nowT);
         Long parkedTime = (System.currentTimeMillis() - Long.parseLong(str[3])) / 1000;
-
         PayMachineController.appendTextArea("You have parked " + Long.toString(parkedTime) + "s and you need to pay $" + fee + "  ($5/s)");
-        log.fine(id + ": " + mymsg);
+//        log.fine(id + ": " + mymsg);
         PayMachineController.updateTicket(str[1],str[2],timestr);
     }
     protected void SendPaymentACK(String mymsg){
