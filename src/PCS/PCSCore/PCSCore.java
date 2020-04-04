@@ -44,7 +44,6 @@ public class PCSCore extends AppThread {
 	ticketList.add(trueTicket);
 	ticketList.add(falseTicket);
 	Ticket EricVIPTick = new Ticket();
-	EricVIPTick.setParkingFee(9999999);
 	ticketList.add(EricVIPTick);
     } // PCSCore
 
