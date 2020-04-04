@@ -39,6 +39,7 @@ public class PCSEmulatorStarter extends PCSStarter {
     // Emulators
     public static class Emulators extends Application {
         private static PCSEmulatorStarter pcsEmulatorStarter;
+        private int PayMachineNumber = pcsEmulatorStarter.PayMachineNumber;
 
 	//----------------------------------------
 	// start
@@ -64,7 +65,7 @@ public class PCSEmulatorStarter extends PCSStarter {
 	        entranceGateEmulator = new GateEmulator("EntranceGateHandler", pcsEmulatorStarter);
             exitGateEmulator = new GateEmulator("ExitGateHandler", pcsEmulatorStarter);
 //            payMachineEmulator = new PayMachineEmulator("PayMachineHandler",pcsEmulatorStarter);
-            for(int i = 0; i < 3; i++)
+            for(int i = 0; i < PayMachineNumber; i++)
                 PMEL.add(new PayMachineEmulator("PayMachineHandler" + Integer.toString(i), pcsEmulatorStarter));
 
             // start emulator GUIs
@@ -72,7 +73,7 @@ public class PCSEmulatorStarter extends PCSStarter {
 		exitGateEmulator.start();
 		collectorEmulator.start();
 //		payMachineEmulator.start();
-		for(int i = 0; i < 3; i++)
+		for(int i = 0; i < PayMachineNumber; i++)
                 PMEL.get(i).start();
 	    } catch (Exception e) {
 		System.out.println("Emulators: start failed");
@@ -85,7 +86,7 @@ public class PCSEmulatorStarter extends PCSStarter {
 	    pcsEmulatorStarter.setGateHandler(exitGateEmulator);
 	    pcsEmulatorStarter.setCollectorHandler(collectorEmulator);
 //	    pcsEmulatorStarter.setPayMachineHandler(payMachineEmulator);
-         for(int i = 0; i < 3; i++)
+         for(int i = 0; i < PayMachineNumber; i++)
              pcsEmulatorStarter.setPayMachineHandler(PMEL.get(i));
 
 
@@ -96,7 +97,7 @@ public class PCSEmulatorStarter extends PCSStarter {
 	    new Thread(exitGateEmulator).start();
 	    new Thread(collectorEmulator).start();
 //	    new Thread(payMachineEmulator).start();
-            for(int i = 1; i <= 3; i++)
+            for(int i = 1; i <= PayMachineNumber; i++)
                 new Thread(PMEL.get(i-1)).start();
 
 	} // start

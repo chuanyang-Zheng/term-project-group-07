@@ -27,6 +27,7 @@ public abstract class AppKickstarter {
     private Timer timer = null;
     protected abstract void startApp();
     protected abstract void stopApp();
+    public int PayMachineNumber = 3;
 
 
     //------------------------------------------------------------

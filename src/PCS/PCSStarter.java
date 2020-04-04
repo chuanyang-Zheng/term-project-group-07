@@ -22,9 +22,8 @@ public class PCSStarter extends AppKickstarter {
     protected PCSCore pcsCore;
     protected GateHandler gateHandler;
     protected CollectorHandler collectorHandler;
-//    protected PayMachineHandler payHandler1,payHandler2,payHandler3;
     protected ArrayList<PayMachineHandler> PML = new ArrayList<PayMachineHandler>();
-
+//	public int PayMachineNumber;
     //------------------------------------------------------------
     // main
     public static void main(String [] args) {
@@ -61,11 +60,7 @@ public class PCSStarter extends AppKickstarter {
 	    pcsCore = new PCSCore("PCSCore", this);
 	    gateHandler = new GateHandler("GateHandler", this);
 	    collectorHandler=new CollectorHandler("CollectorHandler",this);
-//		payHandler1 = new PayMachineHandler("PayMachineHandler 1",this);
-//		payHandler2 = new PayMachineHandler("PayMachineHandler 2",this);
-//		payHandler3 = new PayMachineHandler("PayMachineHandler 3",this);
-//		PML.add(payHandler1); PML.add(payHandler2); PML.add(payHandler3);
-		for(int i = 0; i < 3; i++)
+		for(int i = 0; i < PayMachineNumber; i++)
 			PML.add(new PayMachineHandler("PayMachineHandler " + Integer.toString(i),this));
 
 
@@ -80,10 +75,7 @@ public class PCSStarter extends AppKickstarter {
 	new Thread(timer).start();
 	new Thread(pcsCore).start();
 	new Thread(gateHandler).start();
-//	new Thread(payHandler1).start();
-//	new Thread(payHandler2).start();
-//	new Thread(payHandler3).start();
-	for(int i = 0; i < 3; i++)
+	for(int i = 0; i < PayMachineNumber; i++)
 			new Thread(PML.get(i)).start();
 
 	} // startHandlers

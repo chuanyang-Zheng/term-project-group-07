@@ -60,7 +60,7 @@ public class PCSCore extends AppThread {
 	entranceGateBox = appKickstarter.getThread("EntranceGateHandler").getMBox();
 	exitGateBox=appKickstarter.getThread("ExitGateHandler").getMBox();
 	collectorMbox = appKickstarter.getThread("CollectorHandler").getMBox();
-	for(int i = 0; i < 3; i ++)
+	for(int i = 0; i < appKickstarter.PayMachineNumber; i ++)
 		payMBox.add(appKickstarter.getThread("PayMachineHandler" + Integer.toString(i)).getMBox());
 	for (boolean quit = false; !quit;) {
 	    Msg msg = mbox.receive();
@@ -142,7 +142,7 @@ public class PCSCore extends AppThread {
 	public void SendTicketFee(String msg){
     	String []tmp = msg.split(",");
     	int z = FindTicketByID(Integer.parseInt(tmp[1]));
-    	for(int i = 0; i < 3; i ++)
+    	for(int i = 0; i < appKickstarter.PayMachineNumber; i ++)
 			payMBox.get(i).send(new Msg(id,mbox,Msg.Type.TicketFee, tmp[0] + "," + tmp[1] + "," + Float.toString(ticketList.get(z).calculateFee(5)) + "," + Long.toString(ticketList.get(z).getEnterTime())));
 
 	}
