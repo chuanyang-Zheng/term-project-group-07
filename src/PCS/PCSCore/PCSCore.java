@@ -135,7 +135,6 @@ public class PCSCore extends AppThread {
 	public void PayStateUpdate(int PID,String TicketID){
     	int z = FindTicketByID(Integer.parseInt(TicketID));
 		ticketList.get(z).setPayMachineID(PID);
-    	ticketList.get(z).calculateFee(5);
     	log.fine(id+ ":Payment Updated");
 	}
 	public void SendTicketFee(String TicketID){
