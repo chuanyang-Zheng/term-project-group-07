@@ -140,7 +140,7 @@ public class PCSCore extends AppThread {
 	}
 	public void SendTicketFee(String TicketID){
     	int z = FindTicketByID(Integer.parseInt(TicketID));
-    	payMBox.send(new Msg(id,mbox,Msg.Type.TicketFee,TicketID + "," + Float.toString(ticketList.get(z).getParkingFee()) + "," + Long.toString(ticketList.get(z).getEnterTime())));
+    	payMBox.send(new Msg(id,mbox,Msg.Type.TicketFee,TicketID + "," + Float.toString(ticketList.get(z).calculateFee(5)) + "," + Long.toString(ticketList.get(z).getEnterTime())));
 	}
 
 	public void handleCollectorValidRequest(Msg msg){

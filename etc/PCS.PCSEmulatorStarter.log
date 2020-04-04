@@ -1,22 +1,42 @@
-200404-14:28:07 [INFO] -- 
-200404-14:28:07 [INFO] -- 
-200404-14:28:07 [INFO] -- ============================================================
-200404-14:28:07 [INFO] -- PCSStarter: Application Starting...
-200404-14:28:07 [FINE] -- PCSStarter: registering timer
-200404-14:28:07 [FINE] -- timer: created!
-200404-14:28:07 [FINE] -- PCSStarter: registering PCSCore
-200404-14:28:07 [FINE] -- PCSCore: created!
-200404-14:28:07 [FINE] -- PCSStarter: registering CollectorHandler
-200404-14:28:07 [FINE] -- CollectorHandler: created!
-200404-14:28:07 [FINE] -- PCSStarter: registering EntranceGateHandler
-200404-14:28:07 [FINE] -- EntranceGateHandler: created!
-200404-14:28:07 [FINE] -- PCSStarter: registering ExitGateHandler
-200404-14:28:07 [FINE] -- ExitGateHandler: created!
-200404-14:28:07 [FINE] -- PCSStarter: registering PayMachineHandler
-200404-14:28:07 [FINE] -- PayMachineHandler: created!
-200404-14:28:09 [INFO] -- timer: starting...
-200404-14:28:09 [INFO] -- PCSCore: starting...
-200404-14:28:09 [INFO] -- EntranceGateHandler: starting...
-200404-14:28:09 [INFO] -- CollectorHandler: starting...
-200404-14:28:09 [INFO] -- ExitGateHandler: starting...
-200404-14:28:09 [INFO] -- PayMachineHandler: starting...
+200404-14:40:04 [INFO] -- 
+200404-14:40:04 [INFO] -- 
+200404-14:40:04 [INFO] -- ============================================================
+200404-14:40:04 [INFO] -- PCSStarter: Application Starting...
+200404-14:40:04 [FINE] -- PCSStarter: registering timer
+200404-14:40:04 [FINE] -- timer: created!
+200404-14:40:04 [FINE] -- PCSStarter: registering PCSCore
+200404-14:40:04 [FINE] -- PCSCore: created!
+200404-14:40:04 [FINE] -- PCSStarter: registering CollectorHandler
+200404-14:40:04 [FINE] -- CollectorHandler: created!
+200404-14:40:04 [FINE] -- PCSStarter: registering EntranceGateHandler
+200404-14:40:04 [FINE] -- EntranceGateHandler: created!
+200404-14:40:04 [FINE] -- PCSStarter: registering ExitGateHandler
+200404-14:40:04 [FINE] -- ExitGateHandler: created!
+200404-14:40:04 [FINE] -- PCSStarter: registering PayMachineHandler
+200404-14:40:04 [FINE] -- PayMachineHandler: created!
+200404-14:40:06 [INFO] -- PCSCore: starting...
+200404-14:40:06 [INFO] -- timer: starting...
+200404-14:40:06 [INFO] -- EntranceGateHandler: starting...
+200404-14:40:06 [INFO] -- ExitGateHandler: starting...
+200404-14:40:06 [INFO] -- CollectorHandler: starting...
+200404-14:40:06 [INFO] -- PayMachineHandler: starting...
+200404-14:40:09 [FINE] -- PayMachineHandler: message received: [PayMachineHandler (TicketRequest) -- {0}].
+200404-14:40:09 [FINE] -- PCSCore: message received: [PayMachineHandler (TicketRequest) -- {0}].
+200404-14:40:09 [INFO] -- PCSCore:PCS Sent the fee already
+200404-14:40:09 [FINE] -- PayMachineHandler: message received: [PCSCore (TicketFee) -- {0,26885.0,1585982404582}].
+200404-14:40:09 [FINE] -- PayMachineHandlerEmulator: 0,26885.0,1585982404582
+200404-14:40:10 [FINE] -- PayMachineHandler: message received: [PayMachineHandler (TicketRequest) -- {0}].
+200404-14:40:10 [FINE] -- PCSCore: message received: [PayMachineHandler (TicketRequest) -- {0}].
+200404-14:40:10 [INFO] -- PCSCore:PCS Sent the fee already
+200404-14:40:10 [FINE] -- PayMachineHandler: message received: [PCSCore (TicketFee) -- {0,30735.0,1585982404582}].
+200404-14:40:10 [FINE] -- PayMachineHandlerEmulator: 0,30735.0,1585982404582
+200404-14:40:11 [FINE] -- PayMachineHandler: message received: [PayMachineHandler (TicketRequest) -- {0}].
+200404-14:40:11 [FINE] -- PCSCore: message received: [PayMachineHandler (TicketRequest) -- {0}].
+200404-14:40:11 [INFO] -- PCSCore:PCS Sent the fee already
+200404-14:40:11 [FINE] -- PayMachineHandler: message received: [PCSCore (TicketFee) -- {0,34025.0,1585982404582}].
+200404-14:40:11 [FINE] -- PayMachineHandlerEmulator: 0,34025.0,1585982404582
+200404-14:40:12 [FINE] -- PayMachineHandler: message received: [PayMachineHandler (TicketRequest) -- {0}].
+200404-14:40:12 [FINE] -- PCSCore: message received: [PayMachineHandler (TicketRequest) -- {0}].
+200404-14:40:12 [INFO] -- PCSCore:PCS Sent the fee already
+200404-14:40:12 [FINE] -- PayMachineHandler: message received: [PCSCore (TicketFee) -- {0,37410.0,1585982404582}].
+200404-14:40:12 [FINE] -- PayMachineHandlerEmulator: 0,37410.0,1585982404582

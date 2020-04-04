@@ -26,7 +26,8 @@ public class Ticket {
     public float calculateFee(float coefficient){
         long currentTime = System.currentTimeMillis();
         long time = currentTime-enterTime;//calculate the pay Fee time
-        return coefficient*time;
+        parkingFee = coefficient * time;
+        return parkingFee;
 
     }
     public void setPayMachineID(int ID){
