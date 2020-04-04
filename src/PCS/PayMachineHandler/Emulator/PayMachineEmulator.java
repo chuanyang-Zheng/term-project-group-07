@@ -15,6 +15,9 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 //======================================================================
 // GateEmulator
@@ -71,9 +74,12 @@ public class PayMachineEmulator extends PayMachineHandler {
     protected void FeeReceive(String mymsg){
         String []str = mymsg.split(",");
         float fee = Float.parseFloat(str[1]);
+        Date nowT = new Date(Long.parseLong(str[2]));
+        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
+        String timestr = sdf.format(nowT);
         PayMachineController.appendTextArea("You need to pay $" + fee);
         log.fine(id + ": " + mymsg);
-        PayMachineController.updateTicket(str[0],str[1],str[2]);
+        PayMachineController.updateTicket(str[0],str[1],timestr);
     }
     protected void SendPaymentACK(String mymsg){
         log.fine(id+ ":ticket"+ mymsg + "Paid already.");
