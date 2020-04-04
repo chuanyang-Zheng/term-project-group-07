@@ -17,6 +17,7 @@ public class Ticket {
 
     public Ticket(){
         enterTime=System.currentTimeMillis();
+
         ticketID=TicketCount++;
     }
     public void enterPrint(){
@@ -26,7 +27,8 @@ public class Ticket {
     public float calculateFee(float coefficient){
         long currentTime = System.currentTimeMillis();
         long time = currentTime-enterTime;//calculate the pay Fee time
-        parkingFee = coefficient * time;
+        long currentSecond = time /1000 % 60;
+        parkingFee = coefficient * currentSecond;
         return parkingFee;
 
     }
@@ -90,6 +92,6 @@ public class Ticket {
         long currentTime=System.currentTimeMillis();
         this.exitTime=currentTime+exitTimeCoefficient;
         this.payMachineID=payMachineID;
-        this.parkingFee=(System.currentTimeMillis()-enterTime)*calculateFeeCoefficient;
+        this.parkingFee=(System.currentTimeMillis()-enterTime)*calculateFeeCoefficient; //付了钱清零再出门的 不应该这里更新
     }
 }

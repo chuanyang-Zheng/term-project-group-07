@@ -70,7 +70,8 @@ public class PayMachineHandler extends AppThread {
         TicketFee = Float.parseFloat(mymsg);
     }
     protected void FeeReceive(String mymsg){
-        TicketFee = Float.parseFloat(mymsg);
+        String []str = mymsg.split(",");
+        TicketFee = Float.parseFloat(str[1]);
 
     }
     protected void SendPaymentACK(String mymsg){
