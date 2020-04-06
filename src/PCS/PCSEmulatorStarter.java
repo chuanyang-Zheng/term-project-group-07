@@ -104,8 +104,8 @@ public class PCSEmulatorStarter extends PCSStarter {
 	    new Thread(dispatcherEmulator).start();
 	    new Thread(collectorEmulator).start();
 //	    new Thread(payMachineEmulator).start();
-            for(int i = 1; i <= PayMachineNumber; i++)
-                new Thread(PMEL.get(i-1)).start();
+            for(int i = 0; i < PayMachineNumber; i++)
+                new Thread(PMEL.get(i)).start();
 
 	} // start
     } // Emulators
