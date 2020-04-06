@@ -103,6 +103,10 @@ public class PCSCore extends AppThread {
                         log.info(id + ":PCS Sent the fee already");
                         SendTicketFee(msg.getDetails());
                         break;
+                    case AddTicket:
+                        log.info(id + ":PCS has generated a new ticket");
+                        AddTicket(msg.getDetails());
+                        break;
                     case PaymentACK:
                         log.info(id + ":Payment ACK received");
                         PayStateUpdate(0, msg.getDetails());
@@ -121,6 +125,7 @@ public class PCSCore extends AppThread {
         log.info(id + ": terminating...");
     } // run
 
+
     public boolean checkStringToInt(String detail) {
         try {
             Integer.parseInt(detail);
@@ -137,12 +142,20 @@ public class PCSCore extends AppThread {
         log.fine(id + ":Payment Updated");
     }
 
+
     public void SendTicketFee(String msg) {
         String[] tmp = msg.split(",");
         int z = FindTicketByID(Integer.parseInt(tmp[1]));
         for (int i = 0; i < appKickstarter.PayMachineNumber; i++)
             payMBox.get(i).send(new Msg(id, mbox, Msg.Type.TicketFee, tmp[0] + "," + tmp[1] + "," + Float.toString(ticketList.get(z).calculateFee(5)) + "," + Long.toString(ticketList.get(z).getEnterTime())));
 
+    }
+
+    public void AddTicket(String msg) {
+        //String[] tmp = msg.split(",");
+
+
+        ticketList.add(new Ticket());
     }
 
     public void handleCollectorValidRequest(Msg msg) {

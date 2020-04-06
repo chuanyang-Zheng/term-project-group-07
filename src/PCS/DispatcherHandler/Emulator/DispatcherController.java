@@ -46,7 +46,7 @@ public class DispatcherController {
                 TextInputDialog dialog = new TextInputDialog("0");
                 dialog.setTitle("Ticket printed");
                 dialog.setContentText("Please pick up your ticket.");
-                dispatcherMBox.send(new Msg(id, null, Msg.Type.TicketRequest, id + "," + ticket_id));
+                dispatcherMBox.send(new Msg(id, null, Msg.Type.AddTicket, id ));
                 break;
 
             default:
