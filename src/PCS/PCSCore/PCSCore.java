@@ -105,7 +105,7 @@ public class PCSCore extends AppThread {
                         break;
                     case AddTicket:
                         log.info(id + ":PCS has generated a new ticket");
-                        AddTicket(msg.getDetails());
+                        AddTicket();
                         break;
                     case PaymentACK:
                         log.info(id + ":Payment ACK received");
@@ -151,11 +151,12 @@ public class PCSCore extends AppThread {
 
     }
 
-    public void AddTicket(String msg) {
+    public void AddTicket() {
         //String[] tmp = msg.split(",");
 
 
         ticketList.add(new Ticket());
+        log.fine(id + ":Ticket added");
     }
 
     public void handleCollectorValidRequest(Msg msg) {

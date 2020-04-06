@@ -49,9 +49,8 @@ public class DispatcherHandler extends AppThread {
     protected boolean processMsg(Msg msg) {
         boolean quit = false;
         switch (msg.getType()) {
-            case TicketRequest:  SendRequest(msg.getDetails());  break;
-            case TicketFee:      FeeReceive(msg.getDetails()); break;
-            case PaymentACK:	 SendPaymentACK(msg.getDetails());break;
+            case AddTicket:  SendAddTicket(msg.getDetails());  break;
+
             case Terminate:	     quit = true;break;
         }
         return quit;
@@ -60,26 +59,11 @@ public class DispatcherHandler extends AppThread {
 
     //------------------------
 // Send Fee Request
-    protected void SendRequest(String mymsg){
-        pcsCore.send(new Msg(id, mbox, Msg.Type.TicketRequest, mymsg));
-        String []tmp = mymsg.split(",");
-        TicketFee = Float.parseFloat(tmp[1]);
-    }
-    // Send Fee Request
-    //------------------------
-    // Receive Msg with id,fee,entertime
-    protected void FeeReceive(String mymsg){
-        String []str = mymsg.split(",");
-        TicketFee = Float.parseFloat(str[1]);
-    }
-    // Receive Msg with id,fee,entertime
+    protected void SendAddTicket(String mymsg){
+        pcsCore.send(new Msg(id, mbox, Msg.Type.AddTicket, mymsg));
 
-    //------------------------
-    // Send Payment ACK
-    protected void SendPaymentACK(String mymsg){
-        log.fine(id+ ":ticket"+ mymsg + "Paid already.");
     }
-    // Send Payment ACK
+
 
     //------------------------------------------------------------
     // PM Status

@@ -61,24 +61,19 @@ public class DispatcherEmulator extends DispatcherHandler {
         myStage.show();
     } // DispatcherEmulator
     @Override
-    protected void FeeReceive(String mymsg){
+    protected void SendAddTicket(String mymsg){
         String []str = mymsg.split(",");
-        if(!str[0].equals(super.id)) return;
-        float fee = Float.parseFloat(str[2]);
-        Date nowT = new Date(Long.parseLong(str[3]));
+        if(!mymsg.equals(super.id)) return;
+
+        Date nowT = new Date(System.currentTimeMillis());
         SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
         String timestr = sdf.format(nowT);
-        Long parkedTime = (System.currentTimeMillis() - Long.parseLong(str[3])) / 1000;
-        DispatcherController.appendTextArea("You have parked " + Long.toString(parkedTime) + "s and you need to pay $" + fee + "  ($5/s)");
-//        log.fine(id + ": " + mymsg);
-        DispatcherController.showTicket(str[1],timestr);
+        //Long currentTime = (System.currentTimeMillis() - Long.parseLong(str[3])) / 1000;
+        DispatcherController.appendTextArea("Your enter time is " + timestr + "  ($5/s)");
+
+        DispatcherController.showTicket(mymsg,timestr);
     }
-    protected void SendPaymentACK(String mymsg){
-        log.fine(id+ ":ticket"+ mymsg + "Paid already.");
-        DispatcherController.appendTextArea("Thank you for payment!!!!");
-        pcsCore.send(new Msg(id, mbox, Msg.Type.PaymentACK, mymsg));
-        pcsCore.send(new Msg(id, mbox, Msg.Type.TicketRequest, mymsg));
-    }
+
 
 
 } // DispatcherEmulator
