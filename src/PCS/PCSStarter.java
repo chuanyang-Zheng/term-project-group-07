@@ -5,6 +5,8 @@ import AppKickstarter.misc.Msg;
 import AppKickstarter.timer.Timer;
 
 import PCS.CollectorHandler.CollectorHandler;
+import PCS.DispatcherHandler.DispatcherHandler;
+import PCS.DispatcherHandler.Emulator.DispatcherEmulator;
 import PCS.PCSCore.PCSCore;
 import PCS.GateHandler.GateHandler;
 
@@ -20,6 +22,7 @@ import java.util.ArrayList;
 public class PCSStarter extends AppKickstarter {
     protected Timer timer;
     protected PCSCore pcsCore;
+	protected DispatcherHandler dispatcherHandler;
     protected GateHandler gateHandler;
     protected CollectorHandler collectorHandler;
     protected ArrayList<PayMachineHandler> PML = new ArrayList<PayMachineHandler>();
@@ -58,6 +61,7 @@ public class PCSStarter extends AppKickstarter {
 	try {
 	    timer = new Timer("timer", this);
 	    pcsCore = new PCSCore("PCSCore", this);
+		dispatcherHandler = new DispatcherHandler("DispatcherHandler", this);
 	    gateHandler = new GateHandler("GateHandler", this);
 	    collectorHandler=new CollectorHandler("CollectorHandler",this);
 		for(int i = 0; i < PayMachineNumber; i++)
@@ -74,6 +78,7 @@ public class PCSStarter extends AppKickstarter {
 	// start threads
 	new Thread(timer).start();
 	new Thread(pcsCore).start();
+	new Thread(dispatcherHandler).start();
 	new Thread(gateHandler).start();
 	for(int i = 0; i < PayMachineNumber; i++)
 			new Thread(PML.get(i)).start();
