@@ -61,8 +61,7 @@ public class PayMachineHandler extends AppThread {
 // Send Fee Request
     protected void SendRequest(String mymsg){
         pcsCore.send(new Msg(id, mbox, Msg.Type.TicketRequest, mymsg));
-        String []tmp = mymsg.split(",");
-        TicketFee = Float.parseFloat(tmp[1]);
+
     }
     // Send Fee Request
     //------------------------

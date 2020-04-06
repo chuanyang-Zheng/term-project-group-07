@@ -1,115 +1,99 @@
-200404-23:33:13 [INFO] -- 
-200404-23:33:13 [INFO] -- 
-200404-23:33:13 [INFO] -- ============================================================
-200404-23:33:13 [INFO] -- PCSStarter: Application Starting...
-200404-23:33:13 [FINE] -- PCSStarter: registering timer
-200404-23:33:13 [FINE] -- timer: created!
-200404-23:33:13 [FINE] -- PCSStarter: registering PCSCore
-200404-23:33:13 [FINE] -- PCSCore: created!
-200404-23:33:13 [FINE] -- PCSStarter: registering CollectorHandler
-200404-23:33:13 [FINE] -- CollectorHandler: created!
-200404-23:33:13 [FINE] -- PCSStarter: registering EntranceGateHandler
-200404-23:33:13 [FINE] -- EntranceGateHandler: created!
-200404-23:33:13 [FINE] -- PCSStarter: registering ExitGateHandler
-200404-23:33:13 [FINE] -- ExitGateHandler: created!
-200404-23:33:13 [FINE] -- PCSStarter: registering PayMachineHandler0
-200404-23:33:13 [FINE] -- PayMachineHandler0: created!
-200404-23:33:13 [FINE] -- PCSStarter: registering PayMachineHandler1
-200404-23:33:13 [FINE] -- PayMachineHandler1: created!
-200404-23:33:13 [FINE] -- PCSStarter: registering PayMachineHandler2
-200404-23:33:13 [FINE] -- PayMachineHandler2: created!
-200404-23:33:13 [FINE] -- PCSStarter: registering PayMachineHandler3
-200404-23:33:13 [FINE] -- PayMachineHandler3: created!
-200404-23:33:15 [INFO] -- timer: starting...
-200404-23:33:15 [INFO] -- PayMachineHandler2: starting...
-200404-23:33:15 [INFO] -- ExitGateHandler: starting...
-200404-23:33:15 [INFO] -- EntranceGateHandler: starting...
-200404-23:33:15 [INFO] -- PCSCore: starting...
-200404-23:33:15 [INFO] -- CollectorHandler: starting...
-200404-23:33:15 [INFO] -- PayMachineHandler1: starting...
-200404-23:33:15 [INFO] -- PayMachineHandler3: starting...
-200404-23:33:15 [INFO] -- PayMachineHandler0: starting...
-200404-23:33:18 [FINE] -- PayMachineHandler3: message received: [PayMachineHandler3 (TicketRequest) -- {PayMachineHandler3,2}].
-200404-23:33:18 [FINE] -- PCSCore: message received: [PayMachineHandler3 (TicketRequest) -- {PayMachineHandler3,2}].
-200404-23:33:18 [INFO] -- PCSCore:PCS Sent the fee already
-200404-23:33:18 [FINE] -- PayMachineHandler0: message received: [PCSCore (TicketFee) -- {PayMachineHandler3,2,20.0,1586014393773}].
-200404-23:33:18 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {PayMachineHandler3,2,20.0,1586014393773}].
-200404-23:33:18 [FINE] -- PayMachineHandler2: message received: [PCSCore (TicketFee) -- {PayMachineHandler3,2,20.0,1586014393773}].
-200404-23:33:18 [FINE] -- PayMachineHandler3: message received: [PCSCore (TicketFee) -- {PayMachineHandler3,2,20.0,1586014393773}].
-200404-23:33:23 [FINE] -- PayMachineHandler2: message received: [PayMachineHandler2 (TicketRequest) -- {PayMachineHandler2,2}].
-200404-23:33:23 [FINE] -- PCSCore: message received: [PayMachineHandler2 (TicketRequest) -- {PayMachineHandler2,2}].
-200404-23:33:23 [INFO] -- PCSCore:PCS Sent the fee already
-200404-23:33:23 [FINE] -- PayMachineHandler0: message received: [PCSCore (TicketFee) -- {PayMachineHandler2,2,50.0,1586014393773}].
-200404-23:33:23 [FINE] -- PayMachineHandler2: message received: [PCSCore (TicketFee) -- {PayMachineHandler2,2,50.0,1586014393773}].
-200404-23:33:23 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {PayMachineHandler2,2,50.0,1586014393773}].
-200404-23:33:23 [FINE] -- PayMachineHandler3: message received: [PCSCore (TicketFee) -- {PayMachineHandler2,2,50.0,1586014393773}].
-200404-23:33:27 [FINE] -- PayMachineHandler3: message received: [PayMachineHandler3 (PaymentACK) -- {2}].
-200404-23:33:27 [FINE] -- PayMachineHandler3Emulator:ticket2Paid already.
-200404-23:33:27 [FINE] -- PCSCore: message received: [PayMachineHandler3Emulator (PaymentACK) -- {2}].
-200404-23:33:27 [INFO] -- PCSCore:Payment ACK received
-200404-23:33:27 [FINE] -- PCSCore:Payment Updated
-200404-23:33:27 [FINE] -- PCSCore: message received: [PayMachineHandler3Emulator (TicketRequest) -- {2}].
-200404-23:33:27 [INFO] -- PCSCore:PCS Sent the fee already
-200404-23:33:30 [FINE] -- PayMachineHandler2: message received: [PayMachineHandler2 (TicketRequest) -- {PayMachineHandler2,2}].
-200404-23:33:30 [FINE] -- PCSCore: message received: [PayMachineHandler2 (TicketRequest) -- {PayMachineHandler2,2}].
-200404-23:33:30 [INFO] -- PCSCore:PCS Sent the fee already
-200404-23:33:30 [FINE] -- PayMachineHandler0: message received: [PCSCore (TicketFee) -- {PayMachineHandler2,2,0.0,1586014393773}].
-200404-23:33:30 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {PayMachineHandler2,2,0.0,1586014393773}].
-200404-23:33:30 [FINE] -- PayMachineHandler3: message received: [PCSCore (TicketFee) -- {PayMachineHandler2,2,0.0,1586014393773}].
-200404-23:33:30 [FINE] -- PayMachineHandler2: message received: [PCSCore (TicketFee) -- {PayMachineHandler2,2,0.0,1586014393773}].
-200404-23:33:31 [FINE] -- PayMachineHandler2: message received: [PayMachineHandler2 (PaymentACK) -- {2}].
-200404-23:33:31 [FINE] -- PayMachineHandler2Emulator:ticket2Paid already.
-200404-23:33:31 [FINE] -- PCSCore: message received: [PayMachineHandler2Emulator (PaymentACK) -- {2}].
-200404-23:33:31 [INFO] -- PCSCore:Payment ACK received
-200404-23:33:31 [FINE] -- PCSCore:Payment Updated
-200404-23:33:31 [FINE] -- PCSCore: message received: [PayMachineHandler2Emulator (TicketRequest) -- {2}].
-200404-23:33:31 [INFO] -- PCSCore:PCS Sent the fee already
-200404-23:33:31 [FINE] -- PayMachineHandler2: message received: [PayMachineHandler2 (PaymentACK) -- {2}].
-200404-23:33:31 [FINE] -- PayMachineHandler2Emulator:ticket2Paid already.
-200404-23:33:31 [FINE] -- PCSCore: message received: [PayMachineHandler2Emulator (PaymentACK) -- {2}].
-200404-23:33:31 [INFO] -- PCSCore:Payment ACK received
-200404-23:33:31 [FINE] -- PCSCore:Payment Updated
-200404-23:33:31 [FINE] -- PCSCore: message received: [PayMachineHandler2Emulator (TicketRequest) -- {2}].
-200404-23:33:31 [INFO] -- PCSCore:PCS Sent the fee already
-200404-23:33:32 [FINE] -- PayMachineHandler2: message received: [PayMachineHandler2 (PaymentACK) -- {2}].
-200404-23:33:32 [FINE] -- PayMachineHandler2Emulator:ticket2Paid already.
-200404-23:33:32 [FINE] -- PCSCore: message received: [PayMachineHandler2Emulator (PaymentACK) -- {2}].
-200404-23:33:32 [INFO] -- PCSCore:Payment ACK received
-200404-23:33:32 [FINE] -- PCSCore:Payment Updated
-200404-23:33:32 [FINE] -- PCSCore: message received: [PayMachineHandler2Emulator (TicketRequest) -- {2}].
-200404-23:33:32 [INFO] -- PCSCore:PCS Sent the fee already
-200404-23:33:32 [FINE] -- PayMachineHandler2: message received: [PayMachineHandler2 (PaymentACK) -- {2}].
-200404-23:33:32 [FINE] -- PayMachineHandler2Emulator:ticket2Paid already.
-200404-23:33:32 [FINE] -- PCSCore: message received: [PayMachineHandler2Emulator (PaymentACK) -- {2}].
-200404-23:33:32 [INFO] -- PCSCore:Payment ACK received
-200404-23:33:32 [FINE] -- PCSCore:Payment Updated
-200404-23:33:32 [FINE] -- PCSCore: message received: [PayMachineHandler2Emulator (TicketRequest) -- {2}].
-200404-23:33:32 [INFO] -- PCSCore:PCS Sent the fee already
-200404-23:33:34 [FINE] -- PayMachineHandler3: message received: [PayMachineHandler3 (TicketRequest) -- {PayMachineHandler3,2}].
-200404-23:33:34 [FINE] -- PCSCore: message received: [PayMachineHandler3 (TicketRequest) -- {PayMachineHandler3,2}].
-200404-23:33:34 [INFO] -- PCSCore:PCS Sent the fee already
-200404-23:33:34 [FINE] -- PayMachineHandler0: message received: [PCSCore (TicketFee) -- {PayMachineHandler3,2,0.0,1586014393773}].
-200404-23:33:34 [FINE] -- PayMachineHandler3: message received: [PCSCore (TicketFee) -- {PayMachineHandler3,2,0.0,1586014393773}].
-200404-23:33:34 [FINE] -- PayMachineHandler2: message received: [PCSCore (TicketFee) -- {PayMachineHandler3,2,0.0,1586014393773}].
-200404-23:33:34 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {PayMachineHandler3,2,0.0,1586014393773}].
-200404-23:33:36 [FINE] -- PayMachineHandler3: message received: [PayMachineHandler3 (PaymentACK) -- {2}].
-200404-23:33:36 [FINE] -- PayMachineHandler3Emulator:ticket2Paid already.
-200404-23:33:36 [FINE] -- PCSCore: message received: [PayMachineHandler3Emulator (PaymentACK) -- {2}].
-200404-23:33:36 [INFO] -- PCSCore:Payment ACK received
-200404-23:33:36 [FINE] -- PCSCore:Payment Updated
-200404-23:33:36 [FINE] -- PCSCore: message received: [PayMachineHandler3Emulator (TicketRequest) -- {2}].
-200404-23:33:36 [INFO] -- PCSCore:PCS Sent the fee already
-200404-23:33:37 [FINE] -- PayMachineHandler3: message received: [PayMachineHandler3 (PaymentACK) -- {2}].
-200404-23:33:37 [FINE] -- PayMachineHandler3Emulator:ticket2Paid already.
-200404-23:33:37 [FINE] -- PCSCore: message received: [PayMachineHandler3Emulator (PaymentACK) -- {2}].
-200404-23:33:37 [INFO] -- PCSCore:Payment ACK received
-200404-23:33:37 [FINE] -- PCSCore:Payment Updated
-200404-23:33:37 [FINE] -- PCSCore: message received: [PayMachineHandler3Emulator (TicketRequest) -- {2}].
-200404-23:33:37 [INFO] -- PCSCore:PCS Sent the fee already
-200404-23:33:37 [FINE] -- PayMachineHandler3: message received: [PayMachineHandler3 (PaymentACK) -- {2}].
-200404-23:33:37 [FINE] -- PayMachineHandler3Emulator:ticket2Paid already.
-200404-23:33:37 [FINE] -- PCSCore: message received: [PayMachineHandler3Emulator (PaymentACK) -- {2}].
-200404-23:33:37 [INFO] -- PCSCore:Payment ACK received
-200404-23:33:37 [FINE] -- PCSCore:Payment Updated
-200404-23:33:37 [FINE] -- PCSCore: message received: [PayMachineHandler3Emulator (TicketRequest) -- {2}].
-200404-23:33:37 [INFO] -- PCSCore:PCS Sent the fee already
+200405-11:33:16 [INFO] -- 
+200405-11:33:16 [INFO] -- 
+200405-11:33:16 [INFO] -- ============================================================
+200405-11:33:16 [INFO] -- PCSStarter: Application Starting...
+200405-11:33:17 [FINE] -- PCSStarter: registering timer
+200405-11:33:17 [FINE] -- timer: created!
+200405-11:33:17 [FINE] -- PCSStarter: registering PCSCore
+200405-11:33:17 [FINE] -- PCSCore: created!
+200405-11:33:17 [FINE] -- PCSStarter: registering CollectorHandler
+200405-11:33:17 [FINE] -- CollectorHandler: created!
+200405-11:33:17 [FINE] -- PCSStarter: registering EntranceGateHandler
+200405-11:33:17 [FINE] -- EntranceGateHandler: created!
+200405-11:33:17 [FINE] -- PCSStarter: registering ExitGateHandler
+200405-11:33:17 [FINE] -- ExitGateHandler: created!
+200405-11:33:17 [FINE] -- PCSStarter: registering PayMachineHandler0
+200405-11:33:17 [FINE] -- PayMachineHandler0: created!
+200405-11:33:17 [FINE] -- PCSStarter: registering PayMachineHandler1
+200405-11:33:17 [FINE] -- PayMachineHandler1: created!
+200405-11:33:17 [FINE] -- PCSStarter: registering PayMachineHandler2
+200405-11:33:17 [FINE] -- PayMachineHandler2: created!
+200405-11:33:17 [FINE] -- PCSStarter: registering PayMachineHandler3
+200405-11:33:17 [FINE] -- PayMachineHandler3: created!
+200405-11:33:20 [INFO] -- timer: starting...
+200405-11:33:20 [INFO] -- PCSCore: starting...
+200405-11:33:20 [INFO] -- EntranceGateHandler: starting...
+200405-11:33:20 [INFO] -- ExitGateHandler: starting...
+200405-11:33:20 [INFO] -- CollectorHandler: starting...
+200405-11:33:20 [INFO] -- PayMachineHandler1: starting...
+200405-11:33:20 [INFO] -- PayMachineHandler2: starting...
+200405-11:33:20 [INFO] -- PayMachineHandler3: starting...
+200405-11:33:20 [INFO] -- PayMachineHandler0: starting...
+200405-11:33:52 [FINE] -- EntranceGateHandler: message received: [EntranceGateHandler (GateOpenRequest) -- {GateOpenReq}].
+200405-11:33:52 [INFO] -- EntranceGateHandler: gate open request received
+200405-11:33:52 [INFO] -- EntranceGateHandler: send signal to open the gate now.
+200405-11:33:52 [FINE] -- EntranceGateHandlerEmulator: Gate open signal received.  [autoOpen is on]
+200405-11:33:52 [FINE] -- EntranceGateHandlerEmulator: Gate open timer started.
+200405-11:33:52 [FINE] -- EntranceGateHandler: gate status change: GateClosed --> GateOpening
+200405-11:33:54 [FINE] -- EntranceGateHandler: message received: [Timer (TimesUp) -- {TimesUp 00001 0}].
+200405-11:33:54 [FINE] -- EntranceGateHandlerEmulator: Times up received.
+200405-11:33:54 [FINE] -- EntranceGateHandlerEmulator: Gate open timer is up.  [autoOpen is on]
+200405-11:33:54 [FINE] -- EntranceGateHandlerEmulator: Send gate open reply
+200405-11:33:54 [FINE] -- EntranceGateHandler: message received: [EntranceGateHandlerEmulator (GateOpenReply) -- {Gate Open Reply}].
+200405-11:33:54 [INFO] -- EntranceGateHandler: gate open reply received
+200405-11:33:54 [INFO] -- EntranceGateHandler: inform PCS Core that gate has finished opening.
+200405-11:33:54 [FINE] -- PCSCore: message received: [EntranceGateHandler (GateOpenReply) -- {}].
+200405-11:33:54 [FINE] -- EntranceGateHandler: gate status change: GateOpening --> GateOpened
+200405-11:33:54 [INFO] -- PCSCore: EntranceGateHandler is opened.
+200405-11:34:42 [FINE] -- EntranceGateHandler: message received: [EntranceGateHandler (Poll) -- {}].
+200405-11:34:42 [INFO] -- EntranceGateHandler: poll request received.  Send poll request to hardware.
+200405-11:34:42 [FINE] -- EntranceGateHandlerEmulator: Poll request received.  [autoPoll is on]
+200405-11:34:42 [FINE] -- EntranceGateHandlerEmulator: Send poll ack.
+200405-11:34:42 [FINE] -- EntranceGateHandler: message received: [EntranceGateHandlerEmulator (PollAck) -- {}].
+200405-11:34:42 [INFO] -- EntranceGateHandler: poll ack received.  Send poll ack to PCS Core.
+200405-11:34:42 [FINE] -- PCSCore: message received: [EntranceGateHandler (PollAck) -- {EntranceGateHandler is up!}].
+200405-11:34:42 [INFO] -- PollAck: EntranceGateHandler is up!
+200405-11:34:54 [WARNING] -- EntranceGateHandler: unknown button: [Auto Poll: On]
+200405-11:34:58 [WARNING] -- EntranceGateHandler: unknown button: [Auto Poll: On]
+200405-11:35:00 [FINE] -- EntranceGateHandler: message received: [EntranceGateHandler (GateCloseRequest) -- {GateCloseReq}].
+200405-11:35:00 [INFO] -- EntranceGateHandler: gate close request received
+200405-11:35:00 [INFO] -- EntranceGateHandler: send signal to close the gate now.
+200405-11:35:00 [FINE] -- EntranceGateHandlerEmulator: Gate close signal received.  [autoClose is on]
+200405-11:35:00 [FINE] -- EntranceGateHandlerEmulator: Gate close timer started.
+200405-11:35:00 [FINE] -- EntranceGateHandler: gate status change: GateOpened --> GateClosing
+200405-11:35:01 [FINE] -- EntranceGateHandler: message received: [Timer (TimesUp) -- {TimesUp 00002 0}].
+200405-11:35:01 [FINE] -- EntranceGateHandlerEmulator: Times up received.
+200405-11:35:01 [FINE] -- EntranceGateHandlerEmulator: Gate close timer is up.  [autoClose is on]
+200405-11:35:01 [FINE] -- EntranceGateHandlerEmulator: Send gate close reply
+200405-11:35:01 [FINE] -- EntranceGateHandler: message received: [EntranceGateHandlerEmulator (GateCloseReply) -- {Gate Close Reply}].
+200405-11:35:01 [INFO] -- EntranceGateHandler: gate close reply received
+200405-11:35:01 [INFO] -- EntranceGateHandler: inform PCS Core that gate has finished closing.
+200405-11:35:01 [FINE] -- PCSCore: message received: [EntranceGateHandler (GateCloseReply) -- {}].
+200405-11:35:01 [FINE] -- EntranceGateHandler: gate status change: GateClosing --> GateClosed
+200405-11:35:01 [INFO] -- PCSCore: EntranceGateHandler is closed.
+200405-11:35:17 [FINE] -- EntranceGateHandler: message received: [EntranceGateHandler (GateOpenReply) -- {GateOpenReply}].
+200405-11:35:17 [INFO] -- EntranceGateHandler: gate open reply received
+200405-11:35:17 [WARNING] -- EntranceGateHandler: gate should be closed!!  *** CHK ***
+200405-11:35:21 [FINE] -- EntranceGateHandler: message received: [EntranceGateHandler (PollAck) -- {}].
+200405-11:35:21 [INFO] -- EntranceGateHandler: poll ack received.  Send poll ack to PCS Core.
+200405-11:35:21 [FINE] -- PCSCore: message received: [EntranceGateHandler (PollAck) -- {EntranceGateHandler is up!}].
+200405-11:35:21 [INFO] -- PollAck: EntranceGateHandler is up!
+200405-11:35:23 [FINE] -- EntranceGateHandler: message received: [EntranceGateHandler (GateCloseReply) -- {GateCloseReply}].
+200405-11:35:23 [INFO] -- EntranceGateHandler: gate close reply received
+200405-11:35:23 [WARNING] -- EntranceGateHandler: gate is already closed!!  Ignore reply.
+200405-11:35:25 [WARNING] -- EntranceGateHandler: unknown button: [Auto Open: On]
+200405-11:35:26 [WARNING] -- EntranceGateHandler: unknown button: [Auto Poll: On]
+200405-11:35:27 [WARNING] -- EntranceGateHandler: unknown button: [Auto Close: On]
+200405-11:35:29 [INFO] -- 
+200405-11:35:29 [INFO] -- 
+200405-11:35:29 [INFO] -- ============================================================
+200405-11:35:29 [INFO] -- PCSStarter: Application Stopping...
+200405-11:35:29 [FINE] -- PCSCore: message received: [PCSStarter (Terminate) -- {Terminate now!}].
+200405-11:35:29 [FINE] -- PCSStarter: unregistering PCSCore
+200405-11:35:29 [INFO] -- PCSCore: terminating...
+200405-11:35:29 [INFO] -- timer: received terminate!
+200405-11:35:29 [FINE] -- ExitGateHandler: message received: [PCSStarter (Terminate) -- {Terminate now!}].
+200405-11:35:29 [FINE] -- PCSStarter: unregistering timer
+200405-11:35:29 [INFO] -- timer: terminating...
+200405-11:35:29 [FINE] -- PCSStarter: unregistering ExitGateHandler
+200405-11:35:29 [INFO] -- ExitGateHandler: terminating...
