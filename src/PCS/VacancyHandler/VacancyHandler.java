@@ -1,16 +1,15 @@
-package PCS.VacancyDispHandler;
+package PCS.VacancyHandler;
 
 import AppKickstarter.AppKickstarter;
 import AppKickstarter.misc.AppThread;
 import AppKickstarter.misc.MBox;
 import AppKickstarter.misc.Msg;
-import PCS.GateHandler.GateHandler;
 
-public class VacancyDisHandler extends AppThread {
+public class VacancyHandler extends AppThread {
     protected final MBox pcsCore;
     private  VacancyDisStatus vacancyDisStatus;
 
-    public VacancyDisHandler(String id, AppKickstarter appKickstarter,int[] availableSpaces) {
+    public VacancyHandler(String id, AppKickstarter appKickstarter, int[] availableSpaces) {
         super(id, appKickstarter);
         pcsCore = appKickstarter.getThread("PCSCore").getMBox();
         vacancyDisStatus = VacancyDisStatus.VacancyDisRunning;
