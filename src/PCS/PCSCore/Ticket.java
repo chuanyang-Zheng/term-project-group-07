@@ -10,7 +10,7 @@ public class Ticket {
     //if smaller than 0, it means that it is not valid.
     protected long exitTime=-1;
     protected float parkingFee=-1;
-    protected String payMachineID="";
+    protected String payMachineID = "";
 
 
     protected static int TicketCount=0;
@@ -28,8 +28,8 @@ public class Ticket {
         long currentTime = System.currentTimeMillis();
         long time = currentTime-enterTime;//calculate the pay Fee time
         long currentSecond = time /1000 % 60;
-//        System.out.println("Paymachine is " + Integer.toString(payMachineID));
-        parkingFee = !payMachineID.equals("")? coefficient * currentSecond : -1;
+        System.out.println("Paymachine is " + payMachineID);
+        parkingFee = payMachineID.equals("")? coefficient * currentSecond : 0;
         return parkingFee;
     }
     public void setPayMachineID(String ID){
@@ -97,7 +97,7 @@ public class Ticket {
      */
     public void setExitInformation(long exitTimeCoefficient,String payMachineID, float parkingFee){
         this.exitTime=System.currentTimeMillis()+exitTimeCoefficient;
-        this.payMachineID=payMachineID;
+//        this.payMachineID=payMachineID;
         this.parkingFee=parkingFee;
     }
 }
