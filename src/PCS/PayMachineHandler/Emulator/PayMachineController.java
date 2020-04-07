@@ -62,7 +62,7 @@ public class PayMachineController {
                 if(ticket_id == null || ticket_id.isEmpty())
                     new Alert(Alert.AlertType.ERROR, "Please insert first :)", new ButtonType[]{ButtonType.OK}).show();
                 else
-                    payMBox.send(new Msg(id, null, Msg.Type.PaymentACK, ticket_id));
+                    payMBox.send(new Msg(id, null, Msg.Type.PaymentACK, id + "," + ticket_id));
                 break;
             default:
                 log.warning(id + ": unknown button: [" + btn.getText() + "]");
