@@ -20,14 +20,12 @@ import java.util.Date;
 
 
 //======================================================================
-// GateEmulator
+// PayMachineEmulator
 public class PayMachineEmulator extends PayMachineHandler {
     private Stage myStage;
     private PayMachineController PayMachineController;
     private final PCSStarter pcsStarter;
     private final String id;
-//    private final int gateOpenTime;
-//    private final int gateCloseTime;
     private final int GateOpenTimerID = 1;
     private final int GateCloseTimerID = 2;
     private boolean autoOpen;
@@ -36,7 +34,7 @@ public class PayMachineEmulator extends PayMachineHandler {
 
 
     //------------------------------------------------------------
-    // GateEmulator
+    //  PayMachineEmulator
     public PayMachineEmulator(String id, PCSStarter pcsStarter) {
         super(id, pcsStarter);
         this.pcsStarter = pcsStarter;
@@ -46,7 +44,7 @@ public class PayMachineEmulator extends PayMachineHandler {
 //        this.autoOpen = true;
 //        this.autoClose = true;
 //        this.autoPoll = true;
-    } // GateEmulator
+    } //  PayMachineEmulator
 
 
     //------------------------------------------------------------
@@ -69,9 +67,10 @@ public class PayMachineEmulator extends PayMachineHandler {
             Platform.exit();
         });
         myStage.show();
-    } // GateEmulator
+    } //  PayMachineEmulator
     @Override
     protected void FeeReceive(String mymsg){
+
         String []str = mymsg.split(",");
         if(!str[0].equals(super.id)) return;
         float fee = Float.parseFloat(str[2]);
@@ -92,4 +91,4 @@ public class PayMachineEmulator extends PayMachineHandler {
     }
 
 
-} // GateEmulator
+} //  PayMachineEmulator

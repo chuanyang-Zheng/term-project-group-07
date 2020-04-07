@@ -20,6 +20,7 @@ public class PayMachineHandler extends AppThread {
     public PayMachineHandler(String id,AppKickstarter pcss) {
         super(id, pcss);
         pcsCore = appKickstarter.getThread("PCSCore").getMBox();
+        PMS = PayMachineStatus.idle;
     } // Pay Machine Handler Constructor
 
 
@@ -48,9 +49,18 @@ public class PayMachineHandler extends AppThread {
     protected boolean processMsg(Msg msg) {
         boolean quit = false;
         switch (msg.getType()) {
-            case TicketRequest:  SendRequest(msg.getDetails());  break;
-            case TicketFee:      FeeReceive(msg.getDetails()); break;
-            case PaymentACK:	 SendPaymentACK(msg.getDetails());break;
+            case TicketRequest:
+                SendRequest(msg.getDetails());
+                PMS = PayMachineStatus.WaitPaymentReply;
+            break;
+            case TicketFee:
+                FeeReceive(msg.getDetails());
+                PMS = PayMachineStatus.WaitDriver;
+            break;
+            case PaymentACK:
+                SendPaymentACK(msg.getDetails());
+                PMS = PayMachineStatus.WaitExitInfo;
+            break;
             case Terminate:	     quit = true;break;
         }
         return quit;
@@ -61,7 +71,6 @@ public class PayMachineHandler extends AppThread {
 // Send Fee Request
     protected void SendRequest(String mymsg){
         pcsCore.send(new Msg(id, mbox, Msg.Type.TicketRequest, mymsg));
-
     }
     // Send Fee Request
     //------------------------
@@ -82,9 +91,10 @@ public class PayMachineHandler extends AppThread {
     //------------------------------------------------------------
     // PM Status
     private enum PayMachineStatus {
-        GateOpened,
-        GateClosed,
-        GateOpening,
-        GateClosing,
+        idle,
+        WaitPaymentReply,
+        WaitDriver,
+        WaitExitInfo,
+        WaitRemoval
     }
 } // Pay Machine Handler
