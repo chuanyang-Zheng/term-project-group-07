@@ -156,9 +156,10 @@ public class PCSCore extends AppThread {
     public void AddTicket() {
         //String[] tmp = msg.split(",");
 
-
-        ticketList.add(new Ticket());
+        Ticket t=new Ticket();
+        ticketList.add(t);
         log.fine(id + ":Ticket added");
+        dispatcherMbox.send(new Msg(id,mbox,Msg.Type.ReceiveTicketID,String.valueOf(t.ticketID)));
     }
 
     public void handleCollectorValidRequest(Msg msg) {

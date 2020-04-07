@@ -60,16 +60,22 @@ public class DispatcherEmulator extends DispatcherHandler {
         });
         myStage.show();
     } // DispatcherEmulator
+
+
     @Override
-    protected void SendAddTicket(String mymsg){
-        String []str = mymsg.split(",");
-        if(!mymsg.equals(super.id)) return;
+    protected void SendAddTicket(String mymsg) {
+
+        if (!mymsg.equals(super.id)) return;
         pcsCore.send(new Msg(id, mbox, Msg.Type.AddTicket, mymsg));
+    }
+
+    //receive ticket ID
+    protected void ReceiveTicketID(String mymsg){
+
         Date nowT = new Date(System.currentTimeMillis());
         SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
         String timestr = sdf.format(nowT);
-        //Long currentTime = (System.currentTimeMillis() - Long.parseLong(str[3])) / 1000;
-        DispatcherController.appendTextArea("Your enter time is " + timestr + "  ($5/s)");
+        DispatcherController.appendTextArea("Welcome to our parking lot.\n"+"Your ticket ID is "+mymsg+".\n"+"The time now is " + timestr + ".\nThe parking fee is $5/s.\nHave a good time!");
 
         DispatcherController.showTicket(mymsg,timestr);
     }
