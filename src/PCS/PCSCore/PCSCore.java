@@ -44,7 +44,7 @@ public class PCSCore extends AppThread {
         this.pollTime = Integer.parseInt(appKickstarter.getProperty("PCSCore.PollTime"));
         this.openCloseGateTime = Integer.parseInt(appKickstarter.getProperty("PCSCore.OpenCloseGateTime"));        // for demo only!!!
         Ticket trueTicket = new Ticket();
-        trueTicket.setExitInformation(exitTimeCoefficient, 0, calculateFeeCoefficient);
+        trueTicket.setExitInformation(exitTimeCoefficient, "Test1", calculateFeeCoefficient);
         Ticket falseTicket = new Ticket();
         ticketList.add(trueTicket);
         ticketList.add(falseTicket);
@@ -112,7 +112,7 @@ public class PCSCore extends AppThread {
                         break;
                     case TicketRequest:
                         log.info(id + ":PCS Sent the fee already");
-                        SendTicketFee(msg.getDetails());
+                        SendTicketFee(msg);
                         break;
                     case AddTicket:
                         log.info(id + ":PCS has generated a new ticket");
@@ -125,7 +125,7 @@ public class PCSCore extends AppThread {
                         break;
                     case PaymentACK:
                         log.info(id + ":Payment ACK received");
-                        PayStateUpdate(0, msg.getDetails());
+                        PayStateUpdate(msg.getSender(), msg.getDetails());
                         break;
                     case MotionSensorDetectUp:
                         log.info(id+": MotionSensor Detect Up Message Received");
@@ -160,21 +160,36 @@ public class PCSCore extends AppThread {
         return true;
     }
 
-    public void PayStateUpdate(int PID, String TicketID) {
+    public void PayStateUpdate(String PID, String TicketID) {
         int z = FindTicketByID(Integer.parseInt(TicketID));
         ticketList.get(z).setPayMachineID(PID);
         log.fine(id + ":Payment Updated");
     }
 
 
-    public void SendTicketFee(String msg) {
-        String[] tmp = msg.split(",");
-        int z = FindTicketByID(Integer.parseInt(tmp[1]));
-        for (int i = 0; i < appKickstarter.PayMachineNumber; i++)
-            if(ticketList.get(z).getPayMachineID() == -1)
-                payMBox.get(i).send(new Msg(id, mbox, Msg.Type.TicketFee, tmp[0] + "," + tmp[1] + "," + Float.toString(ticketList.get(z).calculateFee(5)) + "," + Long.toString(ticketList.get(z).getEnterTime())));
-            else
-                payMBox.get(i).send(new Msg(id, mbox, Msg.Type.TicketFee, tmp[0] + "," + tmp[1] + "," + Float.toString(ticketList.get(z).calculateFee(5)) + "," + Long.toString(ticketList.get(z).getExitTime())));
+    public void SendTicketFee(Msg msg) {
+        String[] tmp = msg.getDetails().split(",");
+        try {
+            int ticketIndexInTicketArrayList = FindTicketByID(Integer.parseInt(tmp[1]));//get ticket index in the ticket array list
+            if (ticketIndexInTicketArrayList < 0) {
+                log.warning(id + ": Find Invalid Ticket [" + Integer.parseInt(tmp[1] + "] When Calculate Fee"));
+            } else {
+                Ticket targetTicket = ticketList.get(ticketIndexInTicketArrayList);//get ticket
+                targetTicket.setExitInformation(exitTimeCoefficient, msg.getSender(), calculateFeeCoefficient);
+                msg.getSenderMBox().send(new Msg(id, mbox, Msg.Type.TicketFee, tmp[0] + "," + tmp[1] + "," + Float.toString(targetTicket.getParkingFee()) + "," + Long.toString(targetTicket.getExitTime())));//send corresponding fee
+//        for (int i = 0; i < appKickstarter.PayMachineNumber; i++)
+//            if(ticketList.get(ticketIndexInTicketArrayList).getPayMachineID() == -1) {
+//                payMBox.get(i).send(new Msg(id, mbox, Msg.Type.TicketFee, tmp[0] + "," + tmp[1] + "," + Float.toString(ticketList.get(ticketIndexInTicketArrayList).calculateFeeAndSetInformation(calculateFeeCoefficient)) + "," + Long.toString(ticketList.get(ticketIndexInTicketArrayList).getEnterTime())));
+//            }
+//            else {
+//                payMBox.get(i).send(new Msg(id, mbox, Msg.Type.TicketFee, tmp[0] + "," + tmp[1] + "," + Float.toString(ticketList.get(ticketIndexInTicketArrayList).calculateFeeAndSetInformation(calculateFeeCoefficient)) + "," + Long.toString(ticketList.get(ticketIndexInTicketArrayList).getExitTime())));
+//            }
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            log.warning(id+": Calculate Fee Fail");
+        }
     }
 
     public void AddTicket() {
@@ -272,7 +287,8 @@ public class PCSCore extends AppThread {
     }
 
     /**
-     * @param Input:Msg. Contain Message From MotionSensor Up
+     *
+     * @param msg Contain Message From MotionSensor Up
      */
     public void handleMotionSensorDetectUp(Msg msg){
         log.info(id+": Begin Handle Detect Up");

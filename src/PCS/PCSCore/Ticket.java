@@ -10,7 +10,7 @@ public class Ticket {
     //if smaller than 0, it means that it is not valid.
     protected long exitTime=-1;
     protected float parkingFee=-1;
-    protected int payMachineID=-1;
+    protected String payMachineID="";
 
 
     protected static int TicketCount=0;
@@ -29,10 +29,10 @@ public class Ticket {
         long time = currentTime-enterTime;//calculate the pay Fee time
         long currentSecond = time /1000 % 60;
 //        System.out.println("Paymachine is " + Integer.toString(payMachineID));
-        parkingFee = payMachineID == -1? coefficient * currentSecond : 0;
+        parkingFee = !payMachineID.equals("")? coefficient * currentSecond : -1;
         return parkingFee;
     }
-    public void setPayMachineID(int ID){
+    public void setPayMachineID(String ID){
         payMachineID=ID;
     }
     public void setExitTime(long exitTime){
@@ -54,7 +54,7 @@ public class Ticket {
         return ticketID;
     }
 
-    public int getPayMachineID() {
+    public String getPayMachineID() {
         return payMachineID;
     }
 
@@ -73,7 +73,7 @@ public class Ticket {
             log.warning(id+": "+"Current time"+System.currentTimeMillis()+" is larger than Exit time: "+exitTime);
             return false;
         }
-        if(payMachineID<0)
+        if(payMachineID.equals(""))
         {
             log.warning(id+": "+payMachineID+" is smaller than 0");
             return false;
@@ -88,10 +88,9 @@ public class Ticket {
         return true;
     }
 
-    public void setExitInformation(long exitTimeCoefficient,int payMachineID, float calculateFeeCoefficient){
-        long currentTime=System.currentTimeMillis();
-        this.exitTime=currentTime+exitTimeCoefficient;
+    public void setExitInformation(long exitTimeCoefficient,String payMachineID, float calculateFeeCoefficient){
+        this.exitTime=System.currentTimeMillis()+exitTimeCoefficient;
         this.payMachineID=payMachineID;
-        this.parkingFee=(System.currentTimeMillis()-enterTime)*calculateFeeCoefficient; //付了钱清零再出门的 不应该这里更新
+        this.parkingFee=calculateFee(calculateFeeCoefficient);
     }
 }
