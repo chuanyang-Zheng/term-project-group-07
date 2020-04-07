@@ -15,8 +15,10 @@ public class CollectorHandler extends AppThread {
     }
 
 
-    //*Input: Nothing. Return:Nothing.
-    //** Run Part of handler. It deal with logic commannds*/
+    /**
+     * Input: Nothing. Return:Nothing.
+     * run Part of handler. It deal with logic commannds
+     */
     public void run() {
         Thread.currentThread().setName(id);
         log.info(id + ": starting...");

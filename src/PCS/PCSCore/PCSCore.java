@@ -127,6 +127,14 @@ public class PCSCore extends AppThread {
                         log.info(id + ":Payment ACK received");
                         PayStateUpdate(0, msg.getDetails());
                         break;
+                    case MotionSensorDetectUp:
+                        log.info(id+": MotionSensor Detect Up Message Received");
+                        handleMotionSensorDetectUp(msg);
+                        break;
+                    case MotionSensorDetectDown:
+                        log.info(id+": MotionSensor Detect Down Message Received");
+                        handleMotionSensorDetectDown(msg);
+                        break;
                     default:
                         log.warning(id + ": unknown message type: [" + msg + "]");
                 }
@@ -260,4 +268,63 @@ public class PCSCore extends AppThread {
         log.warning(id + ": No Ticket With ID " + ticketID);
         return false;
     }
+
+    /**
+     * @param Input:Msg. Contain Message From MotionSensor Up
+     */
+    public void handleMotionSensorDetectUp(Msg msg){
+        log.info(id+": Begin Handle Detect Up");
+        try{
+            int floorNumber=Integer.parseInt(msg.getDetails());
+            handleParkingSpaceChange(floorNumber-2,floorNumber-1);// If floor number is 3. Now, it goes up. That means, initial floor number is 2. In array, the position is 1, which is floor number -2.
+
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            log.warning(id+": Handler MotionSensor Up Wrong.");
+        }
+    }
+
+    public void handleMotionSensorDetectDown(Msg msg){
+        log.info(id+": Begin Handle Detect Down");
+        try{
+            int floorNumber=Integer.parseInt(msg.getDetails());
+            handleParkingSpaceChange(floorNumber-1,floorNumber-2);// If floor number is 3. Now, it goes up. That means, initial floor number is 2. In array, the position is 1, which is floor number -2.
+
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            log.warning(id+": Handler MotionSensor Down Wrong.");
+        }
+    }
+
+
+
+    /**
+     *
+     * @param initial:the floor number will decrease one available parking spaces
+     * @param now: the floor number will increase one available parking space
+     */
+    public void handleParkingSpaceChange(int initial,int now){
+        if(initial<0){
+            log.fine("One driver Comes outside the parking lot");
+        }
+        else if (initial>totalFloorNumber-1){
+            log.warning("initial in array is "+initial+". But Total Number is "+totalFloorNumber);
+        }
+        else {
+            availableParkingSpaces[initial]=availableParkingSpaces[initial]+1;
+        }
+
+        if(now<0){
+            log.fine("One driver Goes outside the parking lot");
+        }
+        else if (now>totalFloorNumber-1){
+            log.warning("now in array is "+now+". But Total Number is "+totalFloorNumber);
+        }
+        else {
+            availableParkingSpaces[now]=availableParkingSpaces[now]-1;
+        }
+    }
+
 } // PCSCore
