@@ -103,6 +103,7 @@ public class Msg {
 
         /** Generate a ticket for driver */ AddTicket,
         /** Dispatcher receive ticket ID */ReceiveTicketID,
+        /** Dispatcher Tell PCSCore User ALready Remove Ticket */ RemoveTicket,
     /** Loading Ticket request*/       TicketRequest,
     /** Send the Ticket Info */ TicketFee,
     /** Payment Finished successfully*/ PaymentACK,

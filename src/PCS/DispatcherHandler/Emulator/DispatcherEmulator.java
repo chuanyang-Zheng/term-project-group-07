@@ -78,6 +78,8 @@ public class DispatcherEmulator extends DispatcherHandler {
         DispatcherController.appendTextArea("Welcome to our parking lot.\n"+"Your ticket ID is "+mymsg+".\n"+"The time now is " + timestr + ".\nThe parking fee is $5/s.\nHave a good time!");
 
         DispatcherController.showTicket(mymsg,timestr);
+        pcsCore.send(new Msg(id,mbox,Msg.Type.RemoveTicket,"Remove Ticket Now"));
+
     }
 
 

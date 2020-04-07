@@ -21,11 +21,12 @@ public class PCSCore extends AppThread {
     private final int openCloseGateTime;        // for demo only!!!
     private final int OpenCloseGateTimerID = 2;        // for demo only!!!
     private final int collectorSolveProblemGateWaitTimeID = 3;
+    private final int ticketDispatcherTicketRemoveID=4;
     private boolean gateIsClosed = true;        // for demo only!!!
     private ArrayList<Ticket> ticketList = new ArrayList<>();
     private long exitTimeCoefficient = Long.parseLong(appKickstarter.getProperty("Ticket.exitTimeCoefficient"));
     private float calculateFeeCoefficient = Float.parseFloat(appKickstarter.getProperty("Ticket.calculateFeeCoefficient"));
-    private int collectorSolveProblemGateWaitTime = Integer.parseInt(appKickstarter.getProperty("PCSCore.CollectorSolveProblemGateWaitTime"));
+    private int gateOpenWaitTime = Integer.parseInt(appKickstarter.getProperty("PCSCore.GateOpenWaitTime"));
     private int gateOpenTime = Integer.parseInt(appKickstarter.getProperty("Gate.GateOpenTime"));
     private int totalFloorNumber=Integer.parseInt(appKickstarter.getProperty("TotalFloorNumber"));
     private int[] availableParkingSpaces=new int[totalFloorNumber];
@@ -107,7 +108,7 @@ public class PCSCore extends AppThread {
                         exitGateBox.send(new Msg(id, mbox, Msg.Type.GateOpenRequest, "GateOpenReq"));
                         log.fine(id + ": Collector Solve Problem Now. Collector Is Available Now!");
                         log.info(id + ": inform Exit Gate Open");
-                        Timer.setTimer(id, mbox, gateOpenTime + collectorSolveProblemGateWaitTime, collectorSolveProblemGateWaitTimeID);
+                        Timer.setTimer(id, mbox, gateOpenTime + gateOpenWaitTime, collectorSolveProblemGateWaitTimeID);
                         break;
                     case TicketRequest:
                         log.info(id + ":PCS Sent the fee already");
@@ -116,6 +117,11 @@ public class PCSCore extends AppThread {
                     case AddTicket:
                         log.info(id + ":PCS has generated a new ticket");
                         AddTicket();
+                        break;
+                    case RemoveTicket:
+                        log.info(id+": Ticket Dispatcher Ticket Is Removed. Open Gate. ");
+                        entranceGateBox.send(new Msg(id,mbox, Msg.Type.GateOpenRequest,"OpenGate"));
+                        Timer.setTimer(id,mbox,gateOpenTime + gateOpenWaitTime,ticketDispatcherTicketRemoveID);
                         break;
                     case PaymentACK:
                         log.info(id + ":Payment ACK received");
@@ -181,7 +187,7 @@ public class PCSCore extends AppThread {
                 ticketList.remove(Integer.parseInt(msg.getDetails()));
                 collectorMbox.send(new Msg(id, mbox, Msg.Type.CollectorPositive, ""));
                 exitGateBox.send(new Msg(id, mbox, Msg.Type.GateOpenRequest, "GateOpenReq"));
-                Timer.setTimer(id, mbox, gateOpenTime + collectorSolveProblemGateWaitTime, collectorSolveProblemGateWaitTimeID);
+                Timer.setTimer(id, mbox, gateOpenTime + gateOpenWaitTime, collectorSolveProblemGateWaitTimeID);
 
                 // do something. Such as:
                 // delete the ticket.
@@ -221,6 +227,10 @@ public class PCSCore extends AppThread {
             case collectorSolveProblemGateWaitTimeID:
                 exitGateBox.send(new Msg(id, mbox, Msg.Type.GateCloseRequest, "Close Gate"));
                 log.info(id + ": Inform Exit Gate To Close");
+                break;
+            case ticketDispatcherTicketRemoveID:
+                entranceGateBox.send(new Msg(id,mbox,Msg.Type.GateCloseRequest,"Close Gate"));
+                log.info(id+": Inform Entrance Gate To Close ");
                 break;
 
             default:
