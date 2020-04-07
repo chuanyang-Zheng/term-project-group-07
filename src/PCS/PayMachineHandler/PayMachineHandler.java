@@ -2,6 +2,7 @@ package PCS.PayMachineHandler;
 
 import AppKickstarter.AppKickstarter;
 import AppKickstarter.misc.*;
+import PCS.GateHandler.GateHandler;
 import PCS.PCSStarter;
 import PCS.PayMachineHandler.Emulator.PayMachineController;
 import PCS.PayMachineHandler.Emulator.PayMachineEmulator;
@@ -50,27 +51,37 @@ public class PayMachineHandler extends AppThread {
     // processMsg
     protected boolean processMsg(Msg msg) {
         boolean quit = false;
+        boolean flag = false;
+        String []tmp = msg.getDetails().split(",");
+        if(!tmp[0].equals(id))
+            return quit;
         switch (msg.getType()) {
             case TicketRequest:
                 paid = false;
                 SendRequest(msg.getDetails());
                 PMS = PayMachineStatus.WaitPaymentReply;
+                flag = true;
             break;
             case TicketFee:
                 FeeReceive(msg.getDetails());
                 PMS = paid?PayMachineStatus.WaitRemoval : PayMachineStatus.WaitDriver;
+                flag = true;
             break;
             case PaymentACK:
                 paid = true;
                 SendPaymentACK(msg.getDetails());
                 PMS = PayMachineStatus.WaitExitInfo;
                 SendRequest(msg.getDetails());
+                flag = true;
             break;
             case TicketRemoveACK:
                 PMS = PayMachineStatus.idle;
+                flag = true;
             break;
             case Terminate:	     quit = true;break;
         }
+        if(flag)
+            handleStatus();
         return quit;
     }
     // processMsg
@@ -95,6 +106,37 @@ public class PayMachineHandler extends AppThread {
         log.fine(id+ ":ticket"+ mymsg + "Paid already.");
     }
     // Send Payment ACK
+
+    protected final void handleStatus() {
+
+        PayMachineStatus oldStatus = PMS;
+        switch (PMS) {
+            case idle:
+                log.info(id + ": I am idle please use me.");
+                break;
+
+            case WaitPaymentReply:
+                log.info(id + ": I am waiting for Ticket Info");
+                break;
+
+            case WaitDriver:
+                log.info(id + ": Waiting for driver's Payment");
+                break;
+            case WaitExitInfo:
+                log.info(id + ": Waiting for ExitInfo");
+                break;
+            case WaitRemoval:
+                log.info(id + ": Waiting for Removal");
+                break;
+        }
+
+        if (oldStatus != PMS) {
+            log.fine(id + ": gate status change: " + oldStatus + " --> " + PMS);
+        }
+    } // handleGateOpenRequest
+
+
+
 
     //------------------------------------------------------------
     // PM Status
