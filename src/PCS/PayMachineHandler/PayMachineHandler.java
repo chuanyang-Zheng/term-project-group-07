@@ -57,23 +57,26 @@ public class PayMachineHandler extends AppThread {
             return quit;
         switch (msg.getType()) {
             case TicketRequest:
-                paid = false;
                 SendRequest(msg.getDetails());
                 PMS = PayMachineStatus.WaitPaymentReply;
                 flag = true;
             break;
             case TicketFee:
                 FeeReceive(msg.getDetails());
-                PMS = paid?PayMachineStatus.WaitRemoval : PayMachineStatus.WaitDriver;
+                PMS = PayMachineStatus.WaitDriver;
                 flag = true;
             break;
             case PaymentACK:
-                paid = true;
                 SendPaymentACK(msg.getDetails());
                 PMS = PayMachineStatus.WaitExitInfo;
-                SendRequest(msg.getDetails());
+                SendExitInfoRequest(msg.getDetails());
                 flag = true;
             break;
+            case ExitInfo:
+                PMS = PayMachineStatus.WaitRemoval;
+                ExitReceive(msg.getDetails());
+                flag = true;
+                break;
             case TicketRemoveACK:
                 PMS = PayMachineStatus.idle;
                 flag = true;
@@ -94,12 +97,22 @@ public class PayMachineHandler extends AppThread {
     // Send Fee Request
     //------------------------
     // Receive Msg with id,fee,entertime
+    // Send Fee Request
+    protected void SendExitInfoRequest(String mymsg){
+        pcsCore.send(new Msg(id, mbox, Msg.Type.TicketExitInfoRequest, mymsg));
+    }
+    // Send Fee Request
+    //------------------------
+    // Receive Msg with id,fee,entertime
     protected void FeeReceive(String mymsg){
         String []str = mymsg.split(",");
         TicketFee = Float.parseFloat(str[1]);
     }
     // Receive Msg with id,fee,entertime
 
+    protected void ExitReceive(String mymsg){
+        log.info("Exit INfo received");
+    }
     //------------------------
     // Send Payment ACK
     protected void SendPaymentACK(String mymsg){

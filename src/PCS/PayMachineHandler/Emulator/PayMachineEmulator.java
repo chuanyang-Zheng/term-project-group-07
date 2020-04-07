@@ -71,23 +71,33 @@ public class PayMachineEmulator extends PayMachineHandler {
     } //  PayMachineEmulator
     @Override
     protected void FeeReceive(String mymsg){
-
-        String []str = mymsg.split(",");
-        if(!str[0].equals(super.id)) return;
-        float fee = Float.parseFloat(str[2]);
-        Date nowT = new Date(Long.parseLong(str[3]));
+        Long parkedTime = 0L;
+        String []currentTicket = mymsg.split(",");
+        float fee = Float.parseFloat(currentTicket[2]);
+        Date nowT = new Date(Long.parseLong(currentTicket[3]));
         SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
         String timestr = sdf.format(nowT);
-        if(fee != 0)
-            super.paid = false;
-        Long parkedTime = (System.currentTimeMillis() - Long.parseLong(str[3])) / 1000;
-        if(!paid)
-            PayMachineController.appendTextArea("You have parked " + Long.toString(parkedTime) + "s and you need to pay $" + fee + "  ($5/s)");
-        PayMachineController.updateTicket(str[1],str[2],timestr);
+        parkedTime = fee != 0?(System.currentTimeMillis() - Long.parseLong(currentTicket[3])) / 1000:0;
+        PayMachineController.appendTextArea("You have parked " + Long.toString(parkedTime) + "s and you need to pay $" + fee + "  ($5/s)");
+        PayMachineController.updateTicket(currentTicket[1],currentTicket[2],timestr);
+    }
+    protected void ExitReceive(String mymsg){
+        String []currentTicket = mymsg.split(",");
+        String ticketid = PayMachineController.TicketIDField.getText();
+        String PaidFee = PayMachineController.FeeField.getText();
+        Date nowT = new Date(System.currentTimeMillis());
+        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
+        String timestr = sdf.format(nowT);
+        Date ExitTime = new Date(Long.parseLong(currentTicket[3]));
+        String Exitstr = sdf.format(nowT);
+        PayMachineController.appendTextArea("Ticket ID: " + ticketid);
+        PayMachineController.appendTextArea("Paid: " + PaidFee);
+        PayMachineController.appendTextArea("At: " + timestr);
+        PayMachineController.updateTicket(ticketid,"0",Exitstr);
     }
     protected void SendPaymentACK(String mymsg){
         String []tmp = mymsg.split(",");
-        log.fine(id+ ":ticket"+ mymsg + "Paid already.");
+//        log.fine(id+ ":ticket"+ mymsg + "Paid already.");
         PayMachineController.appendTextArea("Thank you for payment!!!!");
         pcsCore.send(new Msg(id, mbox, Msg.Type.PaymentACK, tmp[1]));
     }
