@@ -1,113 +1,46 @@
-200407-19:35:21 [INFO] -- 
-200407-19:35:21 [INFO] -- 
-200407-19:35:21 [INFO] -- ============================================================
-200407-19:35:21 [INFO] -- PCSStarter: Application Starting...
-200407-19:35:21 [FINE] -- PCSStarter: registering timer
-200407-19:35:21 [FINE] -- timer: created!
-200407-19:35:21 [FINE] -- PCSStarter: registering PCSCore
-200407-19:35:21 [FINE] -- PCSCore: created!
-200407-19:35:21 [INFO] -- PCSCore initial vacancy available floor number: [2000, 2000]
-200407-19:35:21 [FINE] -- PCSStarter: registering DispatcherHandler
-200407-19:35:21 [FINE] -- DispatcherHandler: created!
-200407-19:35:21 [FINE] -- PCSStarter: registering CollectorHandler
-200407-19:35:21 [FINE] -- CollectorHandler: created!
-200407-19:35:21 [FINE] -- PCSStarter: registering EntranceGateHandler
-200407-19:35:21 [FINE] -- EntranceGateHandler: created!
-200407-19:35:21 [FINE] -- PCSStarter: registering ExitGateHandler
-200407-19:35:21 [FINE] -- ExitGateHandler: created!
-200407-19:35:21 [FINE] -- PCSStarter: registering PayMachineHandler0
-200407-19:35:21 [FINE] -- PayMachineHandler0: created!
-200407-19:35:21 [FINE] -- PCSStarter: registering PayMachineHandler1
-200407-19:35:21 [FINE] -- PayMachineHandler1: created!
-200407-19:35:23 [INFO] -- timer: starting...
-200407-19:35:23 [INFO] -- ExitGateHandler: starting...
-200407-19:35:23 [INFO] -- EntranceGateHandler: starting...
-200407-19:35:23 [INFO] -- CollectorHandler: starting...
-200407-19:35:23 [INFO] -- PCSCore: starting...
-200407-19:35:23 [INFO] -- PayMachineHandler0: starting...
-200407-19:35:23 [INFO] -- DispatcherHandler: starting...
-200407-19:35:23 [INFO] -- PayMachineHandler1: starting...
-200407-19:35:26 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,2}].
-200407-19:35:26 [INFO] -- PayMachineHandler1: I am waiting for Ticket Info
-200407-19:35:26 [FINE] -- PCSCore: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,2}].
-200407-19:35:26 [INFO] -- PCSCore:PCS Sent the fee already
-200407-19:35:26 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {PayMachineHandler1,2,20.0,1586259321668}].
-200407-19:35:26 [INFO] -- PayMachineHandler1: Waiting for driver's Payment
-200407-19:35:27 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,2}].
-200407-19:35:27 [INFO] -- PayMachineHandler1: I am waiting for Ticket Info
-200407-19:35:27 [FINE] -- PCSCore: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,2}].
-200407-19:35:27 [INFO] -- PCSCore:PCS Sent the fee already
-200407-19:35:27 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {PayMachineHandler1,2,30.0,1586259321668}].
-200407-19:35:27 [INFO] -- PayMachineHandler1: Waiting for driver's Payment
-200407-19:35:28 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,2}].
-200407-19:35:28 [INFO] -- PayMachineHandler1: I am waiting for Ticket Info
-200407-19:35:28 [FINE] -- PCSCore: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,2}].
-200407-19:35:28 [INFO] -- PCSCore:PCS Sent the fee already
-200407-19:35:28 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {PayMachineHandler1,2,35.0,1586259321668}].
-200407-19:35:28 [INFO] -- PayMachineHandler1: Waiting for driver's Payment
-200407-19:35:29 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,2}].
-200407-19:35:29 [FINE] -- PCSCore: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,2}].
-200407-19:35:29 [INFO] -- PCSCore:PCS Sent the fee already
-200407-19:35:29 [INFO] -- PayMachineHandler1: I am waiting for Ticket Info
-200407-19:35:29 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {PayMachineHandler1,2,35.0,1586259321668}].
-200407-19:35:29 [INFO] -- PayMachineHandler1: Waiting for driver's Payment
-200407-19:35:30 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,2}].
-200407-19:35:30 [INFO] -- PayMachineHandler1: I am waiting for Ticket Info
-200407-19:35:30 [FINE] -- PCSCore: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,2}].
-200407-19:35:30 [INFO] -- PCSCore:PCS Sent the fee already
-200407-19:35:30 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {PayMachineHandler1,2,40.0,1586259321668}].
-200407-19:35:30 [INFO] -- PayMachineHandler1: Waiting for driver's Payment
-200407-19:35:31 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,2}].
-200407-19:35:31 [INFO] -- PayMachineHandler1: I am waiting for Ticket Info
-200407-19:35:31 [FINE] -- PCSCore: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,2}].
-200407-19:35:31 [INFO] -- PCSCore:PCS Sent the fee already
-200407-19:35:31 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {PayMachineHandler1,2,45.0,1586259321668}].
-200407-19:35:31 [INFO] -- PayMachineHandler1: Waiting for driver's Payment
-200407-19:35:32 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,2}].
-200407-19:35:32 [INFO] -- PayMachineHandler1: I am waiting for Ticket Info
-200407-19:35:32 [FINE] -- PCSCore: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,2}].
-200407-19:35:32 [INFO] -- PCSCore:PCS Sent the fee already
-200407-19:35:32 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {PayMachineHandler1,2,50.0,1586259321668}].
-200407-19:35:32 [INFO] -- PayMachineHandler1: Waiting for driver's Payment
-200407-19:35:33 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,2}].
-200407-19:35:33 [INFO] -- PayMachineHandler1: I am waiting for Ticket Info
-200407-19:35:33 [FINE] -- PCSCore: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,2}].
-200407-19:35:33 [INFO] -- PCSCore:PCS Sent the fee already
-200407-19:35:33 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {PayMachineHandler1,2,55.0,1586259321668}].
-200407-19:35:33 [INFO] -- PayMachineHandler1: Waiting for driver's Payment
-200407-19:35:34 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (PaymentACK) -- {PayMachineHandler1,2}].
-200407-19:35:34 [FINE] -- PayMachineHandler1Emulator:ticketPayMachineHandler1,2Paid already.
-200407-19:35:34 [FINE] -- PCSCore: message received: [PayMachineHandler1Emulator (PaymentACK) -- {2}].
-200407-19:35:34 [INFO] -- PayMachineHandler1: Waiting for ExitInfo
-200407-19:35:34 [INFO] -- PCSCore:Payment ACK received
-200407-19:35:34 [FINE] -- PCSCore:Payment Updated
-200407-19:35:34 [FINE] -- PCSCore: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,2}].
-200407-19:35:34 [INFO] -- PCSCore:PCS Sent the fee already
-200407-19:35:34 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {PayMachineHandler1,2,0.0,-1}].
-200407-19:35:34 [INFO] -- PayMachineHandler1: Waiting for Removal
-200407-19:35:36 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (TicketRemoveACK) -- {PayMachineHandler1,2}].
-200407-19:35:36 [INFO] -- PayMachineHandler1: I am idle please use me.
-200407-19:35:37 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,2}].
-200407-19:35:37 [INFO] -- PayMachineHandler1: I am waiting for Ticket Info
-200407-19:35:37 [FINE] -- PCSCore: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,2}].
-200407-19:35:37 [INFO] -- PCSCore:PCS Sent the fee already
-200407-19:35:37 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {PayMachineHandler1,2,0.0,-1}].
-200407-19:35:37 [INFO] -- PayMachineHandler1: Waiting for driver's Payment
-200407-19:35:38 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,2}].
-200407-19:35:38 [INFO] -- PayMachineHandler1: I am waiting for Ticket Info
-200407-19:35:38 [FINE] -- PCSCore: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,2}].
-200407-19:35:38 [INFO] -- PCSCore:PCS Sent the fee already
-200407-19:35:38 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {PayMachineHandler1,2,0.0,-1}].
-200407-19:35:38 [INFO] -- PayMachineHandler1: Waiting for driver's Payment
-200407-19:35:39 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,2}].
-200407-19:35:39 [FINE] -- PCSCore: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,2}].
-200407-19:35:39 [INFO] -- PCSCore:PCS Sent the fee already
-200407-19:35:39 [INFO] -- PayMachineHandler1: I am waiting for Ticket Info
-200407-19:35:39 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {PayMachineHandler1,2,0.0,-1}].
-200407-19:35:39 [INFO] -- PayMachineHandler1: Waiting for driver's Payment
-200407-19:35:40 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,2}].
-200407-19:35:40 [FINE] -- PCSCore: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,2}].
-200407-19:35:40 [INFO] -- PayMachineHandler1: I am waiting for Ticket Info
-200407-19:35:40 [INFO] -- PCSCore:PCS Sent the fee already
-200407-19:35:40 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {PayMachineHandler1,2,0.0,-1}].
-200407-19:35:40 [INFO] -- PayMachineHandler1: Waiting for driver's Payment
+200407-20:21:40 [INFO] -- 
+200407-20:21:40 [INFO] -- 
+200407-20:21:40 [INFO] -- ============================================================
+200407-20:21:40 [INFO] -- PCSStarter: Application Starting...
+200407-20:21:40 [FINE] -- PCSStarter: registering timer
+200407-20:21:40 [FINE] -- timer: created!
+200407-20:21:40 [FINE] -- PCSStarter: registering PCSCore
+200407-20:21:40 [FINE] -- PCSCore: created!
+200407-20:21:40 [INFO] -- PCSCore initial vacancy available floor number: [2000, 2000]
+200407-20:21:40 [FINE] -- PCSStarter: registering DispatcherHandler
+200407-20:21:40 [FINE] -- DispatcherHandler: created!
+200407-20:21:40 [FINE] -- PCSStarter: registering CollectorHandler
+200407-20:21:40 [FINE] -- CollectorHandler: created!
+200407-20:21:40 [FINE] -- PCSStarter: registering EntranceGateHandler
+200407-20:21:40 [FINE] -- EntranceGateHandler: created!
+200407-20:21:40 [FINE] -- PCSStarter: registering ExitGateHandler
+200407-20:21:40 [FINE] -- ExitGateHandler: created!
+200407-20:21:40 [FINE] -- PCSStarter: registering PayMachineHandler0
+200407-20:21:40 [FINE] -- PayMachineHandler0: created!
+200407-20:21:40 [FINE] -- PCSStarter: registering PayMachineHandler1
+200407-20:21:40 [FINE] -- PayMachineHandler1: created!
+200407-20:21:42 [INFO] -- timer: starting...
+200407-20:21:42 [INFO] -- PCSCore: starting...
+200407-20:21:42 [INFO] -- EntranceGateHandler: starting...
+200407-20:21:42 [INFO] -- ExitGateHandler: starting...
+200407-20:21:42 [INFO] -- DispatcherHandler: starting...
+200407-20:21:42 [INFO] -- CollectorHandler: starting...
+200407-20:21:42 [INFO] -- PayMachineHandler0: starting...
+200407-20:21:42 [INFO] -- PayMachineHandler1: starting...
+200407-20:21:47 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,2}].
+200407-20:21:47 [INFO] -- PayMachineHandler1: I am waiting for Ticket Info
+200407-20:21:47 [FINE] -- PCSCore: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,2}].
+200407-20:21:47 [INFO] -- PCSCore:PCS Sent the fee already
+200407-20:21:47 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {PayMachineHandler1,2,30.0,1586262100834}].
+200407-20:21:47 [INFO] -- PayMachineHandler1: Waiting for driver's Payment
+200407-20:21:48 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (PaymentACK) -- {PayMachineHandler1,2}].
+200407-20:21:48 [FINE] -- PCSCore: message received: [PayMachineHandler1Emulator (PaymentACK) -- {2}].
+200407-20:21:48 [INFO] -- PayMachineHandler1: Waiting for ExitInfo
+200407-20:21:48 [INFO] -- PCSCore:Payment ACK received
+200407-20:21:48 [FINE] -- PCSCore:Payment Updated
+200407-20:21:48 [FINE] -- PCSCore: message received: [PayMachineHandler1 (TicketExitInfoRequest) -- {PayMachineHandler1,2}].
+200407-20:21:48 [INFO] -- PCSCore:PCS Sent the Exit Info already
+200407-20:21:48 [FINE] -- PayMachineHandler1: message received: [PCSCore (ExitInfo) -- {PayMachineHandler1,2,0.0,1586263108099}].
+200407-20:21:48 [INFO] -- PayMachineHandler1: Waiting for Removal
+200407-20:21:48 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (TicketRemoveACK) -- {PayMachineHandler1,2}].
+200407-20:21:48 [INFO] -- PayMachineHandler1: I am idle please use me.
