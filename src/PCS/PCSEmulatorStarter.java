@@ -59,7 +59,7 @@ public class PCSEmulatorStarter extends PCSStarter {
         GateEmulator exitGateEmulator = null;
         CollectorEmulator collectorEmulator=null;
 	    PayMachineEmulator payMachineEmulator = null;
-	    ArrayList<PayMachineEmulator> PMEL = new ArrayList<PayMachineEmulator>();
+	    ArrayList<PayMachineEmulator> payMachineEmulatorList = new ArrayList<PayMachineEmulator>();
 	    // create emulators
 	    try {
 	        timer = new Timer("timer", pcsEmulatorStarter);
@@ -70,7 +70,7 @@ public class PCSEmulatorStarter extends PCSStarter {
             exitGateEmulator = new GateEmulator("ExitGateHandler", pcsEmulatorStarter);
 //            payMachineEmulator = new PayMachineEmulator("PayMachineHandler",pcsEmulatorStarter);
             for(int i = 0; i < PayMachineNumber; i++)
-                PMEL.add(new PayMachineEmulator("PayMachineHandler" + Integer.toString(i), pcsEmulatorStarter));
+                payMachineEmulatorList.add(new PayMachineEmulator("PayMachineHandler" + Integer.toString(i), pcsEmulatorStarter));
 
             // start emulator GUIs
             dispatcherEmulator.start();
@@ -79,7 +79,7 @@ public class PCSEmulatorStarter extends PCSStarter {
 		collectorEmulator.start();
 //		payMachineEmulator.start();
 		for(int i = 0; i < PayMachineNumber; i++)
-                PMEL.get(i).start();
+                payMachineEmulatorList.get(i).start();
 	    } catch (Exception e) {
 		System.out.println("Emulators: start failed");
 		e.printStackTrace();
@@ -88,12 +88,12 @@ public class PCSEmulatorStarter extends PCSStarter {
 	    pcsEmulatorStarter.setTimer(timer);
 	    pcsEmulatorStarter.setPCSCore(pcsCore);
 	    pcsEmulatorStarter.setDispatcherHandler(dispatcherEmulator);
-	    pcsEmulatorStarter.setGateHandler(entranceGateEmulator);
-	    pcsEmulatorStarter.setGateHandler(exitGateEmulator);
+	    pcsEmulatorStarter.setExitGateHandler(exitGateEmulator);
+	    pcsEmulatorStarter.setEntranceGateHandler(entranceGateEmulator);
 	    pcsEmulatorStarter.setCollectorHandler(collectorEmulator);
 //	    pcsEmulatorStarter.setPayMachineHandler(payMachineEmulator);
          for(int i = 0; i < PayMachineNumber; i++)
-             pcsEmulatorStarter.setPayMachineHandler(PMEL.get(i));
+             pcsEmulatorStarter.setPayMachineHandler(payMachineEmulatorList.get(i));
 
 
 	    // start threads
@@ -105,7 +105,7 @@ public class PCSEmulatorStarter extends PCSStarter {
 	    new Thread(collectorEmulator).start();
 //	    new Thread(payMachineEmulator).start();
             for(int i = 0; i < PayMachineNumber; i++)
-                new Thread(PMEL.get(i)).start();
+                new Thread(payMachineEmulatorList.get(i)).start();
 
 	} // start
     } // Emulators
@@ -119,8 +119,11 @@ public class PCSEmulatorStarter extends PCSStarter {
     private void setPCSCore(PCSCore pcsCore) {
         this.pcsCore = pcsCore;
     }
-    private void setGateHandler(GateHandler gateHandler) {
-	this.gateHandler = gateHandler;
+    private void setExitGateHandler(GateHandler gateHandler) {
+	this.exitGateHandler = gateHandler;
+    }
+    private void setEntranceGateHandler(GateHandler gateHandler) {
+        this.entranceGateHandler= gateHandler;
     }
     private void setDispatcherHandler(DispatcherHandler dispatcherHandler) {
         this.dispatcherHandler = dispatcherHandler;
@@ -129,6 +132,6 @@ public class PCSEmulatorStarter extends PCSStarter {
         this.collectorHandler=collectorHandler;
     }
     private void setPayMachineHandler(PayMachineHandler payMachineHandler){
-        this.PML.add(payMachineHandler);
+        this.payMachineList.add(payMachineHandler);
     }
 } // PCSEmulatorStarter

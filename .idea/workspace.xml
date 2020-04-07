@@ -2,15 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76c37db4-d153-4079-b307-a865859fe863" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/PCS/VacancyDispHandler/Emulator/VacancyEmulator.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PCS/VacancyDispHandler/Emulator/VacancyEmulator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/etc/PCS.PCSEmulatorStarter.log" beforeDir="false" afterPath="$PROJECT_DIR$/etc/PCS.PCSEmulatorStarter.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PCS/PayMachineHandler/Emulator/PayMachineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/PayMachineHandler/Emulator/PayMachineController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/etc/PCS.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/etc/PCS.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/PCSEmulatorStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/PCSEmulatorStarter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/PCSStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/PCSStarter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/VacancyDispHandler/VacancyDisHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/VacancyDispHandler/VacancyDisHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -28,7 +40,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/COMP4057/bincompat/aws.cmd" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../09_Structural_Patterns-Sample_Code-intellij" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Project" />
@@ -67,26 +79,38 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="320" y="117" key="#Project_Structure/0.0.1440.900@0.0.1440.900" timestamp="1586229276413" />
+    <state x="620" y="304" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1586230522921">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="620" y="304" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1536.824@0.0.1536.824" timestamp="1586230522921" />
     <state x="275" y="8" key="CommitChangelistDialog2" timestamp="1586227466595">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="275" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1586227466595" />
-    <state width="1398" height="261" key="GridCell.Tab.0.bottom" timestamp="1586229456599">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="549" y="170" key="FileChooserDialogImpl" timestamp="1586230817520">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="170" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1586230817520" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1586236778131">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1398" height="261" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1586229456599" />
-    <state width="1398" height="261" key="GridCell.Tab.0.center" timestamp="1586229456598">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586236778131" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1586236778131">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1398" height="261" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1586229456598" />
-    <state width="1398" height="261" key="GridCell.Tab.0.left" timestamp="1586229456598">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586236778131" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1586236778131">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1398" height="261" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1586229456598" />
-    <state width="1398" height="261" key="GridCell.Tab.0.right" timestamp="1586229456599">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586236778131" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1586236778131">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1398" height="261" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1586229456599" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586236778131" />
     <state x="208" y="33" key="SettingsEditor" timestamp="1586229342643">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -95,5 +119,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1586227489250" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1586237172820">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1586237172820" />
   </component>
 </project>

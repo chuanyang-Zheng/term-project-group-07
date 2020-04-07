@@ -23,9 +23,10 @@ public class PCSStarter extends AppKickstarter {
     protected Timer timer;
     protected PCSCore pcsCore;
 	protected DispatcherHandler dispatcherHandler;
-    protected GateHandler gateHandler;
+    protected GateHandler exitGateHandler;
+	protected GateHandler entranceGateHandler;
     protected CollectorHandler collectorHandler;
-    protected ArrayList<PayMachineHandler> PML = new ArrayList<PayMachineHandler>();
+    protected ArrayList<PayMachineHandler> payMachineList = new ArrayList<PayMachineHandler>();
 //	public int PayMachineNumber;
     //------------------------------------------------------------
     // main
@@ -57,15 +58,17 @@ public class PCSStarter extends AppKickstarter {
     //------------------------------------------------------------
     // startHandlers
     protected void startHandlers() {
+    	System.out.println("PCSStart!");
 	// create handlers
 	try {
 	    timer = new Timer("timer", this);
 	    pcsCore = new PCSCore("PCSCore", this);
 		dispatcherHandler = new DispatcherHandler("DispatcherHandler", this);
-	    gateHandler = new GateHandler("GateHandler", this);
+	    exitGateHandler = new GateHandler("ExitGateHandler", this);
+	    entranceGateHandler=new GateHandler("ExitGateHandler",this);
 	    collectorHandler=new CollectorHandler("CollectorHandler",this);
 		for(int i = 0; i < PayMachineNumber; i++)
-			PML.add(new PayMachineHandler("PayMachineHandler " + Integer.toString(i),this));
+			payMachineList.add(new PayMachineHandler("PayMachineHandler " + Integer.toString(i),this));
 
 
 
@@ -79,9 +82,9 @@ public class PCSStarter extends AppKickstarter {
 	new Thread(timer).start();
 	new Thread(pcsCore).start();
 	new Thread(dispatcherHandler).start();
-	new Thread(gateHandler).start();
+	new Thread(exitGateHandler).start();
 	for(int i = 0; i < PayMachineNumber; i++)
-			new Thread(PML.get(i)).start();
+			new Thread(payMachineList.get(i)).start();
 
 	} // startHandlers
 
@@ -94,7 +97,12 @@ public class PCSStarter extends AppKickstarter {
 	log.info("============================================================");
 	log.info(id + ": Application Stopping...");
 	pcsCore.getMBox().send(new Msg(id, null, Msg.Type.Terminate, "Terminate now!"));
-	gateHandler.getMBox().send(new Msg(id, null, Msg.Type.Terminate, "Terminate now!"));
+	exitGateHandler.getMBox().send(new Msg(id, null, Msg.Type.Terminate, "Terminate now!"));
+	entranceGateHandler.getMBox().send(new Msg(id, null, Msg.Type.Terminate, "Terminate now!"));
+	collectorHandler.getMBox().send(new Msg(id, null, Msg.Type.Terminate, "Terminate now!"));
+	for(int i=0;i<payMachineList.size();i++){
+		payMachineList.get(i).getMBox().send(new Msg(id, null, Msg.Type.Terminate, "Terminate now!"));
+	}
 	timer.getMBox().send(new Msg(id, null, Msg.Type.Terminate, "Terminate now!"));
     } // stopApp
 } // PCS.PCSStarter
