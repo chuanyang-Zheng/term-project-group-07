@@ -38,6 +38,8 @@ public class CollectorEmulatorController {
         switch (btn.getText()) {
             case "Collector Valid Request":
                 collectorMBox.send(new Msg(id, null, Msg.Type.CollectorValidRequest,collectorTextAreaInput.getText()));
+                appendTextArea("Collector Valid Ticket ["+collectorTextAreaInput.getText()+"]");
+                log.info(id+"Collector Valid Ticket ["+collectorTextAreaInput.getText()+"]");
                 collectorTextAreaInput.setText("");
                 break;
 

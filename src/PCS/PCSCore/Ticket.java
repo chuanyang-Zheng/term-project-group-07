@@ -75,7 +75,7 @@ public class Ticket {
         }
         if(payMachineID.equals(""))
         {
-            log.warning(id+": "+payMachineID+" is smaller than 0");
+            log.warning(id+": Pay Machine ID is Emypy ["+payMachineID+"]");
             return false;
         }
 

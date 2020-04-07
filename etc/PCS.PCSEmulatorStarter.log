@@ -1,63 +1,42 @@
-200407-20:42:11 [INFO] -- 
-200407-20:42:11 [INFO] -- 
-200407-20:42:11 [INFO] -- ============================================================
-200407-20:42:11 [INFO] -- PCSStarter: Application Starting...
-200407-20:42:12 [FINE] -- PCSStarter: registering timer
-200407-20:42:12 [FINE] -- timer: created!
-200407-20:42:12 [FINE] -- PCSStarter: registering PCSCore
-200407-20:42:12 [FINE] -- PCSCore: created!
-200407-20:42:12 [INFO] -- PCSCore initial vacancy available floor number: [2000, 2000]
-200407-20:42:12 [FINE] -- PCSStarter: registering DispatcherHandler
-200407-20:42:12 [FINE] -- DispatcherHandler: created!
-200407-20:42:12 [FINE] -- PCSStarter: registering CollectorHandler
-200407-20:42:12 [FINE] -- CollectorHandler: created!
-200407-20:42:12 [FINE] -- PCSStarter: registering EntranceGateHandler
-200407-20:42:12 [FINE] -- EntranceGateHandler: created!
-200407-20:42:12 [FINE] -- PCSStarter: registering ExitGateHandler
-200407-20:42:12 [FINE] -- ExitGateHandler: created!
-200407-20:42:12 [FINE] -- PCSStarter: registering PayMachineHandler0
-200407-20:42:12 [FINE] -- PayMachineHandler0: created!
-200407-20:42:12 [FINE] -- PCSStarter: registering PayMachineHandler1
-200407-20:42:12 [FINE] -- PayMachineHandler1: created!
-200407-20:42:14 [INFO] -- timer: starting...
-200407-20:42:14 [INFO] -- PCSCore: starting...
-200407-20:42:14 [INFO] -- EntranceGateHandler: starting...
-200407-20:42:14 [INFO] -- ExitGateHandler: starting...
-200407-20:42:14 [INFO] -- PayMachineHandler0: starting...
-200407-20:42:14 [INFO] -- DispatcherHandler: starting...
-200407-20:42:14 [INFO] -- PayMachineHandler1: starting...
-200407-20:42:14 [INFO] -- CollectorHandler: starting...
-200407-20:42:16 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,2}].
-200407-20:42:16 [INFO] -- PayMachineHandler1: I am waiting for Ticket Info
-200407-20:42:16 [FINE] -- PCSCore: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,2}].
-200407-20:42:16 [INFO] -- PCSCore:PCS Sent the fee already
-200407-20:42:16 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {PayMachineHandler1,2,20.0,1586263332299}].
-200407-20:42:16 [INFO] -- PayMachineHandler1: Waiting for driver's Payment
-200407-20:42:17 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (PaymentACK) -- {PayMachineHandler1,2}].
-200407-20:42:17 [FINE] -- PCSCore: message received: [PayMachineHandler1Emulator (PaymentACK) -- {2}].
-200407-20:42:17 [INFO] -- PayMachineHandler1: Waiting for ExitInfo
-200407-20:42:17 [INFO] -- PCSCore:Payment ACK received
-200407-20:42:17 [FINE] -- PCSCore:Payment Updated
-200407-20:42:17 [FINE] -- PCSCore: message received: [PayMachineHandler1 (TicketExitInfoRequest) -- {PayMachineHandler1,2}].
-200407-20:42:17 [INFO] -- PCSCore:PCS Sent the Exit Info already
-200407-20:42:17 [FINE] -- PayMachineHandler1: message received: [PCSCore (ExitInfo) -- {PayMachineHandler1,2,0.0,1586264337818}].
-200407-20:42:17 [INFO] -- PayMachineHandler1: Waiting for Removal
-200407-20:42:19 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (TicketRemoveACK) -- {PayMachineHandler1,2}].
-200407-20:42:19 [INFO] -- PayMachineHandler1: I am idle please use me.
-200407-20:42:41 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,1}].
-200407-20:42:41 [INFO] -- PayMachineHandler1: I am waiting for Ticket Info
-200407-20:42:41 [FINE] -- PCSCore: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,1}].
-200407-20:42:41 [INFO] -- PCSCore:PCS Sent the fee already
-200407-20:42:41 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {PayMachineHandler1,1,140.0,1586263332299}].
-200407-20:42:41 [INFO] -- PayMachineHandler1: Waiting for driver's Payment
-200407-20:42:42 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (PaymentACK) -- {PayMachineHandler1,1}].
-200407-20:42:42 [INFO] -- PayMachineHandler1: Waiting for ExitInfo
-200407-20:42:42 [FINE] -- PCSCore: message received: [PayMachineHandler1Emulator (PaymentACK) -- {1}].
-200407-20:42:42 [INFO] -- PCSCore:Payment ACK received
-200407-20:42:42 [FINE] -- PCSCore:Payment Updated
-200407-20:42:42 [FINE] -- PCSCore: message received: [PayMachineHandler1 (TicketExitInfoRequest) -- {PayMachineHandler1,1}].
-200407-20:42:42 [INFO] -- PCSCore:PCS Sent the Exit Info already
-200407-20:42:42 [FINE] -- PayMachineHandler1: message received: [PCSCore (ExitInfo) -- {PayMachineHandler1,1,0.0,1586264362770}].
-200407-20:42:42 [INFO] -- PayMachineHandler1: Waiting for Removal
-200407-20:42:43 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (TicketRemoveACK) -- {PayMachineHandler1,1}].
-200407-20:42:43 [INFO] -- PayMachineHandler1: I am idle please use me.
+200407-21:16:29 [INFO] -- 
+200407-21:16:30 [INFO] -- 
+200407-21:16:30 [INFO] -- ============================================================
+200407-21:16:30 [INFO] -- PCSStarter: Application Starting...
+200407-21:16:30 [FINE] -- PCSStarter: registering timer
+200407-21:16:30 [FINE] -- timer: created!
+200407-21:16:30 [FINE] -- PCSStarter: registering PCSCore
+200407-21:16:30 [FINE] -- PCSCore: created!
+200407-21:16:30 [INFO] -- PCSCore initial vacancy available floor number: [2000, 2000]
+200407-21:16:30 [FINE] -- PCSStarter: registering DispatcherHandler
+200407-21:16:30 [FINE] -- DispatcherHandler: created!
+200407-21:16:30 [FINE] -- PCSStarter: registering CollectorHandler
+200407-21:16:30 [FINE] -- CollectorHandler: created!
+200407-21:16:30 [FINE] -- PCSStarter: registering EntranceGateHandler
+200407-21:16:30 [FINE] -- EntranceGateHandler: created!
+200407-21:16:30 [FINE] -- PCSStarter: registering ExitGateHandler
+200407-21:16:30 [FINE] -- ExitGateHandler: created!
+200407-21:16:30 [FINE] -- PCSStarter: registering PayMachineHandler0
+200407-21:16:30 [FINE] -- PayMachineHandler0: created!
+200407-21:16:30 [FINE] -- PCSStarter: registering PayMachineHandler1
+200407-21:16:30 [FINE] -- PayMachineHandler1: created!
+200407-21:16:32 [INFO] -- timer: starting...
+200407-21:16:32 [INFO] -- PCSCore: starting...
+200407-21:16:32 [INFO] -- EntranceGateHandler: starting...
+200407-21:16:32 [INFO] -- DispatcherHandler: starting...
+200407-21:16:32 [INFO] -- CollectorHandler: starting...
+200407-21:16:32 [INFO] -- PayMachineHandler0: starting...
+200407-21:16:32 [INFO] -- PayMachineHandler1: starting...
+200407-21:16:32 [INFO] -- ExitGateHandler: starting...
+200407-21:16:42 [FINE] -- CollectorHandler: message received: [CollectorHandlerEmulator (CollectorValidRequest) -- {0}].
+200407-21:16:42 [INFO] -- CollectorHandlerEmulatorCollector Valid Ticket [0]
+200407-21:16:42 [INFO] -- CollectorHandler: collector valid request received
+200407-21:16:42 [FINE] -- CollectorHandler: Collector Status from CollectorAvailable-> CollectorWaitValidation
+200407-21:16:42 [FINE] -- PCSCore: message received: [CollectorHandler (CollectorValidRequest) -- {0}].
+200407-21:16:42 [INFO] -- PCSCore Collector Valid Request Receive
+200407-21:16:42 [INFO] -- PCSCore valid ticket 0
+200407-21:16:42 [WARNING] -- PCSCore: Pay Machine ID is Emypy []
+200407-21:16:42 [WARNING] -- [PCSCore PCSCore valid a false ticket. Get message {0}]
+200407-21:16:42 [FINE] -- CollectorHandler: message received: [PCSCore (CollectorNegative) -- {}].
+200407-21:16:42 [INFO] -- CollectorHandler: collector receive negative validation
+200407-21:16:42 [WARNING] -- CollectorHandlerEmulator: The Ticket Is Wrong. Ring Alarm!
+200407-21:16:42 [FINE] -- CollectorHandler: Collector Status from CollectorWaitValidation-> CollectorWarning
