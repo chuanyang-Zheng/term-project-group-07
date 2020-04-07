@@ -70,7 +70,7 @@ public class PCSEmulatorStarter extends PCSStarter {
             dispatcherEmulator=new DispatcherEmulator("DispatcherHandler",pcsEmulatorStarter);
             collectorEmulator=new CollectorEmulator("CollectorHandler",pcsEmulatorStarter);
             int availableSpaces[]={};
-            vacancyEmulator=new VacancyEmulator("VancancyHandler", pcsEmulatorStarter);
+            vacancyEmulator=new VacancyEmulator("VacancyHandler", pcsEmulatorStarter);
 	        entranceGateEmulator = new GateEmulator("EntranceGateHandler", pcsEmulatorStarter);
             exitGateEmulator = new GateEmulator("ExitGateHandler", pcsEmulatorStarter);
 //            payMachineEmulator = new PayMachineEmulator("PayMachineHandler",pcsEmulatorStarter);
