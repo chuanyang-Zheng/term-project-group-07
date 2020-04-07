@@ -43,9 +43,13 @@ public class DispatcherController {
 
         switch (btn.getText()) {
             case "Print a ticket":
-                TextInputDialog dialog = new TextInputDialog("0");
-                dialog.setTitle("Ticket printed");
-                dialog.setContentText("Please pick up your ticket.");
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Reminder");
+                alert.setHeaderText("Pick up your ticket please.");
+                alert.setContentText("Ticket is your basis to pay and leave.");
+
+                alert.showAndWait();
+
                 dispatcherMBox.send(new Msg(id, null, Msg.Type.AddTicket, id ));
                 //dispatcherMBox.send(new Msg(id, null, Msg.Type.ReceiveID, id ));
                 break;
