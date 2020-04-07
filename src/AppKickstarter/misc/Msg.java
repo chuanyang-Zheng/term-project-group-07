@@ -108,6 +108,10 @@ public class Msg {
     /** Send the Ticket Info */ TicketFee,
     /** Payment Finished successfully*/ PaymentACK,
 
+    /** MotionSensor */      MotionSensorDetect,
+    /** MotionSensor */      MotionSensorDetectUp,
+    /** MotionSensor */      MotionSensorDetectDown,
+
 
 
     /** Vacanncy Receive Update Request*/                        VancancyDisUpdateRequest,
