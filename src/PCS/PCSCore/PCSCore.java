@@ -5,6 +5,7 @@ import AppKickstarter.misc.*;
 import AppKickstarter.timer.Timer;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 
 //======================================================================
@@ -26,6 +27,8 @@ public class PCSCore extends AppThread {
     private float calculateFeeCoefficient = Float.parseFloat(appKickstarter.getProperty("Ticket.calculateFeeCoefficient"));
     private int collectorSolveProblemGateWaitTime = Integer.parseInt(appKickstarter.getProperty("PCSCore.CollectorSolveProblemGateWaitTime"));
     private int gateOpenTime = Integer.parseInt(appKickstarter.getProperty("Gate.GateOpenTime"));
+    private int totalFloorNumber=Integer.parseInt(appKickstarter.getProperty("TotalFloorNumber"));
+    private int[] availableParkingSpaces=new int[totalFloorNumber];
 
 //	private long exitTimeCoefficient=0;
 //	private float calculateFeeCoefficient=0;
@@ -46,6 +49,11 @@ public class PCSCore extends AppThread {
         ticketList.add(falseTicket);
         Ticket EricVIPTick = new Ticket();
         ticketList.add(EricVIPTick);
+        for(int i=0;i<totalFloorNumber;i++){
+            String tep="Vacancy.Level"+(i+1);
+            availableParkingSpaces[i]=Integer.parseInt(appKickstarter.getProperty(tep));
+        }
+        log.info(id+" initial vacancy available floor number: "+ Arrays.toString(availableParkingSpaces));
     } // PCSCore
 
 

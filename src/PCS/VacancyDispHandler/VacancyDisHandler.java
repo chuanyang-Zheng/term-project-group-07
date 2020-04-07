@@ -8,18 +8,12 @@ import PCS.GateHandler.GateHandler;
 
 public class VacancyDisHandler extends AppThread {
     protected final MBox pcsCore;
-    protected int[] availableSpaces;
     private  VacancyDisStatus vacancyDisStatus;
-    private int firstNumber;
-    private int secondNumber;
 
     public VacancyDisHandler(String id, AppKickstarter appKickstarter,int[] availableSpaces) {
         super(id, appKickstarter);
         pcsCore = appKickstarter.getThread("PCSCore").getMBox();
         vacancyDisStatus = VacancyDisStatus.VacancyDisRunning;
-        this.availableSpaces=availableSpaces;
-        this.firstNumber=availableSpaces.length;
-        this.secondNumber=availableSpaces.length;
     } // VacancyDisHandler
 
     public void run() {
