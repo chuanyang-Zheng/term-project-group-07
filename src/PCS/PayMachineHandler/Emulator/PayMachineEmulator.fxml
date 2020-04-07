@@ -15,12 +15,11 @@
 
         <AnchorPane prefHeight="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="60.0">
             <children>
-                <Label prefHeight="30.0" prefWidth="120.0" AnchorPane.leftAnchor="20.0"> Ticket ID: </Label> <Label prefHeight="30.0" prefWidth="120.0" AnchorPane.leftAnchor="160.0"> Your Fee: </Label> <Label prefHeight="30.0" prefWidth="120.0" AnchorPane.leftAnchor="270.0"> Enter Time: </Label>
+                <Label prefHeight="30.0" prefWidth="120.0" AnchorPane.leftAnchor="20.0"> Ticket ID: </Label> <Label prefHeight="30.0" prefWidth="120.0" AnchorPane.leftAnchor="100.0"> Your Fee: </Label> <Label fx:id = "Mylabel" prefHeight="30.0" prefWidth="120.0" AnchorPane.leftAnchor="180.0"> Enter Time: </Label><Label fx:id = "Mylabel" prefHeight="30.0" prefWidth="120.0" AnchorPane.leftAnchor="280.0"> Exit Time: </Label>
                 <TextArea fx:id="TicketIDField" editable="false" layoutX="0" layoutY="20" prefHeight="42.0" prefWidth="51.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="20" AnchorPane.topAnchor="30.0" />
-                <TextArea fx:id="FeeField" editable="false" layoutX="0" layoutY="20" prefHeight="42.0" prefWidth="51.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="160" AnchorPane.topAnchor="30.0" />
-                <TextArea fx:id="EnterField" editable="false" layoutX="0" layoutY="20" prefHeight="42.0" prefWidth="80.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="270" AnchorPane.topAnchor="30.0" />
-
-                <!--            <TextArea fx:id="PayMachineTextAreaInput" editable="true" layoutX="20.0" layoutY="20" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />-->
+                <TextArea fx:id="FeeField" editable="false" layoutX="0" layoutY="20" prefHeight="42.0" prefWidth="51.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="100" AnchorPane.topAnchor="30.0" />
+                <TextArea fx:id="EnterField" editable="false" layoutX="0" layoutY="20" prefHeight="42.0" prefWidth="80.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="180" AnchorPane.topAnchor="30.0" />
+                <TextArea fx:id="ExitField" editable="false" layoutX="0" layoutY="20" prefHeight="42.0" prefWidth="80.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="280" AnchorPane.topAnchor="30.0" />
             </children>
         </AnchorPane>
         <TextArea fx:id="gateTextArea" editable="false" layoutX="20.0" layoutY="169.0" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="150" />
