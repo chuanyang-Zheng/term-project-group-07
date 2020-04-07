@@ -80,7 +80,7 @@ public class PayMachineEmulator extends PayMachineHandler {
         String timestr = sdf.format(nowT);
         if(fee != 0)
             super.paid = false;
-        Long parkedTime = (System.currentTimeMillis() - Long.parseLong(str[3])) / 1000;
+        Long parkedTime = (System.currentTimeMillis() - Long.parseLong(str[4])) / 1000;
         if(!paid)
             PayMachineController.appendTextArea("You have parked " + Long.toString(parkedTime) + "s and you need to pay $" + fee + "  ($5/s)");
         PayMachineController.updateTicket(str[1],str[2],timestr);
