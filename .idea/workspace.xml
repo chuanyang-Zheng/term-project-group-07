@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="76c37db4-d153-4079-b307-a865859fe863" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/etc/PCS.PCSEmulatorStarter.log" beforeDir="false" afterPath="$PROJECT_DIR$/etc/PCS.PCSEmulatorStarter.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PCS/PCSCore/PCSCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/PCSCore/PCSCore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PCS/PCSCore/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/PCSCore/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PCS/PayMachineHandler/Emulator/PayMachineEmulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/PayMachineHandler/Emulator/PayMachineEmulator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +98,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1586240085407</updated>
-      <workItem from="1586252169844" duration="3980000" />
+      <workItem from="1586252169844" duration="4659000" />
     </task>
     <task id="LOCAL-00003" summary="Update Dispatcher Remove Ticket Response">
       <created>1586242645625</created>
@@ -145,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586255264337</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Update PCSCore And Ticket">
+      <created>1586256165029</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1586256165029</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,7 +189,8 @@
     <MESSAGE value="Update Dispatcher Remove Ticket Response" />
     <MESSAGE value="Update MotionSensor and PCSCore" />
     <MESSAGE value="Update PCSCore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update PCSCore" />
+    <MESSAGE value="Update PCSCore And Ticket" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update PCSCore And Ticket" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="74" key="#Notifications" timestamp="1586254815800">
@@ -200,10 +205,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="620" y="304" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1536.824@0.0.1536.824" timestamp="1586243299348" />
-    <state x="275" y="8" key="CommitChangelistDialog2" timestamp="1586255263214">
+    <state x="275" y="8" key="CommitChangelistDialog2" timestamp="1586256163830">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="275" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1586255263214" />
+    <state x="275" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1586256163830" />
     <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1586255296278">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -236,10 +241,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="208" y="33" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1586229342643" />
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1586255268536">
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1586256167153">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1586255268536" />
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1586256167153" />
     <state x="447" y="214" key="git4idea.merge.GitPullDialog" timestamp="1586255281300">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
