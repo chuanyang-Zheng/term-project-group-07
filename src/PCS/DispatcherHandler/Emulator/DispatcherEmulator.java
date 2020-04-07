@@ -81,7 +81,7 @@ public class DispatcherEmulator extends DispatcherHandler {
         SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
         String timestr = sdf.format(nowT);
         //Long currentTime = (System.currentTimeMillis() - Long.parseLong(str[3])) / 1000;
-        DispatcherController.appendTextArea("Your enter time is " + timestr + "  ($5/s)");
+        DispatcherController.appendTextArea("Welcome to our parking lot.\n"+"Your ticket ID is "+mymsg+".\n"+"The time now is " + timestr + ".\nThe parking fee is $5/s.\nHave a good time!");
 
         DispatcherController.showTicket(mymsg,timestr);
     }

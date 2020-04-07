@@ -1,59 +1,30 @@
-200407-12:45:09 [INFO] -- 
-200407-12:45:09 [INFO] -- 
-200407-12:45:09 [INFO] -- ============================================================
-200407-12:45:09 [INFO] -- PCSStarter: Application Starting...
-200407-12:45:10 [FINE] -- PCSStarter: registering timer
-200407-12:45:10 [FINE] -- timer: created!
-200407-12:45:10 [FINE] -- PCSStarter: registering PCSCore
-200407-12:45:10 [FINE] -- PCSCore: created!
-200407-12:45:10 [FINE] -- PCSStarter: registering DispatcherHandler
-200407-12:45:10 [FINE] -- DispatcherHandler: created!
-200407-12:45:10 [FINE] -- PCSStarter: registering CollectorHandler
-200407-12:45:10 [FINE] -- CollectorHandler: created!
-200407-12:45:10 [FINE] -- PCSStarter: registering EntranceGateHandler
-200407-12:45:10 [FINE] -- EntranceGateHandler: created!
-200407-12:45:10 [FINE] -- PCSStarter: registering ExitGateHandler
-200407-12:45:10 [FINE] -- ExitGateHandler: created!
-200407-12:45:10 [FINE] -- PCSStarter: registering PayMachineHandler0
-200407-12:45:10 [FINE] -- PayMachineHandler0: created!
-200407-12:45:12 [INFO] -- timer: starting...
-200407-12:45:12 [INFO] -- PayMachineHandler0: starting...
-200407-12:45:12 [INFO] -- CollectorHandler: starting...
-200407-12:45:12 [INFO] -- DispatcherHandler: starting...
-200407-12:45:12 [INFO] -- ExitGateHandler: starting...
-200407-12:45:12 [INFO] -- EntranceGateHandler: starting...
-200407-12:45:12 [INFO] -- PCSCore: starting...
-200407-12:45:19 [FINE] -- DispatcherHandler: message received: [DispatcherHandler (AddTicket) -- {DispatcherHandler}].
-200407-12:45:19 [FINE] -- PCSCore: message received: [DispatcherHandlerEmulator (AddTicket) -- {DispatcherHandler}].
-200407-12:45:19 [INFO] -- PCSCore:PCS has generated a new ticket
-200407-12:45:19 [FINE] -- PCSCore:Ticket added
-200407-12:45:19 [FINE] -- DispatcherHandler: message received: [PCSCore (ReceiveTicketID) -- {3}].
-200407-12:45:19 [FINE] -- DispatcherHandler: message received: [DispatcherHandler (AddTicket) -- {DispatcherHandler}].
-200407-12:45:19 [FINE] -- PCSCore: message received: [DispatcherHandlerEmulator (AddTicket) -- {DispatcherHandler}].
-200407-12:45:19 [INFO] -- PCSCore:PCS has generated a new ticket
-200407-12:45:19 [FINE] -- PCSCore:Ticket added
-200407-12:45:19 [FINE] -- DispatcherHandler: message received: [PCSCore (ReceiveTicketID) -- {4}].
-200407-12:45:20 [FINE] -- DispatcherHandler: message received: [DispatcherHandler (AddTicket) -- {DispatcherHandler}].
-200407-12:45:20 [FINE] -- PCSCore: message received: [DispatcherHandlerEmulator (AddTicket) -- {DispatcherHandler}].
-200407-12:45:20 [INFO] -- PCSCore:PCS has generated a new ticket
-200407-12:45:20 [FINE] -- PCSCore:Ticket added
-200407-12:45:20 [FINE] -- DispatcherHandler: message received: [PCSCore (ReceiveTicketID) -- {5}].
-200407-12:45:20 [FINE] -- DispatcherHandler: message received: [DispatcherHandler (AddTicket) -- {DispatcherHandler}].
-200407-12:45:20 [FINE] -- PCSCore: message received: [DispatcherHandlerEmulator (AddTicket) -- {DispatcherHandler}].
-200407-12:45:20 [INFO] -- PCSCore:PCS has generated a new ticket
-200407-12:45:20 [FINE] -- PCSCore:Ticket added
-200407-12:45:20 [FINE] -- DispatcherHandler: message received: [PCSCore (ReceiveTicketID) -- {6}].
-200407-12:45:21 [FINE] -- DispatcherHandler: message received: [DispatcherHandler (AddTicket) -- {DispatcherHandler}].
-200407-12:45:21 [FINE] -- PCSCore: message received: [DispatcherHandlerEmulator (AddTicket) -- {DispatcherHandler}].
-200407-12:45:21 [INFO] -- PCSCore:PCS has generated a new ticket
-200407-12:45:21 [FINE] -- PCSCore:Ticket added
-200407-12:45:21 [FINE] -- DispatcherHandler: message received: [PCSCore (ReceiveTicketID) -- {7}].
-200407-12:45:21 [FINE] -- DispatcherHandler: message received: [DispatcherHandler (AddTicket) -- {DispatcherHandler}].
-200407-12:45:21 [FINE] -- PCSCore: message received: [DispatcherHandlerEmulator (AddTicket) -- {DispatcherHandler}].
-200407-12:45:21 [INFO] -- PCSCore:PCS has generated a new ticket
-200407-12:45:21 [FINE] -- PCSCore:Ticket added
-200407-12:45:21 [FINE] -- DispatcherHandler: message received: [PCSCore (ReceiveTicketID) -- {8}].
-200407-12:45:31 [FINE] -- PayMachineHandler0: message received: [PayMachineHandler0 (TicketRequest) -- {PayMachineHandler0,5}].
-200407-12:45:31 [FINE] -- PCSCore: message received: [PayMachineHandler0 (TicketRequest) -- {PayMachineHandler0,5}].
-200407-12:45:31 [INFO] -- PCSCore:PCS Sent the fee already
-200407-12:45:32 [FINE] -- PayMachineHandler0: message received: [PCSCore (TicketFee) -- {PayMachineHandler0,5,55.0,1586234720293}].
+200407-13:00:13 [INFO] -- 
+200407-13:00:13 [INFO] -- 
+200407-13:00:13 [INFO] -- ============================================================
+200407-13:00:13 [INFO] -- PCSStarter: Application Starting...
+200407-13:00:13 [FINE] -- PCSStarter: registering timer
+200407-13:00:13 [FINE] -- timer: created!
+200407-13:00:13 [FINE] -- PCSStarter: registering PCSCore
+200407-13:00:13 [FINE] -- PCSCore: created!
+200407-13:00:13 [FINE] -- PCSStarter: registering DispatcherHandler
+200407-13:00:13 [FINE] -- DispatcherHandler: created!
+200407-13:00:13 [FINE] -- PCSStarter: registering CollectorHandler
+200407-13:00:13 [FINE] -- CollectorHandler: created!
+200407-13:00:13 [FINE] -- PCSStarter: registering EntranceGateHandler
+200407-13:00:13 [FINE] -- EntranceGateHandler: created!
+200407-13:00:13 [FINE] -- PCSStarter: registering ExitGateHandler
+200407-13:00:13 [FINE] -- ExitGateHandler: created!
+200407-13:00:13 [FINE] -- PCSStarter: registering PayMachineHandler0
+200407-13:00:13 [FINE] -- PayMachineHandler0: created!
+200407-13:00:15 [INFO] -- timer: starting...
+200407-13:00:15 [INFO] -- EntranceGateHandler: starting...
+200407-13:00:15 [INFO] -- PCSCore: starting...
+200407-13:00:15 [INFO] -- DispatcherHandler: starting...
+200407-13:00:15 [INFO] -- ExitGateHandler: starting...
+200407-13:00:15 [INFO] -- CollectorHandler: starting...
+200407-13:00:15 [INFO] -- PayMachineHandler0: starting...
+200407-13:00:24 [FINE] -- DispatcherHandler: message received: [DispatcherHandler (AddTicket) -- {DispatcherHandler}].
+200407-13:00:24 [FINE] -- PCSCore: message received: [DispatcherHandlerEmulator (AddTicket) -- {DispatcherHandler}].
+200407-13:00:24 [INFO] -- PCSCore:PCS has generated a new ticket
+200407-13:00:24 [FINE] -- PCSCore:Ticket added
+200407-13:00:24 [FINE] -- DispatcherHandler: message received: [PCSCore (ReceiveTicketID) -- {3}].
