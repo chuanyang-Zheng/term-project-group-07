@@ -60,8 +60,7 @@ public class DispatcherHandler extends AppThread {
     //------------------------
 // Send Fee Request
     protected void SendAddTicket(String mymsg){
-        pcsCore.send(new Msg(id, mbox, Msg.Type.AddTicket, mymsg));
-
+        log.info("Created new Ticket");
     }
 
 

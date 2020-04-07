@@ -64,7 +64,7 @@ public class DispatcherEmulator extends DispatcherHandler {
     protected void SendAddTicket(String mymsg){
         String []str = mymsg.split(",");
         if(!mymsg.equals(super.id)) return;
-
+        pcsCore.send(new Msg(id, mbox, Msg.Type.AddTicket, mymsg));
         Date nowT = new Date(System.currentTimeMillis());
         SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
         String timestr = sdf.format(nowT);

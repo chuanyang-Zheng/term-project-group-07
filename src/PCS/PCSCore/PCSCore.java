@@ -13,6 +13,7 @@ public class PCSCore extends AppThread {
     private MBox entranceGateBox;
     private MBox exitGateBox;
     private MBox collectorMbox;
+    private MBox dispatcherMbox;
     private ArrayList<MBox> payMBox = new ArrayList<MBox>();
     private final int pollTime;
     private final int PollTimerID = 1;
@@ -59,6 +60,7 @@ public class PCSCore extends AppThread {
         entranceGateBox = appKickstarter.getThread("EntranceGateHandler").getMBox();
         exitGateBox = appKickstarter.getThread("ExitGateHandler").getMBox();
         collectorMbox = appKickstarter.getThread("CollectorHandler").getMBox();
+        dispatcherMbox = appKickstarter.getThread("DispatcherHandler").getMBox();
         for (int i = 0; i < appKickstarter.PayMachineNumber; i++)
             payMBox.add(appKickstarter.getThread("PayMachineHandler" + Integer.toString(i)).getMBox());
         for (boolean quit = false; !quit; ) {
