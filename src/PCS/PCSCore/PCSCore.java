@@ -179,13 +179,9 @@ public class PCSCore extends AppThread {
                 log.warning(id + ": Find Invalid Ticket [" + Integer.parseInt(tmp[1] + "] When Calculate Fee"));
             } else {
                 Ticket targetTicket = ticketList.get(ticketIndexInTicketArrayList);//get ticket
-                if(ticketList.get(ticketIndexInTicketArrayList).getPayMachineID().equals("")) { // the 3rd parameter mapping
+                if(ticketList.get(ticketIndexInTicketArrayList).getPayMachineID().equals(""))  // the 3rd parameter mapping
                     msg.getSenderMBox().send(new Msg(id, mbox, Msg.Type.TicketFee, tmp[0] + "," + tmp[1] + "," + Float.toString(targetTicket.calculateFee(calculateFeeCoefficient)) + "," + Long.toString(targetTicket.getEnterTime())));
-
-                }//send corresponding fee
-                else
-                    msg.getSenderMBox().send(new Msg(id, mbox, Msg.Type.TicketFee, tmp[0] + "," + tmp[1] + "," + Float.toString(targetTicket.calculateFee(calculateFeeCoefficient)) + "," + Long.toString(targetTicket.getExitTime())));//send corresponding fee
-
+                //send corresponding fee
             }
         }
         catch (Exception e){

@@ -57,7 +57,6 @@ public class PayMachineHandler extends AppThread {
             return quit;
         switch (msg.getType()) {
             case TicketRequest:
-                paid = false;
                 SendRequest(msg.getDetails());
                 PMS = PayMachineStatus.WaitPaymentReply;
                 flag = true;
@@ -68,7 +67,6 @@ public class PayMachineHandler extends AppThread {
                 flag = true;
             break;
             case PaymentACK:
-                paid = true;
                 SendPaymentACK(msg.getDetails());
                 PMS = PayMachineStatus.WaitExitInfo;
                 SendExitInfoRequest(msg.getDetails());
