@@ -175,8 +175,7 @@ public class PCSCore extends AppThread {
                 log.warning(id + ": Find Invalid Ticket [" + Integer.parseInt(tmp[1] + "] When Calculate Fee"));
             } else {
                 Ticket targetTicket = ticketList.get(ticketIndexInTicketArrayList);//get ticket
-                targetTicket.setExitInformation(exitTimeCoefficient, msg.getSender(), calculateFeeCoefficient);
-                msg.getSenderMBox().send(new Msg(id, mbox, Msg.Type.TicketFee, tmp[0] + "," + tmp[1] + "," + Float.toString(targetTicket.getParkingFee()) + "," + Long.toString(targetTicket.getExitTime())+","+Long.toString(targetTicket.getEnterTime())));//send corresponding fee
+                msg.getSenderMBox().send(new Msg(id, mbox, Msg.Type.TicketFee, tmp[0] + "," + tmp[1] + "," + Float.toString(targetTicket.getParkingFee()) + "," + Long.toString(targetTicket.getExitTime())+","+Long.toString(targetTicket.getEnterTime())));//send corresponding fee For example, payMachineID ticketID parkingFee ExitTime
 //        for (int i = 0; i < appKickstarter.PayMachineNumber; i++)
 //            if(ticketList.get(ticketIndexInTicketArrayList).getPayMachineID() == -1) {
 //                payMBox.get(i).send(new Msg(id, mbox, Msg.Type.TicketFee, tmp[0] + "," + tmp[1] + "," + Float.toString(ticketList.get(ticketIndexInTicketArrayList).calculateFeeAndSetInformation(calculateFeeCoefficient)) + "," + Long.toString(ticketList.get(ticketIndexInTicketArrayList).getEnterTime())));
