@@ -40,15 +40,10 @@ public class VacancyEmulatorController {
         Button btn = (Button) actionEvent.getSource();
 
         switch (btn.getText()) {
-            case "Print a ticket":
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Reminder");
-                alert.setHeaderText("Pick up your ticket please.");
-                alert.setContentText("Ticket is your basis to pay and leave.");
+            case "Display Vacancy":
 
-                alert.showAndWait();
 
-                VacancyMBox.send(new Msg(id, null, Msg.Type.AddTicket, id ));
+                VacancyMBox.send(new Msg(id, null, Msg.Type.DisplayVacancyRequest, id ));
                 //VacancyMBox.send(new Msg(id, null, Msg.Type.ReceiveID, id ));
                 break;
 
@@ -64,9 +59,5 @@ public class VacancyEmulatorController {
     public void appendTextArea(String status) {
         Platform.runLater(() -> VacancyTextArea.appendText(String.format("[%04d] %s\n", ++lineNo, status)));
     } // appendTextArea
-    public void showTicket(String tmpid, String tmpenter){
-        ticket_enter = tmpenter;
-        TicketIDField.setText(tmpid);
-        EnterField.setText(ticket_enter);
-    }
+
 }
