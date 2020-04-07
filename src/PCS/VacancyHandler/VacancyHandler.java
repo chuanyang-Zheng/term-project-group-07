@@ -9,7 +9,7 @@ public class VacancyHandler extends AppThread {
     protected final MBox pcsCore;
     private  VacancyDisStatus vacancyDisStatus;
 
-    public VacancyHandler(String id, AppKickstarter appKickstarter, int[] availableSpaces) {
+    public VacancyHandler(String id, AppKickstarter appKickstarter) {
         super(id, appKickstarter);
         pcsCore = appKickstarter.getThread("PCSCore").getMBox();
         vacancyDisStatus = VacancyDisStatus.VacancyDisRunning;

@@ -25,8 +25,8 @@ public class VacancyEmulator extends VacancyHandler {
 
     //------------------------------------------------------------
     // VacancyEmulator
-    public VacancyEmulator(String id, PCSStarter pcsStarter,int[] availableSpaces) {
-        super(id, pcsStarter,availableSpaces);
+    public VacancyEmulator(String id, PCSStarter pcsStarter) {
+        super(id, pcsStarter);
         this.pcsStarter = pcsStarter;
         this.id = id + "Emulator";
 //        this.VacancyOpenTime = Integer.parseInt(this.pcsStarter.getProperty("Vacancy.VacancyOpenTime"));

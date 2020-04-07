@@ -12,6 +12,7 @@ import PCS.GateHandler.GateHandler;
 
 import PCS.PayMachineHandler.Emulator.PayMachineEmulator;
 import PCS.PayMachineHandler.PayMachineHandler;
+import PCS.VacancyHandler.VacancyHandler;
 import javafx.application.Platform;
 
 import java.util.ArrayList;
@@ -22,15 +23,17 @@ import java.util.ArrayList;
 public class PCSStarter extends AppKickstarter {
     protected Timer timer;
     protected PCSCore pcsCore;
-	protected DispatcherHandler dispatcherHandler;
+    protected DispatcherHandler dispatcherHandler;
     protected GateHandler exitGateHandler;
-	protected GateHandler entranceGateHandler;
+    protected GateHandler entranceGateHandler;
     protected CollectorHandler collectorHandler;
+    protected VacancyHandler vacancyHandler;
     protected ArrayList<PayMachineHandler> payMachineList = new ArrayList<PayMachineHandler>();
-//	public int PayMachineNumber;
+
+    //	public int PayMachineNumber;
     //------------------------------------------------------------
     // main
-    public static void main(String [] args) {
+    public static void main(String[] args) {
         new PCSStarter().startApp();
     } // main
 
@@ -38,71 +41,74 @@ public class PCSStarter extends AppKickstarter {
     //------------------------------------------------------------
     // PCSStart
     public PCSStarter() {
-	super("PCSStarter", "etc/PCS.cfg");
+        super("PCSStarter", "etc/PCS.cfg");
     } // PCSStart
 
 
     //------------------------------------------------------------
     // startApp
     protected void startApp() {
-	// start our application
-	log.info("");
-	log.info("");
-	log.info("============================================================");
-	log.info(id + ": Application Starting...");
+        // start our application
+        log.info("");
+        log.info("");
+        log.info("============================================================");
+        log.info(id + ": Application Starting...");
 
-	startHandlers();
+        startHandlers();
     } // startApp
 
 
     //------------------------------------------------------------
     // startHandlers
     protected void startHandlers() {
-    	System.out.println("PCSStart!");
-	// create handlers
-	try {
-	    timer = new Timer("timer", this);
-	    pcsCore = new PCSCore("PCSCore", this);
-		dispatcherHandler = new DispatcherHandler("DispatcherHandler", this);
-	    exitGateHandler = new GateHandler("ExitGateHandler", this);
-	    entranceGateHandler=new GateHandler("ExitGateHandler",this);
-	    collectorHandler=new CollectorHandler("CollectorHandler",this);
-		for(int i = 0; i < PayMachineNumber; i++)
-			payMachineList.add(new PayMachineHandler("PayMachineHandler " + Integer.toString(i),this));
+        System.out.println("PCSStart!");
+        // create handlers
+        try {
+            timer = new Timer("timer", this);
+            pcsCore = new PCSCore("PCSCore", this);
+            dispatcherHandler = new DispatcherHandler("DispatcherHandler", this);
+            exitGateHandler = new GateHandler("ExitGateHandler", this);
+            entranceGateHandler = new GateHandler("ExitGateHandler", this);
+            collectorHandler = new CollectorHandler("CollectorHandler", this);
+            vacancyHandler = new VacancyHandler("VacancyHandler", this);
+            for (int i = 0; i < PayMachineNumber; i++)
+                payMachineList.add(new PayMachineHandler("PayMachineHandler " + Integer.toString(i), this));
 
 
+        } catch (Exception e) {
+            System.out.println("AppKickstarter: startApp failed");
+            e.printStackTrace();
+            Platform.exit();
+        }
 
-	} catch (Exception e) {
-	    System.out.println("AppKickstarter: startApp failed");
-	    e.printStackTrace();
-	    Platform.exit();
-	}
+        // start threads
+        new Thread(timer).start();
+        new Thread(pcsCore).start();
+        new Thread(dispatcherHandler).start();
+        new Thread(exitGateHandler).start();
+        new Thread(vacancyHandler).start();
+        for (int i = 0; i < PayMachineNumber; i++)
+            new Thread(payMachineList.get(i)).start();
 
-	// start threads
-	new Thread(timer).start();
-	new Thread(pcsCore).start();
-	new Thread(dispatcherHandler).start();
-	new Thread(exitGateHandler).start();
-	for(int i = 0; i < PayMachineNumber; i++)
-			new Thread(payMachineList.get(i)).start();
-
-	} // startHandlers
+    } // startHandlers
 
 
     //------------------------------------------------------------
     // stopApp
     public void stopApp() {
-	log.info("");
-	log.info("");
-	log.info("============================================================");
-	log.info(id + ": Application Stopping...");
-	pcsCore.getMBox().send(new Msg(id, null, Msg.Type.Terminate, "Terminate now!"));
-	exitGateHandler.getMBox().send(new Msg(id, null, Msg.Type.Terminate, "Terminate now!"));
-	entranceGateHandler.getMBox().send(new Msg(id, null, Msg.Type.Terminate, "Terminate now!"));
-	collectorHandler.getMBox().send(new Msg(id, null, Msg.Type.Terminate, "Terminate now!"));
-	for(int i=0;i<payMachineList.size();i++){
-		payMachineList.get(i).getMBox().send(new Msg(id, null, Msg.Type.Terminate, "Terminate now!"));
-	}
-	timer.getMBox().send(new Msg(id, null, Msg.Type.Terminate, "Terminate now!"));
+        log.info("");
+        log.info("");
+        log.info("============================================================");
+        log.info(id + ": Application Stopping...");
+        pcsCore.getMBox().send(new Msg(id, null, Msg.Type.Terminate, "Terminate now!"));
+        exitGateHandler.getMBox().send(new Msg(id, null, Msg.Type.Terminate, "Terminate now!"));
+        entranceGateHandler.getMBox().send(new Msg(id, null, Msg.Type.Terminate, "Terminate now!"));
+        collectorHandler.getMBox().send(new Msg(id, null, Msg.Type.Terminate, "Terminate now!"));
+        dispatcherHandler.getMBox().send(new Msg(id, null, Msg.Type.Terminate, "Terminate now!"));
+        vacancyHandler.getMBox().send(new Msg(id, null, Msg.Type.Terminate, "Terminate now!"));
+        for (int i = 0; i < payMachineList.size(); i++) {
+            payMachineList.get(i).getMBox().send(new Msg(id, null, Msg.Type.Terminate, "Terminate now!"));
+        }
+        timer.getMBox().send(new Msg(id, null, Msg.Type.Terminate, "Terminate now!"));
     } // stopApp
 } // PCS.PCSStarter

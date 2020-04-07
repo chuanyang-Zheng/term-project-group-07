@@ -12,6 +12,8 @@ import PCS.DispatcherHandler.DispatcherHandler;
 
 import PCS.PayMachineHandler.Emulator.PayMachineEmulator;
 import PCS.PayMachineHandler.PayMachineHandler;
+import PCS.VacancyHandler.Emulator.VacancyEmulator;
+import PCS.VacancyHandler.VacancyHandler;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.stage.Stage;
@@ -59,6 +61,7 @@ public class PCSEmulatorStarter extends PCSStarter {
         GateEmulator exitGateEmulator = null;
         CollectorEmulator collectorEmulator=null;
 	    PayMachineEmulator payMachineEmulator = null;
+	    VacancyEmulator vacancyEmulator=null;
 	    ArrayList<PayMachineEmulator> payMachineEmulatorList = new ArrayList<PayMachineEmulator>();
 	    // create emulators
 	    try {
@@ -66,6 +69,8 @@ public class PCSEmulatorStarter extends PCSStarter {
 	        pcsCore = new PCSCore("PCSCore", pcsEmulatorStarter);
             dispatcherEmulator=new DispatcherEmulator("DispatcherHandler",pcsEmulatorStarter);
             collectorEmulator=new CollectorEmulator("CollectorHandler",pcsEmulatorStarter);
+            int availableSpaces[]={};
+            vacancyEmulator=new VacancyEmulator("VancancyHandler", pcsEmulatorStarter);
 	        entranceGateEmulator = new GateEmulator("EntranceGateHandler", pcsEmulatorStarter);
             exitGateEmulator = new GateEmulator("ExitGateHandler", pcsEmulatorStarter);
 //            payMachineEmulator = new PayMachineEmulator("PayMachineHandler",pcsEmulatorStarter);
@@ -77,6 +82,7 @@ public class PCSEmulatorStarter extends PCSStarter {
 		entranceGateEmulator.start();
 		exitGateEmulator.start();
 		collectorEmulator.start();
+		vacancyEmulator.start();
 //		payMachineEmulator.start();
 		for(int i = 0; i < PayMachineNumber; i++)
                 payMachineEmulatorList.get(i).start();
@@ -91,6 +97,7 @@ public class PCSEmulatorStarter extends PCSStarter {
 	    pcsEmulatorStarter.setExitGateHandler(exitGateEmulator);
 	    pcsEmulatorStarter.setEntranceGateHandler(entranceGateEmulator);
 	    pcsEmulatorStarter.setCollectorHandler(collectorEmulator);
+	    pcsEmulatorStarter.setVacancyHandler(vacancyEmulator);
 //	    pcsEmulatorStarter.setPayMachineHandler(payMachineEmulator);
          for(int i = 0; i < PayMachineNumber; i++)
              pcsEmulatorStarter.setPayMachineHandler(payMachineEmulatorList.get(i));
@@ -103,6 +110,7 @@ public class PCSEmulatorStarter extends PCSStarter {
 	    new Thread(exitGateEmulator).start();
 	    new Thread(dispatcherEmulator).start();
 	    new Thread(collectorEmulator).start();
+	    new Thread(vacancyEmulator).start();
 //	    new Thread(payMachineEmulator).start();
             for(int i = 0; i < PayMachineNumber; i++)
                 new Thread(payMachineEmulatorList.get(i)).start();
@@ -131,6 +139,7 @@ public class PCSEmulatorStarter extends PCSStarter {
     private void setCollectorHandler(CollectorHandler collectorHandler){
         this.collectorHandler=collectorHandler;
     }
+    private void setVacancyHandler(VacancyHandler vacancyHandler){this.vacancyHandler=vacancyHandler;}
     private void setPayMachineHandler(PayMachineHandler payMachineHandler){
         this.payMachineList.add(payMachineHandler);
     }
