@@ -133,6 +133,11 @@ public class PCSCore extends AppThread {
                         log.info(id + ":Payment ACK received");
                         PayStateUpdate(msg.getSender(), msg.getDetails());
                         break;
+                    case DisplayVacancyRequest:
+                        log.info(id + ":Parking space change request received");
+                        handleDisplayVacancyRequest();
+                        break;
+
                     case MotionSensorDetectUp:
                         log.info(id+": MotionSensor Detect Up Message Received");
                         handleMotionSensorDetectUp(msg);
@@ -360,6 +365,14 @@ public class PCSCore extends AppThread {
         else {
             availableParkingSpaces[now]=availableParkingSpaces[now]-1;
         }
+    }
+    public void handleDisplayVacancyRequest(){
+        String vacancyMsg=String.valueOf(availableParkingSpaces[0]);
+        for (int i=1;i<totalFloorNumber;i++){
+            vacancyMsg+=",";
+            vacancyMsg+=String.valueOf(availableParkingSpaces[i]);
+        }
+        vacancyMbox.send(new Msg(id,mbox,Msg.Type.VancancyDisUpdateRequest,vacancyMsg));
     }
 
 } // PCSCore

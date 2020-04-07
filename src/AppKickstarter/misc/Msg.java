@@ -113,7 +113,7 @@ public class Msg {
     /** MotionSensor */      MotionSensorDetect,
     /** MotionSensor */      MotionSensorDetectUp,
     /** MotionSensor */      MotionSensorDetectDown,
-
+        /**PCS asks VacancyDisplay to display*/DisplayVacancyRequest,
 
 
     /** Vacanncy Receive Update Request*/                        VancancyDisUpdateRequest,
