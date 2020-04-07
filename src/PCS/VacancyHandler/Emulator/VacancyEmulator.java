@@ -60,23 +60,16 @@ public class VacancyEmulator extends VacancyHandler {
     } // VacancyEmulator
 
 
-    //@Override
-    protected void SendAddTicket(String mymsg) {
-
-        if (!mymsg.equals(super.id)) return;
-        pcsCore.send(new Msg(id, mbox, Msg.Type.AddTicket, mymsg));
-    }
-
-    //receive ticket ID
-    protected void ReceiveTicketID(String mymsg) {
-
+    @Override
+    public void handleVacancyDisUpdateRequest(Msg mymsg){
+        String []str=mymsg.getDetails().split(",");
         Date nowT = new Date(System.currentTimeMillis());
         SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
         String timestr = sdf.format(nowT);
-        VacancyEmulatorController.appendTextArea("Welcome to our parking lot.\n" + "Your ticket ID is " + mymsg + ".\n" + "The time now is " + timestr + ".\nThe parking fee is $5/s.\nHave a good time!");
-
-        VacancyEmulatorController.showTicket(mymsg, timestr);
-        pcsCore.send(new Msg(id, mbox, Msg.Type.RemoveTicket, "Remove Ticket Now"));
-
+        VacancyEmulatorController.appendTextArea("This is a real time vacancy display:\n");
+        for(int i=0;i<str.length;i++){
+            VacancyEmulatorController.appendTextArea("Floor "+i+": "+str[i]+"\n");
+        }
+        VacancyEmulatorController.appendTextArea("Last update time: "+timestr);
     }
 }
