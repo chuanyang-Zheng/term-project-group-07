@@ -11,6 +11,7 @@ import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
@@ -88,6 +89,7 @@ public class PayMachineEmulator extends PayMachineHandler {
         PayMachineController.appendTextArea("Thank you for payment!!!!");
         pcsCore.send(new Msg(id, mbox, Msg.Type.PaymentACK, tmp[1]));
         pcsCore.send(new Msg(id, mbox, Msg.Type.TicketRequest, mymsg));
+
     }
 
 
