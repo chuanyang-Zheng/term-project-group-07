@@ -177,10 +177,10 @@ public class PCSCore extends AppThread {
                 Ticket targetTicket = ticketList.get(ticketIndexInTicketArrayList);//get ticket
                 if(ticketList.get(ticketIndexInTicketArrayList).getPayMachineID().equals("")) { // the 3rd parameter mapping
                     msg.getSenderMBox().send(new Msg(id, mbox, Msg.Type.TicketFee, tmp[0] + "," + tmp[1] + "," + Float.toString(targetTicket.calculateFee(calculateFeeCoefficient)) + "," + Long.toString(targetTicket.getEnterTime())));
-                    targetTicket.setExitInformation(exitTimeCoefficient, msg.getSender(), calculateFeeCoefficient);
+//                    targetTicket.setExitInformation(exitTimeCoefficient, msg.getSender(), calculateFeeCoefficient);
                 }//send corresponding fee
                 else
-                    msg.getSenderMBox().send(new Msg(id, mbox, Msg.Type.TicketFee, tmp[0] + "," + tmp[1] + "," + Float.toString(targetTicket.getParkingFee()) + "," + Long.toString(targetTicket.getExitTime())));//send corresponding fee
+                    msg.getSenderMBox().send(new Msg(id, mbox, Msg.Type.TicketFee, tmp[0] + "," + tmp[1] + "," + Float.toString(targetTicket.calculateFee(calculateFeeCoefficient)) + "," + Long.toString(targetTicket.getExitTime())));//send corresponding fee
 
             }
         }

@@ -97,7 +97,7 @@ public class Ticket {
      */
     public void setExitInformation(long exitTimeCoefficient,String payMachineID, float parkingFee){
         this.exitTime=System.currentTimeMillis()+exitTimeCoefficient;
-        this.payMachineID=payMachineID;
+//        this.payMachineID=payMachineID;
         this.parkingFee=parkingFee;
     }
 }
