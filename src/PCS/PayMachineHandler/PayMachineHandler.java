@@ -15,7 +15,7 @@ public class PayMachineHandler extends AppThread {
     private PayMachineStatus PMS;
     private PayMachineEmulator PayEmu;
     protected float TicketFee;
-    private boolean paid = false;
+    protected boolean paid = false;
 
     //------------------------------------------------------------
     // Pay Machine Handler Constructor

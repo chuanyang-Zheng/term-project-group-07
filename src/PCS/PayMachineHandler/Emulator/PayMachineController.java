@@ -26,6 +26,7 @@ public class PayMachineController {
     public TextArea TicketIDField;
     public TextArea FeeField;
     public TextArea EnterField;
+    public TextArea ExitField;
     private int lineNo = 0;
     private String ticket_id,ticket_fee,ticket_enter;
 
@@ -87,6 +88,11 @@ public class PayMachineController {
         ticket_fee = tmpfee; ticket_enter = tmpenter;
         TicketIDField.setText(tmpid);
         FeeField.setText(ticket_fee);
-        EnterField.setText(ticket_enter);
+        if(Float.parseFloat(tmpfee) == 0)
+            ExitField.setText(ticket_enter);
+        else {
+            EnterField.setText(ticket_enter);
+            ExitField.setText("");
+        }
     }
 } // GateEmulatorController
