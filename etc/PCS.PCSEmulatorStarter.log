@@ -1,43 +1,158 @@
-200407-16:20:08 [INFO] -- 
-200407-16:20:08 [INFO] -- 
-200407-16:20:08 [INFO] -- ============================================================
-200407-16:20:08 [INFO] -- PCSStarter: Application Starting...
-200407-16:20:08 [FINE] -- PCSStarter: registering timer
-200407-16:20:08 [FINE] -- timer: created!
-200407-16:20:08 [FINE] -- PCSStarter: registering PCSCore
-200407-16:20:08 [FINE] -- PCSCore: created!
-200407-16:20:08 [INFO] -- PCSCore initial vacancy available floor number: [2000, 2000]
-200407-16:20:08 [FINE] -- PCSStarter: registering DispatcherHandler
-200407-16:20:08 [FINE] -- DispatcherHandler: created!
-200407-16:20:08 [FINE] -- PCSStarter: registering CollectorHandler
-200407-16:20:08 [FINE] -- CollectorHandler: created!
-200407-16:20:08 [FINE] -- PCSStarter: registering EntranceGateHandler
-200407-16:20:08 [FINE] -- EntranceGateHandler: created!
-200407-16:20:08 [FINE] -- PCSStarter: registering ExitGateHandler
-200407-16:20:08 [FINE] -- ExitGateHandler: created!
-200407-16:20:08 [FINE] -- PCSStarter: registering PayMachineHandler0
-200407-16:20:08 [FINE] -- PayMachineHandler0: created!
-200407-16:20:08 [FINE] -- PCSStarter: registering PayMachineHandler1
-200407-16:20:08 [FINE] -- PayMachineHandler1: created!
-200407-16:20:10 [INFO] -- timer: starting...
-200407-16:20:10 [INFO] -- PCSCore: starting...
-200407-16:20:10 [INFO] -- DispatcherHandler: starting...
-200407-16:20:10 [INFO] -- EntranceGateHandler: starting...
-200407-16:20:10 [INFO] -- ExitGateHandler: starting...
-200407-16:20:10 [INFO] -- CollectorHandler: starting...
-200407-16:20:10 [INFO] -- PayMachineHandler0: starting...
-200407-16:20:10 [INFO] -- PayMachineHandler1: starting...
-200407-16:20:14 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,2}].
-200407-16:20:14 [FINE] -- PCSCore: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,2}].
-200407-16:20:14 [INFO] -- PCSCore:PCS Sent the fee already
-200407-16:20:14 [FINE] -- PayMachineHandler0: message received: [PCSCore (TicketFee) -- {PayMachineHandler1,2,25.0,1586247608858}].
-200407-16:20:14 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {PayMachineHandler1,2,25.0,1586247608858}].
-200407-16:20:17 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (PaymentACK) -- {PayMachineHandler1,2}].
-200407-16:20:17 [FINE] -- PayMachineHandler1Emulator:ticketPayMachineHandler1,2Paid already.
-200407-16:20:17 [FINE] -- PCSCore: message received: [PayMachineHandler1Emulator (PaymentACK) -- {2}].
-200407-16:20:17 [INFO] -- PCSCore:Payment ACK received
-200407-16:20:17 [FINE] -- PCSCore:Payment Updated
-200407-16:20:17 [FINE] -- PCSCore: message received: [PayMachineHandler1Emulator (TicketRequest) -- {PayMachineHandler1,2}].
-200407-16:20:17 [INFO] -- PCSCore:PCS Sent the fee already
-200407-16:20:17 [FINE] -- PayMachineHandler0: message received: [PCSCore (TicketFee) -- {PayMachineHandler1,2,0.0,1586247608858}].
-200407-16:20:17 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {PayMachineHandler1,2,0.0,1586247608858}].
+200407-16:47:39 [INFO] -- 
+200407-16:47:39 [INFO] -- 
+200407-16:47:39 [INFO] -- ============================================================
+200407-16:47:39 [INFO] -- PCSStarter: Application Starting...
+200407-16:47:39 [FINE] -- PCSStarter: registering timer
+200407-16:47:39 [FINE] -- timer: created!
+200407-16:47:39 [FINE] -- PCSStarter: registering PCSCore
+200407-16:47:39 [FINE] -- PCSCore: created!
+200407-16:47:39 [INFO] -- PCSCore initial vacancy available floor number: [2000, 2000]
+200407-16:47:39 [FINE] -- PCSStarter: registering DispatcherHandler
+200407-16:47:39 [FINE] -- DispatcherHandler: created!
+200407-16:47:39 [FINE] -- PCSStarter: registering CollectorHandler
+200407-16:47:39 [FINE] -- CollectorHandler: created!
+200407-16:47:39 [FINE] -- PCSStarter: registering EntranceGateHandler
+200407-16:47:39 [FINE] -- EntranceGateHandler: created!
+200407-16:47:39 [FINE] -- PCSStarter: registering ExitGateHandler
+200407-16:47:39 [FINE] -- ExitGateHandler: created!
+200407-16:47:39 [FINE] -- PCSStarter: registering PayMachineHandler0
+200407-16:47:39 [FINE] -- PayMachineHandler0: created!
+200407-16:47:39 [FINE] -- PCSStarter: registering PayMachineHandler1
+200407-16:47:39 [FINE] -- PayMachineHandler1: created!
+200407-16:47:41 [INFO] -- timer: starting...
+200407-16:47:41 [INFO] -- PCSCore: starting...
+200407-16:47:41 [INFO] -- EntranceGateHandler: starting...
+200407-16:47:41 [INFO] -- ExitGateHandler: starting...
+200407-16:47:41 [INFO] -- DispatcherHandler: starting...
+200407-16:47:41 [INFO] -- CollectorHandler: starting...
+200407-16:47:41 [INFO] -- PayMachineHandler0: starting...
+200407-16:47:41 [INFO] -- PayMachineHandler1: starting...
+200407-16:47:53 [FINE] -- DispatcherHandler: message received: [DispatcherHandler (AddTicket) -- {DispatcherHandler}].
+200407-16:47:53 [FINE] -- PCSCore: message received: [DispatcherHandlerEmulator (AddTicket) -- {DispatcherHandler}].
+200407-16:47:53 [INFO] -- PCSCore:PCS has generated a new ticket
+200407-16:47:53 [FINE] -- PCSCore:Ticket added
+200407-16:47:53 [FINE] -- DispatcherHandler: message received: [PCSCore (ReceiveTicketID) -- {3}].
+200407-16:47:53 [FINE] -- PCSCore: message received: [DispatcherHandlerEmulator (RemoveTicket) -- {Remove Ticket Now}].
+200407-16:47:53 [INFO] -- PCSCore: Ticket Dispatcher Ticket Is Removed. Open Gate. 
+200407-16:47:53 [FINE] -- EntranceGateHandler: message received: [PCSCore (GateOpenRequest) -- {OpenGate}].
+200407-16:47:53 [INFO] -- EntranceGateHandler: gate open request received
+200407-16:47:53 [INFO] -- EntranceGateHandler: send signal to open the gate now.
+200407-16:47:53 [FINE] -- EntranceGateHandlerEmulator: Gate open signal received.  [autoOpen is on]
+200407-16:47:53 [FINE] -- EntranceGateHandlerEmulator: Gate open timer started.
+200407-16:47:53 [FINE] -- EntranceGateHandler: gate status change: GateClosed --> GateOpening
+200407-16:47:55 [FINE] -- EntranceGateHandler: message received: [Timer (TimesUp) -- {TimesUp 00001 0}].
+200407-16:47:55 [FINE] -- EntranceGateHandlerEmulator: Times up received.
+200407-16:47:55 [FINE] -- EntranceGateHandlerEmulator: Gate open timer is up.  [autoOpen is on]
+200407-16:47:55 [FINE] -- EntranceGateHandlerEmulator: Send gate open reply
+200407-16:47:55 [FINE] -- EntranceGateHandler: message received: [EntranceGateHandlerEmulator (GateOpenReply) -- {Gate Open Reply}].
+200407-16:47:55 [INFO] -- EntranceGateHandler: gate open reply received
+200407-16:47:55 [INFO] -- EntranceGateHandler: inform PCS Core that gate has finished opening.
+200407-16:47:55 [FINE] -- PCSCore: message received: [EntranceGateHandler (GateOpenReply) -- {}].
+200407-16:47:55 [FINE] -- EntranceGateHandler: gate status change: GateOpening --> GateOpened
+200407-16:47:55 [INFO] -- PCSCore: EntranceGateHandler is opened.
+200407-16:47:57 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,3}].
+200407-16:47:57 [FINE] -- PCSCore: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,3}].
+200407-16:47:57 [INFO] -- PCSCore:PCS Sent the fee already
+200407-16:47:57 [FINE] -- PayMachineHandler0: message received: [PCSCore (TicketFee) -- {PayMachineHandler1,3,15.0,1586249273273}].
+200407-16:47:57 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {PayMachineHandler1,3,15.0,1586249273273}].
+200407-16:48:00 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (PaymentACK) -- {PayMachineHandler1,3}].
+200407-16:48:00 [FINE] -- PayMachineHandler1Emulator:ticketPayMachineHandler1,3Paid already.
+200407-16:48:00 [FINE] -- PCSCore: message received: [PayMachineHandler1Emulator (PaymentACK) -- {3}].
+200407-16:48:00 [INFO] -- PCSCore:Payment ACK received
+200407-16:48:00 [FINE] -- PCSCore:Payment Updated
+200407-16:48:00 [FINE] -- PCSCore: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,3}].
+200407-16:48:00 [INFO] -- PCSCore:PCS Sent the fee already
+200407-16:48:00 [FINE] -- PayMachineHandler0: message received: [PCSCore (TicketFee) -- {PayMachineHandler1,3,0.0,-1}].
+200407-16:48:00 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {PayMachineHandler1,3,0.0,-1}].
+200407-16:48:01 [FINE] -- PCSCore: message received: [Timer (TimesUp) -- {TimesUp 00004 0}].
+200407-16:48:01 [INFO] -- ------------------------------------------------------------
+200407-16:48:01 [FINE] -- EntranceGateHandler: message received: [PCSCore (GateCloseRequest) -- {Close Gate}].
+200407-16:48:01 [INFO] -- PCSCore: Inform Entrance Gate To Close 
+200407-16:48:01 [INFO] -- EntranceGateHandler: gate close request received
+200407-16:48:01 [INFO] -- EntranceGateHandler: send signal to close the gate now.
+200407-16:48:01 [FINE] -- EntranceGateHandlerEmulator: Gate close signal received.  [autoClose is on]
+200407-16:48:01 [FINE] -- EntranceGateHandlerEmulator: Gate close timer started.
+200407-16:48:01 [FINE] -- EntranceGateHandler: gate status change: GateOpened --> GateClosing
+200407-16:48:02 [FINE] -- EntranceGateHandler: message received: [Timer (TimesUp) -- {TimesUp 00002 0}].
+200407-16:48:02 [FINE] -- EntranceGateHandlerEmulator: Times up received.
+200407-16:48:02 [FINE] -- EntranceGateHandlerEmulator: Gate close timer is up.  [autoClose is on]
+200407-16:48:02 [FINE] -- EntranceGateHandlerEmulator: Send gate close reply
+200407-16:48:02 [FINE] -- EntranceGateHandler: message received: [EntranceGateHandlerEmulator (GateCloseReply) -- {Gate Close Reply}].
+200407-16:48:02 [INFO] -- EntranceGateHandler: gate close reply received
+200407-16:48:02 [INFO] -- EntranceGateHandler: inform PCS Core that gate has finished closing.
+200407-16:48:02 [FINE] -- EntranceGateHandler: gate status change: GateClosing --> GateClosed
+200407-16:48:02 [FINE] -- PCSCore: message received: [EntranceGateHandler (GateCloseReply) -- {}].
+200407-16:48:02 [INFO] -- PCSCore: EntranceGateHandler is closed.
+200407-16:48:03 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (TicketRemoveACK) -- {PayMachineHandler1,3}].
+200407-16:48:11 [FINE] -- DispatcherHandler: message received: [DispatcherHandler (AddTicket) -- {DispatcherHandler}].
+200407-16:48:11 [FINE] -- PCSCore: message received: [DispatcherHandlerEmulator (AddTicket) -- {DispatcherHandler}].
+200407-16:48:11 [INFO] -- PCSCore:PCS has generated a new ticket
+200407-16:48:11 [FINE] -- PCSCore:Ticket added
+200407-16:48:11 [FINE] -- DispatcherHandler: message received: [PCSCore (ReceiveTicketID) -- {4}].
+200407-16:48:11 [FINE] -- PCSCore: message received: [DispatcherHandlerEmulator (RemoveTicket) -- {Remove Ticket Now}].
+200407-16:48:11 [INFO] -- PCSCore: Ticket Dispatcher Ticket Is Removed. Open Gate. 
+200407-16:48:11 [FINE] -- EntranceGateHandler: message received: [PCSCore (GateOpenRequest) -- {OpenGate}].
+200407-16:48:11 [INFO] -- EntranceGateHandler: gate open request received
+200407-16:48:11 [INFO] -- EntranceGateHandler: send signal to open the gate now.
+200407-16:48:11 [FINE] -- EntranceGateHandlerEmulator: Gate open signal received.  [autoOpen is on]
+200407-16:48:11 [FINE] -- EntranceGateHandlerEmulator: Gate open timer started.
+200407-16:48:11 [FINE] -- EntranceGateHandler: gate status change: GateClosed --> GateOpening
+200407-16:48:13 [FINE] -- EntranceGateHandler: message received: [Timer (TimesUp) -- {TimesUp 00001 0}].
+200407-16:48:13 [FINE] -- EntranceGateHandlerEmulator: Times up received.
+200407-16:48:13 [FINE] -- EntranceGateHandlerEmulator: Gate open timer is up.  [autoOpen is on]
+200407-16:48:13 [FINE] -- EntranceGateHandlerEmulator: Send gate open reply
+200407-16:48:13 [FINE] -- EntranceGateHandler: message received: [EntranceGateHandlerEmulator (GateOpenReply) -- {Gate Open Reply}].
+200407-16:48:13 [INFO] -- EntranceGateHandler: gate open reply received
+200407-16:48:13 [INFO] -- EntranceGateHandler: inform PCS Core that gate has finished opening.
+200407-16:48:13 [FINE] -- EntranceGateHandler: gate status change: GateOpening --> GateOpened
+200407-16:48:13 [FINE] -- PCSCore: message received: [EntranceGateHandler (GateOpenReply) -- {}].
+200407-16:48:13 [INFO] -- PCSCore: EntranceGateHandler is opened.
+200407-16:48:15 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,4}].
+200407-16:48:15 [FINE] -- PCSCore: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,4}].
+200407-16:48:15 [INFO] -- PCSCore:PCS Sent the fee already
+200407-16:48:15 [FINE] -- PayMachineHandler0: message received: [PCSCore (TicketFee) -- {PayMachineHandler1,4,15.0,1586249291694}].
+200407-16:48:15 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {PayMachineHandler1,4,15.0,1586249291694}].
+200407-16:48:16 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (PaymentACK) -- {PayMachineHandler1,4}].
+200407-16:48:16 [FINE] -- PayMachineHandler1Emulator:ticketPayMachineHandler1,4Paid already.
+200407-16:48:16 [FINE] -- PCSCore: message received: [PayMachineHandler1Emulator (PaymentACK) -- {4}].
+200407-16:48:16 [INFO] -- PCSCore:Payment ACK received
+200407-16:48:16 [FINE] -- PCSCore:Payment Updated
+200407-16:48:16 [FINE] -- PCSCore: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,4}].
+200407-16:48:16 [INFO] -- PCSCore:PCS Sent the fee already
+200407-16:48:16 [FINE] -- PayMachineHandler0: message received: [PCSCore (TicketFee) -- {PayMachineHandler1,4,0.0,-1}].
+200407-16:48:16 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {PayMachineHandler1,4,0.0,-1}].
+200407-16:48:17 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (TicketRemoveACK) -- {PayMachineHandler1,4}].
+200407-16:48:19 [FINE] -- PCSCore: message received: [Timer (TimesUp) -- {TimesUp 00004 0}].
+200407-16:48:19 [INFO] -- ------------------------------------------------------------
+200407-16:48:19 [FINE] -- EntranceGateHandler: message received: [PCSCore (GateCloseRequest) -- {Close Gate}].
+200407-16:48:19 [INFO] -- PCSCore: Inform Entrance Gate To Close 
+200407-16:48:19 [INFO] -- EntranceGateHandler: gate close request received
+200407-16:48:19 [INFO] -- EntranceGateHandler: send signal to close the gate now.
+200407-16:48:19 [FINE] -- EntranceGateHandlerEmulator: Gate close signal received.  [autoClose is on]
+200407-16:48:19 [FINE] -- EntranceGateHandlerEmulator: Gate close timer started.
+200407-16:48:19 [FINE] -- EntranceGateHandler: gate status change: GateOpened --> GateClosing
+200407-16:48:21 [FINE] -- EntranceGateHandler: message received: [Timer (TimesUp) -- {TimesUp 00002 0}].
+200407-16:48:21 [FINE] -- EntranceGateHandlerEmulator: Times up received.
+200407-16:48:21 [FINE] -- EntranceGateHandlerEmulator: Gate close timer is up.  [autoClose is on]
+200407-16:48:21 [FINE] -- EntranceGateHandlerEmulator: Send gate close reply
+200407-16:48:21 [FINE] -- EntranceGateHandler: message received: [EntranceGateHandlerEmulator (GateCloseReply) -- {Gate Close Reply}].
+200407-16:48:21 [INFO] -- EntranceGateHandler: gate close reply received
+200407-16:48:21 [INFO] -- EntranceGateHandler: inform PCS Core that gate has finished closing.
+200407-16:48:21 [FINE] -- PCSCore: message received: [EntranceGateHandler (GateCloseReply) -- {}].
+200407-16:48:21 [FINE] -- EntranceGateHandler: gate status change: GateClosing --> GateClosed
+200407-16:48:21 [INFO] -- PCSCore: EntranceGateHandler is closed.
+200407-16:48:33 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,1}].
+200407-16:48:33 [FINE] -- PCSCore: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,1}].
+200407-16:48:33 [INFO] -- PCSCore:PCS Sent the fee already
+200407-16:48:33 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {PayMachineHandler1,1,265.0,1586249259707}].
+200407-16:48:33 [FINE] -- PayMachineHandler0: message received: [PCSCore (TicketFee) -- {PayMachineHandler1,1,265.0,1586249259707}].
+200407-16:48:35 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (PaymentACK) -- {PayMachineHandler1,1}].
+200407-16:48:35 [FINE] -- PayMachineHandler1Emulator:ticketPayMachineHandler1,1Paid already.
+200407-16:48:35 [FINE] -- PCSCore: message received: [PayMachineHandler1Emulator (PaymentACK) -- {1}].
+200407-16:48:35 [INFO] -- PCSCore:Payment ACK received
+200407-16:48:35 [FINE] -- PCSCore:Payment Updated
+200407-16:48:35 [FINE] -- PCSCore: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,1}].
+200407-16:48:35 [INFO] -- PCSCore:PCS Sent the fee already
+200407-16:48:35 [FINE] -- PayMachineHandler0: message received: [PCSCore (TicketFee) -- {PayMachineHandler1,1,0.0,-1}].
+200407-16:48:35 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {PayMachineHandler1,1,0.0,-1}].
+200407-16:48:36 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (TicketRemoveACK) -- {PayMachineHandler1,1}].

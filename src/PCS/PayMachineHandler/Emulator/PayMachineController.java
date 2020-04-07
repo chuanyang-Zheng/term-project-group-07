@@ -63,7 +63,12 @@ public class PayMachineController {
                     new Alert(Alert.AlertType.ERROR, "Please insert first :)", new ButtonType[]{ButtonType.OK}).show();
                 else {
                     payMBox.send(new Msg(id, null, Msg.Type.PaymentACK, id + "," + ticket_id));
-                    new Alert(Alert.AlertType.CONFIRMATION, "Please Remove the ticket :)", new ButtonType[]{ButtonType.OK}).show();
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Congratulation");
+                    alert.setHeaderText("Payment Finished.");
+                    alert.setContentText("Please remove your ticket :)");
+                    alert.showAndWait();
+                    payMBox.send(new Msg(id, null, Msg.Type.TicketRemoveACK, id + "," + ticket_id));
                 }
                 break;
             default:

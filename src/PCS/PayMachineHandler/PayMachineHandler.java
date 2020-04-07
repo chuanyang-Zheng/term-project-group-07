@@ -14,6 +14,7 @@ public class PayMachineHandler extends AppThread {
     private PayMachineStatus PMS;
     private PayMachineEmulator PayEmu;
     protected float TicketFee;
+    private boolean paid = false;
 
     //------------------------------------------------------------
     // Pay Machine Handler Constructor
@@ -21,6 +22,7 @@ public class PayMachineHandler extends AppThread {
         super(id, pcss);
         pcsCore = appKickstarter.getThread("PCSCore").getMBox();
         PMS = PayMachineStatus.idle;
+        paid = false;
     } // Pay Machine Handler Constructor
 
 
@@ -50,16 +52,22 @@ public class PayMachineHandler extends AppThread {
         boolean quit = false;
         switch (msg.getType()) {
             case TicketRequest:
+                paid = false;
                 SendRequest(msg.getDetails());
                 PMS = PayMachineStatus.WaitPaymentReply;
             break;
             case TicketFee:
                 FeeReceive(msg.getDetails());
-                PMS = PayMachineStatus.WaitDriver;
+                PMS = paid?PayMachineStatus.WaitRemoval : PayMachineStatus.WaitDriver;
             break;
             case PaymentACK:
+                paid = true;
                 SendPaymentACK(msg.getDetails());
                 PMS = PayMachineStatus.WaitExitInfo;
+                SendRequest(msg.getDetails());
+            break;
+            case TicketRemoveACK:
+                PMS = PayMachineStatus.idle;
             break;
             case Terminate:	     quit = true;break;
         }

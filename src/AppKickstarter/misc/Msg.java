@@ -107,7 +107,8 @@ public class Msg {
     /** Loading Ticket request*/       TicketRequest,
     /** Send the Ticket Info */ TicketFee,
     /** Payment Finished successfully*/ PaymentACK,
-
+    /**PayMachine Exit Request*/ ExitRequest,
+    /*PayMachine ticket Remove*/ TicketRemoveACK,
     /** MotionSensor */      MotionSensorDetect,
     /** MotionSensor */      MotionSensorDetectUp,
     /** MotionSensor */      MotionSensorDetectDown,

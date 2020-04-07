@@ -88,8 +88,6 @@ public class PayMachineEmulator extends PayMachineHandler {
         log.fine(id+ ":ticket"+ mymsg + "Paid already.");
         PayMachineController.appendTextArea("Thank you for payment!!!!");
         pcsCore.send(new Msg(id, mbox, Msg.Type.PaymentACK, tmp[1]));
-        pcsCore.send(new Msg(id, mbox, Msg.Type.TicketRequest, mymsg));
-
     }
 
 

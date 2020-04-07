@@ -171,8 +171,10 @@ public class PCSCore extends AppThread {
         String[] tmp = msg.split(",");
         int z = FindTicketByID(Integer.parseInt(tmp[1]));
         for (int i = 0; i < appKickstarter.PayMachineNumber; i++)
-            payMBox.get(i).send(new Msg(id, mbox, Msg.Type.TicketFee, tmp[0] + "," + tmp[1] + "," + Float.toString(ticketList.get(z).calculateFee(5)) + "," + Long.toString(ticketList.get(z).getEnterTime())));
-
+            if(ticketList.get(z).getPayMachineID() == -1)
+                payMBox.get(i).send(new Msg(id, mbox, Msg.Type.TicketFee, tmp[0] + "," + tmp[1] + "," + Float.toString(ticketList.get(z).calculateFee(5)) + "," + Long.toString(ticketList.get(z).getEnterTime())));
+            else
+                payMBox.get(i).send(new Msg(id, mbox, Msg.Type.TicketFee, tmp[0] + "," + tmp[1] + "," + Float.toString(ticketList.get(z).calculateFee(5)) + "," + Long.toString(ticketList.get(z).getExitTime())));
     }
 
     public void AddTicket() {
