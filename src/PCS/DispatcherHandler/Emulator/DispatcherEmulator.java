@@ -69,6 +69,18 @@ public class DispatcherEmulator extends DispatcherHandler {
         SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
         String timestr = sdf.format(nowT);
         //Long currentTime = (System.currentTimeMillis() - Long.parseLong(str[3])) / 1000;
+        //DispatcherController.appendTextArea("Your enter time is " + timestr + "  ($5/s)");
+
+        //DispatcherController.showTicket(mymsg,timestr);
+    }
+    protected void ReceiveTicketID(String mymsg){
+        //String []str = mymsg.split(",");
+        //if(!mymsg.equals(super.id)) return;
+        //pcsCore.send(new Msg(id, mbox, Msg.Type.AddTicket, mymsg));
+        Date nowT = new Date(System.currentTimeMillis());
+        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
+        String timestr = sdf.format(nowT);
+        //Long currentTime = (System.currentTimeMillis() - Long.parseLong(str[3])) / 1000;
         DispatcherController.appendTextArea("Your enter time is " + timestr + "  ($5/s)");
 
         DispatcherController.showTicket(mymsg,timestr);

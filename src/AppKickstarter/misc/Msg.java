@@ -102,6 +102,7 @@ public class Msg {
     /** Toggling Collector Emulator AutoClose */	CollectorSolveProblem,
 
         /** Generate a ticket for driver */ AddTicket,
+        /** Dispatcher receive ticket ID */ReceiveTicketID,
     /** Loading Ticket request*/       TicketRequest,
     /** Send the Ticket Info */ TicketFee,
     /** Payment Finished successfully*/ PaymentACK,

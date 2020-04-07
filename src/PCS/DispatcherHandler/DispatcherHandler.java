@@ -51,6 +51,8 @@ public class DispatcherHandler extends AppThread {
         switch (msg.getType()) {
             case AddTicket:  SendAddTicket(msg.getDetails());  break;
 
+            case ReceiveTicketID: ReceiveTicketID(msg.getDetails());break;
+
             case Terminate:	     quit = true;break;
         }
         return quit;
@@ -61,6 +63,9 @@ public class DispatcherHandler extends AppThread {
 // Send Fee Request
     protected void SendAddTicket(String mymsg){
         log.info("Created new Ticket");
+    }
+    protected void ReceiveTicketID(String mymsg){
+        log.info("Ticket ID received");
     }
 
 

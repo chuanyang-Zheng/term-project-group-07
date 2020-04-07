@@ -47,6 +47,7 @@ public class DispatcherController {
                 dialog.setTitle("Ticket printed");
                 dialog.setContentText("Please pick up your ticket.");
                 dispatcherMBox.send(new Msg(id, null, Msg.Type.AddTicket, id ));
+                //dispatcherMBox.send(new Msg(id, null, Msg.Type.ReceiveID, id ));
                 break;
 
             default:
