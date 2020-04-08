@@ -27,7 +27,6 @@ public abstract class AppKickstarter {
     private Timer timer = null;
     protected abstract void startApp();
     protected abstract void stopApp();
-    public int PayMachineNumber = 3;
 
 
     //------------------------------------------------------------
@@ -86,7 +85,6 @@ public abstract class AppKickstarter {
 	log.setLevel(Level.FINER);
 	logConHd.setLevel(Level.parse(getProperty("AppKickstarter.ConsoleLogLevel", "INFO")));
 	logFileHd.setLevel(Level.parse(getProperty("AppKickstarter.FileLogLevel", "INFO")));
-	PayMachineNumber = Integer.parseInt(getProperty("AppKickstarter.PayMachineNumber"));
 	appThreads = new Hashtable<String, AppThread>();
     } // AppKickstarter
 

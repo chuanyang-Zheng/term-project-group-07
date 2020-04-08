@@ -1,91 +1,61 @@
-200408-20:51:24 [INFO] -- 
-200408-20:51:24 [INFO] -- 
-200408-20:51:24 [INFO] -- ============================================================
-200408-20:51:24 [INFO] -- PCSStarter: Application Starting...
-200408-20:51:25 [FINE] -- PCSStarter: registering timer
-200408-20:51:25 [FINE] -- timer: created!
-200408-20:51:25 [FINE] -- PCSStarter: registering PCSCore
-200408-20:51:25 [FINE] -- PCSCore: created!
-200408-20:51:25 [INFO] -- PCSCore initial vacancy available floor number: [2000, 2000]
-200408-20:51:25 [FINE] -- PCSStarter: registering DispatcherHandler
-200408-20:51:25 [FINE] -- DispatcherHandler: created!
-200408-20:51:25 [FINE] -- PCSStarter: registering CollectorHandler
-200408-20:51:25 [FINE] -- CollectorHandler: created!
-200408-20:51:25 [FINE] -- PCSStarter: registering VacancyHandler
-200408-20:51:25 [FINE] -- VacancyHandler: created!
-200408-20:51:25 [FINE] -- PCSStarter: registering EntranceGateHandler
-200408-20:51:25 [FINE] -- EntranceGateHandler: created!
-200408-20:51:25 [FINE] -- PCSStarter: registering ExitGateHandler
-200408-20:51:25 [FINE] -- ExitGateHandler: created!
-200408-20:51:25 [FINE] -- PCSStarter: registering PayMachineHandler0
-200408-20:51:25 [FINE] -- PayMachineHandler0: created!
-200408-20:51:25 [FINE] -- PCSStarter: registering PayMachineHandler1
-200408-20:51:25 [FINE] -- PayMachineHandler1: created!
-200408-20:51:27 [INFO] -- timer: starting...
-200408-20:51:27 [INFO] -- PCSCore: starting...
-200408-20:51:27 [INFO] -- PayMachineHandler1: starting...
-200408-20:51:27 [INFO] -- DispatcherHandler: starting...
-200408-20:51:27 [INFO] -- CollectorHandler: starting...
-200408-20:51:27 [INFO] -- EntranceGateHandler: starting...
-200408-20:51:27 [INFO] -- ExitGateHandler: starting...
-200408-20:51:27 [INFO] -- PayMachineHandler0: starting...
-200408-20:51:27 [INFO] -- VacancyHandler: starting...
-200408-20:51:34 [FINE] -- DispatcherHandler: message received: [DispatcherHandler (AddTicket) -- {DispatcherHandler}].
-200408-20:51:34 [FINE] -- PCSCore: message received: [DispatcherHandlerEmulator (AddTicket) -- {DispatcherHandler}].
-200408-20:51:34 [INFO] -- PCSCore:PCS has generated a new ticket
-200408-20:51:34 [FINE] -- PCSCore:Ticket added
-200408-20:51:34 [FINE] -- DispatcherHandler: message received: [PCSCore (ReceiveTicketID) -- {3}].
-200408-20:51:34 [FINE] -- PCSCore: message received: [DispatcherHandlerEmulator (RemoveTicket) -- {Remove Ticket Now}].
-200408-20:51:34 [INFO] -- PCSCore: Ticket Dispatcher Ticket Is Removed. Open Gate. 
-200408-20:51:34 [FINE] -- EntranceGateHandler: message received: [PCSCore (GateOpenRequest) -- {OpenGate}].
-200408-20:51:34 [INFO] -- EntranceGateHandler: gate open request received
-200408-20:51:34 [INFO] -- EntranceGateHandler: send signal to open the gate now.
-200408-20:51:34 [FINE] -- EntranceGateHandlerEmulator: Gate open signal received.  [autoOpen is on]
-200408-20:51:34 [FINE] -- EntranceGateHandlerEmulator: Gate open timer started.
-200408-20:51:34 [FINE] -- EntranceGateHandler: gate status change: GateClosed --> GateOpening
-200408-20:51:36 [FINE] -- EntranceGateHandler: message received: [Timer (TimesUp) -- {TimesUp 00001 0}].
-200408-20:51:36 [FINE] -- EntranceGateHandlerEmulator: Times up received.
-200408-20:51:36 [FINE] -- EntranceGateHandlerEmulator: Gate open timer is up.  [autoOpen is on]
-200408-20:51:36 [FINE] -- EntranceGateHandlerEmulator: Send gate open reply
-200408-20:51:36 [FINE] -- EntranceGateHandler: message received: [EntranceGateHandlerEmulator (GateOpenReply) -- {Gate Open Reply}].
-200408-20:51:36 [INFO] -- EntranceGateHandler: gate open reply received
-200408-20:51:36 [INFO] -- EntranceGateHandler: inform PCS Core that gate has finished opening.
-200408-20:51:36 [FINE] -- EntranceGateHandler: gate status change: GateOpening --> GateOpened
-200408-20:51:36 [FINE] -- PCSCore: message received: [EntranceGateHandler (GateOpenReply) -- {}].
-200408-20:51:36 [INFO] -- PCSCore: EntranceGateHandler is opened.
-200408-20:51:42 [FINE] -- PCSCore: message received: [Timer (TimesUp) -- {TimesUp 00004 0}].
-200408-20:51:42 [INFO] -- ------------------------------------------------------------
-200408-20:51:42 [FINE] -- EntranceGateHandler: message received: [PCSCore (GateCloseRequest) -- {Close Gate}].
-200408-20:51:42 [INFO] -- PCSCore: Inform Entrance Gate To Close 
-200408-20:51:42 [INFO] -- EntranceGateHandler: gate close request received
-200408-20:51:42 [INFO] -- EntranceGateHandler: send signal to close the gate now.
-200408-20:51:42 [FINE] -- EntranceGateHandlerEmulator: Gate close signal received.  [autoClose is on]
-200408-20:51:42 [FINE] -- EntranceGateHandlerEmulator: Gate close timer started.
-200408-20:51:42 [FINE] -- EntranceGateHandler: gate status change: GateOpened --> GateClosing
-200408-20:51:43 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,3}].
-200408-20:51:43 [FINE] -- PCSCore: message received: [PayMachineHandler1 (TicketRequest) -- {PayMachineHandler1,3}].
-200408-20:51:43 [INFO] -- PCSCore:PCS Sent the fee already
-200408-20:51:43 [INFO] -- PayMachineHandler1: I am waiting for Ticket Info
-200408-20:51:43 [FINE] -- PayMachineHandler1: message received: [PCSCore (TicketFee) -- {PayMachineHandler1,3,40.0,1586350294888}].
-200408-20:51:43 [INFO] -- PayMachineHandler1: Waiting for driver's Payment
-200408-20:51:44 [FINE] -- EntranceGateHandler: message received: [Timer (TimesUp) -- {TimesUp 00002 0}].
-200408-20:51:44 [FINE] -- EntranceGateHandlerEmulator: Times up received.
-200408-20:51:44 [FINE] -- EntranceGateHandlerEmulator: Gate close timer is up.  [autoClose is on]
-200408-20:51:44 [FINE] -- EntranceGateHandlerEmulator: Send gate close reply
-200408-20:51:44 [FINE] -- EntranceGateHandler: message received: [EntranceGateHandlerEmulator (GateCloseReply) -- {Gate Close Reply}].
-200408-20:51:44 [INFO] -- EntranceGateHandler: gate close reply received
-200408-20:51:44 [INFO] -- EntranceGateHandler: inform PCS Core that gate has finished closing.
-200408-20:51:44 [FINE] -- PCSCore: message received: [EntranceGateHandler (GateCloseReply) -- {}].
-200408-20:51:44 [FINE] -- EntranceGateHandler: gate status change: GateClosing --> GateClosed
-200408-20:51:44 [INFO] -- PCSCore: EntranceGateHandler is closed.
-200408-20:51:46 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (PaymentACK) -- {PayMachineHandler1,3}].
-200408-20:51:46 [FINE] -- PCSCore: message received: [PayMachineHandler1Emulator (PaymentACK) -- {3}].
-200408-20:51:46 [INFO] -- PayMachineHandler1: Waiting for ExitInfo
-200408-20:51:46 [INFO] -- PCSCore:Payment ACK received
-200408-20:51:46 [FINE] -- PCSCore:Payment Updated
-200408-20:51:46 [FINE] -- PCSCore: message received: [PayMachineHandler1 (TicketExitInfoRequest) -- {PayMachineHandler1,3}].
-200408-20:51:46 [INFO] -- PCSCore:PCS Sent the Exit Info already
-200408-20:51:46 [FINE] -- PayMachineHandler1: message received: [PCSCore (ExitInfo) -- {PayMachineHandler1,3,0.0,1586351306283}].
-200408-20:51:46 [INFO] -- PayMachineHandler1: Waiting for Removal
-200408-20:51:47 [FINE] -- PayMachineHandler1: message received: [PayMachineHandler1 (TicketRemoveACK) -- {PayMachineHandler1,3}].
-200408-20:51:47 [INFO] -- PayMachineHandler1: I am idle please use me.
+200408-21:01:14 [INFO] -- 
+200408-21:01:14 [INFO] -- 
+200408-21:01:14 [INFO] -- ============================================================
+200408-21:01:14 [INFO] -- PCSStarter: Application Starting...
+200408-21:01:14 [FINE] -- PCSStarter: registering timer
+200408-21:01:14 [FINE] -- timer: created!
+200408-21:01:14 [FINE] -- PCSStarter: registering PCSCore
+200408-21:01:14 [FINE] -- PCSCore: created!
+200408-21:01:14 [INFO] -- PCSCore initial vacancy available floor number: [2000, 2000]
+200408-21:01:14 [FINE] -- PCSStarter: registering DispatcherHandler
+200408-21:01:14 [FINE] -- DispatcherHandler: created!
+200408-21:01:14 [FINE] -- PCSStarter: registering CollectorHandler
+200408-21:01:14 [FINE] -- CollectorHandler: created!
+200408-21:01:14 [FINE] -- PCSStarter: registering VacancyHandler
+200408-21:01:14 [FINE] -- VacancyHandler: created!
+200408-21:01:14 [FINE] -- PCSStarter: registering EntranceGateHandler
+200408-21:01:14 [FINE] -- EntranceGateHandler: created!
+200408-21:01:14 [FINE] -- PCSStarter: registering ExitGateHandler
+200408-21:01:14 [FINE] -- ExitGateHandler: created!
+200408-21:01:14 [FINE] -- PCSStarter: registering PayMachineHandler0
+200408-21:01:14 [FINE] -- PayMachineHandler0: created!
+200408-21:01:14 [FINE] -- PCSStarter: registering PayMachineHandler1
+200408-21:01:14 [FINE] -- PayMachineHandler1: created!
+200408-21:01:14 [FINE] -- PCSStarter: registering PayMachineHandler2
+200408-21:01:14 [FINE] -- PayMachineHandler2: created!
+200408-21:01:17 [INFO] -- PCSCore: starting...
+200408-21:01:17 [INFO] -- EntranceGateHandler: starting...
+200408-21:01:17 [INFO] -- ExitGateHandler: starting...
+200408-21:01:17 [INFO] -- DispatcherHandler: starting...
+200408-21:01:17 [INFO] -- timer: starting...
+200408-21:01:17 [INFO] -- CollectorHandler: starting...
+200408-21:01:17 [INFO] -- VacancyHandler: starting...
+200408-21:01:17 [INFO] -- PayMachineHandler1: starting...
+200408-21:01:17 [INFO] -- PayMachineHandler2: starting...
+200408-21:01:17 [INFO] -- PayMachineHandler0: starting...
+200408-21:01:27 [INFO] -- 
+200408-21:01:27 [INFO] -- 
+200408-21:01:27 [INFO] -- ============================================================
+200408-21:01:27 [INFO] -- PCSStarter: Application Stopping...
+200408-21:01:27 [FINE] -- PayMachineHandler1: message received: [PCSStarter (Terminate) -- {Terminate now!}].
+200408-21:01:27 [INFO] -- timer: received terminate!
+200408-21:01:27 [FINE] -- VacancyHandler: message received: [PCSStarter (Terminate) -- {Terminate now!}].
+200408-21:01:27 [FINE] -- EntranceGateHandler: message received: [PCSStarter (Terminate) -- {Terminate now!}].
+200408-21:01:27 [FINE] -- PayMachineHandler0: message received: [PCSStarter (Terminate) -- {Terminate now!}].
+200408-21:01:27 [FINE] -- PCSStarter: unregistering VacancyHandler
+200408-21:01:27 [INFO] -- VacancyHandler: terminating...
+200408-21:01:27 [FINE] -- CollectorHandler: message received: [PCSStarter (Terminate) -- {Terminate now!}].
+200408-21:01:27 [FINE] -- DispatcherHandler: message received: [PCSStarter (Terminate) -- {Terminate now!}].
+200408-21:01:27 [FINE] -- PCSStarter: unregistering timer
+200408-21:01:27 [FINE] -- PayMachineHandler2: message received: [PCSStarter (Terminate) -- {Terminate now!}].
+200408-21:01:27 [FINE] -- ExitGateHandler: message received: [PCSStarter (Terminate) -- {Terminate now!}].
+200408-21:01:27 [INFO] -- timer: terminating...
+200408-21:01:27 [FINE] -- PCSCore: message received: [PCSStarter (Terminate) -- {Terminate now!}].
+200408-21:01:27 [FINE] -- PCSStarter: unregistering DispatcherHandler
+200408-21:01:27 [FINE] -- PCSStarter: unregistering EntranceGateHandler
+200408-21:01:27 [INFO] -- EntranceGateHandler: terminating...
+200408-21:01:27 [INFO] -- DispatcherHandler: terminating...
+200408-21:01:27 [FINE] -- PCSStarter: unregistering ExitGateHandler
+200408-21:01:27 [FINE] -- PCSStarter: unregistering PCSCore
+200408-21:01:27 [INFO] -- ExitGateHandler: terminating...
+200408-21:01:27 [INFO] -- PCSCore: terminating...

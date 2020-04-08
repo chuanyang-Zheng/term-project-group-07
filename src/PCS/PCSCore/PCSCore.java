@@ -3,6 +3,7 @@ package PCS.PCSCore;
 import AppKickstarter.AppKickstarter;
 import AppKickstarter.misc.*;
 import AppKickstarter.timer.Timer;
+import PCS.PayMachineHandler.Emulator.PayMachineController;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -31,7 +32,7 @@ public class PCSCore extends AppThread {
     private int gateOpenTime = Integer.parseInt(appKickstarter.getProperty("Gate.GateOpenTime"));
     private int totalFloorNumber=Integer.parseInt(appKickstarter.getProperty("TotalFloorNumber"));
     private int[] availableParkingSpaces=new int[totalFloorNumber];
-
+    public int PayMachineNumber;
 //	private long exitTimeCoefficient=0;
 //	private float calculateFeeCoefficient=0;
 //	private int collectorSolveProblemGateWaitTime=0;
@@ -51,6 +52,7 @@ public class PCSCore extends AppThread {
         ticketList.add(falseTicket);
         Ticket EricVIPTick = new Ticket();
         ticketList.add(EricVIPTick);
+        PayMachineNumber = Integer.parseInt(appKickstarter.getProperty("PayMachineNumber"));
         for(int i=0;i<totalFloorNumber;i++){
             String tep="Vacancy.Level"+(i+1);
             availableParkingSpaces[i]=Integer.parseInt(appKickstarter.getProperty(tep));
@@ -66,13 +68,12 @@ public class PCSCore extends AppThread {
 //	Timer.setTimer(id, mbox, pollTime, PollTimerID);
 //	Timer.setTimer(id, mbox, openCloseGateTime, OpenCloseGateTimerID);	// for demo only!!!
         log.info(id + ": starting...");
-
         entranceGateBox = appKickstarter.getThread("EntranceGateHandler").getMBox();
         exitGateBox = appKickstarter.getThread("ExitGateHandler").getMBox();
         collectorMbox = appKickstarter.getThread("CollectorHandler").getMBox();
         dispatcherMbox = appKickstarter.getThread("DispatcherHandler").getMBox();
         vacancyMbox = appKickstarter.getThread("VacancyHandler").getMBox();
-        for (int i = 0; i < appKickstarter.PayMachineNumber; i++)
+        for (int i = 0; i < PayMachineNumber; i++)
             payMBox.add(appKickstarter.getThread("PayMachineHandler" + Integer.toString(i)).getMBox());
         for (boolean quit = false; !quit; ) {
             Msg msg = mbox.receive();

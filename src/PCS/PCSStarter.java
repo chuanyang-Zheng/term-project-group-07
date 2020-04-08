@@ -29,6 +29,7 @@ public class PCSStarter extends AppKickstarter {
     protected CollectorHandler collectorHandler;
     protected VacancyHandler vacancyHandler;
     protected ArrayList<PayMachineHandler> payMachineList = new ArrayList<PayMachineHandler>();
+    public int PayMachineNumber = 3;
 
     //	public int PayMachineNumber;
     //------------------------------------------------------------
@@ -62,6 +63,7 @@ public class PCSStarter extends AppKickstarter {
     // startHandlers
     protected void startHandlers() {
         System.out.println("PCSStart!");
+        PayMachineNumber = Integer.parseInt(getProperty("PayMachineNumber"));
         // create handlers
         try {
             timer = new Timer("timer", this);
