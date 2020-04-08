@@ -48,6 +48,7 @@ public class PCSEmulatorStarter extends PCSStarter {
         private static PCSEmulatorStarter pcsEmulatorStarter;
         private int PayMachineNumber = pcsEmulatorStarter.payMachineNumber;
 
+
 	//----------------------------------------
 	// start
         public void start() {
