@@ -62,14 +62,17 @@ public class VacancyEmulator extends VacancyHandler {
 
     @Override
     public void handleVacancyDisUpdateRequest(Msg mymsg){
-        String []str=mymsg.getDetails().split(",");
+        String []str=mymsg.getDetails().split("\\s+");
         Date nowT = new Date(System.currentTimeMillis());
         SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
         String timestr = sdf.format(nowT);
         VacancyEmulatorController.appendTextArea("This is a real time vacancy display:\n");
+        StringBuilder floorNumberInformation=new StringBuilder();
         for(int i=0;i<str.length;i++){
-            VacancyEmulatorController.appendTextArea("Floor "+i+": "+str[i]+"\n");
+            floorNumberInformation.append("Floor "+(i+1)+": "+str[i]+"\n");
         }
-        VacancyEmulatorController.appendTextArea("Last update time: "+timestr);
+        floorNumberInformation.append("Last update time: "+timestr);
+        VacancyEmulatorController.appendTextArea(floorNumberInformation.toString());
+        log.info(id+"\n"+floorNumberInformation.toString());
     }
 }

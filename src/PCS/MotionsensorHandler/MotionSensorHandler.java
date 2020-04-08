@@ -21,7 +21,7 @@ public class MotionSensorHandler extends AppThread {
     } // MotionSensorHandler
 
     /**
-     * @param Input: Nothing.
+     * @param : Nothing.
      * Return:Nothing.
      * @Author Yijia Zhang
      * @description run Part of handler. It deal with logic commannds
@@ -65,10 +65,15 @@ public class MotionSensorHandler extends AppThread {
         log.info(id + ": motion sensor detect message received");
         switch (motionSensorStatus){
             case MotionSensorRunning:
-                if(this.detectUp)
-                    pcsCore.send(new Msg(id,mbox, Msg.Type.MotionSensorDetectUp,floorNumber+""));
-                else
-                    pcsCore.send(new Msg(id,mbox,Msg.Type.MotionSensorDetectDown,floorNumber+""));
+                if(this.detectUp) {
+                    pcsCore.send(new Msg(id, mbox, Msg.Type.MotionSensorDetectUp, floorNumber + ""));
+                    log.info(id+": "+floorNumber+" Detect Up. Inform PCSCore");
+                }
+                else {
+                    pcsCore.send(new Msg(id, mbox, Msg.Type.MotionSensorDetectDown, floorNumber + ""));
+                    log.info(id+": "+floorNumber+" Detect Up. Inform PCSCore");
+                }
+                break;
             case MotionSensorTerminated:
                 log.warning(id+" is terminated. Please Check");
         }

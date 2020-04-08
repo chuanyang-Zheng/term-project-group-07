@@ -116,8 +116,8 @@ public class Msg {
         /**PCS asks VacancyDisplay to display*/DisplayVacancyRequest,
 
 
-    /** Vacanncy Receive Update Request*/                        VancancyDisUpdateRequest,
-    /** Vacanncy Send Update Reply */                        VancancyDisUpdateReply,
+    /** Vacanncy Receive Update Request*/                        VacancyDisUpdateRequest,
+    /** Vacanncy Send Update Reply */                        VacancyDisUpdateReply,
     } // Type
 
     public static String quoteString(String message){

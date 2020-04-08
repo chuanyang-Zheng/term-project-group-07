@@ -7,6 +7,7 @@ import AppKickstarter.timer.Timer;
 import PCS.CollectorHandler.CollectorHandler;
 import PCS.DispatcherHandler.DispatcherHandler;
 import PCS.DispatcherHandler.Emulator.DispatcherEmulator;
+import PCS.MotionsensorHandler.MotionSensorHandler;
 import PCS.PCSCore.PCSCore;
 import PCS.GateHandler.GateHandler;
 
@@ -29,7 +30,10 @@ public class PCSStarter extends AppKickstarter {
     protected CollectorHandler collectorHandler;
     protected VacancyHandler vacancyHandler;
     protected ArrayList<PayMachineHandler> payMachineList = new ArrayList<PayMachineHandler>();
-    public int PayMachineNumber = 3;
+    protected  ArrayList<MotionSensorHandler> motionSensorDetectUpList=new ArrayList<>();
+    protected  ArrayList<MotionSensorHandler> motionSensorDetectDownList=new ArrayList<>();
+    public int payMachineNumber;
+    public int numOfFloor=Integer.parseInt(this.getProperty("TotalFloorNumber"));
 
     //	public int PayMachineNumber;
     //------------------------------------------------------------
@@ -43,6 +47,7 @@ public class PCSStarter extends AppKickstarter {
     // PCSStart
     public PCSStarter() {
         super("PCSStarter", "etc/PCS.cfg");
+        payMachineNumber=Integer.parseInt(this.getProperty("PayMachineNumber"));
     } // PCSStart
 
 
@@ -63,7 +68,7 @@ public class PCSStarter extends AppKickstarter {
     // startHandlers
     protected void startHandlers() {
         System.out.println("PCSStart!");
-        PayMachineNumber = Integer.parseInt(getProperty("PayMachineNumber"));
+        payMachineNumber = Integer.parseInt(getProperty("PayMachineNumber"));
         // create handlers
         try {
             timer = new Timer("timer", this);
@@ -73,8 +78,12 @@ public class PCSStarter extends AppKickstarter {
             entranceGateHandler = new GateHandler("ExitGateHandler", this);
             collectorHandler = new CollectorHandler("CollectorHandler", this);
             vacancyHandler = new VacancyHandler("VacancyHandler", this);
-            for (int i = 0; i < PayMachineNumber; i++)
+            for (int i = 0; i < payMachineNumber; i++)
                 payMachineList.add(new PayMachineHandler("PayMachineHandler " + Integer.toString(i), this));
+            for(int i=0;i<numOfFloor;i++){
+                motionSensorDetectUpList.add(new MotionSensorHandler("MotionSensorHandlerUp"+(i+1),this,(i+1),true));
+                motionSensorDetectDownList.add(new MotionSensorHandler("MotionSensorHandlerDown"+(i+1),this,(i+1),true));
+            }
 
 
         } catch (Exception e) {
@@ -89,8 +98,12 @@ public class PCSStarter extends AppKickstarter {
         new Thread(dispatcherHandler).start();
         new Thread(exitGateHandler).start();
         new Thread(vacancyHandler).start();
-        for (int i = 0; i < PayMachineNumber; i++)
+        for (int i = 0; i < payMachineNumber; i++)
             new Thread(payMachineList.get(i)).start();
+        for(int i=0;i<numOfFloor;i++){
+            new Thread(motionSensorDetectUpList.get(i)).start();
+            new Thread(motionSensorDetectDownList.get(i)).start();
+        }
 
     } // startHandlers
 
@@ -110,6 +123,10 @@ public class PCSStarter extends AppKickstarter {
         vacancyHandler.getMBox().send(new Msg(id, null, Msg.Type.Terminate, "Terminate now!"));
         for (int i = 0; i < payMachineList.size(); i++) {
             payMachineList.get(i).getMBox().send(new Msg(id, null, Msg.Type.Terminate, "Terminate now!"));
+        }
+        for(int i=0;i<numOfFloor;i++){
+            motionSensorDetectUpList.get(i).getMBox().send(new Msg(id,null,Msg.Type.Terminate,"Terminate now!"));
+            motionSensorDetectDownList.get(i).getMBox().send(new Msg(id,null,Msg.Type.Terminate,"Terminate now!"));
         }
         timer.getMBox().send(new Msg(id, null, Msg.Type.Terminate, "Terminate now!"));
     } // stopApp

@@ -1,9 +1,12 @@
 package PCS;
 
+import AppKickstarter.misc.AppThread;
 import AppKickstarter.timer.Timer;
 
 import PCS.CollectorHandler.CollectorHandler;
 import PCS.CollectorHandler.Emulator.CollectorEmulator;
+import PCS.MotionsensorHandler.Emulator.MotionSensorEmulator;
+import PCS.MotionsensorHandler.MotionSensorHandler;
 import PCS.PCSCore.PCSCore;
 import PCS.GateHandler.GateHandler;
 import PCS.GateHandler.Emulator.GateEmulator;
@@ -43,7 +46,7 @@ public class PCSEmulatorStarter extends PCSStarter {
     // Emulators
     public static class Emulators extends Application {
         private static PCSEmulatorStarter pcsEmulatorStarter;
-        private int PayMachineNumber = pcsEmulatorStarter.PayMachineNumber;
+        private int PayMachineNumber = pcsEmulatorStarter.payMachineNumber;
 
 	//----------------------------------------
 	// start
@@ -63,22 +66,27 @@ public class PCSEmulatorStarter extends PCSStarter {
 	    PayMachineEmulator payMachineEmulator = null;
 	    VacancyEmulator vacancyEmulator=null;
 	    ArrayList<PayMachineEmulator> payMachineEmulatorList = new ArrayList<PayMachineEmulator>();
+        ArrayList<MotionSensorEmulator> motionSensorDetectUpList=new ArrayList<>();
+        ArrayList<MotionSensorEmulator> motionSensorDetectDownList=new ArrayList<>();
 	    // create emulators
 	    try {
 	        timer = new Timer("timer", pcsEmulatorStarter);
 	        pcsCore = new PCSCore("PCSCore", pcsEmulatorStarter);
             dispatcherEmulator=new DispatcherEmulator("DispatcherHandler",pcsEmulatorStarter);
             collectorEmulator=new CollectorEmulator("CollectorHandler",pcsEmulatorStarter);
-            int availableSpaces[]={};
             vacancyEmulator=new VacancyEmulator("VacancyHandler", pcsEmulatorStarter);
 	        entranceGateEmulator = new GateEmulator("EntranceGateHandler", pcsEmulatorStarter);
             exitGateEmulator = new GateEmulator("ExitGateHandler", pcsEmulatorStarter);
 //            payMachineEmulator = new PayMachineEmulator("PayMachineHandler",pcsEmulatorStarter);
             for(int i = 0; i < PayMachineNumber; i++)
                 payMachineEmulatorList.add(new PayMachineEmulator("PayMachineHandler" + Integer.toString(i), pcsEmulatorStarter));
+            for(int i=0;i<pcsEmulatorStarter.numOfFloor;i++){
+                motionSensorDetectUpList.add(new MotionSensorEmulator("MotionSensorHandlerUp"+(i+1),pcsEmulatorStarter,(i+1),true));
+                motionSensorDetectDownList.add(new MotionSensorEmulator("MotionSensorHandlerDown"+(i+1),pcsEmulatorStarter,(i+1),true));
+            }
 
             // start emulator GUIs
-            dispatcherEmulator.start();
+        dispatcherEmulator.start();
 		entranceGateEmulator.start();
 		exitGateEmulator.start();
 		collectorEmulator.start();
@@ -86,6 +94,11 @@ public class PCSEmulatorStarter extends PCSStarter {
 //		payMachineEmulator.start();
 		for(int i = 0; i < PayMachineNumber; i++)
                 payMachineEmulatorList.get(i).start();
+        for(int i=0;i<pcsEmulatorStarter.numOfFloor;i++){
+            motionSensorDetectUpList.get(i).start();
+            motionSensorDetectDownList.get(i).start();
+        }
+
 	    } catch (Exception e) {
 		System.out.println("Emulators: start failed");
 		e.printStackTrace();
@@ -98,6 +111,7 @@ public class PCSEmulatorStarter extends PCSStarter {
 	    pcsEmulatorStarter.setEntranceGateHandler(entranceGateEmulator);
 	    pcsEmulatorStarter.setCollectorHandler(collectorEmulator);
 	    pcsEmulatorStarter.setVacancyHandler(vacancyEmulator);
+	    pcsEmulatorStarter.setMotionSensor(motionSensorDetectUpList,motionSensorDetectDownList);
 //	    pcsEmulatorStarter.setPayMachineHandler(payMachineEmulator);
          for(int i = 0; i < PayMachineNumber; i++)
              pcsEmulatorStarter.setPayMachineHandler(payMachineEmulatorList.get(i));
@@ -112,8 +126,13 @@ public class PCSEmulatorStarter extends PCSStarter {
 	    new Thread(collectorEmulator).start();
 	    new Thread(vacancyEmulator).start();
 //	    new Thread(payMachineEmulator).start();
-            for(int i = 0; i < PayMachineNumber; i++)
-                new Thread(payMachineEmulatorList.get(i)).start();
+        for(int i = 0; i < PayMachineNumber; i++)
+            new Thread(payMachineEmulatorList.get(i)).start();
+        for(int i=0;i<motionSensorDetectUpList.size();i++){
+            new Thread(motionSensorDetectUpList.get(i)).start();
+            new Thread(motionSensorDetectDownList.get(i)).start();
+        }
+
 
 	} // start
     } // Emulators
@@ -143,4 +162,10 @@ public class PCSEmulatorStarter extends PCSStarter {
     private void setPayMachineHandler(PayMachineHandler payMachineHandler){
         this.payMachineList.add(payMachineHandler);
     }
+    private void setMotionSensor(ArrayList<MotionSensorEmulator> motionSensorDetectUpList,ArrayList<MotionSensorEmulator> motionSensorDetectDownList){
+        this.motionSensorDetectUpList.addAll(motionSensorDetectUpList);
+        this.motionSensorDetectDownList.addAll(motionSensorDetectDownList);
+    }
+
+
 } // PCSEmulatorStarter

@@ -36,7 +36,7 @@ public class VacancyHandler extends AppThread {
         boolean quit = false;
 
         switch (msg.getType()) {
-            case VancancyDisUpdateRequest:  handleVacancyDisUpdateRequest(msg);  break;
+            case VacancyDisUpdateRequest:  handleVacancyDisUpdateRequest(msg);  break;
 //            case VancancyDisUpdateReply: handleVacancyDisUpdateReply(msg); break;
 //            case Poll:		   handlePollReq();	     break;
 //            case PollAck:	   handlePollAck();	     break;

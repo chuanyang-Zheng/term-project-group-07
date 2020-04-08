@@ -318,6 +318,7 @@ public class PCSCore extends AppThread {
         try{
             int floorNumber=Integer.parseInt(msg.getDetails());
             handleParkingSpaceChange(floorNumber-2,floorNumber-1);// If floor number is 3. Now, it goes up. That means, initial floor number is 2. In array, the position is 1, which is floor number -2.
+            vacancyMbox.send(new Msg(id,mbox, Msg.Type.VacancyDisUpdateRequest,arrayToString(availableParkingSpaces)));
 
         }
         catch (Exception e){
@@ -331,6 +332,7 @@ public class PCSCore extends AppThread {
         try{
             int floorNumber=Integer.parseInt(msg.getDetails());
             handleParkingSpaceChange(floorNumber-1,floorNumber-2);// If floor number is 3. Now, it goes up. That means, initial floor number is 2. In array, the position is 1, which is floor number -2.
+            vacancyMbox.send(new Msg(id,mbox, Msg.Type.VacancyDisUpdateRequest,arrayToString(availableParkingSpaces)));
 
         }
         catch (Exception e){
@@ -373,7 +375,15 @@ public class PCSCore extends AppThread {
             vacancyMsg+=",";
             vacancyMsg+=String.valueOf(availableParkingSpaces[i]);
         }
-        vacancyMbox.send(new Msg(id,mbox,Msg.Type.VancancyDisUpdateRequest,vacancyMsg));
+        vacancyMbox.send(new Msg(id,mbox,Msg.Type.VacancyDisUpdateRequest,vacancyMsg));
+    }
+
+    public String arrayToString(int[] arrayInformation){
+        StringBuilder tep= new StringBuilder();
+        for(int i=0;i<arrayInformation.length;i++){
+            tep.append(arrayInformation[i]).append(" ");
+        }
+        return tep.toString();
     }
 
 } // PCSCore
