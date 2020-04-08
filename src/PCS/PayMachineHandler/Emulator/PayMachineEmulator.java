@@ -85,7 +85,7 @@ public class PayMachineEmulator extends PayMachineHandler {
         String []currentTicket = mymsg.split(",");
         String ticketid = PayMachineController.TicketIDField.getText();
         String PaidFee = PayMachineController.FeeField.getText();
-        Date nowT = new Date(System.currentTimeMillis());
+        Date nowT = new Date(Long.parseLong(currentTicket[3]));
         SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
         String timestr = sdf.format(nowT);
         Date ExitTime = new Date(Long.parseLong(currentTicket[3]));
