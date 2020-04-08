@@ -43,6 +43,7 @@ public class PCSStarter extends AppKickstarter {
     // PCSStart
     public PCSStarter() {
         super("PCSStarter", "etc/PCS.cfg");
+        PayMachineNumber = Integer.parseInt(getProperty("PayMachineNumber"));
     } // PCSStart
 
 
@@ -63,7 +64,6 @@ public class PCSStarter extends AppKickstarter {
     // startHandlers
     protected void startHandlers() {
         System.out.println("PCSStart!");
-        PayMachineNumber = Integer.parseInt(getProperty("PayMachineNumber"));
         // create handlers
         try {
             timer = new Timer("timer", this);
