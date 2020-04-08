@@ -94,6 +94,7 @@ public class CollectorHandler extends AppThread {
                 break;
             case CollectorWaitValidation:
                 collectorStatus=CollectorStatus.CollectorAvailable;
+                sendPositiveSignal();
                 break;
             case CollectorWarning:
                 log.warning(id+": Collector is Warning Now. Wrong State!");
@@ -163,6 +164,10 @@ public class CollectorHandler extends AppThread {
         // fixme: send gate poll request to hardware
         log.info(id + ": poll request received");
     } // sendPollReq
+
+    protected void sendPositiveSignal(){
+        log.info(id+": Ticket is Valid!");
+    }
 
 
     //------------------------------------------------------------

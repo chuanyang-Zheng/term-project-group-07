@@ -67,6 +67,10 @@ public class CollectorEmulator extends CollectorHandler {
         logFine("Already Solve Problem. Stop Alarm!");
     }
 
+    protected void sendPositiveSignal(){
+        logFine("The Ticket Is Valid");
+    }
+
     //------------------------------------------------------------
     // logFine
     private final void logFine(String logMsg) {

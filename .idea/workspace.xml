@@ -5,15 +5,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/etc/PCS.PCSEmulatorStarter.log" beforeDir="false" afterPath="$PROJECT_DIR$/etc/PCS.PCSEmulatorStarter.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/etc/PCS.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/etc/PCS.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppKickstarter/misc/Msg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppKickstarter/misc/Msg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/Emulator/MotionSensorEmulator.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/Emulator/MotionSensorEmulator.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/Emulator/MotionSensorEmulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/Emulator/MotionSensorEmulator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/Emulator/MotionSensorEmulatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/Emulator/MotionSensorEmulatorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/MotionSensorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/MotionSensorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/CollectorHandler/CollectorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/CollectorHandler/CollectorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/CollectorHandler/Emulator/CollectorEmulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/CollectorHandler/Emulator/CollectorEmulator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PCS/PCSCore/PCSCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/PCSCore/PCSCore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PCS/PCSEmulatorStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/PCSEmulatorStarter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PCS/PCSStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/PCSStarter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PCS/VacancyHandler/Emulator/VacancyEmulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/VacancyHandler/Emulator/VacancyEmulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/PCSCore/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/PCSCore/Ticket.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +137,7 @@
       <workItem from="1586332977862" duration="390000" />
       <workItem from="1586333422231" duration="166000" />
       <workItem from="1586348803623" duration="2375000" />
-      <workItem from="1586352697926" duration="5115000" />
+      <workItem from="1586352697926" duration="8240000" />
     </task>
     <task id="LOCAL-00003" summary="Update Dispatcher Remove Ticket Response">
       <created>1586242645625</created>
@@ -214,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586350428606</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Finish Project. Begin JavaDoc and Fix up">
+      <created>1586360575487</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1586360575487</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,7 +246,8 @@
     <MESSAGE value="modify PCS core" />
     <MESSAGE value="Update" />
     <MESSAGE value="Update PayMachine" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update PayMachine" />
+    <MESSAGE value="Finish Project. Begin JavaDoc and Fix up" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish Project. Begin JavaDoc and Fix up" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="74" key="#Notifications" timestamp="1586254815800">
@@ -267,26 +270,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="501" y="143" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1586333587134" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1586360532420">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1586363587880">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1398" height="261" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1586229456599" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586360532420" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1586360532419">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586363587880" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1586363587880">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1398" height="261" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1586229456598" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586360532419" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1586360532419">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586363587880" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1586363587880">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1398" height="261" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1586229456598" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586360532419" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1586360532420">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586363587880" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1586363587880">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1398" height="261" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1586229456599" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586360532420" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586363587880" />
     <state x="349" y="155" key="IDE.errors.dialog" timestamp="1586327295169">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

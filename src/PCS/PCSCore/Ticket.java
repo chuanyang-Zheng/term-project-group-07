@@ -11,6 +11,7 @@ public class Ticket {
     protected long exitTime=-1;
     protected float parkingFee=-1;
     protected String payMachineID = "";
+    protected boolean payJudge=false;
 
 
     protected static int TicketCount=0;
@@ -83,6 +84,8 @@ public class Ticket {
             log.warning(id+": "+parkingFee+" is smaller than 0");
             return false;
         }
+
+        payJudge=true;
 
 
         return true;

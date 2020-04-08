@@ -228,11 +228,9 @@ public class PCSCore extends AppThread {
         log.info(id + " Collector Valid Request Receive");
         if (checkStringToInt(msg.getDetails())) {
 
-            boolean valid = validTicket(Integer.parseInt(msg.getDetails()));
+            boolean valid = validTicket(Integer.parseInt(msg.getDetails()));// bug
 
             if (valid) {
-
-                ticketList.remove(Integer.parseInt(msg.getDetails()));
                 collectorMbox.send(new Msg(id, mbox, Msg.Type.CollectorPositive, ""));
                 exitGateBox.send(new Msg(id, mbox, Msg.Type.GateOpenRequest, "GateOpenReq"));
                 Timer.setTimer(id, mbox, gateOpenTime + gateOpenWaitTime, collectorSolveProblemGateWaitTimeID);
@@ -385,5 +383,7 @@ public class PCSCore extends AppThread {
         }
         return tep.toString();
     }
+
+//    public void resetAvailableParkingSpace(int floorNumebr,int[] )
 
 } // PCSCore
