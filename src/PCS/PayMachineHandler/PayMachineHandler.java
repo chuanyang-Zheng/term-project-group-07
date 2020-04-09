@@ -13,9 +13,8 @@ import PCS.PayMachineHandler.Emulator.PayMachineEmulator;
 public class PayMachineHandler extends AppThread {
     protected final MBox pcsCore;
     private PayMachineStatus PMS;
-    private PayMachineEmulator PayEmu;
     protected float TicketFee;
-    protected boolean paid = false;
+
 
     //------------------------------------------------------------
     // Pay Machine Handler Constructor
@@ -23,7 +22,6 @@ public class PayMachineHandler extends AppThread {
         super(id, pcss);
         pcsCore = appKickstarter.getThread("PCSCore").getMBox();
         PMS = PayMachineStatus.idle;
-        paid = false;
     } // Pay Machine Handler Constructor
 
 
@@ -53,8 +51,6 @@ public class PayMachineHandler extends AppThread {
         boolean quit = false;
         boolean flag = false;
         String []tmp = msg.getDetails().split(",");
-        if(!tmp[0].equals(id))
-            return quit;
         switch (msg.getType()) {
             case TicketRequest:
                 SendRequest(msg.getDetails());

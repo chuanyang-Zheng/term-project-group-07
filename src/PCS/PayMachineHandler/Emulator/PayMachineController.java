@@ -47,7 +47,7 @@ public class PayMachineController {
         Button btn = (Button) actionEvent.getSource();
 
         switch (btn.getText()) {
-            case "Insert the ticket":
+            case "Insert ticket":
                 TextInputDialog dialog = new TextInputDialog("0");
                 dialog.setTitle("Inserting Ticket....");
                 dialog.setContentText("Please Input Ticket ID:");
@@ -64,14 +64,16 @@ public class PayMachineController {
                     new Alert(Alert.AlertType.ERROR, "Please insert first :)", new ButtonType[]{ButtonType.OK}).show();
                 else {
                     payMBox.send(new Msg(id, null, Msg.Type.PaymentACK, id + "," + ticket_id));
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("Congratulation");
-                    alert.setHeaderText("Payment Finished.");
-                    alert.setContentText("Please remove your ticket :)");
-                    alert.showAndWait();
-                    payMBox.send(new Msg(id, null, Msg.Type.TicketRemoveACK, id + "," + ticket_id));
+                    appendTextArea("Payment Finished");
+                    appendTextArea("Please remove your ticket :)");
                 }
                 break;
+            case "Remove ticket":
+                payMBox.send(new Msg(id, null, Msg.Type.TicketRemoveACK, id + "," + ticket_id));
+                appendTextArea("Ticket removed!");
+                appendTextArea("Please exit before exit time~");
+                break;
+
             default:
                 log.warning(id + ": unknown button: [" + btn.getText() + "]");
                 break;
