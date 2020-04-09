@@ -68,7 +68,7 @@ public class PayMachineEmulator extends PayMachineHandler {
         SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
         String timestr = sdf.format(nowT);
         parkedTime = fee != 0?(System.currentTimeMillis() - Long.parseLong(currentTicket[3])) / 1000:0;
-        PayMachineController.appendTextArea("You have parked " + Long.toString(parkedTime) + "h and you need to pay $" + fee + "  ($5/s)");
+        PayMachineController.appendTextArea("You have parked " + Long.toString(parkedTime) + "s and you need to pay $" + fee + "  ($5/s)");
         PayMachineController.updateTicket(currentTicket[1],currentTicket[2],timestr);
     }
     protected void ExitReceive(String mymsg){
@@ -86,6 +86,7 @@ public class PayMachineEmulator extends PayMachineHandler {
     protected void SendPaymentACK(String mymsg){
         String []tmp = mymsg.split(",");
         PayMachineController.appendTextArea("Thank you for payment!!!!");
+        PayMachineController.appendTextArea("Please remove your ticket :)");
         pcsCore.send(new Msg(id, mbox, Msg.Type.PaymentACK, tmp[1]));
     }
 
