@@ -51,8 +51,6 @@ public class PayMachineHandler extends AppThread {
         boolean quit = false;
         boolean flag = false;
         String []tmp = msg.getDetails().split(",");
-        if(!tmp[0].equals(id))
-            return quit;
         switch (msg.getType()) {
             case TicketRequest:
                 SendRequest(msg.getDetails());
