@@ -5,9 +5,21 @@ import AppKickstarter.misc.AppThread;
 import AppKickstarter.misc.MBox;
 import AppKickstarter.misc.Msg;
 
+/**
+ * @description Ticket Collector Class.
+ * @Author Chuanyang Zheng
+ */
 public class CollectorHandler extends AppThread {
     protected final MBox pcsCore;
     private CollectorStatus collectorStatus;
+
+    /**
+     *
+     * @param id:A String ID of the Collector. For example, CollecotrHandler
+     * @param appKickstarter: An appKickstarter
+     * @description CollectorHandler Constructor
+     * @Author Chuanyang Zheng
+     */
     public CollectorHandler(String id, AppKickstarter appKickstarter){
         super(id, appKickstarter);
         pcsCore = appKickstarter.getThread("PCSCore").getMBox();
@@ -16,8 +28,8 @@ public class CollectorHandler extends AppThread {
 
 
     /**
-     * Input: Nothing. Return:Nothing.
-     * run Part of handler. It deal with logic commannds
+     * @description A method used to receive and judge Msg type
+     * @Author Chuanyang Zheng
      */
     public void run() {
         Thread.currentThread().setName(id);
@@ -32,9 +44,13 @@ public class CollectorHandler extends AppThread {
         }
     }
 
-    //*Input:Msg msg*/
-    //**Return: boolean*/
-    //**Receive a msg and handle the logic*/
+
+    /**
+     * @param msg:a message received
+     * @return if message type is terminated, return false. Else, return true
+     * @description : A method used to process message.
+     * @Author Chuanyang Zheng
+     */
     public boolean processMsg(Msg msg){
         boolean quit = false;
 
@@ -52,6 +68,11 @@ public class CollectorHandler extends AppThread {
         return quit;
     }
 
+    /**
+     * @param msg:A msg received from processMsg(Msg msg) method
+     * @description Handle Collector Valid Request. First Check Collector Status. If Collector is available, send valid request to PCSCore
+     * @Author Chuanyang Zheng
+     */
     public void handleCollectorValidRequest(Msg msg){
         log.info(id + ": collector valid request received");
         CollectorStatus oldStatus=collectorStatus;
@@ -85,6 +106,11 @@ public class CollectorHandler extends AppThread {
     //** Input:Nothing*/
     //** Return:Nothing*/
     //A simple function. The ticket is valid. Therefore, we log received message.
+
+    /**
+     * @description The ticket is valid. Therefore, we log received message.
+     * @Author Chuanyang Zheng
+     */
     public void handleCollectorPositive(){
         log.info(id + ": collector receive positive validation");
         CollectorStatus oldStatus=collectorStatus;
@@ -106,6 +132,11 @@ public class CollectorHandler extends AppThread {
     //**Input:Nothing*/
     //**Return Nothing*/
     //PCS believe that the ticket is invalid. Therefore, in the method, ring alrams, ask staff to solve problem.
+
+    /**
+     * @description PCS believe that the ticket is invalid. Therefore, in the method, ring alrams, ask staff to solve problem
+     * @Author Chuanyang Zheng
+     */
     public void handleCollectorNegative(){
         log.info(id+": collector receive negative validation");
         CollectorStatus oldStatus=collectorStatus;
@@ -126,6 +157,11 @@ public class CollectorHandler extends AppThread {
     //**Input:No thing
     //**Return: Nothing
     //**After solve problem, we use the function to tell PCS Core.
+
+    /**
+     * @description After solve problem, we use the function to tell PCS Core.
+     * @Author Chuanyang Zheng
+     */
     public void handleCollctorSolveProblem(){
         log.info(id+": collector receive Problem-Solve Message");
         CollectorStatus oldStatus=collectorStatus;
@@ -147,24 +183,44 @@ public class CollectorHandler extends AppThread {
 
     }
 
+    /**
+     * @description Send Ring Alarm Signal To Collector Controller.
+     * @Author Chuanyang Zheng
+     */
     protected void sendStartAlarmSignal(){
         log.fine(id+" Ring Alarm!");
     }
 
+    /**
+     * @description Solve Problem, Send Stop Alarm Signal To Collector
+     * @Author Chuanyang Zheng
+     */
     protected void sendStopAlarmSignal(){
         log.fine(id+": Stop Alarm!");
     }
 
+    /**
+     * @description Handle Pool Request
+     * @Author Chuanyang Zheng
+     */
     protected final void handlePollReq() {
         log.info(id + ": poll request received.  Send poll request to hardware.");
         sendPollReq();
     } // handlePollReq
 
+    /**
+     * @description Send Pool Request
+     * @Author Chuanyang Zheng
+     */
     protected void sendPollReq() {
         // fixme: send gate poll request to hardware
         log.info(id + ": poll request received");
     } // sendPollReq
 
+    /**
+     * @description PCSCore Valid A true Ticket. CollectorHandler Sends Signal To Collector
+     * @Author Chuanyang Zheng
+     */
     protected void sendPositiveSignal(){
         log.info(id+": Ticket is Valid!");
     }
@@ -172,12 +228,20 @@ public class CollectorHandler extends AppThread {
 
     //------------------------------------------------------------
     // handlePollAck
+
+    /**
+     * @description handler Pool Acknowledgement
+     * @Author Chuanyang Zheng
+     */
     protected final void handlePollAck() {
         log.info(id + ": poll ack received.  Send poll ack to PCS Core.");
         pcsCore.send(new Msg(id, mbox, Msg.Type.PollAck, id + " is up!"));
     } // handlePollAck
 
-
+    /**
+     * @description Collector Status. Totally Three:CollectorAvailable,CollectorWaitValidation,CollectorWarning
+     * @Author Chuanyang Zheng
+     */
     private enum CollectorStatus {
         CollectorAvailable,
         CollectorWaitValidation,

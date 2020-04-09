@@ -51,6 +51,7 @@ public class MotionSensorHandler extends AppThread {
 //            case PollAck:	   handlePollAck();	     break;
             case MotionSensorDetect:
                 handleMotionSensorDetect(msg);
+                break;
             case Terminate:	   quit = true;		     break;
             default:
                 log.warning(id + ": unknown message type: [" + msg + "]");

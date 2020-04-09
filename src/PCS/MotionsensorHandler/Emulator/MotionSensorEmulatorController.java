@@ -34,6 +34,7 @@ public class MotionSensorEmulatorController {
         switch (btn.getText()) {
             case "Detect":
                 motionSensorBox.send(new Msg(id, null, Msg.Type.MotionSensorDetect, "Motion Sensor Detect"));
+                appendTextArea("Motion Sensor Detect");
                 break;
 
 //            case "Gate Open Reply":

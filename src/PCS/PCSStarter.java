@@ -82,7 +82,7 @@ public class PCSStarter extends AppKickstarter {
                 payMachineList.add(new PayMachineHandler("PayMachineHandler " + Integer.toString(i), this));
             for(int i=0;i<numOfFloor;i++){
                 motionSensorDetectUpList.add(new MotionSensorHandler("MotionSensorHandlerUp"+(i+1),this,(i+1),true));
-                motionSensorDetectDownList.add(new MotionSensorHandler("MotionSensorHandlerDown"+(i+1),this,(i+1),true));
+                motionSensorDetectDownList.add(new MotionSensorHandler("MotionSensorHandlerDown"+(i+1),this,(i+1),false));
             }
 
 

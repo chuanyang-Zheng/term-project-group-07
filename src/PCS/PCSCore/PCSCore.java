@@ -352,7 +352,7 @@ public class PCSCore extends AppThread {
             log.warning("initial in array is "+initial+". But Total Number is "+totalFloorNumber);
         }
         else {
-            availableParkingSpaces[initial]=availableParkingSpaces[initial]+1;
+            availableParkingSpaces[initial]=Math.min(availableParkingSpaces[initial]+1,Integer.parseInt(appKickstarter.getProperty("Vacancy.Level"+(initial+1))));
         }
 
         if(now<0){
@@ -362,7 +362,7 @@ public class PCSCore extends AppThread {
             log.warning("now in array is "+now+". But Total Number is "+totalFloorNumber);
         }
         else {
-            availableParkingSpaces[now]=availableParkingSpaces[now]-1;
+            availableParkingSpaces[now]=Math.max(availableParkingSpaces[now]-1,0);
         }
     }
     public void handleDisplayVacancyRequest(){

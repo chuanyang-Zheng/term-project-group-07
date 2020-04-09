@@ -83,7 +83,7 @@ public class PCSEmulatorStarter extends PCSStarter {
                 payMachineEmulatorList.add(new PayMachineEmulator("PayMachineHandler" + Integer.toString(i), pcsEmulatorStarter));
             for(int i=0;i<pcsEmulatorStarter.numOfFloor;i++){
                 motionSensorDetectUpList.add(new MotionSensorEmulator("MotionSensorHandlerUp"+(i+1),pcsEmulatorStarter,(i+1),true));
-                motionSensorDetectDownList.add(new MotionSensorEmulator("MotionSensorHandlerDown"+(i+1),pcsEmulatorStarter,(i+1),true));
+                motionSensorDetectDownList.add(new MotionSensorEmulator("MotionSensorHandlerDown"+(i+1),pcsEmulatorStarter,(i+1),false));
             }
 
             // start emulator GUIs
