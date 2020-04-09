@@ -296,13 +296,11 @@ public class PCSCore extends AppThread {
         return -1;
     }
 
-    public boolean validTicket(int ticketID) { // To Cheung Yeung: 这里直接用FindByID吧  因为根据ID找Ticket 在很多情况要用
+    public boolean validTicket(int ticketID) {
         log.info(id + " valid ticket " + ticketID);
-        for (int i = 0; i < ticketList.size(); i++) {
-            if (ticketList.get(i).getTicketID() == ticketID) {
-                return ticketList.get(i).valid(log, id);
-            }
-        }
+        int indexOfTicket = FindTicketByID(ticketID);
+        if(indexOfTicket > -1)
+                return ticketList.get(indexOfTicket).valid(log, id);
         log.warning(id + ": No Ticket With ID " + ticketID);
         return false;
     }
