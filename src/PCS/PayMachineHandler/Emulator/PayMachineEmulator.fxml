@@ -8,14 +8,15 @@
     <children>
         <AnchorPane prefHeight="30.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
             <children>
-                <Button mnemonicParsing="false" onAction="#buttonPressed" prefHeight="30.0" prefWidth="120.0" text="Insert the ticket" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="0.0"><font><Font size="12.0" /></font></Button>
-                <Button mnemonicParsing="false" onAction="#buttonPressed" prefHeight="30.0" prefWidth="120.0" text="Pay by Oct" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="0.0"><font><Font size="12.0" /></font></Button>
+                <Button mnemonicParsing="false" onAction="#buttonPressed" prefHeight="30.0" prefWidth="100.0" text="Insert ticket" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="0.0"><font><Font size="12.0" /></font></Button>
+                <Button mnemonicParsing="false" onAction="#buttonPressed" prefHeight="30.0" prefWidth="100.0" text="Pay by Oct" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="0.0"><font><Font size="12.0" /></font></Button>
+                <Button mnemonicParsing="false" onAction="#buttonPressed" prefHeight="30.0" prefWidth="100.0" text="Remove ticket" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="270.0" AnchorPane.topAnchor="0.0"><font><Font size="12.0" /></font></Button>
             </children>
         </AnchorPane>
 
         <AnchorPane prefHeight="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="60.0">
             <children>
-                <Label prefHeight="30.0" prefWidth="120.0" AnchorPane.leftAnchor="20.0"> Ticket ID: </Label> <Label prefHeight="30.0" prefWidth="120.0" AnchorPane.leftAnchor="100.0"> Your Fee: </Label> <Label fx:id = "Mylabel" prefHeight="30.0" prefWidth="120.0" AnchorPane.leftAnchor="180.0"> Enter Time: </Label><Label fx:id = "Mylabel" prefHeight="30.0" prefWidth="120.0" AnchorPane.leftAnchor="280.0"> Exit Time: </Label>
+                <Label prefHeight="30.0" prefWidth="120.0" AnchorPane.leftAnchor="20.0"> Ticket ID: </Label> <Label prefHeight="30.0" prefWidth="120.0" AnchorPane.leftAnchor="100.0"> Your Fee: </Label> <Label prefHeight="30.0" prefWidth="120.0" AnchorPane.leftAnchor="180.0"> Enter Time: </Label><Label prefHeight="30.0" prefWidth="120.0" AnchorPane.leftAnchor="280.0"> Exit Time: </Label>
                 <TextArea fx:id="TicketIDField" editable="false" layoutX="0" layoutY="20" prefHeight="42.0" prefWidth="51.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="20" AnchorPane.topAnchor="30.0" />
                 <TextArea fx:id="FeeField" editable="false" layoutX="0" layoutY="20" prefHeight="42.0" prefWidth="51.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="100" AnchorPane.topAnchor="30.0" />
                 <TextArea fx:id="EnterField" editable="false" layoutX="0" layoutY="20" prefHeight="42.0" prefWidth="80.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="180" AnchorPane.topAnchor="30.0" />
