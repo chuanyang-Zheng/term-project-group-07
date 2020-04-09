@@ -29,7 +29,6 @@ public class Ticket {
         long currentTime = System.currentTimeMillis();
         long time = currentTime-enterTime;//calculate the pay Fee time
         long currentSecond = time /1000 % 60;
-        System.out.println("Paymachine is " + payMachineID);
         parkingFee = payMachineID.equals("")? coefficient * currentSecond : 0;
         return parkingFee;
     }
