@@ -62,11 +62,8 @@ public class PayMachineController {
             case "Pay by Oct":
                 if(ticket_id == null || ticket_id.isEmpty())
                     new Alert(Alert.AlertType.ERROR, "Please insert first :)", new ButtonType[]{ButtonType.OK}).show();
-                else {
+                else
                     payMBox.send(new Msg(id, null, Msg.Type.PaymentACK, id + "," + ticket_id));
-                    appendTextArea("Payment Finished");
-                    appendTextArea("Please remove your ticket :)");
-                }
                 break;
             case "Remove ticket":
                 payMBox.send(new Msg(id, null, Msg.Type.TicketRemoveACK, id + "," + ticket_id));
