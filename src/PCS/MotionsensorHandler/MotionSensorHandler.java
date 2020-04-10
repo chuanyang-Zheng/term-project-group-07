@@ -38,6 +38,14 @@ public class MotionSensorHandler extends AppThread {
             quit = processMsg(msg);
         }
     }
+    /**
+     * A method used to process message.
+     *
+     * @param msg:a message received
+     * @return if message type is terminated, return false. Else, return true
+     *
+     * @author Chuanyang Zheng
+     */
 
     protected boolean processMsg(Msg msg) {
         boolean quit = false;
@@ -82,6 +90,10 @@ public class MotionSensorHandler extends AppThread {
                 log.warning(id+" is terminated. Please Check");
         }
     }
+    /**
+     * MotionSensor Status. Totally Two:running and terminated.
+     * @author YiJia Zhang
+     */
 
     private enum MotionSensorStatus {
         MotionSensorRunning,

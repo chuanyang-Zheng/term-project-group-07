@@ -1,27 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="76c37db4-d153-4079-b307-a865859fe863" name="Default Changelist" comment="dispatcher status">
-      <change beforePath="$PROJECT_DIR$/etc/PCS.PCSEmulatorStarter.log" beforeDir="false" afterPath="$PROJECT_DIR$/etc/PCS.PCSEmulatorStarter.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PCS/DispatcherHandler/Emulator/DispatcherEmulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/DispatcherHandler/Emulator/DispatcherEmulator.java" afterDir="false" />
+    <list default="true" id="76c37db4-d153-4079-b307-a865859fe863" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/CollectorHandler/CollectorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/CollectorHandler/CollectorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/CollectorHandler/Emulator/CollectorEmulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/CollectorHandler/Emulator/CollectorEmulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/CollectorHandler/Emulator/CollectorEmulatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/CollectorHandler/Emulator/CollectorEmulatorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/MotionSensorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/MotionSensorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/PCSCore/PCSCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/PCSCore/PCSCore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/PCSCore/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/PCSCore/Ticket.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,11 +37,11 @@
   <component name="ProjectId" id="1aC6neg5zXNZImSLCbnhWwdqaeW" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -156,7 +144,6 @@
       <workItem from="1586435483834" duration="20000" />
       <workItem from="1586439584054" duration="1943000" />
       <workItem from="1586488640072" duration="2857000" />
-      <workItem from="1586532880937" duration="5873000" />
     </task>
     <task id="LOCAL-00003" summary="Update Dispatcher Remove Ticket Response">
       <created>1586242645625</created>
@@ -284,30 +271,24 @@
       <option name="project" value="LOCAL" />
       <updated>1586441256951</updated>
     </task>
-    <task id="LOCAL-00021" summary="dispatcher status">
-      <created>1586543471920</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1586543471921</updated>
-    </task>
-    <option name="localTasksCounter" value="22" />
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Dispatcher can be roughly used now." />
@@ -325,8 +306,7 @@
     <MESSAGE value="Remove system.out.println" />
     <MESSAGE value="optimizing" />
     <MESSAGE value="Fix MotionSensor Bugs. Finish CollectorHandler JavaDoc" />
-    <MESSAGE value="dispatcher status" />
-    <option name="LAST_COMMIT_MESSAGE" value="dispatcher status" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix MotionSensor Bugs. Finish CollectorHandler JavaDoc" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="74" key="#Notifications" timestamp="1586441247943">
@@ -358,30 +338,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="501" y="143" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1586489702372" />
-    <state width="1358" height="206" key="GridCell.Tab.0.bottom" timestamp="1586543491134">
-      <screen x="0" y="23" width="1440" height="835" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1586491498578">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1398" height="207" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1586411787081" />
     <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586491498578" />
-    <state width="1358" height="206" key="GridCell.Tab.0.bottom/0.23.1440.835@0.23.1440.835" timestamp="1586543491134" />
-    <state width="1358" height="206" key="GridCell.Tab.0.center" timestamp="1586543491132">
-      <screen x="0" y="23" width="1440" height="835" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1586491498578">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1398" height="207" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1586411787080" />
     <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586491498578" />
-    <state width="1358" height="206" key="GridCell.Tab.0.center/0.23.1440.835@0.23.1440.835" timestamp="1586543491132" />
-    <state width="1358" height="206" key="GridCell.Tab.0.left" timestamp="1586543491132">
-      <screen x="0" y="23" width="1440" height="835" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1586491498578">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1398" height="207" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1586411787079" />
     <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586491498578" />
-    <state width="1358" height="206" key="GridCell.Tab.0.left/0.23.1440.835@0.23.1440.835" timestamp="1586543491132" />
-    <state width="1358" height="206" key="GridCell.Tab.0.right" timestamp="1586543491133">
-      <screen x="0" y="23" width="1440" height="835" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1586491498578">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1398" height="207" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1586411787080" />
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586491498578" />
-    <state width="1358" height="206" key="GridCell.Tab.0.right/0.23.1440.835@0.23.1440.835" timestamp="1586543491133" />
     <state x="349" y="155" key="IDE.errors.dialog" timestamp="1586327295169">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -412,15 +388,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1586349754859" />
-    <state x="544" y="115" width="588" height="729" key="find.popup" timestamp="1586539415702">
-      <screen x="0" y="23" width="1440" height="835" />
-    </state>
-    <state x="544" y="115" width="588" height="729" key="find.popup/0.23.1440.835@0.23.1440.835" timestamp="1586539415702" />
-    <state x="419" y="240" key="git4idea.merge.GitPullDialog" timestamp="1586538423446">
-      <screen x="0" y="23" width="1440" height="836" />
+    <state x="447" y="214" key="git4idea.merge.GitPullDialog" timestamp="1586441480844">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="447" y="214" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1586441480844" />
-    <state x="419" y="240" key="git4idea.merge.GitPullDialog/0.23.1440.836@0.23.1440.836" timestamp="1586538423446" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1586491373223">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
