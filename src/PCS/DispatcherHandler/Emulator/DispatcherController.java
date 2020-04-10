@@ -43,6 +43,7 @@ public class DispatcherController {
 
         switch (btn.getText()) {
             case "Print a ticket":
+
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Reminder");
                 alert.setHeaderText("Pick up your ticket please.");
@@ -53,7 +54,12 @@ public class DispatcherController {
                 dispatcherMBox.send(new Msg(id, null, Msg.Type.AddTicket, id ));
                 //dispatcherMBox.send(new Msg(id, null, Msg.Type.ReceiveID, id ));
                 break;
+            case "Remove ticket":
 
+
+                dispatcherMBox.send(new Msg(id, null, Msg.Type.RemoveTicket, id ));
+                //dispatcherMBox.send(new Msg(id, null, Msg.Type.ReceiveID, id ));
+                break;
             default:
                 log.warning(id + ": unknown button: [" + btn.getText() + "]");
                 break;

@@ -4,6 +4,7 @@ import AppKickstarter.AppKickstarter;
 import AppKickstarter.misc.AppThread;
 import AppKickstarter.misc.MBox;
 import AppKickstarter.misc.Msg;
+import PCS.CollectorHandler.CollectorHandler;
 import PCS.DispatcherHandler.Emulator.DispatcherEmulator;
 import PCS.DispatcherHandler.DispatcherHandler;
 
@@ -12,15 +13,15 @@ import PCS.DispatcherHandler.DispatcherHandler;
 // DispatcherHandler
 public class DispatcherHandler extends AppThread {
     protected final MBox pcsCore;
-    private DispatcherHandler.DispatcherStatus PMS;
-    private DispatcherEmulator PayEmu;
-    protected float TicketFee;
+    private DispatcherStatus dispatcherStatus;
+
 
     //------------------------------------------------------------
     // Pay Machine Handler Constructor
     public DispatcherHandler(String id,AppKickstarter pcss) {
         super(id, pcss);
         pcsCore = appKickstarter.getThread("PCSCore").getMBox();
+        dispatcherStatus=DispatcherStatus.idle;
     } // Dispatcher Handler Constructor
 
 
@@ -48,10 +49,21 @@ public class DispatcherHandler extends AppThread {
     // processMsg
     protected boolean processMsg(Msg msg) {
         boolean quit = false;
+        DispatcherStatus oldStatus=dispatcherStatus;
         switch (msg.getType()) {
-            case AddTicket:  SendAddTicket(msg.getDetails());  break;
+            case AddTicket:
+                SendAddTicket(msg.getDetails());
+                dispatcherStatus=DispatcherStatus.waitForRemoval;
+                break;
 
-            case ReceiveTicketID: ReceiveTicketID(msg.getDetails());break;
+            case ReceiveTicketID:
+                ReceiveTicketID(msg.getDetails());
+                break;
+
+            case RemoveTicket:
+                HandleRemoveTicket(msg.getDetails());
+                dispatcherStatus=DispatcherStatus.idle;
+                break;
 
             case Terminate:	     quit = true;break;
         }
@@ -67,14 +79,16 @@ public class DispatcherHandler extends AppThread {
     protected void ReceiveTicketID(String mymsg){
         log.info("Ticket ID received");
     }
+    protected void HandleRemoveTicket(String mymsg){
+        log.info("Ticket removed");
+    }
+
 
 
     //------------------------------------------------------------
     // PM Status
     private enum DispatcherStatus {
-        DispatcherOpened,
-        DispatcherClosed,
-        DispatcherOpening,
-        DispatcherClosing,
+        idle,
+        waitForRemoval
     }
 } // DispatcherHandler

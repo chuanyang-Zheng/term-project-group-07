@@ -37,9 +37,7 @@ public class VacancyHandler extends AppThread {
 
         switch (msg.getType()) {
             case VacancyDisUpdateRequest:  handleVacancyDisUpdateRequest(msg);  break;
-//            case VancancyDisUpdateReply: handleVacancyDisUpdateReply(msg); break;
-//            case Poll:		   handlePollReq();	     break;
-//            case PollAck:	   handlePollAck();	     break;
+
             case Terminate:	   quit = true;		     break;
             default:
                 log.warning(id + ": unknown message type: [" + msg + "]");
@@ -52,9 +50,9 @@ public class VacancyHandler extends AppThread {
         //check Receive String Is correct or not.
         switch (vacancyDisStatus){
             case VacancyDisRunning:
-                log.info(id+": Vacancy is running. Show Updated Available Parking Spaces");
-                String[] spliInformation=msg.getDetails().split("\\s+");
-                sendVacancyDisUpdateSingal();
+                log.info(id+": Vacancy display is running. Show Updated Available Parking Spaces");
+                //String[] spliInformation=msg.getDetails().split("\\s+");
+                sendVacancyDisUpdateSignal();
                 break;
             default:
                 log.warning(id+" unknow vacancy display status ["+vacancyDisStatus+"]");
@@ -63,7 +61,7 @@ public class VacancyHandler extends AppThread {
 
 
 
-    public void sendVacancyDisUpdateSingal(){
+    public void sendVacancyDisUpdateSignal(){
 
         // fixme: send Vacancy Update signal to hardware
         log.info(id + ": sending vacancy update signal to hardware.");
