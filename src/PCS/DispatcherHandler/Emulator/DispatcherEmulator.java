@@ -85,6 +85,7 @@ public class DispatcherEmulator extends DispatcherHandler {
 
 
         pcsCore.send(new Msg(id,mbox,Msg.Type.RemoveTicket,"Remove Ticket Now"));
+        DispatcherController.appendTextArea("Ticket removed.\nPlease take care of your ticket.");
 
     }
 
