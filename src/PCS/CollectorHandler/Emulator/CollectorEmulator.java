@@ -11,32 +11,31 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
 
+/**
+ * Collector Emulator Combine by Collector Handler and Collector Controller
+ * This class is mainly combined by Collector Handler and Collector Controller. It is a subclass of Collector Handler.
+ * @author Chuanyang Zheng
+ */
 public class CollectorEmulator extends CollectorHandler {
     private Stage myStage;
     private CollectorEmulatorController collectorEmulatorController;
     private final PCSStarter pcsStarter;
     private final String id;
-    private final int gateOpenTime;
-    private final int gateCloseTime;
-    private final int GateOpenTimerID = 1;
-    private final int GateCloseTimerID = 2;
-    private boolean autoOpen;
-    private boolean autoClose;
-    private boolean autoPoll;
 
     public CollectorEmulator(String id, PCSStarter pcsStarter){
         super(id, pcsStarter);
         this.pcsStarter = pcsStarter;
         this.id = id + "Emulator";
-        this.gateOpenTime = Integer.parseInt(this.pcsStarter.getProperty("Gate.GateOpenTime"));
-        this.gateCloseTime = Integer.parseInt(this.pcsStarter.getProperty("Gate.GateCloseTime"));
-        this.autoOpen = true;
-        this.autoClose = true;
-        this.autoPoll = true;
     }
 
     //------------------------------------------------------------
     // start
+
+    /**
+     * Start A GUI
+     * The method starts a GUI that is interactive with users
+     * @author Chuanyang Zheng
+     */
     public void start() throws Exception {
         Parent root;
         myStage = new Stage();
@@ -57,46 +56,74 @@ public class CollectorEmulator extends CollectorHandler {
         myStage.show();
     } // CollectorEmulator
 
-    @Override
+
+
+    /**
+     * Send Alarm signal To Collector.
+     * Add Alarm Information in console and Controller
+     * @author Chuanyang Zheng
+     */
     protected void sendStartAlarmSignal() {
         logWarning("The Ticket Is Wrong. Ring Alarm!");
     }
 
-    @Override
+
+    /**
+     * Send Alarm signal To Collector.
+     * Add Stop Alarm Information in console and Controller
+     * @author Chuanyang Zheng
+     */
     protected void sendStopAlarmSignal() {
         logFine("Already Solve Problem. Stop Alarm!");
     }
 
+    /**
+     * Send "Ticket is Positive" signal To Collector.
+     * Add "Ticket is Positive" Information in console and Controller
+     * @author Chuanyang Zheng
+     */
     protected void sendPositiveSignal(){
         logFine("The Ticket Is Valid");
     }
 
-    //------------------------------------------------------------
-    // logFine
+    /**
+     * Log Fine Type Information and Add it to Controller
+     * @param logMsg:Log Msg
+     * @author Chuanyang Zheng
+     */
     private final void logFine(String logMsg) {
         collectorEmulatorController.appendTextArea("[FINE]: " + logMsg);
         log.fine(id + ": " + logMsg);
     } // logFine
 
 
-    //------------------------------------------------------------
-    // logInfo
+    /**
+     * Log Info Type Information and Add it to Controller
+     * @param logMsg:Log Msg
+     * @author Chuanyang Zheng
+     */
     private final void logInfo(String logMsg) {
         collectorEmulatorController.appendTextArea("[INFO]: " + logMsg);
         log.info(id + ": " + logMsg);
     } // logInfo
 
 
-    //------------------------------------------------------------
-    // logWarning
+    /**
+     * Log Warning Type Information and Add it to Controller
+     * @param logMsg:Log Msg
+     * @author Chuanyang Zheng
+     */
     private final void logWarning(String logMsg) {
         collectorEmulatorController.appendTextArea("[WARNING]: " + logMsg);
         log.warning(id + ": " + logMsg);
     } // logWarning
 
 
-    //------------------------------------------------------------
-    // logSevere
+    /**
+     * Log Severe Type Information and Add it to Controller
+     * @param logMsg:Log Msg
+     * @author Chuanyang Zheng
+     */
     private final void logSevere(String logMsg) {
         collectorEmulatorController.appendTextArea("[SEVERE]: " + logMsg);
         log.severe(id + ": " + logMsg);

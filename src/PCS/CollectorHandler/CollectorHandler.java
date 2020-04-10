@@ -6,19 +6,21 @@ import AppKickstarter.misc.MBox;
 import AppKickstarter.misc.Msg;
 
 /**
- * @description Ticket Collector Class.
- * @Author Chuanyang Zheng
+ * Ticket Collector Handler Class.
+ * The class will handle logic message from PCSCore, and it will also receive process logic commands from Collector
+ * @author Chuanyang Zheng
  */
 public class CollectorHandler extends AppThread {
     protected final MBox pcsCore;
     private CollectorStatus collectorStatus;
 
     /**
+     * CollectorHandler Constructor
      *
      * @param id:A String ID of the Collector. For example, CollecotrHandler
      * @param appKickstarter: An appKickstarter
-     * @description CollectorHandler Constructor
-     * @Author Chuanyang Zheng
+     *
+     * @author Chuanyang Zheng
      */
     public CollectorHandler(String id, AppKickstarter appKickstarter){
         super(id, appKickstarter);
@@ -28,8 +30,8 @@ public class CollectorHandler extends AppThread {
 
 
     /**
-     * @description A method used to receive and judge Msg type
-     * @Author Chuanyang Zheng
+     * A method used to receive and judge Msg type
+     * @author Chuanyang Zheng
      */
     public void run() {
         Thread.currentThread().setName(id);
@@ -46,10 +48,12 @@ public class CollectorHandler extends AppThread {
 
 
     /**
+     * A method used to process message.
+     *
      * @param msg:a message received
      * @return if message type is terminated, return false. Else, return true
-     * @description : A method used to process message.
-     * @Author Chuanyang Zheng
+     *
+     * @author Chuanyang Zheng
      */
     public boolean processMsg(Msg msg){
         boolean quit = false;
@@ -69,9 +73,11 @@ public class CollectorHandler extends AppThread {
     }
 
     /**
+     * Handle Collector Valid Request. First Check Collector Status. If Collector is available, send valid request to PCSCore
+     *
      * @param msg:A msg received from processMsg(Msg msg) method
-     * @description Handle Collector Valid Request. First Check Collector Status. If Collector is available, send valid request to PCSCore
-     * @Author Chuanyang Zheng
+     *
+     * @author Chuanyang Zheng
      */
     public void handleCollectorValidRequest(Msg msg){
         log.info(id + ": collector valid request received");
@@ -108,8 +114,9 @@ public class CollectorHandler extends AppThread {
     //A simple function. The ticket is valid. Therefore, we log received message.
 
     /**
-     * @description The ticket is valid. Therefore, we log received message.
-     * @Author Chuanyang Zheng
+     *  PCSCore Tell Handler That The ticket is valid.
+     *  Therefore, we log received message. For append the mssage to Controller area, we will finish it in ConllectorEmulator Class.
+     * @author Chuanyang Zheng
      */
     public void handleCollectorPositive(){
         log.info(id + ": collector receive positive validation");
@@ -129,13 +136,11 @@ public class CollectorHandler extends AppThread {
         log.fine(id+": Collector Status from "+oldStatus+"-> "+collectorStatus);
     }
 
-    //**Input:Nothing*/
-    //**Return Nothing*/
-    //PCS believe that the ticket is invalid. Therefore, in the method, ring alrams, ask staff to solve problem.
+
 
     /**
-     * @description PCS believe that the ticket is invalid. Therefore, in the method, ring alrams, ask staff to solve problem
-     * @Author Chuanyang Zheng
+     *  PCS believe that the ticket is invalid. Therefore, in the method, ring alrams, ask staff to solve problem
+     * @author Chuanyang Zheng
      */
     public void handleCollectorNegative(){
         log.info(id+": collector receive negative validation");
@@ -159,8 +164,9 @@ public class CollectorHandler extends AppThread {
     //**After solve problem, we use the function to tell PCS Core.
 
     /**
-     * @description After solve problem, we use the function to tell PCS Core.
-     * @Author Chuanyang Zheng
+     * After solve problem, we use the function to tell PCS Core.
+     *
+     * @author Chuanyang Zheng
      */
     public void handleCollctorSolveProblem(){
         log.info(id+": collector receive Problem-Solve Message");
@@ -184,24 +190,24 @@ public class CollectorHandler extends AppThread {
     }
 
     /**
-     * @description Send Ring Alarm Signal To Collector Controller.
-     * @Author Chuanyang Zheng
+     * Send Ring Alarm Signal To Collector Controller.
+     * @author Chuanyang Zheng
      */
     protected void sendStartAlarmSignal(){
         log.fine(id+" Ring Alarm!");
     }
 
     /**
-     * @description Solve Problem, Send Stop Alarm Signal To Collector
-     * @Author Chuanyang Zheng
+     * Solve Problem, Send Stop Alarm Signal To Collector
+     * @author Chuanyang Zheng
      */
     protected void sendStopAlarmSignal(){
         log.fine(id+": Stop Alarm!");
     }
 
     /**
-     * @description Handle Pool Request
-     * @Author Chuanyang Zheng
+     * Handle Pool Request
+     * @author Chuanyang Zheng
      */
     protected final void handlePollReq() {
         log.info(id + ": poll request received.  Send poll request to hardware.");
@@ -209,8 +215,8 @@ public class CollectorHandler extends AppThread {
     } // handlePollReq
 
     /**
-     * @description Send Pool Request
-     * @Author Chuanyang Zheng
+     * Send Pool Request
+     * @author Chuanyang Zheng
      */
     protected void sendPollReq() {
         // fixme: send gate poll request to hardware
@@ -218,8 +224,8 @@ public class CollectorHandler extends AppThread {
     } // sendPollReq
 
     /**
-     * @description PCSCore Valid A true Ticket. CollectorHandler Sends Signal To Collector
-     * @Author Chuanyang Zheng
+     * PCSCore Valid A true Ticket. CollectorHandler Sends Signal To Collector
+     * @author Chuanyang Zheng
      */
     protected void sendPositiveSignal(){
         log.info(id+": Ticket is Valid!");
@@ -230,8 +236,8 @@ public class CollectorHandler extends AppThread {
     // handlePollAck
 
     /**
-     * @description handler Pool Acknowledgement
-     * @Author Chuanyang Zheng
+     * handler Pool Acknowledgement
+     * @author Chuanyang Zheng
      */
     protected final void handlePollAck() {
         log.info(id + ": poll ack received.  Send poll ack to PCS Core.");
@@ -239,8 +245,8 @@ public class CollectorHandler extends AppThread {
     } // handlePollAck
 
     /**
-     * @description Collector Status. Totally Three:CollectorAvailable,CollectorWaitValidation,CollectorWarning
-     * @Author Chuanyang Zheng
+     * Collector Status. Totally Three:CollectorAvailable,CollectorWaitValidation,CollectorWarning
+     * @author Chuanyang Zheng
      */
     private enum CollectorStatus {
         CollectorAvailable,

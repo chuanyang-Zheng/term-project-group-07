@@ -13,6 +13,10 @@ import javafx.stage.Stage;
 
 import java.util.logging.Logger;
 
+/**
+ * Collector Controller is an Emulator of Real Collector Hardware
+ * @author Chuanyang Zheng
+ */
 public class CollectorEmulatorController {
     private String id;
     private AppKickstarter appKickstarter;
@@ -24,6 +28,14 @@ public class CollectorEmulatorController {
 
     private int lineNo = 0;
 
+    /**
+     * Initialize Collector Controller GUI
+     * @param id:Handler ID
+     * @param appKickstarter; AppKickstarter in PCSEmulator Starter
+     * @param log: Logger in Collector Emulator
+     * @param collectorEmulator:CollectorEmulator
+     * @author Chuanyang Zheng
+     */
     public void initialize(String id, AppKickstarter appKickstarter, Logger log, CollectorEmulator collectorEmulator) {
         this.id = id;
         this.appKickstarter = appKickstarter;
@@ -32,6 +44,11 @@ public class CollectorEmulatorController {
         this.collectorMBox = appKickstarter.getThread("CollectorHandler").getMBox();
     } // initialize
 
+    /**
+     * Button Information in CollectorEmulator.fxm
+     * @param actionEvent:Button Event
+     * @author Chuanyang Zheng
+     */
     public void buttonPressed(ActionEvent actionEvent) {
         Button btn = (Button) actionEvent.getSource();
 
@@ -74,6 +91,12 @@ public class CollectorEmulatorController {
 
     //------------------------------------------------------------
     // appendTextArea
+
+    /**
+     * Append Information to Controller
+     * @param status: Information
+     * @author Chuanyang Zheng
+     */
     public void appendTextArea(String status) {
         Platform.runLater(() -> collectorTextArea.appendText(String.format("[%04d] %s\n", ++lineNo, status)));
     } // appendTextArea

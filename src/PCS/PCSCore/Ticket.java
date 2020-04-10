@@ -91,11 +91,13 @@ public class Ticket {
     }
 
     /**
+     *set Ticket Information. It will be used after user ging money and pay Machine send the message to PCSCore
      *
      * @param exitTimeCoefficient:used to calculate exitTime=currentTime+exitTimeCoefficient
      * @param payMachineID:set payMachine
      * @param parkingFee:calculate Parking fee
-     * @description set Ticket Information. It will be used after user ging money and pay Machine send the message to PCSCore
+     *
+     * @author Chuanyang Zheng
      */
     public void setExitInformation(long exitTimeCoefficient,String payMachineID, float parkingFee){
         this.exitTime=System.currentTimeMillis()+exitTimeCoefficient;

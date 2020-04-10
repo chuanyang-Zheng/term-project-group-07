@@ -21,10 +21,10 @@ public class MotionSensorHandler extends AppThread {
     } // MotionSensorHandler
 
     /**
-     * @param : Nothing.
-     * Return:Nothing.
-     * @Author Yijia Zhang
-     * @description run Part of handler. It deal with logic commannds
+     * run Part of handler. It deal with logic commands
+     *
+     * @author Yijia Zhang
+     *
      */
     public void run() {
         Thread.currentThread().setName(id);
@@ -60,7 +60,10 @@ public class MotionSensorHandler extends AppThread {
     } // processMsg
 
     /**
-     * @param
+     * When motion sensors detect motion, send signal to handler. And the handler will use the method to deal with detection logic
+     *
+     * @param msg:Msg Received From Controller
+     * @author Chuanyang Zheng
      */
     public void handleMotionSensorDetect(Msg msg){
         log.info(id + ": motion sensor detect message received");

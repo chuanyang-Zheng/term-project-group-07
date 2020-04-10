@@ -287,6 +287,10 @@ public class PCSCore extends AppThread {
 
     /**
      * A Function to search a ticket by TicketID
+     *
+     * @param TargetID:The Ticket ID
+     * @return If one ticket has the TargetID, return the position index of the Ticket in the TicketList. Else, return -1
+     * @author Chuanyang Zheng
      */
     public int FindTicketByID(int TargetID) {
         for (int i = 0; i < ticketList.size(); ++i)
