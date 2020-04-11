@@ -179,7 +179,15 @@ public class PCSCore extends AppThread {
         log.fine(id + ":Payment Updated");
     }
 
-
+    /**
+     * A Function to send the TicketFee
+     *
+     * @param msg:The received message
+     * Find the specified Ticket
+     * Calculated the current Fee of that ticket
+     * Send the Fee to the Paymachine
+     * @author Pan Feng
+     */
     public void SendTicketFee(Msg msg) {
         String[] tmp = msg.getDetails().split(",");
         try {
@@ -198,6 +206,13 @@ public class PCSCore extends AppThread {
             log.warning(id+": Calculate Fee Fail");
         }
     }
+    /**
+     * A Function to send the EXit Information
+     *
+     * @param msg:The received message
+     * Find the specified Ticket and send the exitinfo to paymachine handler
+     * @author Pan Feng
+     */
     public void SendExitInfo(Msg msg) {
         String[] tmp = msg.getDetails().split(",");
         try {
@@ -290,7 +305,7 @@ public class PCSCore extends AppThread {
      *
      * @param TargetID:The Ticket ID
      * @return If one ticket has the TargetID, return the position index of the Ticket in the TicketList. Else, return -1
-     * @author Chuanyang Zheng
+     * @author Pan Feng
      */
     public int FindTicketByID(int TargetID) {
         for (int i = 0; i < ticketList.size(); ++i)
