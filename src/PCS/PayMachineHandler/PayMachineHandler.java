@@ -10,13 +10,13 @@ import javafx.scene.control.Alert;
 
 
 //======================================================================
-// Pay Machine Handler
+// PayMachineHandler
 public class PayMachineHandler extends AppThread {
     protected final MBox pcsCore;
     private PayMachineStatus PMS;
 
     //------------------------------------------------------------
-    // Pay Machine Handler Constructor
+    // PayMachineHandler Constructor
     public PayMachineHandler(String id,AppKickstarter pcss) {
         super(id, pcss);
         pcsCore = appKickstarter.getThread("PCSCore").getMBox();
@@ -43,10 +43,10 @@ public class PayMachineHandler extends AppThread {
         log.info(id + ": terminating...");
     } // run
 
-
+    //------------------------------------------------------------
+    // processMsg
     /**
      * A Function to process the recieved Message
-     *
      * @param msg:The received message
      * Switch the message type to different cases
      * Handle it case by case
@@ -103,9 +103,10 @@ public class PayMachineHandler extends AppThread {
     }
     // processMsg
 
+    //------------------------------------------------------------
+    // SendRequest
     /**
-     * A Function to process the recieved Message
-     *
+     * A Function to process the received Message
      * @param mymsg:The received message
      * Send the request to PCSCore for fee.
      * @author Pan Feng
@@ -113,8 +114,13 @@ public class PayMachineHandler extends AppThread {
     protected void SendRequest(String mymsg){
         pcsCore.send(new Msg(id, mbox, Msg.Type.TicketRequest, mymsg));
     }
+    //SendRequest
+
+
+    //------------------------------------------------------------
+    // SendExitInfoRequest
     /**
-     * A Function to process the recieved Message
+     * A Function to send ExitInfo request
      *
      * @param mymsg:The received message
      * Send the request to PCSCore for ExitInfo.
@@ -123,6 +129,10 @@ public class PayMachineHandler extends AppThread {
     protected void SendExitInfoRequest(String mymsg){
         pcsCore.send(new Msg(id, mbox, Msg.Type.TicketExitInfoRequest, mymsg));
     }
+    //SendExitInfoRequest
+
+    //------------------------------------------------------------
+    // RemovalFinished
     /**
      * A Function to display reminder
      * Display the Ticket is Removed
@@ -131,6 +141,10 @@ public class PayMachineHandler extends AppThread {
     protected void RemovalFinished(){
         log.info(id + "Ticket Removed");
     }
+    //RemovalFinished
+
+    //------------------------------------------------------------
+    // FeeReceive
     /**
      * A Function to handle the Fee message
      *  Display the Fee is received
@@ -139,20 +153,34 @@ public class PayMachineHandler extends AppThread {
     protected void FeeReceive(String mymsg){
         String []str = mymsg.split(",");
     }
+    //FeeReceive
+
+    //------------------------------------------------------------
+    // ExitReceive
     /**
-     * A Function to handle the Fee message
-     *  Display the Fee is received
+     * A Function to handle the Exit Info
+     *  Display the Exit time is received
      * @author Pan Feng
      */
     protected void ExitReceive(String mymsg){
         log.info("Exit INfo received");
     }
-    //------------------------
-    // Send Payment ACK
+    //ExitReceive
+
+    //------------------------------------------------------------
+    // SendPaymentACK
+    /**
+     * A Function to Display the PayMachine Status case by case
+     * @author Pan Feng
+     */
     protected void SendPaymentACK(String mymsg){
         log.fine(id+ ":ticket"+ mymsg + "Paid already.");
     }
-    // Send Payment ACK
+    // SendPaymentACK
+
+
+    //------------------------------------------------------------
+    // handleStatus
     /**
      * A Function to Display the PayMachine Status case by case
      * @author Pan Feng
@@ -183,18 +211,18 @@ public class PayMachineHandler extends AppThread {
         if (oldStatus != PMS) {
             log.fine(id + ": gate status change: " + oldStatus + " --> " + PMS);
         }
-    } // handleGateOpenRequest
+    } // handleStatus
 
 
 
 
     //------------------------------------------------------------
-    // PM Status
+    // PayMachineStatus
     private enum PayMachineStatus {
         idle,
         WaitPaymentReply,
         WaitDriver,
         WaitExitInfo,
         WaitRemoval
-    }
-} // Pay Machine Handler
+    }// PayMachineStatus
+} // PayMachineHandler

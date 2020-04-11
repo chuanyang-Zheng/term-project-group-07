@@ -15,7 +15,7 @@ import javax.swing.*;
 
 
 //======================================================================
-// GateEmulatorController
+// PayMachineController
 public class PayMachineController {
     private String id;
     private AppKickstarter appKickstarter;
@@ -41,7 +41,8 @@ public class PayMachineController {
     } // initialize
 
 
-
+    //------------------------------------------------------------
+    // buttonPressed
     /**
      *  Controller to handle whether there is a button pressed.
      *  @param actionEvent actionEvent received from panel
@@ -86,6 +87,8 @@ public class PayMachineController {
     public void appendTextArea(String status) {
         Platform.runLater(() -> gateTextArea.appendText(String.format("[%04d] %s\n", ++lineNo, status)));
     } // appendTextArea
+    //------------------------------------------------------------
+    // updateTicket
     /**
      * Function to update the Ticket Info in the upper textArea()
      *  @param tmpid the Current TicketID
@@ -104,5 +107,5 @@ public class PayMachineController {
             EnterField.setText(ticket_time);
             ExitField.setText("");
         }
-    }
-} // GateEmulatorController
+    }//updateTicket
+} // PayMachineController
