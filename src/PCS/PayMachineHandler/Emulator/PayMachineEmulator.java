@@ -69,15 +69,15 @@ public class PayMachineEmulator extends PayMachineHandler {
      * @author Pan Feng
      */
     protected void FeeReceive(String mymsg){
-        Long parkedTime = 0L;
-        String []currentTicket = mymsg.split(",");
-        float fee = Float.parseFloat(currentTicket[2]);
-        Date nowT = new Date(Long.parseLong(currentTicket[3]));
-        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
-        String timestr = sdf.format(nowT);
-        parkedTime = fee != 0?(System.currentTimeMillis() - Long.parseLong(currentTicket[3])) / 1000:0;
+        Long parkedTime = 0L; // initialization
+        String []currentTicket = mymsg.split(","); // proccess the protocal;
+        float fee = Float.parseFloat(currentTicket[2]); // get the fee from message
+        Date nowT = new Date(Long.parseLong(currentTicket[3])); // get the time from message
+        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss"); // set the time format
+        String timestr = sdf.format(nowT); // set the time format
+        parkedTime = fee != 0?(System.currentTimeMillis() - Long.parseLong(currentTicket[3])) / 1000:0; //is the payment is done ,no parking time,otherwise calculate the parking time
         PayMachineController.appendTextArea("You have parked " + Long.toString(parkedTime) + "s and you need to pay $" + fee + "  ($5/s)");
-        PayMachineController.updateTicket(currentTicket[1],currentTicket[2],timestr);
+        PayMachineController.updateTicket(currentTicket[1],currentTicket[2],timestr); // update the display of upper textArea
     }// FeeReceive
 
     //------------------------------------------------------------
@@ -89,16 +89,16 @@ public class PayMachineEmulator extends PayMachineHandler {
      * @author Pan Feng
      */
     protected void ExitReceive(String mymsg){
-        String []currentTicket = mymsg.split(",");
-        String ticketid = PayMachineController.TicketIDField.getText();
-        String PaidFee = PayMachineController.FeeField.getText();
-        Date nowT = new Date(Long.parseLong(currentTicket[3]));
+        String []currentTicket = mymsg.split(","); // process the protocal message
+        String ticketid = PayMachineController.TicketIDField.getText(); // get the ticket ID
+        String PaidFee = PayMachineController.FeeField.getText();// get the Fee
+        Date nowT = new Date(Long.parseLong(currentTicket[3])); // get the Exit time
         SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
-        String timestr = sdf.format(nowT);
+        String timestr = sdf.format(nowT); // Date format
         PayMachineController.appendTextArea("Ticket ID: " + ticketid);
         PayMachineController.appendTextArea("Paid: " + PaidFee);
-        PayMachineController.appendTextArea("Please exit before: " + timestr);
-        PayMachineController.updateTicket(ticketid,"0",timestr);
+        PayMachineController.appendTextArea("Please exit before: " + timestr); // Display in textBox
+        PayMachineController.updateTicket(ticketid,"0",timestr); // Update the TextArea
     }// ExitReceive
 
     //------------------------------------------------------------
@@ -112,8 +112,8 @@ public class PayMachineEmulator extends PayMachineHandler {
     protected void SendPaymentACK(String mymsg){
         String []tmp = mymsg.split(",");
         PayMachineController.appendTextArea("Thank you for payment!!!!");
-        PayMachineController.appendTextArea("Please remove your ticket :)");
-        pcsCore.send(new Msg(id, mbox, Msg.Type.PaymentACK, tmp[1]));
+        PayMachineController.appendTextArea("Please remove your ticket :)"); // Display the reminder in TextBox
+        pcsCore.send(new Msg(id, mbox, Msg.Type.PaymentACK, tmp[1])); // Send the Payment ACK to PCSCore
     }//SendPaymentACK
 
     //------------------------------------------------------------
@@ -126,7 +126,7 @@ public class PayMachineEmulator extends PayMachineHandler {
      */
     protected void RemovalFinished(){
         PayMachineController.appendTextArea("Ticket removed!");
-        PayMachineController.appendTextArea("Please exit before exit time~");
+        PayMachineController.appendTextArea("Please exit before exit time~"); // Display the reminder in TextBox
     }//RemovalFinished
 
 
