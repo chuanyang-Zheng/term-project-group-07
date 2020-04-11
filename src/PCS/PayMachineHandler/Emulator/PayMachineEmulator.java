@@ -89,6 +89,10 @@ public class PayMachineEmulator extends PayMachineHandler {
         PayMachineController.appendTextArea("Please remove your ticket :)");
         pcsCore.send(new Msg(id, mbox, Msg.Type.PaymentACK, tmp[1]));
     }
+    protected void RemovalFinished(){
+        PayMachineController.appendTextArea("Ticket removed!");
+        PayMachineController.appendTextArea("Please exit before exit time~");
+    }
 
 
 } //  PayMachineEmulator

@@ -67,8 +67,6 @@ public class PayMachineController {
                 break;
             case "Remove ticket":
                 payMBox.send(new Msg(id, null, Msg.Type.TicketRemoveACK, id + "," + ticket_id));
-                appendTextArea("Ticket removed!");
-                appendTextArea("Please exit before exit time~");
                 break;
 
             default:

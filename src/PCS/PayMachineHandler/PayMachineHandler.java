@@ -46,8 +46,14 @@ public class PayMachineHandler extends AppThread {
     } // run
 
 
-    //------------------------------------------------------------
-    // processMsg
+    /**
+     * A Function to process the recieved Message
+     *
+     * @param msg:The received message
+     * Switch the message type to different cases
+     * Handle it case by case
+     * @author Pan Feng
+     */
     protected boolean processMsg(Msg msg) {
         boolean quit = false;
         boolean flag = false;
@@ -86,6 +92,7 @@ public class PayMachineHandler extends AppThread {
                 if(PMS == PayMachineStatus.WaitRemoval) {
                     PMS = PayMachineStatus.idle;
                     flag = true;
+                    RemovalFinished();
                 }
             break;
             case Terminate:	     quit = true;break;
@@ -109,6 +116,9 @@ public class PayMachineHandler extends AppThread {
     // Send Fee Request
     protected void SendExitInfoRequest(String mymsg){
         pcsCore.send(new Msg(id, mbox, Msg.Type.TicketExitInfoRequest, mymsg));
+    }
+    protected void RemovalFinished(){
+        log.info(id + "Ticket Removed");
     }
     // Send Fee Request
     //------------------------
