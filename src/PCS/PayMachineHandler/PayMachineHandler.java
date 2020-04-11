@@ -6,6 +6,7 @@ import PCS.GateHandler.GateHandler;
 import PCS.PCSStarter;
 import PCS.PayMachineHandler.Emulator.PayMachineController;
 import PCS.PayMachineHandler.Emulator.PayMachineEmulator;
+import javafx.scene.control.Alert;
 
 
 //======================================================================
@@ -53,34 +54,46 @@ public class PayMachineHandler extends AppThread {
         String []tmp = msg.getDetails().split(",");
         switch (msg.getType()) {
             case TicketRequest:
-                SendRequest(msg.getDetails());
-                PMS = PayMachineStatus.WaitPaymentReply;
-                flag = true;
+                if(PMS == PayMachineStatus.idle) {
+                    SendRequest(msg.getDetails());
+                    PMS = PayMachineStatus.WaitPaymentReply;
+                    flag = true;
+                }
             break;
             case TicketFee:
-                FeeReceive(msg.getDetails());
-                PMS = PayMachineStatus.WaitDriver;
-                flag = true;
+                if(PMS == PayMachineStatus.WaitPaymentReply) {
+                    FeeReceive(msg.getDetails());
+                    PMS = PayMachineStatus.WaitDriver;
+                    flag = true;
+                }
             break;
             case PaymentACK:
-                SendPaymentACK(msg.getDetails());
-                PMS = PayMachineStatus.WaitExitInfo;
-                SendExitInfoRequest(msg.getDetails());
-                flag = true;
+                if(PMS == PayMachineStatus.WaitDriver) {
+                    SendPaymentACK(msg.getDetails());
+                    PMS = PayMachineStatus.WaitExitInfo;
+                    SendExitInfoRequest(msg.getDetails());
+                    flag = true;
+                }
             break;
             case ExitInfo:
-                PMS = PayMachineStatus.WaitRemoval;
-                ExitReceive(msg.getDetails());
-                flag = true;
+                if(PMS == PayMachineStatus.WaitExitInfo) {
+                    PMS = PayMachineStatus.WaitRemoval;
+                    ExitReceive(msg.getDetails());
+                    flag = true;
+                }
                 break;
             case TicketRemoveACK:
-                PMS = PayMachineStatus.idle;
-                flag = true;
+                if(PMS == PayMachineStatus.WaitRemoval) {
+                    PMS = PayMachineStatus.idle;
+                    flag = true;
+                }
             break;
             case Terminate:	     quit = true;break;
         }
         if(flag)
             handleStatus();
+        else
+            log.warning(id + " is " + PMS + " cannot do it!!!");
         return quit;
     }
     // processMsg
