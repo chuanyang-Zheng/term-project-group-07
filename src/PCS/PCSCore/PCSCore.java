@@ -172,12 +172,20 @@ public class PCSCore extends AppThread {
         }
         return true;
     }
+    //------------------------------------------------------------
+    // PayStateUpdate
 
+    /**
+     *
+     * @param PID is the Paymachine ID
+     * @param TicketID is the Ticket ID
+     * Set the Paymachine ID to this ticket
+     */
     public void PayStateUpdate(String PID, String TicketID) {
         int z = FindTicketByID(Integer.parseInt(TicketID));
         ticketList.get(z).setPayMachineID(PID);
         log.fine(id + ":Payment Updated");
-    }
+    }//PayStateUpdate
 
     /**
      * A Function to send the TicketFee
