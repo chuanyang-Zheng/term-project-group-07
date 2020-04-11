@@ -174,7 +174,6 @@ public class PCSCore extends AppThread {
     }
     //------------------------------------------------------------
     // PayStateUpdate
-
     /**
      *
      * @param PID is the Paymachine ID
@@ -187,6 +186,8 @@ public class PCSCore extends AppThread {
         log.fine(id + ":Payment Updated");
     }//PayStateUpdate
 
+    //------------------------------------------------------------
+    // SendTicketFee
     /**
      * A Function to send the TicketFee
      *
@@ -206,7 +207,7 @@ public class PCSCore extends AppThread {
                 Ticket targetTicket = ticketList.get(ticketIndexInTicketArrayList);//get ticket
                 if(ticketList.get(ticketIndexInTicketArrayList).getPayMachineID().equals(""))  // the 3rd parameter mapping
                     msg.getSenderMBox().send(new Msg(id, mbox, Msg.Type.TicketFee, tmp[0] + "," + tmp[1] + "," + Float.toString(targetTicket.calculateFee(calculateFeeCoefficient)) + "," + Long.toString(targetTicket.getEnterTime())));
-                //send corresponding fee
+                //SendTicketFee
             }
         }
         catch (Exception e){
@@ -214,6 +215,8 @@ public class PCSCore extends AppThread {
             log.warning(id+": Calculate Fee Fail");
         }
     }
+    //------------------------------------------------------------
+    // SendExitInfo
     /**
      * A Function to send the EXit Information
      *
@@ -237,7 +240,8 @@ public class PCSCore extends AppThread {
             e.printStackTrace();
             log.warning(id+": Calculate Fee Fail");
         }
-    }
+    }//SendExitInfo
+
     public void AddTicket() {
         //String[] tmp = msg.split(",");
 
@@ -307,7 +311,8 @@ public class PCSCore extends AppThread {
                 break;
         }
     } // handleTimesUp
-
+    //------------------------------------------------------------
+    // FindTicketByID
     /**
      * A Function to search a ticket by TicketID
      *
@@ -321,7 +326,7 @@ public class PCSCore extends AppThread {
                 return i;
         log.warning(id + "No such Ticket =_= called" + TargetID);
         return -1;
-    }
+    }//FindTicketByID
 
     public boolean validTicket(int ticketID) {
         log.info(id + " valid ticket " + ticketID);
