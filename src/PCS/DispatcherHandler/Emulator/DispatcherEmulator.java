@@ -68,22 +68,22 @@ public class DispatcherEmulator extends DispatcherHandler {
     }
 
     //receive ticket ID
-    protected void ReceiveTicketID(String mymsg){
-
+    protected void ReceiveTicketID(Msg msg){
+        String mymsg=msg.getDetails();
         Date nowT = new Date(System.currentTimeMillis());
         SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
         String timestr = sdf.format(nowT);
-        dispatcherController.appendTextArea("Welcome to our parking lot.\n"+"Your ticket ID is "+mymsg+".\n"+"The time now is " + timestr + ".\nThe parking fee is $5/s.\nHave a good time!");
+        logInfo("Welcome to our parking lot.\n"+"Your ticket ID is "+mymsg+".\n"+"The time now is " + timestr + ".\nThe parking fee is $5/s.\nHave a good time!");
 
         dispatcherController.showTicket(mymsg,timestr);
         //pcsCore.send(new Msg(id,mbox,Msg.Type.RemoveTicket,"Remove Ticket Now"));
 
     }
-    protected void HandleRemoveTicket(String mymsg){
+    protected void SendRemoveTicket(Msg msg){
 
 
         pcsCore.send(new Msg(id,mbox,Msg.Type.RemoveTicket,"Remove Ticket Now"));
-        dispatcherController.appendTextArea("Ticket removed.\nPlease take care of your ticket.");
+        logInfo("Ticket removed.\nPlease take care of your ticket.");
 
     }
 

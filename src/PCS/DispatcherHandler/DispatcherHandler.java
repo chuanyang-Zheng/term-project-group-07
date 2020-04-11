@@ -61,7 +61,6 @@ public class DispatcherHandler extends AppThread {
 
             case RemoveTicket:
                 handleRemoveTicket(msg);
-                dispatcherStatus=DispatcherStatus.idle;
                 break;
 
             case Terminate:	     quit = true;break;
@@ -101,7 +100,7 @@ public class DispatcherHandler extends AppThread {
                 log.warning(id+": Dispatcher is Idle. Ignore Receive Ticket ID");
                 break;
             case waitPCSCoreReply:
-                ReceiveTicketID(id+" Receive Ticket ID");
+                ReceiveTicketID(msg);
                 dispatcherStatus=DispatcherStatus.waitForRemoval;
                 break;
             case waitForRemoval:
@@ -122,6 +121,7 @@ public class DispatcherHandler extends AppThread {
                 log.warning(id+": Dispatcher is Wait PCSCore Reply. Ignore Remove Ticket");
                 break;
             case waitForRemoval:
+                SendRemoveTicket(msg);
                 log.fine("Remove Ticket");
                 dispatcherStatus=DispatcherStatus.idle;
                 break;
@@ -132,8 +132,11 @@ public class DispatcherHandler extends AppThread {
     protected void SendAddTicket(String mymsg){
         log.info("Creating new Ticket");
     }
-    protected void ReceiveTicketID(String mymsg){
-        log.info("Ticket ID received");
+    protected void ReceiveTicketID(Msg msg){
+        log.info(msg.getDetails());
+    }
+    protected void SendRemoveTicket(Msg msg){
+        pcsCore.send(new Msg(id,mbox,Msg.Type.RemoveTicket,"Remove Ticket Now"));
     }
 
 

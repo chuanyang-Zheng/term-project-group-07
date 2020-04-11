@@ -55,6 +55,7 @@ public class CollectorEmulator extends CollectorHandler {
     /**
      * Start A GUI
      * The method starts a GUI that is interactive with users
+     * @exception  Exception throw Exception
      * @author Chuanyang Zheng
      */
     public void start() throws Exception {
