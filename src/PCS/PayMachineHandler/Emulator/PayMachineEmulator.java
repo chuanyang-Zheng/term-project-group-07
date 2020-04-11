@@ -66,6 +66,7 @@ public class PayMachineEmulator extends PayMachineHandler {
      * Override the FeeReceive()
      *  Display the Ticket the ticket information in the buttom "textbox".
      *  Update the Ticket Information information in textarea.
+     *  Protocol message format: PayMachine ID,Ticket ID,TicketFee,EnterTime
      * @author Pan Feng
      */
     protected void FeeReceive(String mymsg){
@@ -86,6 +87,7 @@ public class PayMachineEmulator extends PayMachineHandler {
      * Override the ExitReceive()
      *  Display the Ticket the ticket information in the buttom "textbox".
      *  Update the Ticket Information information in textarea.
+     *  Protocol message format: PayMachine ID,Ticket ID,TicketFee,ExitTime
      * @author Pan Feng
      */
     protected void ExitReceive(String mymsg){

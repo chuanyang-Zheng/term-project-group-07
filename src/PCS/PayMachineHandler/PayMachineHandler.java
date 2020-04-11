@@ -148,6 +148,7 @@ public class PayMachineHandler extends AppThread {
     /**
      * A Function to handle the Fee message
      *  Display the Fee is received
+     *  Protocol message format: PayMachine ID,Ticket ID,TicketFee,EnterTime
      * @author Pan Feng
      */
     protected void FeeReceive(String mymsg){

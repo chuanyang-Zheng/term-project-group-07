@@ -63,7 +63,7 @@ public class PayMachineController {
                 if(ticket_id == null || ticket_id.isEmpty()) // Check Validation
                     new Alert(Alert.AlertType.ERROR, "Please input valid ID :(", new ButtonType[]{ButtonType.OK}).show();
                 else
-                    payMBox.send(new Msg(id, null, Msg.Type.TicketRequest, id + "," + ticket_id)); // send the Fee request
+                    payMBox.send(new Msg(id, null, Msg.Type.TicketRequest, id + "," + ticket_id)); // send the Fee request with Paymachine ID,Ticket ID
                 break;
             case "Pay by Oct": // payment button pressed
                 if(ticket_id == null || ticket_id.isEmpty())
