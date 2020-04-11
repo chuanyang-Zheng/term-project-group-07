@@ -89,6 +89,7 @@ public class PCSStarter extends AppKickstarter {
     /**
      * Create A PCSStart Object and run startApp()
      * @param args Arguments from user input.
+     *             @author Chuanyang Zheng
      */
     public static void main(String[] args) {
         new PCSStarter().startApp();
@@ -100,6 +101,7 @@ public class PCSStarter extends AppKickstarter {
 
     /**
      * PCSStarter Constructor
+     * @author Chuanyang Zheng
      */
     public PCSStarter() {
         super("PCSStarter", "etc/PCS.cfg");
@@ -112,6 +114,7 @@ public class PCSStarter extends AppKickstarter {
 
     /**
      * Start App method. Log information and start all handlers
+     * @author Chuanyang Zheng
      */
     protected void startApp() {
         // start our application
@@ -129,6 +132,7 @@ public class PCSStarter extends AppKickstarter {
 
     /**
      * Start all handlers. First create all handlers. Then use create new Thread for each handlers and run start() method
+     * @author Chuanyang Zheng
      */
     protected void startHandlers() {
         System.out.println("PCSStart!");
@@ -177,6 +181,7 @@ public class PCSStarter extends AppKickstarter {
 
     /**
      * Stop All handlers by send Terminate Msg
+     * @author Chuanyang Zheng
      */
     public void stopApp() {
         log.info("");

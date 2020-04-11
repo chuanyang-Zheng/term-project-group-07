@@ -37,6 +37,7 @@ public class PCSEmulatorStarter extends PCSStarter {
      * PCS Emulator Main method.
      * Create a PCSEmulatorStart Object and run startApp() method
      * @param args Arguments from Users
+     *             @author Chuanyang Zheng
      */
     public static void main(String [] args) {
 	new PCSEmulatorStarter().startApp();
@@ -60,6 +61,7 @@ public class PCSEmulatorStarter extends PCSStarter {
 
     /**
      * Emulator class will start all Emulators
+     * @author Chuanyang Zheng
      */
     public static class Emulators extends Application {
         private static PCSEmulatorStarter pcsEmulatorStarter;
@@ -79,6 +81,7 @@ public class PCSEmulatorStarter extends PCSStarter {
          * Start all Emulators. First Create All Emulators. Then run corresponding GUIs by running start() method.
          * Finally, create new Thread and running all handlers
          * @param primaryStage Stage
+         *                     @author Chuanyang Zheng
          */
         public void start(Stage primaryStage) {
 	    Timer timer = null;
@@ -168,6 +171,7 @@ public class PCSEmulatorStarter extends PCSStarter {
     /**
      * Set Timer Object
      * @param timer Set the time for PCSEmulator
+     *              @author Chuanyang Zheng
      */
     private void setTimer(Timer timer) {
         this.timer = timer;
@@ -176,6 +180,7 @@ public class PCSEmulatorStarter extends PCSStarter {
     /**
      * Set PCSCore for PCSEmulator
      * @param pcsCore PCSCore for PCSEmulator
+     *                @author Chuanyang Zheng
      */
     private void setPCSCore(PCSCore pcsCore) {
         this.pcsCore = pcsCore;
@@ -184,6 +189,7 @@ public class PCSEmulatorStarter extends PCSStarter {
     /**
      * Set Exit Gate Handler for PCSEmulator
      * @param gateHandler Exit Gate Handler for PCSEmulator
+     *                    @author Chuanyang Zheng
      */
     private void setExitGateHandler(GateHandler gateHandler) {
 	this.exitGateHandler = gateHandler;
@@ -192,6 +198,7 @@ public class PCSEmulatorStarter extends PCSStarter {
     /**
      * Set Entrance Gate Handler for PCSEmulator
      * @param gateHandler  Entrance Gate Handler for PCSEmulator
+     *                     @author Chuanyang Zheng
      */
     private void setEntranceGateHandler(GateHandler gateHandler) {
         this.entranceGateHandler= gateHandler;
@@ -200,6 +207,7 @@ public class PCSEmulatorStarter extends PCSStarter {
     /**
      * Set Dispatcher Handler for PCSEmulator
      * @param dispatcherHandler Dispatcher Handler for PCSEmulator
+     *                          @author Chuanyang Zheng
      */
     private void setDispatcherHandler(DispatcherHandler dispatcherHandler) {
         this.dispatcherHandler = dispatcherHandler;
@@ -208,6 +216,7 @@ public class PCSEmulatorStarter extends PCSStarter {
     /**
      * Set Collector Handler For PCSEmulator
      * @param collectorHandler Collector Handler For PCSEmulator
+     *                         @author Chuanyang Zheng
      */
     private void setCollectorHandler(CollectorHandler collectorHandler){
         this.collectorHandler=collectorHandler;
@@ -216,6 +225,7 @@ public class PCSEmulatorStarter extends PCSStarter {
     /**
      * Set VacancyHandler for PCSEmulator
      * @param vacancyHandler VacancyHandler for PCSEmulator
+     *                       @author Chuanyang Zheng
      */
     private void setVacancyHandler(VacancyHandler vacancyHandler){this.vacancyHandler=vacancyHandler;}
     private void setPayMachineHandler(PayMachineHandler payMachineHandler){
@@ -226,6 +236,7 @@ public class PCSEmulatorStarter extends PCSStarter {
      * Set MotionSensor DetectUpList and MotionSensor DetectDown List for PCSEmulator
      * @param motionSensorDetectUpList MotionSensor DetectUpList  for PCSEmulator
      * @param motionSensorDetectDownList MotionSensor DetectDown for PCSEmulator
+     *                                   @author Chuanyang Zheng
      */
     private void setMotionSensor(ArrayList<MotionSensorEmulator> motionSensorDetectUpList,ArrayList<MotionSensorEmulator> motionSensorDetectDownList){
         this.motionSensorDetectUpList.addAll(motionSensorDetectUpList);
