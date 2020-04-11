@@ -11,7 +11,21 @@ import AppKickstarter.misc.Msg;
  * @author Chuanyang Zheng
  */
 public class CollectorHandler extends AppThread {
+
+
+    /**
+     * The PCSCore Box
+     */
     protected final MBox pcsCore;
+
+    /**
+     * The Collector Status. We have three Status:
+     * CollectorAvailable,
+     * CollectorWaitValidation,
+     * CollectorWarning,
+     */
+
+
     private CollectorStatus collectorStatus;
 
     /**
@@ -55,7 +69,7 @@ public class CollectorHandler extends AppThread {
      *
      * @author Chuanyang Zheng
      */
-    public boolean processMsg(Msg msg){
+    protected boolean processMsg(Msg msg){
         boolean quit = false;
 
         switch (msg.getType()) {
@@ -79,7 +93,7 @@ public class CollectorHandler extends AppThread {
      *
      * @author Chuanyang Zheng
      */
-    public void handleCollectorValidRequest(Msg msg){
+    protected void handleCollectorValidRequest(Msg msg){
         log.info(id + ": collector valid request received");
         CollectorStatus oldStatus=collectorStatus;
 
@@ -118,7 +132,7 @@ public class CollectorHandler extends AppThread {
      *  Therefore, we log received message. For append the mssage to Controller area, we will finish it in ConllectorEmulator Class.
      * @author Chuanyang Zheng
      */
-    public void handleCollectorPositive(){
+    protected void handleCollectorPositive(){
         log.info(id + ": collector receive positive validation");
         CollectorStatus oldStatus=collectorStatus;
         switch (collectorStatus){
@@ -142,7 +156,7 @@ public class CollectorHandler extends AppThread {
      *  PCS believe that the ticket is invalid. Therefore, in the method, ring alrams, ask staff to solve problem
      * @author Chuanyang Zheng
      */
-    public void handleCollectorNegative(){
+    protected void handleCollectorNegative(){
         log.info(id+": collector receive negative validation");
         CollectorStatus oldStatus=collectorStatus;
         switch (collectorStatus){
@@ -168,7 +182,7 @@ public class CollectorHandler extends AppThread {
      *
      * @author Chuanyang Zheng
      */
-    public void handleCollctorSolveProblem(){
+    protected void handleCollctorSolveProblem(){
         log.info(id+": collector receive Problem-Solve Message");
         CollectorStatus oldStatus=collectorStatus;
         switch (collectorStatus){

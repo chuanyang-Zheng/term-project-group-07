@@ -3,17 +3,46 @@ package PCS.PCSCore;
 
 import java.util.logging.*;
 
+/**
+ * Ticker Class for Driver to pick, pay fee and exit
+ * @author Chuanyang Zheng
+ */
 public class Ticket {
+    /**
+     * Record Enter Time
+     */
     protected final long enterTime;
+
+    /**
+     * Ticket ID
+     */
     protected final int ticketID;
 
     //if smaller than 0, it means that it is not valid.
+
+    /**
+     * Driver should go out before Exit Time. if smaller than 0, it means that it is not valid.
+     */
     protected long exitTime=-1;
+
+    /**
+     * Driver Parking fee. if smaller than 0, it means that it is not valid.
+     */
     protected float parkingFee=-1;
+
+    /**
+     * Pay Machine ID for the Ticket. if empty, it means that it is not valid.
+     */
     protected String payMachineID = "";
+
+    /**
+     * If true, it meas that the ticket already pay fee
+     */
     protected boolean payJudge=false;
 
-
+    /**
+     * WIll be used for Ticket ID
+     */
     protected static int TicketCount=0;
 
     public Ticket(){
@@ -21,10 +50,13 @@ public class Ticket {
 
         ticketID=TicketCount++;
     }
-    public void enterPrint(){
 
-
-    }
+    /**
+     * Calculate Parking Fee
+     * @param coefficient Parking fee coefficient. By default, we set it to 5 in PCS.cfg file
+     * @return return parking fee
+     * @author Chuanyang Zheng
+     */
     public float calculateFee(float coefficient){
         long currentTime = System.currentTimeMillis();
         long time = currentTime-enterTime;//calculate the pay Fee time
@@ -32,36 +64,86 @@ public class Ticket {
         parkingFee = payMachineID.equals("")? coefficient * currentSecond : 0;
         return parkingFee;
     }
+
+    /**
+     * Set Ticket ParyMachine ID
+     * @param ID The PayMachine ID of the ticket
+     *           @author Chuanyang Zheng
+     */
     public void setPayMachineID(String ID){
         payMachineID=ID;
     }
+
+    /**
+     * Set Exit Time
+     * @param exitTime exit Time
+     *                 @author Chuanyang Zheng
+     */
     public void setExitTime(long exitTime){
         this.exitTime=exitTime;
     }
 
+    /**
+     * Set parking fee
+     * @param parkingFee The parking fee of the Ticket
+     *                   @author Chuanyang Zheng
+     */
     public void setParkingFee(float parkingFee) {
         this.parkingFee = parkingFee;
     }
 
+    /**
+     * Return Enter Time
+     * @return Return Enter Time
+     * @author Chuanyang Zheng
+     */
     public long getEnterTime(){
         return enterTime;
     }
+
+    /**
+     * Return Parking fee
+     * @return Return Parking Fee
+     * @author Chuanyang Zheng
+     */
     public float getParkingFee(){
         return parkingFee;
     }
 
+    /**
+     * Return Ticket ID
+     * @return Return Ticket ID
+     * @author Chuanyang Zheng
+     */
     public int getTicketID() {
         return ticketID;
     }
 
+    /**
+     * Return Pay Machine ID
+     * @return Pay Machine ID
+     * @author Chuanyang Zheng
+     */
     public String getPayMachineID() {
         return payMachineID;
     }
 
+    /**
+     * Return Exit Time
+     * @return return Exit Time
+     * @author Chuanyang Zheng
+     */
     public long getExitTime() {
         return exitTime;
     }
 
+    /**
+     *
+     * @param log The Logger From PCSCore
+     * @param id The ID of PCSCore Will be used for log
+     * @return If true, the ticket is valid. Other else, it is invalid.
+     * @author Chuanyang Zheng
+     */
     public boolean valid(Logger log,String id){
         if(ticketID<0)
         {

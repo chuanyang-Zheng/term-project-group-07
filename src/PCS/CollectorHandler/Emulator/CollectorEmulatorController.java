@@ -18,14 +18,46 @@ import java.util.logging.Logger;
  * @author Chuanyang Zheng
  */
 public class CollectorEmulatorController {
+
+    /**
+     * ID Get from Collector Emulator
+     */
     private String id;
+
+    /**
+     * AppKickstarter Object
+     */
     private AppKickstarter appKickstarter;
+
+    /**
+     * Logger from Collector Emulator
+     */
     private Logger log;
+
+    /**
+     * Collector Emulator Object
+     */
     private CollectorEmulator collectorEmulator;
+
+    /**
+     * collector Mox. Will be used to send messages
+     */
     private MBox collectorMBox;
+
+    /**
+     * Collector Text Area. Collector Emulator will add message to here
+     */
+
     public TextArea collectorTextArea;
+
+    /**
+     * Input Area of Ticket ID
+     */
     public TextArea collectorTextAreaInput;
 
+    /**
+     * Count How many Messages are added.
+     */
     private int lineNo = 0;
 
     /**

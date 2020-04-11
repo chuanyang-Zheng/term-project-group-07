@@ -51,7 +51,7 @@ public class DispatcherController {
 
                 alert.showAndWait();
 
-                dispatcherMBox.send(new Msg(id, null, Msg.Type.AddTicket, id ));
+                dispatcherMBox.send(new Msg(id, null, Msg.Type.AddTicket,"" ));
                 //dispatcherMBox.send(new Msg(id, null, Msg.Type.ReceiveID, id ));
                 break;
             case "Remove ticket":

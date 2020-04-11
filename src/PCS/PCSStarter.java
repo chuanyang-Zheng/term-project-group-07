@@ -22,22 +22,74 @@ import java.util.ArrayList;
 //======================================================================
 // PCSStarter
 public class PCSStarter extends AppKickstarter {
+    /**
+     * Timer for wake up
+     */
     protected Timer timer;
+
+    /**
+     * PCSCore from PCS Package
+     */
     protected PCSCore pcsCore;
+
+    /**
+     * Dispatcher Handler
+     */
     protected DispatcherHandler dispatcherHandler;
+
+    /**
+     * Exit Gate Handler
+     */
     protected GateHandler exitGateHandler;
+
+    /**
+     * entranceGate Handler
+     */
     protected GateHandler entranceGateHandler;
+
+    /**
+     * Collector Handler
+     */
     protected CollectorHandler collectorHandler;
+
+    /**
+     * Vacancy Handler
+     */
     protected VacancyHandler vacancyHandler;
+
+    /**
+     * Pay Machine List
+     */
     protected ArrayList<PayMachineHandler> payMachineList = new ArrayList<PayMachineHandler>();
+
+    /**
+     * MotionSensor Detect Up List
+     */
     protected  ArrayList<MotionSensorHandler> motionSensorDetectUpList=new ArrayList<>();
+
+    /**
+     * motionSensor Detect Down List
+     */
     protected  ArrayList<MotionSensorHandler> motionSensorDetectDownList=new ArrayList<>();
+
+    /**
+     * How many pay Machines? If necessary, set the number in PCS.cfg
+     */
     public int payMachineNumber;
+
+    /**
+     * How many floors? If necessary. set the number in PCS.cfg
+     */
     public int numOfFloor=Integer.parseInt(this.getProperty("TotalFloorNumber"));
 
     //	public int PayMachineNumber;
     //------------------------------------------------------------
     // main
+
+    /**
+     * Create A PCSStart Object and run startApp()
+     * @param args Arguments from user input.
+     */
     public static void main(String[] args) {
         new PCSStarter().startApp();
     } // main
@@ -45,6 +97,10 @@ public class PCSStarter extends AppKickstarter {
 
     //------------------------------------------------------------
     // PCSStart
+
+    /**
+     * PCSStarter Constructor
+     */
     public PCSStarter() {
         super("PCSStarter", "etc/PCS.cfg");
         payMachineNumber=Integer.parseInt(this.getProperty("PayMachineNumber"));
@@ -53,6 +109,10 @@ public class PCSStarter extends AppKickstarter {
 
     //------------------------------------------------------------
     // startApp
+
+    /**
+     * Start App method. Log information and start all handlers
+     */
     protected void startApp() {
         // start our application
         log.info("");
@@ -66,6 +126,10 @@ public class PCSStarter extends AppKickstarter {
 
     //------------------------------------------------------------
     // startHandlers
+
+    /**
+     * Start all handlers. First create all handlers. Then use create new Thread for each handlers and run start() method
+     */
     protected void startHandlers() {
         System.out.println("PCSStart!");
         payMachineNumber = Integer.parseInt(getProperty("PayMachineNumber"));
@@ -110,6 +174,10 @@ public class PCSStarter extends AppKickstarter {
 
     //------------------------------------------------------------
     // stopApp
+
+    /**
+     * Stop All handlers by send Terminate Msg
+     */
     public void stopApp() {
         log.info("");
         log.info("");

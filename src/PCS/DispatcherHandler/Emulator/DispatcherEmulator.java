@@ -19,7 +19,7 @@ import java.util.Date;
 // DispatcherEmulator
 public class DispatcherEmulator extends DispatcherHandler {
     private Stage myStage;
-    private DispatcherController DispatcherController;
+    private DispatcherController dispatcherController;
     private final PCSStarter pcsStarter;
     private final String id;
 
@@ -48,8 +48,8 @@ public class DispatcherEmulator extends DispatcherHandler {
         String fxmlName = "DispatcherEmulator.fxml";
         loader.setLocation(DispatcherEmulator.class.getResource(fxmlName));
         root = loader.load();
-        DispatcherController = loader.getController();
-        DispatcherController.initialize(super.id, pcsStarter, log, this);
+        dispatcherController = loader.getController();
+        dispatcherController.initialize(super.id, pcsStarter, log, this);
         myStage.initStyle(StageStyle.DECORATED);
         myStage.setScene(new Scene(root, 420, 470));
         myStage.setTitle(id);
@@ -64,9 +64,7 @@ public class DispatcherEmulator extends DispatcherHandler {
 
     @Override
     protected void SendAddTicket(String mymsg) {
-
-        if (!mymsg.equals(super.id)) return;
-        pcsCore.send(new Msg(id, mbox, Msg.Type.AddTicket, mymsg));
+        logFine(mymsg);
     }
 
     //receive ticket ID
@@ -75,9 +73,9 @@ public class DispatcherEmulator extends DispatcherHandler {
         Date nowT = new Date(System.currentTimeMillis());
         SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
         String timestr = sdf.format(nowT);
-        DispatcherController.appendTextArea("Welcome to our parking lot.\n"+"Your ticket ID is "+mymsg+".\n"+"The time now is " + timestr + ".\nThe parking fee is $5/s.\nHave a good time!");
+        dispatcherController.appendTextArea("Welcome to our parking lot.\n"+"Your ticket ID is "+mymsg+".\n"+"The time now is " + timestr + ".\nThe parking fee is $5/s.\nHave a good time!");
 
-        DispatcherController.showTicket(mymsg,timestr);
+        dispatcherController.showTicket(mymsg,timestr);
         //pcsCore.send(new Msg(id,mbox,Msg.Type.RemoveTicket,"Remove Ticket Now"));
 
     }
@@ -85,9 +83,51 @@ public class DispatcherEmulator extends DispatcherHandler {
 
 
         pcsCore.send(new Msg(id,mbox,Msg.Type.RemoveTicket,"Remove Ticket Now"));
-        DispatcherController.appendTextArea("Ticket removed.\nPlease take care of your ticket.");
+        dispatcherController.appendTextArea("Ticket removed.\nPlease take care of your ticket.");
 
     }
+
+    /**
+     * Log Fine Type Information and Add it to Controller
+     * @param logMsg:Log Msg
+     * @author Chuanyang Zheng
+     */
+    private final void logFine(String logMsg) {
+        dispatcherController.appendTextArea("[FINE]: " + logMsg);
+        log.fine(id + ": " + logMsg);
+    } // logFine
+
+    /**
+     * Log Info Type Information and Add it to Controller
+     * @param logMsg:Log Msg
+     * @author Chuanyang Zheng
+     */
+    private final void logInfo(String logMsg) {
+        dispatcherController.appendTextArea("[INFO]: " + logMsg);
+        log.info(id + ": " + logMsg);
+    } // logInfo
+
+
+    /**
+     * Log Warning Type Information and Add it to Controller
+     * @param logMsg:Log Msg
+     * @author Chuanyang Zheng
+     */
+    private final void logWarning(String logMsg) {
+        dispatcherController.appendTextArea("[WARNING]: " + logMsg);
+        log.warning(id + ": " + logMsg);
+    } // logWarning
+
+
+    /**
+     * Log Severe Type Information and Add it to Controller
+     * @param logMsg:Log Msg
+     * @author Chuanyang Zheng
+     */
+    private final void logSevere(String logMsg) {
+        dispatcherController.appendTextArea("[SEVERE]: " + logMsg);
+        log.severe(id + ": " + logMsg);
+    } // logSevere
 
 
 

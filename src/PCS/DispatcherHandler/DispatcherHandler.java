@@ -52,16 +52,15 @@ public class DispatcherHandler extends AppThread {
         DispatcherStatus oldStatus=dispatcherStatus;
         switch (msg.getType()) {
             case AddTicket:
-                SendAddTicket(msg.getDetails());
-                dispatcherStatus=DispatcherStatus.waitForRemoval;
+                handleAddTicket(msg);
                 break;
 
             case ReceiveTicketID:
-                ReceiveTicketID(msg.getDetails());
+                handleReceiveTicketID(msg);
                 break;
 
             case RemoveTicket:
-                HandleRemoveTicket(msg.getDetails());
+                handleRemoveTicket(msg);
                 dispatcherStatus=DispatcherStatus.idle;
                 break;
 
@@ -71,16 +70,70 @@ public class DispatcherHandler extends AppThread {
     }
     // processMsg
 
-    //------------------------
-// Send Fee Request
+    /**
+     *Handle AddTicket
+     * @param msg Msg Received from processMsg when AddTicket Msg Type Receive
+     */
+    protected void handleAddTicket(Msg msg){
+        log.info(id+": Handle Add Ticket");
+        DispatcherStatus oldStatus=dispatcherStatus;
+        switch (dispatcherStatus){
+            case idle:
+                SendAddTicket("Created new Ticket");
+                pcsCore.send(new Msg(id, mbox, Msg.Type.AddTicket, ""));
+                dispatcherStatus=DispatcherStatus.waitPCSCoreReply;
+                break;
+            case waitPCSCoreReply:
+                log.warning(id+": Dispatcher is WaitPCSCoreReply! Ignore Add Ticket");
+                break;
+            case waitForRemoval:
+                log.warning(id+": Dispatcher is WaitForRemoval! Ignore Add Ticket");
+                break;
+        }
+        log.info(id+": Dispatcher status from ["+oldStatus+"] to ["+dispatcherStatus+"]");
+    }
+
+    protected void handleReceiveTicketID(Msg msg){
+        log.info(id+": Handle Receive Ticket ID");
+        DispatcherStatus oldStatus=dispatcherStatus;
+        switch (dispatcherStatus){
+            case idle:
+                log.warning(id+": Dispatcher is Idle. Ignore Receive Ticket ID");
+                break;
+            case waitPCSCoreReply:
+                ReceiveTicketID(id+" Receive Ticket ID");
+                dispatcherStatus=DispatcherStatus.waitForRemoval;
+                break;
+            case waitForRemoval:
+                log.warning(id+": Dispatcher is WaitForRemoval! Ignore Reply");
+                break;
+        }
+        log.info(id+": Dispatcher status from ["+oldStatus+"] to ["+dispatcherStatus+"]");
+    }
+
+    protected void handleRemoveTicket(Msg msg){
+        log.info(id+": Handle Remove");
+        DispatcherStatus oldStatus=dispatcherStatus;
+        switch (dispatcherStatus){
+            case idle:
+                log.warning(id+": Dispatcher is Idle. Ignore Remove Ticket");
+                break;
+            case waitPCSCoreReply:
+                log.warning(id+": Dispatcher is Wait PCSCore Reply. Ignore Remove Ticket");
+                break;
+            case waitForRemoval:
+                log.fine("Remove Ticket");
+                dispatcherStatus=DispatcherStatus.idle;
+                break;
+        }
+        log.info(id+": Dispatcher status from ["+oldStatus+"] to ["+dispatcherStatus+"]");
+    }
+
     protected void SendAddTicket(String mymsg){
-        log.info("Created new Ticket");
+        log.info("Creating new Ticket");
     }
     protected void ReceiveTicketID(String mymsg){
         log.info("Ticket ID received");
-    }
-    protected void HandleRemoveTicket(String mymsg){
-        log.info("Ticket removed");
     }
 
 
@@ -89,6 +142,7 @@ public class DispatcherHandler extends AppThread {
     // PM Status
     private enum DispatcherStatus {
         idle,
+        waitPCSCoreReply,
         waitForRemoval
     }
 } // DispatcherHandler

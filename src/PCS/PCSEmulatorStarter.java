@@ -25,9 +25,19 @@ import java.util.ArrayList;
 
 //======================================================================
 // PCSEmulatorStarter
+
+/**
+ * Run the Program By Running The class
+ */
 public class PCSEmulatorStarter extends PCSStarter {
     //------------------------------------------------------------
     // main
+
+    /**
+     * PCS Emulator Main method.
+     * Create a PCSEmulatorStart Object and run startApp() method
+     * @param args Arguments from Users
+     */
     public static void main(String [] args) {
 	new PCSEmulatorStarter().startApp();
     } // main
@@ -35,7 +45,10 @@ public class PCSEmulatorStarter extends PCSStarter {
 
     //------------------------------------------------------------
     // startHandlers
+
+
     @Override
+
     protected void startHandlers() {
         Emulators.pcsEmulatorStarter = this;
         new Emulators().start();
@@ -44,6 +57,10 @@ public class PCSEmulatorStarter extends PCSStarter {
 
     //------------------------------------------------------------
     // Emulators
+
+    /**
+     * Emulator class will start all Emulators
+     */
     public static class Emulators extends Application {
         private static PCSEmulatorStarter pcsEmulatorStarter;
         private int PayMachineNumber = pcsEmulatorStarter.payMachineNumber;
@@ -57,6 +74,12 @@ public class PCSEmulatorStarter extends PCSStarter {
 
 	//----------------------------------------
 	// start
+
+        /**
+         * Start all Emulators. First Create All Emulators. Then run corresponding GUIs by running start() method.
+         * Finally, create new Thread and running all handlers
+         * @param primaryStage Stage
+         */
         public void start(Stage primaryStage) {
 	    Timer timer = null;
 	    PCSCore pcsCore = null;
@@ -141,28 +164,69 @@ public class PCSEmulatorStarter extends PCSStarter {
 
     //------------------------------------------------------------
     //  setters
+
+    /**
+     * Set Timer Object
+     * @param timer Set the time for PCSEmulator
+     */
     private void setTimer(Timer timer) {
         this.timer = timer;
     }
+
+    /**
+     * Set PCSCore for PCSEmulator
+     * @param pcsCore PCSCore for PCSEmulator
+     */
     private void setPCSCore(PCSCore pcsCore) {
         this.pcsCore = pcsCore;
     }
+
+    /**
+     * Set Exit Gate Handler for PCSEmulator
+     * @param gateHandler Exit Gate Handler for PCSEmulator
+     */
     private void setExitGateHandler(GateHandler gateHandler) {
 	this.exitGateHandler = gateHandler;
     }
+
+    /**
+     * Set Entrance Gate Handler for PCSEmulator
+     * @param gateHandler  Entrance Gate Handler for PCSEmulator
+     */
     private void setEntranceGateHandler(GateHandler gateHandler) {
         this.entranceGateHandler= gateHandler;
     }
+
+    /**
+     * Set Dispatcher Handler for PCSEmulator
+     * @param dispatcherHandler Dispatcher Handler for PCSEmulator
+     */
     private void setDispatcherHandler(DispatcherHandler dispatcherHandler) {
         this.dispatcherHandler = dispatcherHandler;
     }
+
+    /**
+     * Set Collector Handler For PCSEmulator
+     * @param collectorHandler Collector Handler For PCSEmulator
+     */
     private void setCollectorHandler(CollectorHandler collectorHandler){
         this.collectorHandler=collectorHandler;
     }
+
+    /**
+     * Set VacancyHandler for PCSEmulator
+     * @param vacancyHandler VacancyHandler for PCSEmulator
+     */
     private void setVacancyHandler(VacancyHandler vacancyHandler){this.vacancyHandler=vacancyHandler;}
     private void setPayMachineHandler(PayMachineHandler payMachineHandler){
         this.payMachineList.add(payMachineHandler);
     }
+
+    /**
+     * Set MotionSensor DetectUpList and MotionSensor DetectDown List for PCSEmulator
+     * @param motionSensorDetectUpList MotionSensor DetectUpList  for PCSEmulator
+     * @param motionSensorDetectDownList MotionSensor DetectDown for PCSEmulator
+     */
     private void setMotionSensor(ArrayList<MotionSensorEmulator> motionSensorDetectUpList,ArrayList<MotionSensorEmulator> motionSensorDetectDownList){
         this.motionSensorDetectUpList.addAll(motionSensorDetectUpList);
         this.motionSensorDetectDownList.addAll(motionSensorDetectDownList);

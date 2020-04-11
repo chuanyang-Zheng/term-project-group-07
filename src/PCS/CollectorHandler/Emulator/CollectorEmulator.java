@@ -17,11 +17,32 @@ import javafx.stage.WindowEvent;
  * @author Chuanyang Zheng
  */
 public class CollectorEmulator extends CollectorHandler {
+
+    /**
+     * It will be used in Start() method to create Collector GUI
+     */
     private Stage myStage;
+
+    /**
+     * It is the Collector Controller. A Emulator Of Collector
+     */
     private CollectorEmulatorController collectorEmulatorController;
+
+    /**
+     * PCS Start Object
+     */
     private final PCSStarter pcsStarter;
+
+    /**
+     * The ID The Collector Emulator
+     */
     private final String id;
 
+    /**
+     * Collector Constructor
+     * @param id The ID Of Collector Emulator
+     * @param pcsStarter PCS Starter Object
+     */
     public CollectorEmulator(String id, PCSStarter pcsStarter){
         super(id, pcsStarter);
         this.pcsStarter = pcsStarter;

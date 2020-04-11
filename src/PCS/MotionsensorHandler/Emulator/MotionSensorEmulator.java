@@ -51,4 +51,36 @@ public class MotionSensorEmulator extends MotionSensorHandler {
         });
         myStage.show();
     } // MotionSensorEmulator
+
+    /**
+     * Log Info Type Information and Add it to Controller
+     * @param logMsg:Log Msg
+     * @author Chuanyang Zheng
+     */
+    private final void logInfo(String logMsg) {
+        motionSensorEmulatorController.appendTextArea("[INFO]: " + logMsg);
+        log.info(id + ": " + logMsg);
+    } // logInfo
+
+
+    /**
+     * Log Warning Type Information and Add it to Controller
+     * @param logMsg:Log Msg
+     * @author Chuanyang Zheng
+     */
+    private final void logWarning(String logMsg) {
+        motionSensorEmulatorController.appendTextArea("[WARNING]: " + logMsg);
+        log.warning(id + ": " + logMsg);
+    } // logWarning
+
+
+    /**
+     * Log Severe Type Information and Add it to Controller
+     * @param logMsg:Log Msg
+     * @author Chuanyang Zheng
+     */
+    private final void logSevere(String logMsg) {
+        motionSensorEmulatorController.appendTextArea("[SEVERE]: " + logMsg);
+        log.severe(id + ": " + logMsg);
+    } // logSevere
 }
