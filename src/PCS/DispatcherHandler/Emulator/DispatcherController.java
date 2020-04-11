@@ -72,6 +72,7 @@ public class DispatcherController {
     public void appendTextArea(String status) {
         Platform.runLater(() -> DispatcherTextArea.appendText(String.format("[%04d] %s\n", ++lineNo, status)));
     } // appendTextArea
+
     public void showTicket(String tmpid, String tmpenter){
         ticket_enter = tmpenter;
         TicketIDField.setText(tmpid);

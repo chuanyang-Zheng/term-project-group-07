@@ -60,6 +60,12 @@ public class PayMachineEmulator extends PayMachineHandler {
         myStage.show();
     } //  PayMachineEmulator
     @Override
+    /**
+     * Override the FeeReceive()
+     *  Display the Ticket the ticket information in the buttom "textbox".
+     *  Update the Ticket Information information in textarea.
+     * @author Pan Feng
+     */
     protected void FeeReceive(String mymsg){
         Long parkedTime = 0L;
         String []currentTicket = mymsg.split(",");
@@ -71,6 +77,12 @@ public class PayMachineEmulator extends PayMachineHandler {
         PayMachineController.appendTextArea("You have parked " + Long.toString(parkedTime) + "s and you need to pay $" + fee + "  ($5/s)");
         PayMachineController.updateTicket(currentTicket[1],currentTicket[2],timestr);
     }
+    /**
+     * Override the ExitReceive()
+     *  Display the Ticket the ticket information in the buttom "textbox".
+     *  Update the Ticket Information information in textarea.
+     * @author Pan Feng
+     */
     protected void ExitReceive(String mymsg){
         String []currentTicket = mymsg.split(",");
         String ticketid = PayMachineController.TicketIDField.getText();
@@ -83,12 +95,24 @@ public class PayMachineEmulator extends PayMachineHandler {
         PayMachineController.appendTextArea("Please exit before: " + timestr);
         PayMachineController.updateTicket(ticketid,"0",timestr);
     }
+    /**
+     * Override the SendPaymentACK()
+     *  Display the Ticket the ticket information in the buttom "textbox".
+     *  Send the Payment finished Acknowledgement to PCSCore
+     * @author Pan Feng
+     */
     protected void SendPaymentACK(String mymsg){
         String []tmp = mymsg.split(",");
         PayMachineController.appendTextArea("Thank you for payment!!!!");
         PayMachineController.appendTextArea("Please remove your ticket :)");
         pcsCore.send(new Msg(id, mbox, Msg.Type.PaymentACK, tmp[1]));
     }
+    /**
+     * Override the RemovalFinished()
+     *  Display the Ticket the ticket information in the buttom "textbox".
+     *
+     * @author Pan Feng
+     */
     protected void RemovalFinished(){
         PayMachineController.appendTextArea("Ticket removed!");
         PayMachineController.appendTextArea("Please exit before exit time~");

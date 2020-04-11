@@ -14,8 +14,6 @@ import javafx.scene.control.Alert;
 public class PayMachineHandler extends AppThread {
     protected final MBox pcsCore;
     private PayMachineStatus PMS;
-    protected float TicketFee;
-
 
     //------------------------------------------------------------
     // Pay Machine Handler Constructor
@@ -105,30 +103,47 @@ public class PayMachineHandler extends AppThread {
     }
     // processMsg
 
-//------------------------
-// Send Fee Request
+    /**
+     * A Function to process the recieved Message
+     *
+     * @param mymsg:The received message
+     * Send the request to PCSCore for fee.
+     * @author Pan Feng
+     */
     protected void SendRequest(String mymsg){
         pcsCore.send(new Msg(id, mbox, Msg.Type.TicketRequest, mymsg));
     }
-    // Send Fee Request
-    //------------------------
-    // Receive Msg with id,fee,entertime
-    // Send Fee Request
+    /**
+     * A Function to process the recieved Message
+     *
+     * @param mymsg:The received message
+     * Send the request to PCSCore for ExitInfo.
+     * @author Pan Feng
+     */
     protected void SendExitInfoRequest(String mymsg){
         pcsCore.send(new Msg(id, mbox, Msg.Type.TicketExitInfoRequest, mymsg));
     }
+    /**
+     * A Function to display reminder
+     * Display the Ticket is Removed
+     * @author Pan Feng
+     */
     protected void RemovalFinished(){
         log.info(id + "Ticket Removed");
     }
-    // Send Fee Request
-    //------------------------
-    // Receive Msg with id,fee,entertime
+    /**
+     * A Function to handle the Fee message
+     *  Display the Fee is received
+     * @author Pan Feng
+     */
     protected void FeeReceive(String mymsg){
         String []str = mymsg.split(",");
-        TicketFee = Float.parseFloat(str[1]);
     }
-    // Receive Msg with id,fee,entertime
-
+    /**
+     * A Function to handle the Fee message
+     *  Display the Fee is received
+     * @author Pan Feng
+     */
     protected void ExitReceive(String mymsg){
         log.info("Exit INfo received");
     }
@@ -138,7 +153,10 @@ public class PayMachineHandler extends AppThread {
         log.fine(id+ ":ticket"+ mymsg + "Paid already.");
     }
     // Send Payment ACK
-
+    /**
+     * A Function to Display the PayMachine Status case by case
+     * @author Pan Feng
+     */
     protected final void handleStatus() {
 
         PayMachineStatus oldStatus = PMS;
