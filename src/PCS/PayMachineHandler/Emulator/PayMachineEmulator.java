@@ -67,6 +67,7 @@ public class PayMachineEmulator extends PayMachineHandler {
      *  Display the Ticket the ticket information in the buttom "textbox".
      *  Update the Ticket Information information in textarea.
      *  Protocol message format: PayMachine ID,Ticket ID,TicketFee,EnterTime
+     * @param mymsg received message
      * @author Pan Feng
      */
     protected void FeeReceive(String mymsg){
@@ -88,6 +89,7 @@ public class PayMachineEmulator extends PayMachineHandler {
      *  Display the Ticket the ticket information in the buttom "textbox".
      *  Update the Ticket Information information in textarea.
      *  Protocol message format: PayMachine ID,Ticket ID,TicketFee,ExitTime
+     * @param mymsg Received message
      * @author Pan Feng
      */
     protected void ExitReceive(String mymsg){
@@ -109,6 +111,8 @@ public class PayMachineEmulator extends PayMachineHandler {
      * Override the SendPaymentACK()
      *  Display the Ticket the ticket information in the buttom "textbox".
      *  Send the Payment finished Acknowledgement to PCSCore
+     *  Protocol message format is PaymachineID,TicketID
+     * @param mymsg Received message
      * @author Pan Feng
      */
     protected void SendPaymentACK(String mymsg){

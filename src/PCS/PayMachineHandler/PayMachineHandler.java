@@ -149,6 +149,7 @@ public class PayMachineHandler extends AppThread {
      * A Function to handle the Fee message
      *  Display the Fee is received
      *  Protocol message format: PayMachine ID,Ticket ID,TicketFee,EnterTime
+     * @mymsg Received Protocol Message
      * @author Pan Feng
      */
     protected void FeeReceive(String mymsg){
@@ -161,6 +162,8 @@ public class PayMachineHandler extends AppThread {
     /**
      * A Function to handle the Exit Info
      *  Display the Exit time is received
+     * @param mymsg Received protocol message
+     * Protocol Message format is  PayMachine ID,Ticket ID,TicketFee,ExitTime
      * @author Pan Feng
      */
     protected void ExitReceive(String mymsg){
@@ -172,6 +175,8 @@ public class PayMachineHandler extends AppThread {
     // SendPaymentACK
     /**
      * A Function to Display the PayMachine Status case by case
+     * @param mymsg Received Protocol message
+     * Protocol Format is Paymachine ID,Ticket ID
      * @author Pan Feng
      */
     protected void SendPaymentACK(String mymsg){
