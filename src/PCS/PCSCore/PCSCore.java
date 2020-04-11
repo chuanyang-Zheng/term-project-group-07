@@ -15,6 +15,7 @@ import java.util.Arrays;
 /**
  * PCSCore CLass Connected ALL Handlers
  * @author Chuanyang Zheng(17251311)
+ * @author Pan Feng (19205945)
  */
 public class PCSCore extends AppThread {
     /**
