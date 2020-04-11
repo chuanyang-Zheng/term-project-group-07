@@ -53,26 +53,26 @@ public class PayMachineController {
         Button btn = (Button) actionEvent.getSource();
 
         switch (btn.getText()) {
-            case "Insert ticket":
-                TextInputDialog dialog = new TextInputDialog("0");
+            case "Insert ticket": // the insert ticket button pressed
+                TextInputDialog dialog = new TextInputDialog("0"); // Dialog for input the ticket ID
                 dialog.setTitle("Inserting Ticket....");
                 dialog.setContentText("Please Input Ticket ID:");
                 Optional<String> result = dialog.showAndWait();
-                if (result.isPresent())
-                    ticket_id = result.get();
-                if(ticket_id == null || ticket_id.isEmpty())
+                if (result.isPresent()) // if Inputed
+                    ticket_id = result.get(); // get the inputs
+                if(ticket_id == null || ticket_id.isEmpty()) // Check Validation
                     new Alert(Alert.AlertType.ERROR, "Please input valid ID :(", new ButtonType[]{ButtonType.OK}).show();
                 else
-                    payMBox.send(new Msg(id, null, Msg.Type.TicketRequest, id + "," + ticket_id));
+                    payMBox.send(new Msg(id, null, Msg.Type.TicketRequest, id + "," + ticket_id)); // send the Fee request
                 break;
-            case "Pay by Oct":
+            case "Pay by Oct": // payment button pressed
                 if(ticket_id == null || ticket_id.isEmpty())
-                    new Alert(Alert.AlertType.ERROR, "Please insert first :)", new ButtonType[]{ButtonType.OK}).show();
+                    new Alert(Alert.AlertType.ERROR, "Please insert first :)", new ButtonType[]{ButtonType.OK}).show(); // Check is ticket here
                 else
-                    payMBox.send(new Msg(id, null, Msg.Type.PaymentACK, id + "," + ticket_id));
+                    payMBox.send(new Msg(id, null, Msg.Type.PaymentACK, id + "," + ticket_id)); // send payment request
                 break;
             case "Remove ticket":
-                payMBox.send(new Msg(id, null, Msg.Type.TicketRemoveACK, id + "," + ticket_id));
+                payMBox.send(new Msg(id, null, Msg.Type.TicketRemoveACK, id + "," + ticket_id)); // send removal ACK
                 break;
 
             default:
@@ -97,15 +97,25 @@ public class PayMachineController {
      *  Update the Display in GUI.
      * @author Pan Feng
      */
+
+    //------------------------------------------------------------
+    // updateTicket
+    /**
+     *
+     * @param tmpid Ticket ID
+     * @param tmpfee Ticket Fee
+     * @param tmptime Ticket Time
+     */
     public void updateTicket(String tmpid,String tmpfee, String tmptime){
         ticket_fee = tmpfee; ticket_time = tmptime;
         TicketIDField.setText(tmpid);
         FeeField.setText(ticket_fee);
-        if(Float.parseFloat(tmpfee) == 0)
+        if(Float.parseFloat(tmpfee) == 0) // if the ticket is paid, the tmptime is exit time
             ExitField.setText(ticket_time);
         else {
-            EnterField.setText(ticket_time);
+            EnterField.setText(ticket_time); // update the enter time
             ExitField.setText("");
         }
     }//updateTicket
+
 } // PayMachineController
