@@ -24,8 +24,6 @@ public class CollectorHandler extends AppThread {
      * CollectorWaitValidation,
      * CollectorWarning,
      */
-
-
     private CollectorStatus collectorStatus;
 
     /**
