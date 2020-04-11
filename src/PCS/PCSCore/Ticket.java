@@ -54,8 +54,12 @@ public class Ticket {
     /**
      * Calculate Parking Fee
      * @param coefficient Parking fee coefficient. By default, we set it to 5 in PCS.cfg file
+     * Fee is calculated by second for easy demo
+     * If there is no PayMachine set,which means this ticket isn't paid, so calculate the fee by time
+     * If there is already a PayMachine ID here, which means the driver paid, then the fee is 0
+     * Update the parkingFee
      * @return return parking fee
-     * @author Chuanyang Zheng
+     * @author Pan Feng
      */
     public float calculateFee(float coefficient){
         long currentTime = System.currentTimeMillis();

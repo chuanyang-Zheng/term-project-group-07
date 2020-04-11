@@ -28,7 +28,7 @@ public class PayMachineController {
     public TextArea EnterField;
     public TextArea ExitField;
     private int lineNo = 0;
-    private String ticket_id,ticket_fee,ticket_enter;
+    private String ticket_id,ticket_fee,ticket_time;
 
     //------------------------------------------------------------
     // initialize
@@ -41,8 +41,13 @@ public class PayMachineController {
     } // initialize
 
 
-    //------------------------------------------------------------
-    // buttonPressed
+
+    /**
+     *  Controller to handle whether there is a button pressed.
+     *  @param actionEvent actionEvent received from panel
+     *  Handle the process case by case based on the content of "pressed button"
+     * @author Pan Feng
+     */
     public void buttonPressed(ActionEvent actionEvent) {
         Button btn = (Button) actionEvent.getSource();
 
@@ -67,8 +72,6 @@ public class PayMachineController {
                 break;
             case "Remove ticket":
                 payMBox.send(new Msg(id, null, Msg.Type.TicketRemoveACK, id + "," + ticket_id));
-                appendTextArea("Ticket removed!");
-                appendTextArea("Please exit before exit time~");
                 break;
 
             default:
@@ -83,14 +86,22 @@ public class PayMachineController {
     public void appendTextArea(String status) {
         Platform.runLater(() -> gateTextArea.appendText(String.format("[%04d] %s\n", ++lineNo, status)));
     } // appendTextArea
-    public void updateTicket(String tmpid,String tmpfee, String tmpenter){
-        ticket_fee = tmpfee; ticket_enter = tmpenter;
+    /**
+     * Function to update the Ticket Info in the upper textArea()
+     *  @param tmpid the Current TicketID
+     *  @param tmpfee the Current TicketFee
+     *  @param tmptime the Received Time of the Ticket; if fee is 0 it is exit time, if fee is not 0 it is the enter time.
+     *  Update the Display in GUI.
+     * @author Pan Feng
+     */
+    public void updateTicket(String tmpid,String tmpfee, String tmptime){
+        ticket_fee = tmpfee; ticket_time = tmptime;
         TicketIDField.setText(tmpid);
         FeeField.setText(ticket_fee);
         if(Float.parseFloat(tmpfee) == 0)
-            ExitField.setText(ticket_enter);
+            ExitField.setText(ticket_time);
         else {
-            EnterField.setText(ticket_enter);
+            EnterField.setText(ticket_time);
             ExitField.setText("");
         }
     }
