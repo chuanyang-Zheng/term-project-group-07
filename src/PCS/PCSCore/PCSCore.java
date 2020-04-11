@@ -11,27 +11,114 @@ import java.util.Arrays;
 
 //======================================================================
 // PCSCore
+
+/**
+ * PCSCore CLass Connected ALL Handlers
+ * @author Chuanyang Zheng(17251311)
+ */
 public class PCSCore extends AppThread {
+    /**
+     * Entrance Gate Box
+     */
     private MBox entranceGateBox;
+    /**
+     * Exit Gate Box
+     */
     private MBox exitGateBox;
+
+    /**
+     * Collector Box
+     */
     private MBox collectorMbox;
+
+    /**
+     * Dispatcher Box
+     */
     private MBox dispatcherMbox;
+
+    /**
+     * Vacancy Box
+     */
     private MBox vacancyMbox;
+
+    /**
+     * payMachine Box
+     */
     private ArrayList<MBox> payMBox = new ArrayList<MBox>();
+
+    /**
+     *Poll Time
+     */
     private final int pollTime;
+
+    /**
+     * Pool Time ID will be used for Timer weak Up
+     */
     private final int PollTimerID = 1;
+
+    /**
+     * For Demo
+     */
     private final int openCloseGateTime;        // for demo only!!!
+
+    /**
+     * For Demo
+     */
     private final int OpenCloseGateTimerID = 2;        // for demo only!!!
+
+    /**
+     * Will be used for asking exit Gate to open, when collector solves problems
+     */
     private final int collectorSolveProblemGateWaitTimeID = 3;
+
+    /**
+     * Will be used for asking entrance gate to close, when a driver removes ticket
+     */
     private final int ticketDispatcherTicketRemoveID=4;
+
+    /**
+     * For Demo
+     */
     private boolean gateIsClosed = true;        // for demo only!!!
+
+    /**
+     * Ticket List
+     */
     private ArrayList<Ticket> ticketList = new ArrayList<>();
+
+    /**
+     * Exit Time=Insert Cart Time + exitTimeCoefficient. If necessary, change it in PCS.cfg
+     */
     private long exitTimeCoefficient = Long.parseLong(appKickstarter.getProperty("Ticket.exitTimeCoefficient"));
+
+    /**
+     * Calculating Parking Fee. If necessary, change it in PCS.cfg
+     */
     private float calculateFeeCoefficient = Float.parseFloat(appKickstarter.getProperty("Ticket.calculateFeeCoefficient"));
+
+    /**
+     * The time gate starting closing after opening. If necessary, open it in PCS.cfg
+     */
     private int gateOpenWaitTime = Integer.parseInt(appKickstarter.getProperty("PCSCore.GateOpenWaitTime"));
+
+    /**
+     * The time gate using to open. If necessary, open it in PCS.cfg
+     */
     private int gateOpenTime = Integer.parseInt(appKickstarter.getProperty("Gate.GateOpenTime"));
+
+    /**
+     * The number of floors. If necessary, open it in PCS.cfg
+     */
     private int totalFloorNumber=Integer.parseInt(appKickstarter.getProperty("TotalFloorNumber"));
+
+    /**
+     * Number of available parking spaces in each floor
+     */
     private int[] availableParkingSpaces=new int[totalFloorNumber];
+
+    /**
+     * The number of pay machines
+     */
     public int PayMachineNumber;
 //	private long exitTimeCoefficient=0;
 //	private float calculateFeeCoefficient=0;

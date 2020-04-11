@@ -61,10 +61,8 @@ public class CollectorHandler extends AppThread {
 
     /**
      * A method used to process message.
-     *
      * @param msg:a message received
      * @return if message type is terminated, return false. Else, return true
-     *
      * @author Chuanyang Zheng
      */
     protected boolean processMsg(Msg msg){
@@ -86,9 +84,7 @@ public class CollectorHandler extends AppThread {
 
     /**
      * Handle Collector Valid Request. First Check Collector Status. If Collector is available, send valid request to PCSCore
-     *
      * @param msg:A msg received from processMsg(Msg msg) method
-     *
      * @author Chuanyang Zheng
      */
     protected void handleCollectorValidRequest(Msg msg){
@@ -126,8 +122,8 @@ public class CollectorHandler extends AppThread {
     //A simple function. The ticket is valid. Therefore, we log received message.
 
     /**
-     *  PCSCore Tell Handler That The ticket is valid.
-     *  Therefore, we log received message. For append the mssage to Controller area, we will finish it in ConllectorEmulator Class.
+     * PCSCore Tell Handler That The ticket is valid.
+     * Therefore, we log received message. For append the mssage to Controller area, we will finish it in ConllectorEmulator Class.
      * @author Chuanyang Zheng
      */
     protected void handleCollectorPositive(){

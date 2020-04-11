@@ -28,6 +28,7 @@ import java.util.ArrayList;
 
 /**
  * Run the Program By Running The class
+ * @author Chuanyang Zheng(17251311)
  */
 public class PCSEmulatorStarter extends PCSStarter {
     //------------------------------------------------------------
