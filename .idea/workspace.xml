@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="76c37db4-d153-4079-b307-a865859fe863" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/etc/PCS.PCSEmulatorStarter.log" beforeDir="false" afterPath="$PROJECT_DIR$/etc/PCS.PCSEmulatorStarter.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/DispatcherHandler/DispatcherHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/DispatcherHandler/DispatcherHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/DispatcherHandler/Emulator/DispatcherEmulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/DispatcherHandler/Emulator/DispatcherEmulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/PCSStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/PCSStarter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +141,7 @@
       <workItem from="1586435483834" duration="20000" />
       <workItem from="1586439584054" duration="1943000" />
       <workItem from="1586488640072" duration="3561000" />
-      <workItem from="1586573669299" duration="5013000" />
+      <workItem from="1586573669299" duration="7536000" />
     </task>
     <task id="LOCAL-00003" summary="Update Dispatcher Remove Ticket Response">
       <created>1586242645625</created>
@@ -279,7 +283,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586578681745</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Update JavaDoc">
+      <created>1586578840581</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1586578840581</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -316,7 +327,8 @@
     <MESSAGE value="Fix MotionSensor Bugs. Finish CollectorHandler JavaDoc" />
     <MESSAGE value="Finish Collector JavaDoc" />
     <MESSAGE value="Finish Ticket,PCSStarter and PCSEmulatorStarter JavaDoc. Begin PCSCore JavaDoc" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish Ticket,PCSStarter and PCSEmulatorStarter JavaDoc. Begin PCSCore JavaDoc" />
+    <MESSAGE value="Update JavaDoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update JavaDoc" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="74" key="#Notifications" timestamp="1586578740715">
@@ -335,39 +347,39 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="162" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1586489242753" />
-    <state x="520" y="167" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1586491423540">
+    <state x="520" y="167" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1586578852125">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="520" y="167" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1586491423540" />
-    <state x="275" y="8" key="CommitChangelistDialog2" timestamp="1586578678324">
+    <state x="520" y="167" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1586578852125" />
+    <state x="275" y="8" key="CommitChangelistDialog2" timestamp="1586578839706">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="258" y="23" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1586413091378" />
-    <state x="275" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1586578678324" />
+    <state x="275" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1586578839706" />
     <state x="501" y="143" key="FileChooserDialogImpl" timestamp="1586489702372">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="501" y="143" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1586489702372" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1586492206838">
+    <state width="746" height="361" key="GridCell.Tab.0.bottom" timestamp="1586582530886">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1398" height="207" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1586411787081" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586492206838" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1586492206838">
+    <state width="746" height="361" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586582530886" />
+    <state width="746" height="361" key="GridCell.Tab.0.center" timestamp="1586582530886">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1398" height="207" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1586411787080" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586492206838" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1586492206838">
+    <state width="746" height="361" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586582530886" />
+    <state width="746" height="361" key="GridCell.Tab.0.left" timestamp="1586582530886">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1398" height="207" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1586411787079" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586492206838" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1586492206838">
+    <state width="746" height="361" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586582530886" />
+    <state width="746" height="361" key="GridCell.Tab.0.right" timestamp="1586582530886">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1398" height="207" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1586411787080" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586492206838" />
+    <state width="746" height="361" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586582530886" />
     <state x="349" y="155" key="IDE.errors.dialog" timestamp="1586327295169">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -385,11 +397,11 @@
     </state>
     <state x="208" y="33" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1586229342643" />
     <state x="222" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1586489657470" />
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1586578717020">
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1586578842893">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="338" y="162" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1586413099156" />
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1586578717020" />
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1586578842893" />
     <state x="454" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1586573668257">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

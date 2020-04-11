@@ -21,6 +21,10 @@ import java.util.ArrayList;
 
 //======================================================================
 // PCSStarter
+
+/**
+ * PCS Starter
+ */
 public class PCSStarter extends AppKickstarter {
     /**
      * Timer for wake up
