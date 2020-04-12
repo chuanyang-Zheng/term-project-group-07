@@ -6,12 +6,32 @@ import AppKickstarter.misc.*;
 
 //======================================================================
 // GateHandler
+
+/**
+ * Gate Handler
+ * @author Joe
+ */
 public class GateHandler extends AppThread {
+
+	/**
+	 * PCSCore MBox
+	 */
     protected final MBox pcsCore;
-    private GateStatus gateStatus;
+
+	/**
+	 * Gate StatusGateOpened, GateClosed, GateOpening, GateClosing,
+	 */
+	private GateStatus gateStatus;
 
     //------------------------------------------------------------
     // GateHandler
+
+	/**
+	 * Gate Handler Constructor
+	 * @param id The ID of Gate
+	 * @param appKickstarter Appkickstarter
+	 * @author Joe
+	 */
     public GateHandler(String id, AppKickstarter appKickstarter) {
 	super(id, appKickstarter);
 	pcsCore = appKickstarter.getThread("PCSCore").getMBox();
@@ -21,6 +41,11 @@ public class GateHandler extends AppThread {
 
     //------------------------------------------------------------
     // run
+
+	/**
+	 * The run method of Gate Handler receives message and processes logic
+	 * @author Joe
+	 */
     public void run() {
 	Thread.currentThread().setName(id);
 	log.info(id + ": starting...");
@@ -41,6 +66,13 @@ public class GateHandler extends AppThread {
 
     //------------------------------------------------------------
     // processMsg
+
+	/**
+	 * Process Logic
+	 * @param msg Msg received from run() method
+	 * @return If Msg type is Terminate, return true. ELse, return false
+	 * @author Joe
+	 */
     protected boolean processMsg(Msg msg) {
         boolean quit = false;
 
@@ -61,6 +93,11 @@ public class GateHandler extends AppThread {
 
     //------------------------------------------------------------
     // handleGateOpenRequest
+
+	/**
+	 * Handle Gate Open Request
+	 * @author Joe
+	 */
     protected final void handleGateOpenRequest() {
 	log.info(id + ": gate open request received");
 
@@ -93,6 +130,11 @@ public class GateHandler extends AppThread {
 
     //------------------------------------------------------------
     // handleGateCloseRequest
+
+	/**
+	 * Handle Gate Close Request
+	 * @author Joe
+	 */
     protected final void handleGateCloseRequest() {
 	log.info(id + ": gate close request received");
 
@@ -125,7 +167,13 @@ public class GateHandler extends AppThread {
 
     //------------------------------------------------------------
     // handleGateOpenReply
-    protected final void handleGateOpenReply() {
+
+
+	/**
+	 * Handle Gate Open reply
+	 * @author Joe
+	 */
+	protected final void handleGateOpenReply() {
 	log.info(id + ": gate open reply received");
 
 	GateStatus oldGateStatus = gateStatus;
@@ -157,6 +205,11 @@ public class GateHandler extends AppThread {
 
     //------------------------------------------------------------
     // handleGateCloseReply
+
+	/**
+	 * Handle Gate Close Reply
+	 * @author Joe
+	 */
     protected final void handleGateCloseReply() {
 	log.info(id + ": gate close reply received");
 
@@ -189,6 +242,11 @@ public class GateHandler extends AppThread {
 
     //------------------------------------------------------------
     // handlePollReq
+
+	/**
+	 * Handle Pool Request
+	 * @author Joe
+	 */
     protected final void handlePollReq() {
 	log.info(id + ": poll request received.  Send poll request to hardware.");
 	sendPollReq();
@@ -197,6 +255,11 @@ public class GateHandler extends AppThread {
 
     //------------------------------------------------------------
     // handlePollAck
+
+	/**
+	 * Handle Pool Acknowledgement
+	 * @author Joe
+	 */
     protected final void handlePollAck() {
 	log.info(id + ": poll ack received.  Send poll ack to PCS Core.");
 	pcsCore.send(new Msg(id, mbox, Msg.Type.PollAck, id + " is up!"));
@@ -205,6 +268,11 @@ public class GateHandler extends AppThread {
 
     //------------------------------------------------------------
     // sendGateOpenSignal
+
+	/**
+	 * Send Gate Open Singal
+	 * @author Joe
+	 */
     protected void sendGateOpenSignal() {
 	// fixme: send gate open signal to hardware
 	log.info(id + ": sending gate open signal to hardware.");
@@ -213,6 +281,11 @@ public class GateHandler extends AppThread {
 
     //------------------------------------------------------------
     // sendGateCloseSignal
+
+	/**
+	 * Send Gate Close Signal
+	 * @author Joe
+	 */
     protected void sendGateCloseSignal() {
 	// fixme: send gate close signal to hardware
 	log.info(id + ": sending gate close signal to hardware.");
@@ -221,6 +294,10 @@ public class GateHandler extends AppThread {
 
     //------------------------------------------------------------
     // sendPollReq
+
+	/**
+	 * Send Pool Request
+	 */
     protected void sendPollReq() {
 	// fixme: send gate poll request to hardware
 	log.info(id + ": poll request received");
@@ -231,6 +308,11 @@ public class GateHandler extends AppThread {
 
     //------------------------------------------------------------
     // Gate Status
+
+	/**
+	 * Gate Status
+	 * @author Joe
+	 */
     private enum GateStatus {
 	GateOpened,
 	GateClosed,

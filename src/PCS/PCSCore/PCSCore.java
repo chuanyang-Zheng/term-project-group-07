@@ -53,7 +53,7 @@ public class PCSCore extends AppThread {
     private final int pollTime;
 
     /**
-     * Pool Time ID will be used for Timer weak Up
+     * Pool Time ID will be used for Timer wake Up
      */
     private final int PollTimerID = 1;
 
@@ -129,6 +129,13 @@ public class PCSCore extends AppThread {
 
     //------------------------------------------------------------
     // PCSCore
+
+    /**
+     * PCS Core Constructor
+     * @param id The ID Of the PCS Core. By Default, the ID is PCSCore
+     * @param appKickstarter appKickstarter
+     * @exception Exception throws Exception
+     */
     public PCSCore(String id, AppKickstarter appKickstarter) throws Exception {
         super(id, appKickstarter);
         this.pollTime = Integer.parseInt(appKickstarter.getProperty("PCSCore.PollTime"));
@@ -151,6 +158,10 @@ public class PCSCore extends AppThread {
 
     //------------------------------------------------------------
     // run
+
+    /**
+     * Get Handler boxes and Process Logic Message. The most important method of PCSCore
+     */
     public void run() {
         Thread.currentThread().setName(id);
 //	Timer.setTimer(id, mbox, pollTime, PollTimerID);
@@ -250,7 +261,12 @@ public class PCSCore extends AppThread {
         log.info(id + ": terminating...");
     } // run
 
-
+    /**
+     * Check whether the String can be converted to int or not
+     * @param detail The String that tried to be converted to int
+     * @return If the String can be converted to int, return true. ELse, return false
+     * @author Chuanyang Zheng
+     */
     public boolean checkStringToInt(String detail) {
         try {
             Integer.parseInt(detail);
@@ -330,6 +346,9 @@ public class PCSCore extends AppThread {
         }
     }//SendExitInfo
 
+    /**
+     * Add Ticket to ticket List
+     */
     public void AddTicket() {
         //String[] tmp = msg.split(",");
 
@@ -339,6 +358,11 @@ public class PCSCore extends AppThread {
         dispatcherMbox.send(new Msg(id,mbox,Msg.Type.ReceiveTicketID,String.valueOf(t.ticketID)));
     }
 
+    /**
+     * Process Collector Valid a ticket request. If the ticket is valid, tell Collector that the ticket is valid, and tell exit gate to open. Also, set a timer to tell exit gate to close after a defined period
+     * @param msg Msg received from Collector
+     * @author Chuanyang Zheng
+     */
     public void handleCollectorValidRequest(Msg msg) {
         log.info(id + " Collector Valid Request Receive");
         if (checkStringToInt(msg.getDetails())) {
@@ -368,6 +392,12 @@ public class PCSCore extends AppThread {
 
     //------------------------------------------------------------
     // run
+
+    /**
+     * Handle Timer wake up
+     * @param msg Message receive from Timer
+     * @author Chuanyang Zheng
+     */
     private void handleTimesUp(Msg msg) {
         log.info("------------------------------------------------------------");
         switch (Timer.getTimesUpMsgTimerId(msg)) {
@@ -426,8 +456,9 @@ public class PCSCore extends AppThread {
     }
 
     /**
-     *
-     * @param msg Contain Message From MotionSensor Up
+     *Handle Motion Sensor Detect Up
+     * @param msg Contain Message From Motion Sensor Detect Up
+     * @author Chuanyang Zheng
      */
     public void handleMotionSensorDetectUp(Msg msg){
         log.info(id+": Begin Handle Detect Up");
@@ -443,6 +474,11 @@ public class PCSCore extends AppThread {
         }
     }
 
+    /**
+     * Handle Motion Sensor Detect Down
+     * @param msg Msg received from Motion Sensor Detect Down
+     * @author Chuanyang Z
+     */
     public void handleMotionSensorDetectDown(Msg msg){
         log.info(id+": Begin Handle Detect Down");
         try{
@@ -460,9 +496,10 @@ public class PCSCore extends AppThread {
 
 
     /**
-     *
+     *Handle Available Parking Spaces change.
      * @param initial:the floor number will decrease one available parking spaces
      * @param now: the floor number will increase one available parking space
+     * @author Chuanang Zheng
      */
     public void handleParkingSpaceChange(int initial,int now){
         if(initial<0){
@@ -485,6 +522,10 @@ public class PCSCore extends AppThread {
             availableParkingSpaces[now]=Math.max(availableParkingSpaces[now]-1,0);
         }
     }
+
+    /**
+     * Handle Vacancy Display Request
+     */
     public void handleDisplayVacancyRequest(){
         String vacancyMsg=String.valueOf(availableParkingSpaces[0]);
         for (int i=1;i<totalFloorNumber;i++){
@@ -494,6 +535,12 @@ public class PCSCore extends AppThread {
         vacancyMbox.send(new Msg(id,mbox,Msg.Type.VacancyDisUpdateRequest,vacancyMsg));
     }
 
+    /**
+     * Change Array Elements to String
+     * @param arrayInformation An Array
+     * @return A String of all array elements split with spaces. For example, "1 2 5 3 1 6"
+     * @author Chuanyang Zheng
+     */
     public String arrayToString(int[] arrayInformation){
         StringBuilder tep= new StringBuilder();
         for(int i=0;i<arrayInformation.length;i++){

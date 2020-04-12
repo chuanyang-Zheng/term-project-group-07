@@ -6,12 +6,39 @@ import AppKickstarter.misc.MBox;
 import AppKickstarter.misc.Msg;
 import PCS.GateHandler.GateHandler;
 
+/**
+ * Motion Sensor Class
+ * @author Chuanyang Zheng
+ */
 public class MotionSensorHandler extends AppThread {
+
+    /**
+     * PCSCore Mbox
+     */
     protected final MBox pcsCore;
+
+    /**
+     * Motion Sensor Status: MotionSensorRunning, MotionSensorTerminated
+     */
     private MotionSensorStatus motionSensorStatus;
+
+    /**
+     * The floor the the motion sensor located
+     */
     private int floorNumber;
+
+    /**
+     * If detectUp is true, the motion sensor detect up. ELse, it detect down
+     */
     private boolean detectUp;
 
+    /**
+     * Motion Sensor Detect Constructor
+     * @param id The ID of the Handler
+     * @param appKickstarter Appkiskstarter
+     * @param floorNumber The floor that the motion sensor lcoated
+     * @param detectUp If detectUp is true, the motion sensor detect up. ELse, it detect down
+     */
     public MotionSensorHandler(String id, AppKickstarter appKickstarter, int floorNumber, boolean detectUp) {
         super(id, appKickstarter);
         pcsCore = appKickstarter.getThread("PCSCore").getMBox();

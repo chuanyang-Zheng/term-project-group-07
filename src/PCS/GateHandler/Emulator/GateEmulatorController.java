@@ -13,19 +13,60 @@ import javafx.scene.control.TextArea;
 
 //======================================================================
 // GateEmulatorController
-public class GateEmulatorController {
-    private String id;
-    private AppKickstarter appKickstarter;
-    private Logger log;
-    private GateEmulator gateEmulator;
-    private MBox gateMBox;
-    public TextArea gateTextArea;
 
+/**
+ * Gate Emulator Controller is a GateEmulator
+ * @author Joje
+ */
+public class GateEmulatorController {
+
+	/**
+	 * The ID of Gate Emulator Controller
+	 */
+    private String id;
+
+	/**
+	 * Appkickstarter
+	 */
+	private AppKickstarter appKickstarter;
+
+	/**
+	 * Logger
+	 */
+    private Logger log;
+
+	/**
+	 * Gate Emulator
+	 */
+	private GateEmulator gateEmulator;
+
+	/**
+	 * Gate Box
+	 */
+    private MBox gateMBox;
+
+	/**
+	 * Gate Text Area contains button events
+	 */
+	public TextArea gateTextArea;
+
+	/**
+	 * Count line
+	 */
 	private int lineNo = 0;
 
 
     //------------------------------------------------------------
     // initialize
+
+	/**
+	 * Initialize Gate Emulator Controller
+	 * @param id GateEmulatorController ID
+	 * @param appKickstarter Appkickstarter
+	 * @param log Logger
+	 * @param gateEmulator Gate Emulator
+	 * @author Joe
+	 */
     public void initialize(String id, AppKickstarter appKickstarter, Logger log, GateEmulator gateEmulator) {
         this.id = id;
         this.appKickstarter = appKickstarter;
@@ -37,6 +78,12 @@ public class GateEmulatorController {
 
     //------------------------------------------------------------
     // buttonPressed
+
+	/**
+	 * Process Button Event
+	 * @param actionEvent Action Event from GateEmulator.fxml
+	 * @author Joe
+	 */
     public void buttonPressed(ActionEvent actionEvent) {
 	Button btn = (Button) actionEvent.getSource();
 
@@ -77,6 +124,12 @@ public class GateEmulatorController {
 
     //------------------------------------------------------------
     // appendTextArea
+
+	/**
+	 * Store Controller messages
+	 * @param status Messages to be stored
+	 * @author Joe
+	 */
     public void appendTextArea(String status) {
 	Platform.runLater(() -> gateTextArea.appendText(String.format("[%04d] %s\n", ++lineNo, status)));
     } // appendTextArea

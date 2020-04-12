@@ -10,16 +10,54 @@ import javafx.scene.control.TextArea;
 
 import java.util.logging.Logger;
 
+/**
+ * Motion Sensor Emulator Controller is an emulator of Motion Sensor
+ * @author Chuanyang Zheng
+ */
 public class MotionSensorEmulatorController {
+
+    /**
+     * The ID of Motion Sensor Emulator
+     */
     private String id;
+
+    /**
+     * Appkickstarter
+     */
     private AppKickstarter appKickstarter;
+
+    /**
+     * Logger
+     */
     private Logger log;
+
+    /**
+     * Motion Sensor Emulator
+     */
     private MotionSensorEmulator motionSensorEmulator;
+
+    /**
+     * Motion Sensor Emulator Mbox
+     */
     private MBox motionSensorBox;
+
+    /**
+     * Motion Sensor Text Area will store received message of Controller
+     */
     public TextArea motionSensorTextArea;
 
+    /**
+     * Count Message
+     */
     private int lineNo = 0;
 
+    /**
+     *Initialize Controller
+     * @param id The ID of Motion Sensor Controller
+     * @param appKickstarter Appkiskstarter
+     * @param log The logger
+     * @param motionSensorEmulator Motion Sensor Emulator
+     */
     public void initialize(String id, AppKickstarter appKickstarter, Logger log, MotionSensorEmulator motionSensorEmulator) {
         this.id = id;
         this.appKickstarter = appKickstarter;
@@ -28,6 +66,11 @@ public class MotionSensorEmulatorController {
         this.motionSensorBox = appKickstarter.getThread(id).getMBox();
     } // initialize
 
+    /**
+     * Receive Button Event from MotionSensorEmulator.fxml and process the messages
+     * @param actionEvent ActionEvent from MotionSensorEmulator.fxml
+     * @author Chuanyang Zheng
+     */
     public void buttonPressed(ActionEvent actionEvent) {
         Button btn = (Button) actionEvent.getSource();
 
@@ -69,6 +112,12 @@ public class MotionSensorEmulatorController {
 
     //------------------------------------------------------------
     // appendTextArea
+
+    /**
+     * Apppend Text Area
+     * @param status The meesage to be added to Motion Sensor Text Area
+     * @author Chuanyang Zheng
+     */
     public void appendTextArea(String status) {
         Platform.runLater(() -> motionSensorTextArea.appendText(String.format("[%04d] %s\n", ++lineNo, status)));
     } // appendTextArea

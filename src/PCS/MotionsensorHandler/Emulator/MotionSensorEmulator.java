@@ -12,11 +12,30 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
 
-
+/**
+ * Motion Sensor Detect Up
+ * @author Chuanyang Zheng
+ */
 public class MotionSensorEmulator extends MotionSensorHandler {
+
+    /**
+     * Stage will be used in start() method
+     */
     private Stage myStage;
+
+    /**
+     * Motion Sensor Controller. An Emulator Of Motion Sensor
+     */
     private MotionSensorEmulatorController motionSensorEmulatorController;
+
+    /**
+     * PCSStarter
+     */
     private final PCSStarter pcsStarter;
+
+    /**
+     * The ID the Motion Sensor Emulator
+     */
     private final String id;
 
     /**
@@ -25,6 +44,7 @@ public class MotionSensorEmulator extends MotionSensorHandler {
      * @param pcsStarter:PCSCore
      * @param floorNumber:floor number. The floor that the motion sensor detecting
      * @param detectUp: If it is true, the motion sensor detects up.
+     * @author Chuanyang Zheng
      */
     public MotionSensorEmulator(String id, PCSStarter pcsStarter,int floorNumber, boolean detectUp) {
         super(id, pcsStarter,floorNumber,detectUp);
@@ -32,6 +52,11 @@ public class MotionSensorEmulator extends MotionSensorHandler {
         this.id = id + "Emulator";
     } // Motion Sensor Emulator
 
+    /**
+     * Start GUI
+     * @exception Exception throws Exception
+     * @author Chuanyang ZHeng
+     */
     public void start() throws Exception {
         Parent root;
         myStage = new Stage();

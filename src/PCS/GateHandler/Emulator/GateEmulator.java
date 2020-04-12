@@ -17,22 +17,78 @@ import javafx.stage.WindowEvent;
 
 //======================================================================
 // GateEmulator
+
+/**
+ * Gate Emulator
+ * @author Joe
+ */
 public class GateEmulator extends GateHandler {
+
+	/**
+	 * State will be used in start() for creating GUI
+	 */
     private Stage myStage;
-    private GateEmulatorController gateEmulatorController;
+
+	/**
+	 * Gate Emulator Controller is an emulator of GUI
+	 */
+	private GateEmulatorController gateEmulatorController;
+
+	/**
+	 * PCSStarter
+	 */
     private final PCSStarter pcsStarter;
-    private final String id;
+
+	/**
+	 * ID of the GateEmulator
+	 */
+	private final String id;
+
+	/**
+	 * How much time used to open gate
+	 */
     private final int gateOpenTime;
-    private final int gateCloseTime;
+
+	/**
+	 * How much time used to close gate
+	 */
+	private final int gateCloseTime;
+
+	/**
+	 * Gate Open Timer ID for Timer wake up
+	 */
     private final int GateOpenTimerID = 1;
-    private final int GateCloseTimerID = 2;
+
+	/**
+	 * Gate Close Timer ID for Timer wake up
+	 */
+	private final int GateCloseTimerID = 2;
+
+	/**
+	 * Auto Open
+	 */
     private boolean autoOpen;
-    private boolean autoClose;
+
+	/**
+	 * Auto Close
+	 */
+	private boolean autoClose;
+
+	/**
+	 * Auto Poll
+	 */
     private boolean autoPoll;
 
 
     //------------------------------------------------------------
     // GateEmulator
+
+	/**
+	 * Gate Constructor
+	 * @param id The ID of the Gate Emulator
+	 * @param pcsStarter PCSStarter
+	 * @author Joe
+	 */
     public GateEmulator(String id, PCSStarter pcsStarter) {
 	super(id, pcsStarter);
 	this.pcsStarter = pcsStarter;
@@ -47,6 +103,12 @@ public class GateEmulator extends GateHandler {
 
     //------------------------------------------------------------
     // start
+
+	/**
+	 * Start Gate GUI
+	 * @exception  Exception thorws Exception
+	 * @author Joe
+	 */
     public void start() throws Exception {
 	Parent root;
 	myStage = new Stage();
@@ -70,6 +132,12 @@ public class GateEmulator extends GateHandler {
 
     //------------------------------------------------------------
     // processMsg
+
+	/**
+	 * Compared to GateHandler processMsg() method, add several new Msg cases
+	 * @param msg Msg received from run() method
+	 * @return If Msg type is Terminate, return true. ELse, return false
+	 */
     protected final boolean processMsg(Msg msg) {
         boolean quit = false;
 
@@ -135,6 +203,12 @@ public class GateEmulator extends GateHandler {
 
     //------------------------------------------------------------
     // handleTimesUp
+
+	/**
+	 * Handle Timer Wake Up
+	 * @param msg Msg receive from processMsg() method
+	 * @author Joe
+	 */
     public final void handleTimesUp(Msg msg) {
 	logFine("Times up received.");
 
@@ -169,6 +243,12 @@ public class GateEmulator extends GateHandler {
 
     //------------------------------------------------------------
     // handleGateEmulatorAutoOpenToggle
+
+	/**
+	 * Handle Gate Emulator Auto Open Toggle
+	 * @return return autoOpen
+	 * @auhor Joe
+	 */
     public final boolean handleGateEmulatorAutoOpenToggle() {
 	autoOpen = !autoOpen;
 	logFine("Auto open change: " + (autoOpen ? "off --> on" : "on --> off"));
@@ -178,6 +258,12 @@ public class GateEmulator extends GateHandler {
 
     //------------------------------------------------------------
     // handleGateEmulatorAutoCloseToggle
+
+	/**
+	 * Handle Gate Emulator Auto Close Toggle
+	 * @return return autoClose
+	 * @auhor Joe
+	 */
     public final boolean handleGateEmulatorAutoCloseToggle() {
 	autoClose = !autoClose;
 	logFine("Auto close change: " + (autoClose ? "off --> on" : "on --> off"));
@@ -187,6 +273,12 @@ public class GateEmulator extends GateHandler {
 
     //------------------------------------------------------------
     // handleGateEmulatorAutoPollToggle:
+
+	/**
+	 * Handle Gate Emulator Auto Poll Toggle
+	 * @return return autoPoll
+	 * @auhor Joe
+	 */
     public final boolean handleGateEmulatorAutoPollToggle() {
         autoPoll = !autoPoll;
 	logFine("Auto poll change: " + (autoPoll ? "off --> on" : "on --> off"));
@@ -196,6 +288,12 @@ public class GateEmulator extends GateHandler {
 
     //------------------------------------------------------------
     // logFine
+
+	/**
+	 * Log Fine Type Information and add it to Controller
+	 * @param logMsg Log Information
+	 * @author Joe
+	 */
     private final void logFine(String logMsg) {
 	gateEmulatorController.appendTextArea("[FINE]: " + logMsg);
 	log.fine(id + ": " + logMsg);
@@ -204,6 +302,12 @@ public class GateEmulator extends GateHandler {
 
     //------------------------------------------------------------
     // logInfo
+
+	/**
+	 * Log Infor Type Information and add it to Controller
+	 * @param logMsg Log Information
+	 * @author Joe
+	 */
     private final void logInfo(String logMsg) {
 	gateEmulatorController.appendTextArea("[INFO]: " + logMsg);
 	log.info(id + ": " + logMsg);
@@ -212,6 +316,12 @@ public class GateEmulator extends GateHandler {
 
     //------------------------------------------------------------
     // logWarning
+
+	/**
+	 * Log Warning Type Information and add it to Controller
+	 * @param logMsg Log Information
+	 * @author Joe
+	 */
     private final void logWarning(String logMsg) {
 	gateEmulatorController.appendTextArea("[WARNING]: " + logMsg);
 	log.warning(id + ": " + logMsg);
@@ -220,6 +330,12 @@ public class GateEmulator extends GateHandler {
 
     //------------------------------------------------------------
     // logSevere
+
+	/**
+	 * Log Severe Type Information and add it to Controller
+	 * @param logMsg Log Information
+	 * @author Joe
+	 */
     private final void logSevere(String logMsg) {
 	gateEmulatorController.appendTextArea("[SEVERE]: " + logMsg);
 	log.severe(id + ": " + logMsg);
