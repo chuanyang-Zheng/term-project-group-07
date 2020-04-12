@@ -47,9 +47,9 @@ public class PayMachineHandler extends AppThread {
     // processMsg
     /**
      * A Function to process the recieved Message
-     * @param msg:The received message
      * Switch the message type to different cases
-     * Handle it case by case
+     *  Handle it case by case
+     * @param msg:The received message
      * @author Pan Feng
      */
     protected boolean processMsg(Msg msg) {
@@ -149,7 +149,7 @@ public class PayMachineHandler extends AppThread {
      * A Function to handle the Fee message
      *  Display the Fee is received
      *  Protocol message format: PayMachine ID,Ticket ID,TicketFee,EnterTime
-     * @mymsg Received Protocol Message
+     * @param mymsg Received Protocol Message
      * @author Pan Feng
      */
     protected void FeeReceive(String mymsg){

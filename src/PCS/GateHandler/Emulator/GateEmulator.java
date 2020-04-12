@@ -247,7 +247,7 @@ public class GateEmulator extends GateHandler {
 	/**
 	 * Handle Gate Emulator Auto Open Toggle
 	 * @return return autoOpen
-	 * @auhor Joe
+	 * @author Joe
 	 */
     public final boolean handleGateEmulatorAutoOpenToggle() {
 	autoOpen = !autoOpen;
@@ -262,7 +262,7 @@ public class GateEmulator extends GateHandler {
 	/**
 	 * Handle Gate Emulator Auto Close Toggle
 	 * @return return autoClose
-	 * @auhor Joe
+	 * @author Joe
 	 */
     public final boolean handleGateEmulatorAutoCloseToggle() {
 	autoClose = !autoClose;
@@ -277,7 +277,7 @@ public class GateEmulator extends GateHandler {
 	/**
 	 * Handle Gate Emulator Auto Poll Toggle
 	 * @return return autoPoll
-	 * @auhor Joe
+	 * @author Joe
 	 */
     public final boolean handleGateEmulatorAutoPollToggle() {
         autoPoll = !autoPoll;
