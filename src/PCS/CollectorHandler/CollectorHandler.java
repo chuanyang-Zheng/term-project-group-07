@@ -103,7 +103,7 @@ public class CollectorHandler extends AppThread {
                     pcsCore.send(new Msg(id, mbox, Msg.Type.CollectorValidRequest, msg.getDetails()));
                     collectorStatus=CollectorStatus.CollectorWaitValidation;
                 } catch (Exception e) {
-                    log.warning(e.getMessage());
+                    sendParseIntFailSignal(e.getMessage());
                     e.printStackTrace();
                 }
                 break;
@@ -251,6 +251,15 @@ public class CollectorHandler extends AppThread {
         log.info(id + ": poll ack received.  Send poll ack to PCS Core.");
         pcsCore.send(new Msg(id, mbox, Msg.Type.PollAck, id + " is up!"));
     } // handlePollAck
+
+    /**
+     * When Parse Int fail, log the information
+     * @param information information will be logged
+     * @author Chuanyang Zheng
+     */
+    protected void sendParseIntFailSignal(String information){
+        log.warning(id+": "+information);
+    }
 
     /**
      * Collector Status. Totally Three:CollectorAvailable,CollectorWaitValidation,CollectorWarning

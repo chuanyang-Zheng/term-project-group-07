@@ -108,6 +108,11 @@ public class CollectorEmulator extends CollectorHandler {
         logFine("The Ticket Is Valid");
     }
 
+    @Override
+    protected void sendParseIntFailSignal(String information) {
+        logWarning(information);
+    }
+
     /**
      * Log Fine Type Information and Add it to Controller
      * @param logMsg:Log Msg
