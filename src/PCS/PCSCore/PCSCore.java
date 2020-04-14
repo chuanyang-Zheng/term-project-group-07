@@ -205,6 +205,7 @@ public class PCSCore extends AppThread {
 
                     case CollectorValidRequest:
                         handleCollectorValidRequest(msg);
+                        log.info(ticketList.toString());
                         break;
                     case CollectorSolveProblem:
                         exitGateBox.send(new Msg(id, mbox, Msg.Type.GateOpenRequest, "GateOpenReq"));
@@ -223,6 +224,7 @@ public class PCSCore extends AppThread {
                     case AddTicket:
                         log.info(id + ":PCS has generated a new ticket");
                         AddTicket();
+                        log.info(ticketList.toString());
                         break;
                     case RemoveTicket:
                         log.info(id+": Ticket Dispatcher Ticket Is Removed. Open Gate. ");

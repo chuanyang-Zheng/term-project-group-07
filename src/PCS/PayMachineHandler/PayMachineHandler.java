@@ -14,6 +14,7 @@ import javafx.scene.control.Alert;
 public class PayMachineHandler extends AppThread {
     protected final MBox pcsCore;
     private PayMachineStatus PMS;
+    protected int parkingFeeCoefficient;
 
     //------------------------------------------------------------
     // PayMachineHandler Constructor
@@ -21,6 +22,7 @@ public class PayMachineHandler extends AppThread {
         super(id, pcss);
         pcsCore = appKickstarter.getThread("PCSCore").getMBox();
         PMS = PayMachineStatus.idle;
+        parkingFeeCoefficient=Integer.parseInt(pcss.getProperty("Ticket.calculateFeeCoefficient"));
     } // Pay Machine Handler Constructor
 
 

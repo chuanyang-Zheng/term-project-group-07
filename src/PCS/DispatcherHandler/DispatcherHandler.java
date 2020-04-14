@@ -14,6 +14,7 @@ import PCS.DispatcherHandler.DispatcherHandler;
 public class DispatcherHandler extends AppThread {
     protected final MBox pcsCore;
     private DispatcherStatus dispatcherStatus;
+    protected int parkingFeeCoefficient;
 
 
     //------------------------------------------------------------
@@ -22,6 +23,7 @@ public class DispatcherHandler extends AppThread {
         super(id, pcss);
         pcsCore = appKickstarter.getThread("PCSCore").getMBox();
         dispatcherStatus=DispatcherStatus.idle;
+        this.parkingFeeCoefficient=Integer.parseInt(pcss.getProperty("Ticket.calculateFeeCoefficient"));
     } // Dispatcher Handler Constructor
 
 

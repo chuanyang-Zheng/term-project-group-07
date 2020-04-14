@@ -25,12 +25,14 @@ public class DispatcherEmulator extends DispatcherHandler {
 
 
 
+
     //------------------------------------------------------------
     // DispatcherEmulator
     public DispatcherEmulator(String id, PCSStarter pcsStarter) {
         super(id, pcsStarter);
         this.pcsStarter = pcsStarter;
         this.id = id + "Emulator";
+
 //        this.DispatcherOpenTime = Integer.parseInt(this.pcsStarter.getProperty("Dispatcher.DispatcherOpenTime"));
 ////        this.DispatcherCloseTime = Integer.parseInt(this.pcsStarter.getProperty("Dispatcher.DispatcherCloseTime"));
 //        this.autoOpen = true;
@@ -73,7 +75,7 @@ public class DispatcherEmulator extends DispatcherHandler {
         Date nowT = new Date(System.currentTimeMillis());
         SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
         String timestr = sdf.format(nowT);
-        logInfo("Welcome to our parking lot.\n"+"Your ticket ID is "+mymsg+".\n"+"The time now is " + timestr + ".\nThe parking fee is $5/s.\nHave a good time!");
+        logInfo("Welcome to our parking lot.\n"+"Your ticket ID is "+mymsg+".\n"+"The time now is " + timestr + ".\nThe parking fee is "+parkingFeeCoefficient+"/s.\nHave a good time!");
 
         dispatcherController.showTicket(mymsg,timestr);
         //pcsCore.send(new Msg(id,mbox,Msg.Type.RemoveTicket,"Remove Ticket Now"));

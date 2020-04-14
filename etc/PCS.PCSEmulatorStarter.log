@@ -1,128 +1,462 @@
-200411-15:36:08 [INFO] -- 
-200411-15:36:08 [INFO] -- 
-200411-15:36:08 [INFO] -- ============================================================
-200411-15:36:08 [INFO] -- PCSStarter: Application Starting...
-200411-15:36:08 [FINE] -- PCSStarter: registering timer
-200411-15:36:08 [FINE] -- timer: created!
-200411-15:36:08 [FINE] -- PCSStarter: registering PCSCore
-200411-15:36:08 [FINE] -- PCSCore: created!
-200411-15:36:08 [INFO] -- PCSCore initial vacancy available floor number: [10, 5, 7]
-200411-15:36:08 [FINE] -- PCSStarter: registering DispatcherHandler
-200411-15:36:08 [FINE] -- DispatcherHandler: created!
-200411-15:36:08 [FINE] -- PCSStarter: registering CollectorHandler
-200411-15:36:08 [FINE] -- CollectorHandler: created!
-200411-15:36:08 [FINE] -- PCSStarter: registering VacancyHandler
-200411-15:36:08 [FINE] -- VacancyHandler: created!
-200411-15:36:08 [FINE] -- PCSStarter: registering EntranceGateHandler
-200411-15:36:08 [FINE] -- EntranceGateHandler: created!
-200411-15:36:08 [FINE] -- PCSStarter: registering ExitGateHandler
-200411-15:36:08 [FINE] -- ExitGateHandler: created!
-200411-15:36:08 [FINE] -- PCSStarter: registering PayMachineHandler0
-200411-15:36:08 [FINE] -- PayMachineHandler0: created!
-200411-15:36:08 [FINE] -- PCSStarter: registering PayMachineHandler1
-200411-15:36:08 [FINE] -- PayMachineHandler1: created!
-200411-15:36:08 [FINE] -- PCSStarter: registering PayMachineHandler2
-200411-15:36:08 [FINE] -- PayMachineHandler2: created!
-200411-15:36:08 [FINE] -- PCSStarter: registering MotionSensorHandlerUp1
-200411-15:36:08 [FINE] -- MotionSensorHandlerUp1: created!
-200411-15:36:08 [FINE] -- PCSStarter: registering MotionSensorHandlerDown1
-200411-15:36:08 [FINE] -- MotionSensorHandlerDown1: created!
-200411-15:36:08 [FINE] -- PCSStarter: registering MotionSensorHandlerUp2
-200411-15:36:08 [FINE] -- MotionSensorHandlerUp2: created!
-200411-15:36:08 [FINE] -- PCSStarter: registering MotionSensorHandlerDown2
-200411-15:36:08 [FINE] -- MotionSensorHandlerDown2: created!
-200411-15:36:08 [FINE] -- PCSStarter: registering MotionSensorHandlerUp3
-200411-15:36:08 [FINE] -- MotionSensorHandlerUp3: created!
-200411-15:36:08 [FINE] -- PCSStarter: registering MotionSensorHandlerDown3
-200411-15:36:08 [FINE] -- MotionSensorHandlerDown3: created!
-200411-15:36:10 [INFO] -- timer: starting...
-200411-15:36:10 [INFO] -- PCSCore: starting...
-200411-15:36:10 [INFO] -- PayMachineHandler0: starting...
-200411-15:36:10 [INFO] -- EntranceGateHandler: starting...
-200411-15:36:10 [INFO] -- ExitGateHandler: starting...
-200411-15:36:10 [INFO] -- DispatcherHandler: starting...
-200411-15:36:10 [INFO] -- CollectorHandler: starting...
-200411-15:36:10 [INFO] -- VacancyHandler: starting...
-200411-15:36:10 [INFO] -- PayMachineHandler2: starting...
-200411-15:36:10 [INFO] -- MotionSensorHandlerUp1: starting...
-200411-15:36:10 [INFO] -- MotionSensorHandlerDown1: starting...
-200411-15:36:10 [INFO] -- PayMachineHandler1: starting...
-200411-15:36:10 [INFO] -- MotionSensorHandlerDown2: starting...
-200411-15:36:10 [INFO] -- MotionSensorHandlerUp2: starting...
-200411-15:36:10 [INFO] -- MotionSensorHandlerUp3: starting...
-200411-15:36:10 [INFO] -- MotionSensorHandlerDown3: starting...
-200411-15:36:36 [FINE] -- DispatcherHandler: message received: [DispatcherHandler (AddTicket) -- {}].
-200411-15:36:36 [INFO] -- DispatcherHandler: Handle Add Ticket
-200411-15:36:36 [FINE] -- DispatcherHandlerEmulator: Created new Ticket
-200411-15:36:36 [INFO] -- DispatcherHandler: Dispatcher status from [idle] to [waitPCSCoreReply]
-200411-15:36:36 [FINE] -- PCSCore: message received: [DispatcherHandler (AddTicket) -- {}].
-200411-15:36:36 [INFO] -- PCSCore:PCS has generated a new ticket
-200411-15:36:36 [FINE] -- PCSCore:Ticket added
-200411-15:36:36 [FINE] -- DispatcherHandler: message received: [PCSCore (ReceiveTicketID) -- {3}].
-200411-15:36:36 [INFO] -- DispatcherHandler: Handle Receive Ticket ID
-200411-15:36:36 [INFO] -- DispatcherHandlerEmulator: Welcome to our parking lot.
+200413-21:30:27 [INFO] -- 
+200413-21:30:27 [INFO] -- 
+200413-21:30:27 [INFO] -- ============================================================
+200413-21:30:27 [INFO] -- PCSStarter: Application Starting...
+200413-21:30:29 [FINE] -- PCSStarter: registering timer
+200413-21:30:29 [FINE] -- timer: created!
+200413-21:30:29 [FINE] -- PCSStarter: registering PCSCore
+200413-21:30:29 [FINE] -- PCSCore: created!
+200413-21:30:29 [INFO] -- PCSCore initial vacancy available floor number: [10, 5, 7]
+200413-21:30:29 [FINE] -- PCSStarter: registering DispatcherHandler
+200413-21:30:29 [FINE] -- DispatcherHandler: created!
+200413-21:30:29 [FINE] -- PCSStarter: registering CollectorHandler
+200413-21:30:29 [FINE] -- CollectorHandler: created!
+200413-21:30:29 [FINE] -- PCSStarter: registering VacancyHandler
+200413-21:30:29 [FINE] -- VacancyHandler: created!
+200413-21:30:29 [FINE] -- PCSStarter: registering EntranceGateHandler
+200413-21:30:29 [FINE] -- EntranceGateHandler: created!
+200413-21:30:29 [FINE] -- PCSStarter: registering ExitGateHandler
+200413-21:30:29 [FINE] -- ExitGateHandler: created!
+200413-21:30:29 [FINE] -- PCSStarter: registering PayMachineHandler0
+200413-21:30:29 [FINE] -- PayMachineHandler0: created!
+200413-21:30:29 [FINE] -- PCSStarter: registering PayMachineHandler1
+200413-21:30:29 [FINE] -- PayMachineHandler1: created!
+200413-21:30:29 [FINE] -- PCSStarter: registering PayMachineHandler2
+200413-21:30:29 [FINE] -- PayMachineHandler2: created!
+200413-21:30:29 [FINE] -- PCSStarter: registering MotionSensorHandlerUp1
+200413-21:30:29 [FINE] -- MotionSensorHandlerUp1: created!
+200413-21:30:29 [FINE] -- PCSStarter: registering MotionSensorHandlerDown1
+200413-21:30:29 [FINE] -- MotionSensorHandlerDown1: created!
+200413-21:30:29 [FINE] -- PCSStarter: registering MotionSensorHandlerUp2
+200413-21:30:29 [FINE] -- MotionSensorHandlerUp2: created!
+200413-21:30:29 [FINE] -- PCSStarter: registering MotionSensorHandlerDown2
+200413-21:30:29 [FINE] -- MotionSensorHandlerDown2: created!
+200413-21:30:29 [FINE] -- PCSStarter: registering MotionSensorHandlerUp3
+200413-21:30:29 [FINE] -- MotionSensorHandlerUp3: created!
+200413-21:30:29 [FINE] -- PCSStarter: registering MotionSensorHandlerDown3
+200413-21:30:29 [FINE] -- MotionSensorHandlerDown3: created!
+200413-21:30:32 [INFO] -- MotionSensorHandlerUp1: starting...
+200413-21:30:32 [INFO] -- MotionSensorHandlerUp2: starting...
+200413-21:30:32 [INFO] -- PayMachineHandler0: starting...
+200413-21:30:32 [INFO] -- MotionSensorHandlerDown1: starting...
+200413-21:30:32 [INFO] -- PayMachineHandler1: starting...
+200413-21:30:32 [INFO] -- PayMachineHandler2: starting...
+200413-21:30:32 [INFO] -- CollectorHandler: starting...
+200413-21:30:32 [INFO] -- timer: starting...
+200413-21:30:32 [INFO] -- PCSCore: starting...
+200413-21:30:32 [INFO] -- EntranceGateHandler: starting...
+200413-21:30:32 [INFO] -- VacancyHandler: starting...
+200413-21:30:32 [INFO] -- MotionSensorHandlerDown3: starting...
+200413-21:30:32 [INFO] -- MotionSensorHandlerDown2: starting...
+200413-21:30:32 [INFO] -- DispatcherHandler: starting...
+200413-21:30:32 [INFO] -- MotionSensorHandlerUp3: starting...
+200413-21:30:32 [INFO] -- ExitGateHandler: starting...
+200413-21:30:53 [FINE] -- DispatcherHandler: message received: [DispatcherHandler (AddTicket) -- {}].
+200413-21:30:53 [INFO] -- DispatcherHandler: Handle Add Ticket
+200413-21:30:53 [FINE] -- DispatcherHandlerEmulator: Created new Ticket
+200413-21:30:53 [INFO] -- DispatcherHandler: Dispatcher status from [idle] to [waitPCSCoreReply]
+200413-21:30:53 [FINE] -- PCSCore: message received: [DispatcherHandler (AddTicket) -- {}].
+200413-21:30:53 [INFO] -- PCSCore:PCS has generated a new ticket
+200413-21:30:53 [FINE] -- PCSCore:Ticket added
+200413-21:30:53 [FINE] -- DispatcherHandler: message received: [PCSCore (ReceiveTicketID) -- {3}].
+200413-21:30:53 [INFO] -- DispatcherHandler: Handle Receive Ticket ID
+200413-21:30:53 [INFO] -- [0 1586785629807 10.0 Test1
+, 1 -1 -1.0 
+, 2 -1 -1.0 
+, 3 -1 -1.0 
+]
+200413-21:30:53 [INFO] -- DispatcherHandlerEmulator: Welcome to our parking lot.
 Your ticket ID is 3.
-The time now is 03:36:36.
-The parking fee is $5/s.
+The time now is 09:30:53.
+The parking fee is 10/s.
 Have a good time!
-200411-15:36:36 [INFO] -- DispatcherHandler: Dispatcher status from [waitPCSCoreReply] to [waitForRemoval]
-200411-15:36:38 [FINE] -- DispatcherHandler: message received: [DispatcherHandler (RemoveTicket) -- {DispatcherHandler}].
-200411-15:36:38 [INFO] -- DispatcherHandler: Handle Remove
-200411-15:36:38 [INFO] -- DispatcherHandlerEmulator: Ticket removed.
+200413-21:30:53 [INFO] -- DispatcherHandler: Dispatcher status from [waitPCSCoreReply] to [waitForRemoval]
+200413-21:30:56 [FINE] -- DispatcherHandler: message received: [DispatcherHandler (RemoveTicket) -- {DispatcherHandler}].
+200413-21:30:56 [INFO] -- DispatcherHandler: Handle Remove
+200413-21:30:56 [INFO] -- DispatcherHandlerEmulator: Ticket removed.
 Please take care of your ticket.
-200411-15:36:38 [FINE] -- PCSCore: message received: [DispatcherHandlerEmulator (RemoveTicket) -- {Remove Ticket Now}].
-200411-15:36:38 [FINE] -- Remove Ticket
-200411-15:36:38 [INFO] -- PCSCore: Ticket Dispatcher Ticket Is Removed. Open Gate. 
-200411-15:36:38 [INFO] -- DispatcherHandler: Dispatcher status from [waitForRemoval] to [idle]
-200411-15:36:38 [FINE] -- EntranceGateHandler: message received: [PCSCore (GateOpenRequest) -- {OpenGate}].
-200411-15:36:38 [INFO] -- EntranceGateHandler: gate open request received
-200411-15:36:38 [INFO] -- EntranceGateHandler: send signal to open the gate now.
-200411-15:36:38 [FINE] -- EntranceGateHandlerEmulator: Gate open signal received.  [autoOpen is on]
-200411-15:36:38 [FINE] -- EntranceGateHandlerEmulator: Gate open timer started.
-200411-15:36:38 [FINE] -- EntranceGateHandler: gate status change: GateClosed --> GateOpening
-200411-15:36:40 [FINE] -- EntranceGateHandler: message received: [Timer (TimesUp) -- {TimesUp 00001 0}].
-200411-15:36:40 [FINE] -- EntranceGateHandlerEmulator: Times up received.
-200411-15:36:40 [FINE] -- EntranceGateHandlerEmulator: Gate open timer is up.  [autoOpen is on]
-200411-15:36:40 [FINE] -- EntranceGateHandlerEmulator: Send gate open reply
-200411-15:36:40 [FINE] -- EntranceGateHandler: message received: [EntranceGateHandlerEmulator (GateOpenReply) -- {Gate Open Reply}].
-200411-15:36:40 [INFO] -- EntranceGateHandler: gate open reply received
-200411-15:36:40 [INFO] -- EntranceGateHandler: inform PCS Core that gate has finished opening.
-200411-15:36:40 [FINE] -- PCSCore: message received: [EntranceGateHandler (GateOpenReply) -- {}].
-200411-15:36:40 [FINE] -- EntranceGateHandler: gate status change: GateOpening --> GateOpened
-200411-15:36:40 [INFO] -- PCSCore: EntranceGateHandler is opened.
-200411-15:36:46 [FINE] -- PCSCore: message received: [Timer (TimesUp) -- {TimesUp 00004 0}].
-200411-15:36:46 [INFO] -- ------------------------------------------------------------
-200411-15:36:46 [INFO] -- PCSCore: Inform Entrance Gate To Close 
-200411-15:36:46 [FINE] -- EntranceGateHandler: message received: [PCSCore (GateCloseRequest) -- {Close Gate}].
-200411-15:36:46 [INFO] -- EntranceGateHandler: gate close request received
-200411-15:36:46 [INFO] -- EntranceGateHandler: send signal to close the gate now.
-200411-15:36:46 [FINE] -- EntranceGateHandlerEmulator: Gate close signal received.  [autoClose is on]
-200411-15:36:46 [FINE] -- EntranceGateHandlerEmulator: Gate close timer started.
-200411-15:36:46 [FINE] -- EntranceGateHandler: gate status change: GateOpened --> GateClosing
-200411-15:36:47 [FINE] -- EntranceGateHandler: message received: [Timer (TimesUp) -- {TimesUp 00002 0}].
-200411-15:36:47 [FINE] -- EntranceGateHandlerEmulator: Times up received.
-200411-15:36:47 [FINE] -- EntranceGateHandlerEmulator: Gate close timer is up.  [autoClose is on]
-200411-15:36:47 [FINE] -- EntranceGateHandlerEmulator: Send gate close reply
-200411-15:36:47 [FINE] -- EntranceGateHandler: message received: [EntranceGateHandlerEmulator (GateCloseReply) -- {Gate Close Reply}].
-200411-15:36:47 [INFO] -- EntranceGateHandler: gate close reply received
-200411-15:36:47 [INFO] -- EntranceGateHandler: inform PCS Core that gate has finished closing.
-200411-15:36:47 [FINE] -- EntranceGateHandler: gate status change: GateClosing --> GateClosed
-200411-15:36:47 [FINE] -- PCSCore: message received: [EntranceGateHandler (GateCloseReply) -- {}].
-200411-15:36:47 [INFO] -- PCSCore: EntranceGateHandler is closed.
-200411-15:36:51 [FINE] -- PayMachineHandler0: message received: [PayMachineHandler0 (TicketRequest) -- {PayMachineHandler0,3}].
-200411-15:36:51 [FINE] -- PCSCore: message received: [PayMachineHandler0 (TicketRequest) -- {PayMachineHandler0,3}].
-200411-15:36:51 [INFO] -- PayMachineHandler0: I am waiting for Ticket Info
-200411-15:36:51 [INFO] -- PCSCore:PCS Sent the fee already
-200411-15:36:51 [FINE] -- PayMachineHandler0: message received: [PCSCore (TicketFee) -- {PayMachineHandler0,3,75.0,1586590596271}].
-200411-15:36:51 [INFO] -- PayMachineHandler0: Waiting for driver's Payment
-200411-15:40:00 [FINE] -- PayMachineHandler0: message received: [PayMachineHandler0 (PaymentACK) -- {PayMachineHandler0,3}].
-200411-15:40:00 [INFO] -- PayMachineHandler0: Waiting for ExitInfo
-200411-15:40:00 [FINE] -- PCSCore: message received: [PayMachineHandler0Emulator (PaymentACK) -- {3}].
-200411-15:40:00 [INFO] -- PCSCore:Payment ACK received
-200411-15:40:00 [FINE] -- PCSCore:Payment Updated
-200411-15:40:00 [FINE] -- PCSCore: message received: [PayMachineHandler0 (TicketExitInfoRequest) -- {PayMachineHandler0,3}].
-200411-15:40:00 [INFO] -- PCSCore:PCS Sent the Exit Info already
-200411-15:40:00 [FINE] -- PayMachineHandler0: message received: [PCSCore (ExitInfo) -- {PayMachineHandler0,3,0.0,1586591800422}].
-200411-15:40:00 [INFO] -- PayMachineHandler0: Waiting for Removal
-200411-15:40:49 [FINE] -- PayMachineHandler0: message received: [PayMachineHandler0 (TicketRemoveACK) -- {PayMachineHandler0,3}].
-200411-15:40:49 [INFO] -- PayMachineHandler0: I am idle please use me.
+200413-21:30:56 [FINE] -- Remove Ticket
+200413-21:30:56 [FINE] -- PCSCore: message received: [DispatcherHandlerEmulator (RemoveTicket) -- {Remove Ticket Now}].
+200413-21:30:56 [INFO] -- DispatcherHandler: Dispatcher status from [waitForRemoval] to [idle]
+200413-21:30:56 [INFO] -- PCSCore: Ticket Dispatcher Ticket Is Removed. Open Gate. 
+200413-21:30:56 [FINE] -- EntranceGateHandler: message received: [PCSCore (GateOpenRequest) -- {OpenGate}].
+200413-21:30:56 [INFO] -- EntranceGateHandler: gate open request received
+200413-21:30:56 [INFO] -- EntranceGateHandler: send signal to open the gate now.
+200413-21:30:56 [FINE] -- EntranceGateHandlerEmulator: Gate open signal received.  [autoOpen is on]
+200413-21:30:56 [FINE] -- EntranceGateHandlerEmulator: Gate open timer started.
+200413-21:30:56 [FINE] -- EntranceGateHandler: gate status change: GateClosed --> GateOpening
+200413-21:30:58 [FINE] -- EntranceGateHandler: message received: [Timer (TimesUp) -- {TimesUp 00001 0}].
+200413-21:30:58 [FINE] -- EntranceGateHandlerEmulator: Times up received.
+200413-21:30:58 [FINE] -- EntranceGateHandlerEmulator: Gate open timer is up.  [autoOpen is on]
+200413-21:30:58 [FINE] -- EntranceGateHandlerEmulator: Send gate open reply
+200413-21:30:58 [FINE] -- EntranceGateHandler: message received: [EntranceGateHandlerEmulator (GateOpenReply) -- {Gate Open Reply}].
+200413-21:30:58 [INFO] -- EntranceGateHandler: gate open reply received
+200413-21:30:58 [INFO] -- EntranceGateHandler: inform PCS Core that gate has finished opening.
+200413-21:30:58 [FINE] -- EntranceGateHandler: gate status change: GateOpening --> GateOpened
+200413-21:30:58 [FINE] -- PCSCore: message received: [EntranceGateHandler (GateOpenReply) -- {}].
+200413-21:30:58 [INFO] -- PCSCore: EntranceGateHandler is opened.
+200413-21:30:59 [FINE] -- DispatcherHandler: message received: [DispatcherHandler (AddTicket) -- {}].
+200413-21:30:59 [INFO] -- DispatcherHandler: Handle Add Ticket
+200413-21:30:59 [FINE] -- DispatcherHandlerEmulator: Created new Ticket
+200413-21:30:59 [FINE] -- PCSCore: message received: [DispatcherHandler (AddTicket) -- {}].
+200413-21:30:59 [INFO] -- DispatcherHandler: Dispatcher status from [idle] to [waitPCSCoreReply]
+200413-21:30:59 [INFO] -- PCSCore:PCS has generated a new ticket
+200413-21:30:59 [FINE] -- PCSCore:Ticket added
+200413-21:30:59 [INFO] -- [0 1586785629807 10.0 Test1
+, 1 -1 -1.0 
+, 2 -1 -1.0 
+, 3 -1 -1.0 
+, 4 -1 -1.0 
+]
+200413-21:30:59 [FINE] -- DispatcherHandler: message received: [PCSCore (ReceiveTicketID) -- {4}].
+200413-21:30:59 [INFO] -- DispatcherHandler: Handle Receive Ticket ID
+200413-21:30:59 [INFO] -- DispatcherHandlerEmulator: Welcome to our parking lot.
+Your ticket ID is 4.
+The time now is 09:30:59.
+The parking fee is 10/s.
+Have a good time!
+200413-21:30:59 [INFO] -- DispatcherHandler: Dispatcher status from [waitPCSCoreReply] to [waitForRemoval]
+200413-21:31:01 [FINE] -- DispatcherHandler: message received: [DispatcherHandler (RemoveTicket) -- {DispatcherHandler}].
+200413-21:31:01 [INFO] -- DispatcherHandler: Handle Remove
+200413-21:31:01 [FINE] -- PCSCore: message received: [DispatcherHandlerEmulator (RemoveTicket) -- {Remove Ticket Now}].
+200413-21:31:01 [INFO] -- DispatcherHandlerEmulator: Ticket removed.
+Please take care of your ticket.
+200413-21:31:01 [INFO] -- PCSCore: Ticket Dispatcher Ticket Is Removed. Open Gate. 
+200413-21:31:01 [FINE] -- Remove Ticket
+200413-21:31:01 [FINE] -- EntranceGateHandler: message received: [PCSCore (GateOpenRequest) -- {OpenGate}].
+200413-21:31:01 [INFO] -- DispatcherHandler: Dispatcher status from [waitForRemoval] to [idle]
+200413-21:31:01 [INFO] -- EntranceGateHandler: gate open request received
+200413-21:31:01 [WARNING] -- EntranceGateHandler: gate is already opened!!  Ignore request.
+200413-21:31:04 [FINE] -- PCSCore: message received: [Timer (TimesUp) -- {TimesUp 00004 0}].
+200413-21:31:04 [INFO] -- ------------------------------------------------------------
+200413-21:31:04 [FINE] -- EntranceGateHandler: message received: [PCSCore (GateCloseRequest) -- {Close Gate}].
+200413-21:31:04 [INFO] -- PCSCore: Inform Entrance Gate To Close 
+200413-21:31:04 [INFO] -- EntranceGateHandler: gate close request received
+200413-21:31:04 [INFO] -- EntranceGateHandler: send signal to close the gate now.
+200413-21:31:04 [FINE] -- EntranceGateHandlerEmulator: Gate close signal received.  [autoClose is on]
+200413-21:31:04 [FINE] -- EntranceGateHandlerEmulator: Gate close timer started.
+200413-21:31:04 [FINE] -- EntranceGateHandler: gate status change: GateOpened --> GateClosing
+200413-21:31:06 [FINE] -- EntranceGateHandler: message received: [Timer (TimesUp) -- {TimesUp 00002 0}].
+200413-21:31:06 [FINE] -- EntranceGateHandlerEmulator: Times up received.
+200413-21:31:06 [FINE] -- EntranceGateHandlerEmulator: Gate close timer is up.  [autoClose is on]
+200413-21:31:06 [FINE] -- EntranceGateHandlerEmulator: Send gate close reply
+200413-21:31:06 [FINE] -- EntranceGateHandler: message received: [EntranceGateHandlerEmulator (GateCloseReply) -- {Gate Close Reply}].
+200413-21:31:06 [INFO] -- EntranceGateHandler: gate close reply received
+200413-21:31:06 [INFO] -- EntranceGateHandler: inform PCS Core that gate has finished closing.
+200413-21:31:06 [FINE] -- EntranceGateHandler: gate status change: GateClosing --> GateClosed
+200413-21:31:06 [FINE] -- PCSCore: message received: [EntranceGateHandler (GateCloseReply) -- {}].
+200413-21:31:06 [INFO] -- PCSCore: EntranceGateHandler is closed.
+200413-21:31:09 [FINE] -- PCSCore: message received: [Timer (TimesUp) -- {TimesUp 00004 0}].
+200413-21:31:09 [INFO] -- ------------------------------------------------------------
+200413-21:31:09 [FINE] -- EntranceGateHandler: message received: [PCSCore (GateCloseRequest) -- {Close Gate}].
+200413-21:31:09 [INFO] -- PCSCore: Inform Entrance Gate To Close 
+200413-21:31:09 [INFO] -- EntranceGateHandler: gate close request received
+200413-21:31:09 [WARNING] -- EntranceGateHandler: gate is already closed!!  Ignore request.
+200413-21:31:17 [FINE] -- MotionSensorHandlerUp1: message received: [MotionSensorHandlerUp1 (MotionSensorDetect) -- {Motion Sensor Detect}].
+200413-21:31:17 [INFO] -- MotionSensorHandlerUp1: motion sensor detect message received
+200413-21:31:17 [FINE] -- PCSCore: message received: [MotionSensorHandlerUp1 (MotionSensorDetectUp) -- {1}].
+200413-21:31:17 [INFO] -- MotionSensorHandlerUp1: 1 Detect Up. Inform PCSCore
+200413-21:31:17 [INFO] -- PCSCore: MotionSensor Detect Up Message Received
+200413-21:31:17 [INFO] -- PCSCore: Begin Handle Detect Up
+200413-21:31:17 [FINE] -- One driver Comes outside the parking lot
+200413-21:31:17 [FINE] -- VacancyHandler: message received: [PCSCore (VacancyDisUpdateRequest) -- {9 5 7 }].
+200413-21:31:17 [INFO] -- VacancyHandlerEmulator
+Floor 1: 9
+Floor 2: 5
+Floor 3: 7
+Last update time: 09:31:17
+200413-21:33:42 [FINE] -- MotionSensorHandlerUp2: message received: [MotionSensorHandlerUp2 (MotionSensorDetect) -- {Motion Sensor Detect}].
+200413-21:33:42 [INFO] -- MotionSensorHandlerUp2: motion sensor detect message received
+200413-21:33:42 [INFO] -- MotionSensorHandlerUp2: 2 Detect Up. Inform PCSCore
+200413-21:33:42 [FINE] -- PCSCore: message received: [MotionSensorHandlerUp2 (MotionSensorDetectUp) -- {2}].
+200413-21:33:42 [INFO] -- PCSCore: MotionSensor Detect Up Message Received
+200413-21:33:42 [INFO] -- PCSCore: Begin Handle Detect Up
+200413-21:33:42 [FINE] -- VacancyHandler: message received: [PCSCore (VacancyDisUpdateRequest) -- {10 4 7 }].
+200413-21:33:42 [INFO] -- VacancyHandlerEmulator
+Floor 1: 10
+Floor 2: 4
+Floor 3: 7
+Last update time: 09:33:42
+200413-21:35:32 [FINE] -- DispatcherHandler: message received: [DispatcherHandler (RemoveTicket) -- {DispatcherHandler}].
+200413-21:35:32 [INFO] -- DispatcherHandler: Handle Remove
+200413-21:35:32 [WARNING] -- DispatcherHandler: Dispatcher is Idle. Ignore Remove Ticket
+200413-21:35:32 [INFO] -- DispatcherHandler: Dispatcher status from [idle] to [idle]
+200413-21:38:03 [FINE] -- MotionSensorHandlerUp2: message received: [MotionSensorHandlerUp2 (MotionSensorDetect) -- {Motion Sensor Detect}].
+200413-21:38:03 [INFO] -- MotionSensorHandlerUp2: motion sensor detect message received
+200413-21:38:03 [INFO] -- MotionSensorHandlerUp2: 2 Detect Up. Inform PCSCore
+200413-21:38:03 [FINE] -- PCSCore: message received: [MotionSensorHandlerUp2 (MotionSensorDetectUp) -- {2}].
+200413-21:38:03 [INFO] -- PCSCore: MotionSensor Detect Up Message Received
+200413-21:38:03 [INFO] -- PCSCore: Begin Handle Detect Up
+200413-21:38:03 [FINE] -- VacancyHandler: message received: [PCSCore (VacancyDisUpdateRequest) -- {10 3 7 }].
+200413-21:38:03 [INFO] -- VacancyHandlerEmulator
+Floor 1: 10
+Floor 2: 3
+Floor 3: 7
+Last update time: 09:38:03
+200413-21:39:34 [FINE] -- MotionSensorHandlerUp2: message received: [MotionSensorHandlerUp2 (MotionSensorDetect) -- {Motion Sensor Detect}].
+200413-21:39:34 [INFO] -- MotionSensorHandlerUp2: motion sensor detect message received
+200413-21:39:34 [FINE] -- PCSCore: message received: [MotionSensorHandlerUp2 (MotionSensorDetectUp) -- {2}].
+200413-21:39:34 [INFO] -- MotionSensorHandlerUp2: 2 Detect Up. Inform PCSCore
+200413-21:39:34 [INFO] -- PCSCore: MotionSensor Detect Up Message Received
+200413-21:39:34 [INFO] -- PCSCore: Begin Handle Detect Up
+200413-21:39:34 [FINE] -- VacancyHandler: message received: [PCSCore (VacancyDisUpdateRequest) -- {10 2 7 }].
+200413-21:39:34 [INFO] -- VacancyHandlerEmulator
+Floor 1: 10
+Floor 2: 2
+Floor 3: 7
+Last update time: 09:39:34
+200413-21:39:34 [FINE] -- MotionSensorHandlerUp2: message received: [MotionSensorHandlerUp2 (MotionSensorDetect) -- {Motion Sensor Detect}].
+200413-21:39:34 [INFO] -- MotionSensorHandlerUp2: motion sensor detect message received
+200413-21:39:34 [FINE] -- PCSCore: message received: [MotionSensorHandlerUp2 (MotionSensorDetectUp) -- {2}].
+200413-21:39:34 [INFO] -- MotionSensorHandlerUp2: 2 Detect Up. Inform PCSCore
+200413-21:39:34 [INFO] -- PCSCore: MotionSensor Detect Up Message Received
+200413-21:39:34 [INFO] -- PCSCore: Begin Handle Detect Up
+200413-21:39:34 [FINE] -- VacancyHandler: message received: [PCSCore (VacancyDisUpdateRequest) -- {10 1 7 }].
+200413-21:39:34 [INFO] -- VacancyHandlerEmulator
+Floor 1: 10
+Floor 2: 1
+Floor 3: 7
+Last update time: 09:39:34
+200413-21:39:34 [FINE] -- MotionSensorHandlerUp2: message received: [MotionSensorHandlerUp2 (MotionSensorDetect) -- {Motion Sensor Detect}].
+200413-21:39:34 [INFO] -- MotionSensorHandlerUp2: motion sensor detect message received
+200413-21:39:34 [INFO] -- MotionSensorHandlerUp2: 2 Detect Up. Inform PCSCore
+200413-21:39:34 [FINE] -- PCSCore: message received: [MotionSensorHandlerUp2 (MotionSensorDetectUp) -- {2}].
+200413-21:39:34 [INFO] -- PCSCore: MotionSensor Detect Up Message Received
+200413-21:39:34 [INFO] -- PCSCore: Begin Handle Detect Up
+200413-21:39:34 [FINE] -- VacancyHandler: message received: [PCSCore (VacancyDisUpdateRequest) -- {10 0 7 }].
+200413-21:39:34 [INFO] -- VacancyHandlerEmulator
+Floor 1: 10
+Floor 2: 0
+Floor 3: 7
+Last update time: 09:39:34
+200413-21:39:35 [FINE] -- MotionSensorHandlerUp2: message received: [MotionSensorHandlerUp2 (MotionSensorDetect) -- {Motion Sensor Detect}].
+200413-21:39:35 [INFO] -- MotionSensorHandlerUp2: motion sensor detect message received
+200413-21:39:35 [INFO] -- MotionSensorHandlerUp2: 2 Detect Up. Inform PCSCore
+200413-21:39:35 [FINE] -- PCSCore: message received: [MotionSensorHandlerUp2 (MotionSensorDetectUp) -- {2}].
+200413-21:39:35 [INFO] -- PCSCore: MotionSensor Detect Up Message Received
+200413-21:39:35 [INFO] -- PCSCore: Begin Handle Detect Up
+200413-21:39:35 [FINE] -- VacancyHandler: message received: [PCSCore (VacancyDisUpdateRequest) -- {10 0 7 }].
+200413-21:39:35 [INFO] -- VacancyHandlerEmulator
+Floor 1: 10
+Floor 2: 0
+Floor 3: 7
+Last update time: 09:39:35
+200413-21:39:35 [FINE] -- MotionSensorHandlerUp2: message received: [MotionSensorHandlerUp2 (MotionSensorDetect) -- {Motion Sensor Detect}].
+200413-21:39:35 [INFO] -- MotionSensorHandlerUp2: motion sensor detect message received
+200413-21:39:35 [FINE] -- PCSCore: message received: [MotionSensorHandlerUp2 (MotionSensorDetectUp) -- {2}].
+200413-21:39:35 [INFO] -- MotionSensorHandlerUp2: 2 Detect Up. Inform PCSCore
+200413-21:39:35 [INFO] -- PCSCore: MotionSensor Detect Up Message Received
+200413-21:39:35 [INFO] -- PCSCore: Begin Handle Detect Up
+200413-21:39:35 [FINE] -- VacancyHandler: message received: [PCSCore (VacancyDisUpdateRequest) -- {10 0 7 }].
+200413-21:39:35 [INFO] -- VacancyHandlerEmulator
+Floor 1: 10
+Floor 2: 0
+Floor 3: 7
+Last update time: 09:39:35
+200413-21:42:35 [FINE] -- MotionSensorHandlerDown1: message received: [MotionSensorHandlerDown1 (MotionSensorDetect) -- {Motion Sensor Detect}].
+200413-21:42:35 [INFO] -- MotionSensorHandlerDown1: motion sensor detect message received
+200413-21:42:35 [INFO] -- MotionSensorHandlerDown1: 1 Detect Up. Inform PCSCore
+200413-21:42:35 [FINE] -- PCSCore: message received: [MotionSensorHandlerDown1 (MotionSensorDetectDown) -- {1}].
+200413-21:42:35 [INFO] -- PCSCore: MotionSensor Detect Down Message Received
+200413-21:42:35 [INFO] -- PCSCore: Begin Handle Detect Down
+200413-21:42:35 [FINE] -- One driver Goes outside the parking lot
+200413-21:42:35 [FINE] -- VacancyHandler: message received: [PCSCore (VacancyDisUpdateRequest) -- {10 0 7 }].
+200413-21:42:35 [INFO] -- VacancyHandlerEmulator
+Floor 1: 10
+Floor 2: 0
+Floor 3: 7
+Last update time: 09:42:35
+200413-21:42:40 [FINE] -- MotionSensorHandlerDown1: message received: [MotionSensorHandlerDown1 (MotionSensorDetect) -- {Motion Sensor Detect}].
+200413-21:42:40 [INFO] -- MotionSensorHandlerDown1: motion sensor detect message received
+200413-21:42:40 [INFO] -- MotionSensorHandlerDown1: 1 Detect Up. Inform PCSCore
+200413-21:42:40 [FINE] -- PCSCore: message received: [MotionSensorHandlerDown1 (MotionSensorDetectDown) -- {1}].
+200413-21:42:40 [INFO] -- PCSCore: MotionSensor Detect Down Message Received
+200413-21:42:40 [INFO] -- PCSCore: Begin Handle Detect Down
+200413-21:42:40 [FINE] -- One driver Goes outside the parking lot
+200413-21:42:40 [FINE] -- VacancyHandler: message received: [PCSCore (VacancyDisUpdateRequest) -- {10 0 7 }].
+200413-21:42:40 [INFO] -- VacancyHandlerEmulator
+Floor 1: 10
+Floor 2: 0
+Floor 3: 7
+Last update time: 09:42:40
+200413-21:42:42 [FINE] -- MotionSensorHandlerDown1: message received: [MotionSensorHandlerDown1 (MotionSensorDetect) -- {Motion Sensor Detect}].
+200413-21:42:42 [INFO] -- MotionSensorHandlerDown1: motion sensor detect message received
+200413-21:42:42 [INFO] -- MotionSensorHandlerDown1: 1 Detect Up. Inform PCSCore
+200413-21:42:42 [FINE] -- PCSCore: message received: [MotionSensorHandlerDown1 (MotionSensorDetectDown) -- {1}].
+200413-21:42:42 [INFO] -- PCSCore: MotionSensor Detect Down Message Received
+200413-21:42:42 [INFO] -- PCSCore: Begin Handle Detect Down
+200413-21:42:42 [FINE] -- One driver Goes outside the parking lot
+200413-21:42:42 [FINE] -- VacancyHandler: message received: [PCSCore (VacancyDisUpdateRequest) -- {10 0 7 }].
+200413-21:42:42 [INFO] -- VacancyHandlerEmulator
+Floor 1: 10
+Floor 2: 0
+Floor 3: 7
+Last update time: 09:42:42
+200413-21:43:00 [FINE] -- MotionSensorHandlerDown2: message received: [MotionSensorHandlerDown2 (MotionSensorDetect) -- {Motion Sensor Detect}].
+200413-21:43:00 [INFO] -- MotionSensorHandlerDown2: motion sensor detect message received
+200413-21:43:00 [INFO] -- MotionSensorHandlerDown2: 2 Detect Up. Inform PCSCore
+200413-21:43:00 [FINE] -- PCSCore: message received: [MotionSensorHandlerDown2 (MotionSensorDetectDown) -- {2}].
+200413-21:43:00 [INFO] -- PCSCore: MotionSensor Detect Down Message Received
+200413-21:43:00 [INFO] -- PCSCore: Begin Handle Detect Down
+200413-21:43:00 [FINE] -- VacancyHandler: message received: [PCSCore (VacancyDisUpdateRequest) -- {9 1 7 }].
+200413-21:43:00 [INFO] -- VacancyHandlerEmulator
+Floor 1: 9
+Floor 2: 1
+Floor 3: 7
+Last update time: 09:43:00
+200413-21:43:01 [FINE] -- MotionSensorHandlerDown2: message received: [MotionSensorHandlerDown2 (MotionSensorDetect) -- {Motion Sensor Detect}].
+200413-21:43:01 [INFO] -- MotionSensorHandlerDown2: motion sensor detect message received
+200413-21:43:01 [FINE] -- PCSCore: message received: [MotionSensorHandlerDown2 (MotionSensorDetectDown) -- {2}].
+200413-21:43:01 [INFO] -- MotionSensorHandlerDown2: 2 Detect Up. Inform PCSCore
+200413-21:43:01 [INFO] -- PCSCore: MotionSensor Detect Down Message Received
+200413-21:43:01 [INFO] -- PCSCore: Begin Handle Detect Down
+200413-21:43:01 [FINE] -- VacancyHandler: message received: [PCSCore (VacancyDisUpdateRequest) -- {8 2 7 }].
+200413-21:43:01 [INFO] -- VacancyHandlerEmulator
+Floor 1: 8
+Floor 2: 2
+Floor 3: 7
+Last update time: 09:43:01
+200413-21:43:01 [FINE] -- MotionSensorHandlerDown2: message received: [MotionSensorHandlerDown2 (MotionSensorDetect) -- {Motion Sensor Detect}].
+200413-21:43:01 [INFO] -- MotionSensorHandlerDown2: motion sensor detect message received
+200413-21:43:01 [FINE] -- PCSCore: message received: [MotionSensorHandlerDown2 (MotionSensorDetectDown) -- {2}].
+200413-21:43:01 [INFO] -- MotionSensorHandlerDown2: 2 Detect Up. Inform PCSCore
+200413-21:43:01 [INFO] -- PCSCore: MotionSensor Detect Down Message Received
+200413-21:43:01 [INFO] -- PCSCore: Begin Handle Detect Down
+200413-21:43:01 [FINE] -- VacancyHandler: message received: [PCSCore (VacancyDisUpdateRequest) -- {7 3 7 }].
+200413-21:43:01 [INFO] -- VacancyHandlerEmulator
+Floor 1: 7
+Floor 2: 3
+Floor 3: 7
+Last update time: 09:43:01
+200413-21:43:01 [FINE] -- MotionSensorHandlerDown2: message received: [MotionSensorHandlerDown2 (MotionSensorDetect) -- {Motion Sensor Detect}].
+200413-21:43:01 [INFO] -- MotionSensorHandlerDown2: motion sensor detect message received
+200413-21:43:01 [INFO] -- MotionSensorHandlerDown2: 2 Detect Up. Inform PCSCore
+200413-21:43:01 [FINE] -- PCSCore: message received: [MotionSensorHandlerDown2 (MotionSensorDetectDown) -- {2}].
+200413-21:43:01 [INFO] -- PCSCore: MotionSensor Detect Down Message Received
+200413-21:43:01 [INFO] -- PCSCore: Begin Handle Detect Down
+200413-21:43:01 [FINE] -- VacancyHandler: message received: [PCSCore (VacancyDisUpdateRequest) -- {6 4 7 }].
+200413-21:43:01 [INFO] -- VacancyHandlerEmulator
+Floor 1: 6
+Floor 2: 4
+Floor 3: 7
+Last update time: 09:43:01
+200413-21:43:02 [FINE] -- MotionSensorHandlerDown2: message received: [MotionSensorHandlerDown2 (MotionSensorDetect) -- {Motion Sensor Detect}].
+200413-21:43:02 [INFO] -- MotionSensorHandlerDown2: motion sensor detect message received
+200413-21:43:02 [INFO] -- MotionSensorHandlerDown2: 2 Detect Up. Inform PCSCore
+200413-21:43:02 [FINE] -- PCSCore: message received: [MotionSensorHandlerDown2 (MotionSensorDetectDown) -- {2}].
+200413-21:43:02 [INFO] -- PCSCore: MotionSensor Detect Down Message Received
+200413-21:43:02 [INFO] -- PCSCore: Begin Handle Detect Down
+200413-21:43:02 [FINE] -- VacancyHandler: message received: [PCSCore (VacancyDisUpdateRequest) -- {5 5 7 }].
+200413-21:43:02 [INFO] -- VacancyHandlerEmulator
+Floor 1: 5
+Floor 2: 5
+Floor 3: 7
+Last update time: 09:43:02
+200413-21:43:02 [FINE] -- MotionSensorHandlerDown2: message received: [MotionSensorHandlerDown2 (MotionSensorDetect) -- {Motion Sensor Detect}].
+200413-21:43:02 [INFO] -- MotionSensorHandlerDown2: motion sensor detect message received
+200413-21:43:02 [INFO] -- MotionSensorHandlerDown2: 2 Detect Up. Inform PCSCore
+200413-21:43:02 [FINE] -- PCSCore: message received: [MotionSensorHandlerDown2 (MotionSensorDetectDown) -- {2}].
+200413-21:43:02 [INFO] -- PCSCore: MotionSensor Detect Down Message Received
+200413-21:43:02 [INFO] -- PCSCore: Begin Handle Detect Down
+200413-21:43:02 [FINE] -- VacancyHandler: message received: [PCSCore (VacancyDisUpdateRequest) -- {4 5 7 }].
+200413-21:43:02 [INFO] -- VacancyHandlerEmulator
+Floor 1: 4
+Floor 2: 5
+Floor 3: 7
+Last update time: 09:43:02
+200413-21:43:02 [FINE] -- MotionSensorHandlerDown2: message received: [MotionSensorHandlerDown2 (MotionSensorDetect) -- {Motion Sensor Detect}].
+200413-21:43:02 [INFO] -- MotionSensorHandlerDown2: motion sensor detect message received
+200413-21:43:02 [INFO] -- MotionSensorHandlerDown2: 2 Detect Up. Inform PCSCore
+200413-21:43:02 [FINE] -- PCSCore: message received: [MotionSensorHandlerDown2 (MotionSensorDetectDown) -- {2}].
+200413-21:43:02 [INFO] -- PCSCore: MotionSensor Detect Down Message Received
+200413-21:43:02 [INFO] -- PCSCore: Begin Handle Detect Down
+200413-21:43:02 [FINE] -- VacancyHandler: message received: [PCSCore (VacancyDisUpdateRequest) -- {3 5 7 }].
+200413-21:43:02 [INFO] -- VacancyHandlerEmulator
+Floor 1: 3
+Floor 2: 5
+Floor 3: 7
+Last update time: 09:43:02
+200413-21:43:02 [FINE] -- MotionSensorHandlerDown2: message received: [MotionSensorHandlerDown2 (MotionSensorDetect) -- {Motion Sensor Detect}].
+200413-21:43:02 [INFO] -- MotionSensorHandlerDown2: motion sensor detect message received
+200413-21:43:02 [INFO] -- MotionSensorHandlerDown2: 2 Detect Up. Inform PCSCore
+200413-21:43:02 [FINE] -- PCSCore: message received: [MotionSensorHandlerDown2 (MotionSensorDetectDown) -- {2}].
+200413-21:43:02 [INFO] -- PCSCore: MotionSensor Detect Down Message Received
+200413-21:43:02 [INFO] -- PCSCore: Begin Handle Detect Down
+200413-21:43:02 [FINE] -- VacancyHandler: message received: [PCSCore (VacancyDisUpdateRequest) -- {2 5 7 }].
+200413-21:43:02 [INFO] -- VacancyHandlerEmulator
+Floor 1: 2
+Floor 2: 5
+Floor 3: 7
+Last update time: 09:43:02
+200413-21:43:02 [FINE] -- MotionSensorHandlerDown2: message received: [MotionSensorHandlerDown2 (MotionSensorDetect) -- {Motion Sensor Detect}].
+200413-21:43:02 [INFO] -- MotionSensorHandlerDown2: motion sensor detect message received
+200413-21:43:02 [FINE] -- PCSCore: message received: [MotionSensorHandlerDown2 (MotionSensorDetectDown) -- {2}].
+200413-21:43:02 [INFO] -- MotionSensorHandlerDown2: 2 Detect Up. Inform PCSCore
+200413-21:43:02 [INFO] -- PCSCore: MotionSensor Detect Down Message Received
+200413-21:43:02 [INFO] -- PCSCore: Begin Handle Detect Down
+200413-21:43:02 [FINE] -- VacancyHandler: message received: [PCSCore (VacancyDisUpdateRequest) -- {1 5 7 }].
+200413-21:43:02 [INFO] -- VacancyHandlerEmulator
+Floor 1: 1
+Floor 2: 5
+Floor 3: 7
+Last update time: 09:43:02
+200413-21:43:02 [FINE] -- MotionSensorHandlerDown2: message received: [MotionSensorHandlerDown2 (MotionSensorDetect) -- {Motion Sensor Detect}].
+200413-21:43:02 [INFO] -- MotionSensorHandlerDown2: motion sensor detect message received
+200413-21:43:02 [INFO] -- MotionSensorHandlerDown2: 2 Detect Up. Inform PCSCore
+200413-21:43:02 [FINE] -- PCSCore: message received: [MotionSensorHandlerDown2 (MotionSensorDetectDown) -- {2}].
+200413-21:43:02 [INFO] -- PCSCore: MotionSensor Detect Down Message Received
+200413-21:43:02 [INFO] -- PCSCore: Begin Handle Detect Down
+200413-21:43:02 [FINE] -- VacancyHandler: message received: [PCSCore (VacancyDisUpdateRequest) -- {0 5 7 }].
+200413-21:43:02 [INFO] -- VacancyHandlerEmulator
+Floor 1: 0
+Floor 2: 5
+Floor 3: 7
+Last update time: 09:43:02
+200413-21:43:03 [FINE] -- MotionSensorHandlerDown2: message received: [MotionSensorHandlerDown2 (MotionSensorDetect) -- {Motion Sensor Detect}].
+200413-21:43:03 [INFO] -- MotionSensorHandlerDown2: motion sensor detect message received
+200413-21:43:03 [INFO] -- MotionSensorHandlerDown2: 2 Detect Up. Inform PCSCore
+200413-21:43:03 [FINE] -- PCSCore: message received: [MotionSensorHandlerDown2 (MotionSensorDetectDown) -- {2}].
+200413-21:43:03 [INFO] -- PCSCore: MotionSensor Detect Down Message Received
+200413-21:43:03 [INFO] -- PCSCore: Begin Handle Detect Down
+200413-21:43:03 [FINE] -- VacancyHandler: message received: [PCSCore (VacancyDisUpdateRequest) -- {0 5 7 }].
+200413-21:43:03 [INFO] -- VacancyHandlerEmulator
+Floor 1: 0
+Floor 2: 5
+Floor 3: 7
+Last update time: 09:43:03
+200413-21:43:03 [FINE] -- MotionSensorHandlerDown2: message received: [MotionSensorHandlerDown2 (MotionSensorDetect) -- {Motion Sensor Detect}].
+200413-21:43:03 [INFO] -- MotionSensorHandlerDown2: motion sensor detect message received
+200413-21:43:03 [INFO] -- MotionSensorHandlerDown2: 2 Detect Up. Inform PCSCore
+200413-21:43:03 [FINE] -- PCSCore: message received: [MotionSensorHandlerDown2 (MotionSensorDetectDown) -- {2}].
+200413-21:43:03 [INFO] -- PCSCore: MotionSensor Detect Down Message Received
+200413-21:43:03 [INFO] -- PCSCore: Begin Handle Detect Down
+200413-21:43:03 [FINE] -- VacancyHandler: message received: [PCSCore (VacancyDisUpdateRequest) -- {0 5 7 }].
+200413-21:43:03 [INFO] -- VacancyHandlerEmulator
+Floor 1: 0
+Floor 2: 5
+Floor 3: 7
+Last update time: 09:43:03
+200413-21:43:03 [FINE] -- MotionSensorHandlerDown2: message received: [MotionSensorHandlerDown2 (MotionSensorDetect) -- {Motion Sensor Detect}].
+200413-21:43:03 [INFO] -- MotionSensorHandlerDown2: motion sensor detect message received
+200413-21:43:03 [INFO] -- MotionSensorHandlerDown2: 2 Detect Up. Inform PCSCore
+200413-21:43:03 [FINE] -- PCSCore: message received: [MotionSensorHandlerDown2 (MotionSensorDetectDown) -- {2}].
+200413-21:43:03 [INFO] -- PCSCore: MotionSensor Detect Down Message Received
+200413-21:43:03 [INFO] -- PCSCore: Begin Handle Detect Down
+200413-21:43:03 [FINE] -- VacancyHandler: message received: [PCSCore (VacancyDisUpdateRequest) -- {0 5 7 }].
+200413-21:43:03 [INFO] -- VacancyHandlerEmulator
+Floor 1: 0
+Floor 2: 5
+Floor 3: 7
+Last update time: 09:43:03
+200413-21:43:03 [FINE] -- MotionSensorHandlerDown2: message received: [MotionSensorHandlerDown2 (MotionSensorDetect) -- {Motion Sensor Detect}].
+200413-21:43:03 [INFO] -- MotionSensorHandlerDown2: motion sensor detect message received
+200413-21:43:03 [INFO] -- MotionSensorHandlerDown2: 2 Detect Up. Inform PCSCore
+200413-21:43:03 [FINE] -- PCSCore: message received: [MotionSensorHandlerDown2 (MotionSensorDetectDown) -- {2}].
+200413-21:43:03 [INFO] -- PCSCore: MotionSensor Detect Down Message Received
+200413-21:43:03 [INFO] -- PCSCore: Begin Handle Detect Down
+200413-21:43:03 [FINE] -- VacancyHandler: message received: [PCSCore (VacancyDisUpdateRequest) -- {0 5 7 }].
+200413-21:43:03 [INFO] -- VacancyHandlerEmulator
+Floor 1: 0
+Floor 2: 5
+Floor 3: 7
+Last update time: 09:43:03

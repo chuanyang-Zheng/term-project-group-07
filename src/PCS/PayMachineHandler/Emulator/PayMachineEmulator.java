@@ -78,7 +78,7 @@ public class PayMachineEmulator extends PayMachineHandler {
         SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss"); // set the time format
         String timestr = sdf.format(nowT); // set the time format
         parkedTime = fee != 0?(System.currentTimeMillis() - Long.parseLong(currentTicket[3])) / 1000:0; //is the payment is done ,no parking time,otherwise calculate the parking time
-        PayMachineController.appendTextArea("You have parked " + Long.toString(parkedTime) + "s and you need to pay $" + fee + "  ($5/s)");
+        PayMachineController.appendTextArea("You have parked " + Long.toString(parkedTime) + "s and you need to pay $" + fee + "  ($"+parkingFeeCoefficient+"/s)");
         PayMachineController.updateTicket(currentTicket[1],currentTicket[2],timestr); // update the display of upper textArea
     }// FeeReceive
 

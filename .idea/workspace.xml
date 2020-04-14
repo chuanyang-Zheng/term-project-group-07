@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="76c37db4-d153-4079-b307-a865859fe863" name="Default Changelist" comment="Collector,MotionSensor And PCSCore JAVADoc Done.">
+    <list default="true" id="76c37db4-d153-4079-b307-a865859fe863" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PCS/GateHandler/Emulator/GateEmulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/GateHandler/Emulator/GateEmulator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PCS/GateHandler/Emulator/GateEmulatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/GateHandler/Emulator/GateEmulatorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PCS/GateHandler/GateHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/GateHandler/GateHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/Emulator/MotionSensorEmulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/Emulator/MotionSensorEmulator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/Emulator/MotionSensorEmulatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/Emulator/MotionSensorEmulatorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/MotionSensorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/MotionSensorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/etc/PCS.PCSEmulatorStarter.log" beforeDir="false" afterPath="$PROJECT_DIR$/etc/PCS.PCSEmulatorStarter.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/etc/PCS.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/etc/PCS.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/DispatcherHandler/DispatcherHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/DispatcherHandler/DispatcherHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/DispatcherHandler/Emulator/DispatcherEmulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/DispatcherHandler/Emulator/DispatcherEmulator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PCS/PCSCore/PCSCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/PCSCore/PCSCore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/PCSCore/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/PCSCore/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/PayMachineHandler/Emulator/PayMachineEmulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/PayMachineHandler/Emulator/PayMachineEmulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/PayMachineHandler/PayMachineHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/PayMachineHandler/PayMachineHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +148,8 @@
       <workItem from="1586573669299" duration="7560000" />
       <workItem from="1586582972442" duration="4798000" />
       <workItem from="1586590183277" duration="1647000" />
-      <workItem from="1586662464783" duration="4009000" />
+      <workItem from="1586662464783" duration="6591000" />
+      <workItem from="1586771292239" duration="4695000" />
     </task>
     <task id="LOCAL-00003" summary="Update Dispatcher Remove Ticket Response">
       <created>1586242645625</created>
@@ -331,7 +333,21 @@
       <option name="project" value="LOCAL" />
       <updated>1586590582639</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Collector,MotionSensor,Gate And PCSCore JAVADoc Done.">
+      <created>1586666830796</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1586666830796</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Fix JavaDoc">
+      <created>1586666986799</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1586666986799</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,7 +388,9 @@
     <MESSAGE value="Merge" />
     <MESSAGE value="PCSCore Variables JavaDoc Done" />
     <MESSAGE value="Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update" />
+    <MESSAGE value="Collector,MotionSensor,Gate And PCSCore JAVADoc Done." />
+    <MESSAGE value="Fix JavaDoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix JavaDoc" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="74" key="#Notifications" timestamp="1586578740715">
@@ -391,15 +409,15 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="162" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1586489242753" />
-    <state x="520" y="167" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1586666855365">
+    <state x="520" y="167" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1586771432965">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="520" y="167" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1586666855365" />
-    <state x="275" y="8" key="CommitChangelistDialog2" timestamp="1586666829393">
+    <state x="520" y="167" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1586771432965" />
+    <state x="275" y="8" key="CommitChangelistDialog2" timestamp="1586666985973">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="258" y="23" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1586413091378" />
-    <state x="275" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1586666829393" />
+    <state x="275" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1586666985973" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1586589847037">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -408,26 +426,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="501" y="143" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1586489702372" />
-    <state width="746" height="194" key="GridCell.Tab.0.bottom" timestamp="1586666942270">
+    <state width="746" height="530" key="GridCell.Tab.0.bottom" timestamp="1586785708812">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1398" height="207" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1586411787081" />
-    <state width="746" height="194" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586666942270" />
-    <state width="746" height="194" key="GridCell.Tab.0.center" timestamp="1586666942270">
+    <state width="746" height="530" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586785708812" />
+    <state width="746" height="530" key="GridCell.Tab.0.center" timestamp="1586785708811">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1398" height="207" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1586411787080" />
-    <state width="746" height="194" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586666942270" />
-    <state width="746" height="194" key="GridCell.Tab.0.left" timestamp="1586666942270">
+    <state width="746" height="530" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586785708811" />
+    <state width="746" height="530" key="GridCell.Tab.0.left" timestamp="1586785708811">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1398" height="207" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1586411787079" />
-    <state width="746" height="194" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586666942270" />
-    <state width="746" height="194" key="GridCell.Tab.0.right" timestamp="1586666942270">
+    <state width="746" height="530" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586785708811" />
+    <state width="746" height="530" key="GridCell.Tab.0.right" timestamp="1586785708811">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1398" height="207" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1586411787080" />
-    <state width="746" height="194" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586666942270" />
+    <state width="746" height="530" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586785708811" />
     <state x="349" y="155" key="IDE.errors.dialog" timestamp="1586327295169">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -445,15 +463,15 @@
     </state>
     <state x="208" y="33" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1586229342643" />
     <state x="222" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1586489657470" />
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1586666834982">
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1586666989710">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="338" y="162" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1586413099156" />
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1586666834982" />
-    <state x="454" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1586662473075">
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1586666989710" />
+    <state x="454" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1586833810742">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="454" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1586662473075" />
+    <state x="454" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1586833810742" />
     <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586349754859">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

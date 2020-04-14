@@ -190,4 +190,8 @@ public class Ticket {
         this.payMachineID=payMachineID;
         this.parkingFee=parkingFee;
     }
+
+    public String toString(){
+        return this.ticketID+" "+exitTime+" "+parkingFee+" "+payMachineID+"\n";
+    }
 }
