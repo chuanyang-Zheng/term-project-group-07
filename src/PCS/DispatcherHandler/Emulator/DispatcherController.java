@@ -11,22 +11,60 @@ import java.util.Optional;
 import java.util.logging.Logger;
 
 
-//======================================================================
-// DispatcherEmulatorController
+/**
+ * Dispatcher Controller is an Emulator of Real Dispatcher Hardware
+ * @author Gong Yikai
+ */
 public class DispatcherController {
+    /**
+     * ID Get from Dispatcher Emulator
+     */
     private String id;
+    /**
+     * AppKickstarter Object
+     */
     private AppKickstarter appKickstarter;
+    /**
+     * Logger from Dispatcher Emulator
+     */
     private Logger log;
-    private PCS.DispatcherHandler.Emulator.DispatcherEmulator DispatcherEmulator;
+    /**
+     * Dispatcher Emulator Object
+     */
+    private DispatcherEmulator DispatcherEmulator;
+    /**
+     * Dispatcher Mox. Will be used to send messages
+     */
     private MBox dispatcherMBox;
+    /**
+     * Dispatcher Text Area. Dispatcher Emulator will add message to here
+     */
     public TextArea DispatcherTextArea;
+    /**
+     * Ticket ID Area. Show ticket ID here
+     */
     public TextArea TicketIDField;
+    /**
+     * Entertime Area. Show enter time here
+     */
     public TextArea EnterField;
+    /**
+     * Count How many Messages are added.
+     */
     private int lineNo = 0;
-    private String ticket_id,ticket_enter;
+    /**
+     * Record drivers' enter time
+     */
+    private String ticket_enter;
 
-    //------------------------------------------------------------
-    // initialize
+    /**
+     * Initialize Dispatcher Controller GUI
+     * @param id:Handler ID
+     * @param appKickstarter; AppKickstarter in PCSEmulator Starter
+     * @param log: Logger in Dispatcher Emulator
+     * @param DispatcherEmulator:DispatcherEmulator
+     * @author Gong Yikai
+     */
     public void initialize(String id, AppKickstarter appKickstarter, Logger log, PCS.DispatcherHandler.Emulator.DispatcherEmulator DispatcherEmulator) {
         this.id = id;
         this.appKickstarter = appKickstarter;
@@ -36,8 +74,11 @@ public class DispatcherController {
     } // initialize
 
 
-    //------------------------------------------------------------
-    // buttonPressed
+    /**
+     * Button Information in DispatcherEmulator.fxm
+     * @param actionEvent:Button Event
+     * @author Gong Yikai
+     */
     public void buttonPressed(ActionEvent actionEvent) {
         Button btn = (Button) actionEvent.getSource();
 
@@ -67,12 +108,21 @@ public class DispatcherController {
     } // buttonPressed
 
 
-    //------------------------------------------------------------
-    // appendTextArea
+    /**
+     * Append Information to Controller
+     * @param status: Information
+     * @author Gong Yikai
+     */
     public void appendTextArea(String status) {
         Platform.runLater(() -> DispatcherTextArea.appendText(String.format("[%04d] %s\n", ++lineNo, status)));
     } // appendTextArea
 
+    /**
+     * Show information on the GUI
+     * @param tmpid : ticketID
+     * @param tmpenter : enter time
+     * @author Gong Yikai
+     */
     public void showTicket(String tmpid, String tmpenter){
         ticket_enter = tmpenter;
         TicketIDField.setText(tmpid);

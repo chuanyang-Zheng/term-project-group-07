@@ -19,9 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76c37db4-d153-4079-b307-a865859fe863" name="Default Changelist" comment="">
+    <list default="true" id="76c37db4-d153-4079-b307-a865859fe863" name="Default Changelist" comment="dispatcher javadoc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PCS/DispatcherHandler/DispatcherHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/DispatcherHandler/DispatcherHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/DispatcherHandler/Emulator/DispatcherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/DispatcherHandler/Emulator/DispatcherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/DispatcherHandler/Emulator/DispatcherEmulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/DispatcherHandler/Emulator/DispatcherEmulator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -365,7 +366,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586833858682</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="dispatcher javadoc">
+      <created>1586966442173</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1586966442174</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -408,7 +416,8 @@
     <MESSAGE value="Collector,MotionSensor,Gate And PCSCore JAVADoc Done." />
     <MESSAGE value="Fix JavaDoc" />
     <MESSAGE value="Connect dollars/s with PCS.cfg" />
-    <option name="LAST_COMMIT_MESSAGE" value="Connect dollars/s with PCS.cfg" />
+    <MESSAGE value="dispatcher javadoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="dispatcher javadoc" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="74" key="#Notifications" timestamp="1586578740715">
@@ -440,10 +449,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1586589847037" />
-    <state x="501" y="143" key="FileChooserDialogImpl" timestamp="1586489702372">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="470" y="168" key="FileChooserDialogImpl" timestamp="1586966961563">
+      <screen x="0" y="23" width="1440" height="836" />
     </state>
     <state x="501" y="143" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1586489702372" />
+    <state x="470" y="168" key="FileChooserDialogImpl/0.23.1440.836@0.23.1440.836" timestamp="1586966961563" />
     <state width="746" height="108" key="GridCell.Tab.0.bottom" timestamp="1586835528834">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -481,11 +491,12 @@
     </state>
     <state x="208" y="33" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1586229342643" />
     <state x="222" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1586489657470" />
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1586833860073">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="338" y="173" key="Vcs.Push.Dialog.v2" timestamp="1586966452475">
+      <screen x="0" y="23" width="1440" height="836" />
     </state>
     <state x="338" y="162" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1586413099156" />
     <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1586833860073" />
+    <state x="338" y="173" key="Vcs.Push.Dialog.v2/0.23.1440.836@0.23.1440.836" timestamp="1586966452475" />
     <state x="454" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1586833810742">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -494,10 +505,15 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1586349754859" />
-    <state x="447" y="214" key="git4idea.merge.GitPullDialog" timestamp="1586662477743">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="446" y="188" width="588" height="538" key="find.popup" timestamp="1586966963406">
+      <screen x="0" y="23" width="1440" height="836" />
+    </state>
+    <state x="446" y="188" width="588" height="538" key="find.popup/0.23.1440.836@0.23.1440.836" timestamp="1586966963406" />
+    <state x="419" y="240" key="git4idea.merge.GitPullDialog" timestamp="1586966469658">
+      <screen x="0" y="23" width="1440" height="836" />
     </state>
     <state x="447" y="214" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1586662477743" />
+    <state x="419" y="240" key="git4idea.merge.GitPullDialog/0.23.1440.836@0.23.1440.836" timestamp="1586966469658" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1586664470780">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
