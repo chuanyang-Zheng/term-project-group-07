@@ -106,6 +106,7 @@ public class CollectorEmulatorController {
                 break;
 
             case "Collector Solve Problem":
+                appendTextArea("Press Solve Problem Button");
                 collectorMBox.send(new Msg(id, null, Msg.Type.CollectorSolveProblem, "Collector Solve Problem"));
                 break;
 
