@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76c37db4-d153-4079-b307-a865859fe863" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/Emulator/MotionSensorEmulator.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/Emulator/MotionSensorEmulator.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/Emulator/MotionSensorEmulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/Emulator/MotionSensorEmulator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/Emulator/MotionSensorEmulatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/Emulator/MotionSensorEmulatorController.java" afterDir="false" />
     </list>
@@ -381,7 +381,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587037320640</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="motionsensor Poll,Poll Ack and Auto Poll Finish">
+      <created>1587066668211</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1587066668211</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -401,7 +408,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Define Vacancy Total Floor number and Available Parking Spaces" />
     <MESSAGE value="Update Dispatcher Remove Ticket Response" />
     <MESSAGE value="Update MotionSensor and PCSCore" />
     <MESSAGE value="Update PCSCore" />
@@ -426,7 +432,8 @@
     <MESSAGE value="Update Collector. Finish Collector Test plan" />
     <MESSAGE value="Update Gate" />
     <MESSAGE value="Collector Poll,Poll Ack and Auto Poll Finish" />
-    <option name="LAST_COMMIT_MESSAGE" value="Collector Poll,Poll Ack and Auto Poll Finish" />
+    <MESSAGE value="motionsensor Poll,Poll Ack and Auto Poll Finish" />
+    <option name="LAST_COMMIT_MESSAGE" value="motionsensor Poll,Poll Ack and Auto Poll Finish" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="74" key="#Notifications" timestamp="1586578740715">
@@ -449,11 +456,12 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="520" y="167" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1586771432965" />
-    <state x="275" y="8" key="CommitChangelistDialog2" timestamp="1587037319679">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="344" y="10" key="CommitChangelistDialog2" timestamp="1587067314021">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="258" y="23" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1586413091378" />
     <state x="275" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1587037319679" />
+    <state x="344" y="10" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1587067314021" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1586589847037">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

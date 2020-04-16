@@ -16,6 +16,7 @@ import java.util.logging.Logger;
  */
 public class MotionSensorEmulatorController {
 
+    public Button autoPollButton;
     /**
      * The ID of Motion Sensor Emulator
      */

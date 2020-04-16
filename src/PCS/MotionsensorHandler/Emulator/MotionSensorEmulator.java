@@ -83,6 +83,13 @@ public class MotionSensorEmulator extends MotionSensorHandler {
         myStage.show();
     } // MotionSensorEmulator
 
+   public final boolean handleMontionSensorEmulatorAutoPollToggle() {
+        autoPoll = !autoPoll;
+        logFine("Auto poll change: " + (autoPoll ? "off --> on" : "on --> off"));
+        return autoPoll;
+    } // handleGateEmulatorAutoPollToggle
+
+
     /**
      * Log Info Type Information and Add it to Controller
      * @param logMsg:Log Msg
