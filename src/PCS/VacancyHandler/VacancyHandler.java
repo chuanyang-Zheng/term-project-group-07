@@ -4,17 +4,40 @@ import AppKickstarter.AppKickstarter;
 import AppKickstarter.misc.AppThread;
 import AppKickstarter.misc.MBox;
 import AppKickstarter.misc.Msg;
-
+/**
+ * Ticket Vacancy Handler Class.
+ * The class will handle logic message from PCSCore, and it will also receive process logic commands from Vacancy
+ * @author Gong Yikai
+ */
 public class VacancyHandler extends AppThread {
+    /**
+     * The PCSCore Box
+     */
     protected final MBox pcsCore;
+    /**
+     * The Vacancy Status. We have one Status:
+     * VacancyDisRunning
+     */
     private  VacancyDisStatus vacancyDisStatus;
 
+    /**
+     * VacancyHandler Constructor
+     *
+     * @param id:A String ID of the Vacancy. For example, CollecotrHandler
+     * @param appKickstarter: An appKickstarter
+     *
+     * @author Gong Yikai
+     */
     public VacancyHandler(String id, AppKickstarter appKickstarter) {
         super(id, appKickstarter);
         pcsCore = appKickstarter.getThread("PCSCore").getMBox();
         vacancyDisStatus = VacancyDisStatus.VacancyDisRunning;
     } // VacancyDisHandler
 
+    /**
+     * A method used to receive and judge Msg type
+     * @author Gong Yikai
+     */
     public void run() {
         Thread.currentThread().setName(id);
         log.info(id + ": starting...");
@@ -32,6 +55,12 @@ public class VacancyHandler extends AppThread {
         log.info(id + ": terminating...");
     } // run
 
+    /**
+     * A method used to process message.
+     * @param msg:a message received
+     * @return if message type is terminated, return false. Else, return true
+     * @author Gong Yikai
+     */
     public boolean processMsg(Msg msg){
         boolean quit = false;
 
@@ -45,6 +74,11 @@ public class VacancyHandler extends AppThread {
         return quit;
     }
 
+    /**
+     * Handle Vacancy Display update request. 
+     * @param msg:A msg received from processMsg(Msg msg) method
+     * @author Gong Yikai
+     */
     public void handleVacancyDisUpdateRequest(Msg msg){
         log.info(id + ": vacancy display update request received");
         //check Receive String Is correct or not.
@@ -60,16 +94,21 @@ public class VacancyHandler extends AppThread {
     }
 
 
-
+    /**
+     * Send vacancy display update signal
+     * @author Gong Yikai
+     */
     public void sendVacancyDisUpdateSignal(){
 
         // fixme: send Vacancy Update signal to hardware
         log.info(id + ": sending vacancy update signal to hardware.");
 
     }
-
+    /**
+     * Vacancy Status. One in total: VacancyDisRunning
+     * @author Gong Yikai
+     */
     private enum VacancyDisStatus {
         VacancyDisRunning,
-        VacancyDisTerminated
     }
 }

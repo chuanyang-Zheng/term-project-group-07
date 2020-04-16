@@ -16,29 +16,48 @@ import javafx.stage.WindowEvent;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * Vacancy Emulator Combine by Vacancy Handler and Vacancy Controller
+ * This class is mainly combined by Vacancy Handler and Vacancy Controller. It is a subclass of Vacancy Handler.
+ * @author Gong Yikai
+ */
 public class VacancyEmulator extends VacancyHandler {
+    /**
+     * It will be used in Start() method to create Vacancy GUI
+     */
     private Stage myStage;
-    private PCS.VacancyHandler.Emulator.VacancyEmulatorController VacancyEmulatorController;
+    /**
+     * It will be used in Start() method to create Vacancy GUI
+     */
+    private VacancyEmulatorController vacancyEmulatorController;
+    /**
+     * PCS Start Object
+     */
     private final PCSStarter pcsStarter;
+    /**
+     * The ID of the Vacancy Emulator
+     */
     private final String id;
 
 
-    //------------------------------------------------------------
-    // VacancyEmulator
+    /**
+     * Vacancy Constructor
+     * @param id The ID Of Vacancy Emulator
+     * @param pcsStarter PCS Starter Object
+     */
     public VacancyEmulator(String id, PCSStarter pcsStarter) {
         super(id, pcsStarter);
         this.pcsStarter = pcsStarter;
         this.id = id + "Emulator";
-//        this.VacancyOpenTime = Integer.parseInt(this.pcsStarter.getProperty("Vacancy.VacancyOpenTime"));
-////        this.VacancyCloseTime = Integer.parseInt(this.pcsStarter.getProperty("Vacancy.VacancyCloseTime"));
-//        this.autoOpen = true;
-//        this.autoClose = true;
-//        this.autoPoll = true;
+
     } // VacancyEmulator
 
-
-    //------------------------------------------------------------
-    // start
+    /**
+     * Start A GUI
+     * The method starts a GUI that is interactive with users
+     * @exception  Exception throw Exception
+     * @author Gong Yikai
+     */
     public void start() throws Exception {
         Parent root;
         myStage = new Stage();
@@ -46,8 +65,8 @@ public class VacancyEmulator extends VacancyHandler {
         String fxmlName = "VacancyEmulator.fxml";
         loader.setLocation(VacancyEmulator.class.getResource(fxmlName));
         root = loader.load();
-        VacancyEmulatorController = loader.getController();
-        VacancyEmulatorController.initialize(super.id, pcsStarter, log, this);
+        vacancyEmulatorController = loader.getController();
+        vacancyEmulatorController.initialize(super.id, pcsStarter, log, this);
         myStage.initStyle(StageStyle.DECORATED);
         myStage.setScene(new Scene(root, 420, 470));
         myStage.setTitle(id);
@@ -60,19 +79,24 @@ public class VacancyEmulator extends VacancyHandler {
     } // VacancyEmulator
 
 
+    /**
+     * Handle Vacancy Display Update Request
+     * Display vacancy information on the text area
+     * @author Gong Yikai
+     */
     @Override
     public void handleVacancyDisUpdateRequest(Msg mymsg){
         String []str=mymsg.getDetails().split("\\s+");
         Date nowT = new Date(System.currentTimeMillis());
         SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
         String timestr = sdf.format(nowT);
-        VacancyEmulatorController.appendTextArea("This is a real time vacancy display:\n");
+        vacancyEmulatorController.appendTextArea("This is a real time vacancy display:\n");
         StringBuilder floorNumberInformation=new StringBuilder();
         for(int i=0;i<str.length;i++){
             floorNumberInformation.append("Floor "+(i+1)+": "+str[i]+"\n");
         }
         floorNumberInformation.append("Last update time: "+timestr);
-        VacancyEmulatorController.appendTextArea(floorNumberInformation.toString());
+        vacancyEmulatorController.appendTextArea(floorNumberInformation.toString());
         log.info(id+"\n"+floorNumberInformation.toString());
     }
 }

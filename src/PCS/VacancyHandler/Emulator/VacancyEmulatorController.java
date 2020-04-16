@@ -11,20 +11,49 @@ import javafx.scene.control.TextArea;
 
 import java.util.logging.Logger;
 
+/**
+ * Vacancy Controller is an Emulator of Real Vacancy Hardware
+ * @author Gong Yikai
+ */
 public class VacancyEmulatorController {
+    /**
+     * ID Get from Vacancy Emulator
+     */
     private String id;
+    /**
+     * AppKickstarter Object
+     */
     private AppKickstarter appKickstarter;
+    /**
+     * Logger from Vacancy Emulator
+     */
     private Logger log;
-    private PCS.VacancyHandler.Emulator.VacancyEmulator VacancyEmulator;
+    /**
+     * Vacancy Emulator Object
+     */
+    private VacancyEmulator VacancyEmulator;
+    /**
+     * Vacancy Mox. Will be used to send messages
+     */
     private MBox VacancyMBox;
+    /**
+     * Vacancy Text Area. Vacancy Emulator will add message to here
+     */
     public TextArea VacancyTextArea;
-    public TextArea TicketIDField;
-    public TextArea EnterField;
+    /**
+     * Count How many Messages are added.
+     */
     private int lineNo = 0;
-    private String ticket_id,ticket_enter;
 
-    //------------------------------------------------------------
-    // initialize
+
+    /**
+     * Initialize Vacancy Controller GUI
+     * @param id:Handler ID
+     * @param appKickstarter; AppKickstarter in PCSEmulator Starter
+     * @param log: Logger in Vacancy Emulator
+     * @param VacancyEmulator:VacancyEmulator
+     * @author Gong Yikai
+     */
     public void initialize(String id, AppKickstarter appKickstarter, Logger log, PCS.VacancyHandler.Emulator.VacancyEmulator VacancyEmulator) {
         this.id = id;
         this.appKickstarter = appKickstarter;
@@ -34,8 +63,11 @@ public class VacancyEmulatorController {
     } // initialize
 
 
-    //------------------------------------------------------------
-    // buttonPressed
+    /**
+     * Button Information in VacancyEmulator.fxm
+     * @param actionEvent:Button Event
+     * @author Gong Yikai
+     */
     public void buttonPressed(ActionEvent actionEvent) {
         Button btn = (Button) actionEvent.getSource();
 
@@ -54,8 +86,11 @@ public class VacancyEmulatorController {
     } // buttonPressed
 
 
-    //------------------------------------------------------------
-    // appendTextArea
+    /**
+     * Append Information to Controller
+     * @param status: Information
+     * @author Gong Yikai
+     */
     public void appendTextArea(String status) {
         Platform.runLater(() -> VacancyTextArea.appendText(String.format("[%04d] %s\n", ++lineNo, status)));
     } // appendTextArea

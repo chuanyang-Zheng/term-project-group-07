@@ -9,26 +9,48 @@ import PCS.DispatcherHandler.Emulator.DispatcherEmulator;
 import PCS.DispatcherHandler.DispatcherHandler;
 
 
-//======================================================================
-// DispatcherHandler
+
+/**
+ * Ticket Dispatcher Handler Class.
+ * The class will handle logic message from PCSCore, and it will also receive process logic commands from Dispatcher
+ * @author Gong Yikai
+ */
 public class DispatcherHandler extends AppThread {
+    /**
+     * The PCSCore Box
+     */
     protected final MBox pcsCore;
+    /**
+     * The Dispatcher Status. We have three Status:
+     * idle,
+     * waitPCSCoreReply,
+     * waitForRemoval
+     */
     private DispatcherStatus dispatcherStatus;
     protected int parkingFeeCoefficient;
 
 
-    //------------------------------------------------------------
-    // Pay Machine Handler Constructor
-    public DispatcherHandler(String id,AppKickstarter pcss) {
-        super(id, pcss);
+    /**
+     * DispatcherHandler Constructor
+     *
+     * @param id:A String ID of the Dispatcher. For example, DispatcherHandler
+     * @param appKickstarter: An appKickstarter
+     *
+     * @author Gong Yikai
+     */
+    public DispatcherHandler(String id,AppKickstarter appKickstarter) {
+        super(id, appKickstarter);
         pcsCore = appKickstarter.getThread("PCSCore").getMBox();
         dispatcherStatus=DispatcherStatus.idle;
-        this.parkingFeeCoefficient=Integer.parseInt(pcss.getProperty("Ticket.calculateFeeCoefficient"));
+        this.parkingFeeCoefficient=Integer.parseInt(appKickstarter.getProperty("Ticket.calculateFeeCoefficient"));
     } // Dispatcher Handler Constructor
 
 
-    //------------------------------------------------------------
-    // run
+
+    /**
+     * A method used to receive and judge Msg type
+     * @author Gong Yikai
+     */
     public void run() {
         Thread.currentThread().setName(id);
         log.info(id + ": starting...");
@@ -47,8 +69,12 @@ public class DispatcherHandler extends AppThread {
     } // run
 
 
-    //------------------------------------------------------------
-    // processMsg
+    /**
+     * A method used to process message.
+     * @param msg:a message received
+     * @return if message type is terminated, return false. Else, return true
+     * @author Gong Yikai
+     */
     protected boolean processMsg(Msg msg) {
         boolean quit = false;
         DispatcherStatus oldStatus=dispatcherStatus;
@@ -71,9 +97,11 @@ public class DispatcherHandler extends AppThread {
     }
     // processMsg
 
+
     /**
-     *Handle AddTicket
+     * Handle AddTicket
      * @param msg Msg Received from processMsg when AddTicket Msg Type Receive
+     * @author Gong Yikai
      */
     protected void handleAddTicket(Msg msg){
         log.info(id+": Handle Add Ticket");
@@ -94,6 +122,11 @@ public class DispatcherHandler extends AppThread {
         log.info(id+": Dispatcher status from ["+oldStatus+"] to ["+dispatcherStatus+"]");
     }
 
+    /**
+     * Handle ReceiveTicketID
+     * @param msg Msg Received from processMsg when ReceiveTicketID Msg Type Receive
+     * @author Gong Yikai
+     */
     protected void handleReceiveTicketID(Msg msg){
         log.info(id+": Handle Receive Ticket ID");
         DispatcherStatus oldStatus=dispatcherStatus;
@@ -112,6 +145,11 @@ public class DispatcherHandler extends AppThread {
         log.info(id+": Dispatcher status from ["+oldStatus+"] to ["+dispatcherStatus+"]");
     }
 
+    /**
+     * Handle RemoveTicket
+     * @param msg Msg Received from processMsg when RemoveTicket Msg Type Receive
+     * @author Gong Yikai
+     */
     protected void handleRemoveTicket(Msg msg){
         log.info(id+": Handle Remove");
         DispatcherStatus oldStatus=dispatcherStatus;
@@ -131,20 +169,34 @@ public class DispatcherHandler extends AppThread {
         log.info(id+": Dispatcher status from ["+oldStatus+"] to ["+dispatcherStatus+"]");
     }
 
+    /**
+     * Inform PCSCore to add a ticket
+     * @author Gong Yikai
+     */
     protected void SendAddTicket(String mymsg){
         log.info("Creating new Ticket");
     }
+    /**
+     * Get ticket ID to show on the emulator
+     * @author Gong Yikai
+     */
     protected void ReceiveTicketID(Msg msg){
         log.info(msg.getDetails());
     }
+    /**
+     * Inform PCSCore the ticket is removed
+     * @author Gong Yikai
+     */
     protected void SendRemoveTicket(Msg msg){
         pcsCore.send(new Msg(id,mbox,Msg.Type.RemoveTicket,"Remove Ticket Now"));
     }
 
 
 
-    //------------------------------------------------------------
-    // PM Status
+    /**
+     * Dispatcher status. Three in total: idle, waitPCSCoreReply, waitForRemoval
+     * @author Gong Yikai
+     */
     private enum DispatcherStatus {
         idle,
         waitPCSCoreReply,

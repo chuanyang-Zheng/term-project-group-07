@@ -15,34 +15,51 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
-//======================================================================
-// DispatcherEmulator
+/**
+ * Dispatcher Emulator Combine by Dispatcher Handler and Dispatcher Controller
+ * This class is mainly combined by Dispatcher Handler and Dispatcher Controller. It is a subclass of Dispatcher Handler.
+ * @author Gong Yikai
+ */
 public class DispatcherEmulator extends DispatcherHandler {
+    /**
+     * It will be used in Start() method to create Dispatcher GUI
+     */
     private Stage myStage;
+    /**
+     * It is the Dispatcher Controller. A Emulator Of Dispatcher
+     */
     private DispatcherController dispatcherController;
+    /**
+     * PCS Start Object
+     */
     private final PCSStarter pcsStarter;
+    /**
+     * The ID of the Dispatcher Emulator
+     */
     private final String id;
 
 
 
 
-    //------------------------------------------------------------
-    // DispatcherEmulator
+    /**
+     * Dispatcher Constructor
+     * @param id The ID Of Dispatcher Emulator
+     * @param pcsStarter PCS Starter Object
+     */
     public DispatcherEmulator(String id, PCSStarter pcsStarter) {
         super(id, pcsStarter);
         this.pcsStarter = pcsStarter;
         this.id = id + "Emulator";
 
-//        this.DispatcherOpenTime = Integer.parseInt(this.pcsStarter.getProperty("Dispatcher.DispatcherOpenTime"));
-////        this.DispatcherCloseTime = Integer.parseInt(this.pcsStarter.getProperty("Dispatcher.DispatcherCloseTime"));
-//        this.autoOpen = true;
-//        this.autoClose = true;
-//        this.autoPoll = true;
     } // DispatcherEmulator
 
 
-    //------------------------------------------------------------
-    // start
+    /**
+     * Start A GUI
+     * The method starts a GUI that is interactive with users
+     * @exception  Exception throw Exception
+     * @author Gong Yikai
+     */
     public void start() throws Exception {
         Parent root;
         myStage = new Stage();
@@ -63,24 +80,32 @@ public class DispatcherEmulator extends DispatcherHandler {
         myStage.show();
     } // DispatcherEmulator
 
-
+    /**
+     * Inform PCSCore to add a ticket
+     * @author Gong Yikai
+     */
     @Override
     protected void SendAddTicket(String mymsg) {
         logFine(mymsg);
     }
 
-    //receive ticket ID
+    /**
+     * Receive ticket ID from PCSCore and show it on the GUI
+     * @author Gong Yikai
+     */
     protected void ReceiveTicketID(Msg msg){
         String mymsg=msg.getDetails();
         Date nowT = new Date(System.currentTimeMillis());
         SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
         String timestr = sdf.format(nowT);
         logInfo("Welcome to our parking lot.\n"+"Your ticket ID is "+mymsg+".\n"+"The time now is " + timestr + ".\nThe parking fee is "+parkingFeeCoefficient+"/s.\nHave a good time!");
-
         dispatcherController.showTicket(mymsg,timestr);
-        //pcsCore.send(new Msg(id,mbox,Msg.Type.RemoveTicket,"Remove Ticket Now"));
-
     }
+
+    /**
+     * Inform PCSCore the ticket is removed
+     * @author Gong Yikai
+     */
     protected void SendRemoveTicket(Msg msg){
 
 
