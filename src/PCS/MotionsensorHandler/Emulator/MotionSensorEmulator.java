@@ -1,5 +1,6 @@
 package PCS.MotionsensorHandler.Emulator;
 
+import AppKickstarter.misc.Msg;
 import PCS.GateHandler.Emulator.GateEmulator;
 import PCS.GateHandler.Emulator.GateEmulatorController;
 import PCS.MotionsensorHandler.MotionSensorHandler;
@@ -37,6 +38,10 @@ public class MotionSensorEmulator extends MotionSensorHandler {
      * The ID the Motion Sensor Emulator
      */
     private final String id;
+    /**
+     * Auto Poll
+     */
+    private boolean autoPoll;
 
     /**
      *
@@ -50,6 +55,7 @@ public class MotionSensorEmulator extends MotionSensorHandler {
         super(id, pcsStarter,floorNumber,detectUp);
         this.pcsStarter = pcsStarter;
         this.id = id + "Emulator";
+        this.autoPoll = true;
     } // Motion Sensor Emulator
 
     /**
@@ -108,4 +114,16 @@ public class MotionSensorEmulator extends MotionSensorHandler {
         motionSensorEmulatorController.appendTextArea("[SEVERE]: " + logMsg);
         log.severe(id + ": " + logMsg);
     } // logSevere
+    protected void sendPollReq() {
+        logFine("Poll request received.  [autoPoll is " + (autoPoll ? "on]" : "off]"));
+        if (autoPoll) {
+            logFine("Send poll ack.");
+            mbox.send(new Msg(id, mbox, Msg.Type.PollAck, ""));
+        }
+    } // sendPollReq
+    private final void logFine(String logMsg) {
+        motionSensorEmulatorController.appendTextArea("[FINE]: " + logMsg);
+        log.fine(id + ": " + logMsg);
+    } // logFine
+
 }
