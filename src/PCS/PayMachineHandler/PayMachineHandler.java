@@ -95,6 +95,8 @@ public class PayMachineHandler extends AppThread {
                     RemovalFinished();// Update the panel display
                 }
             break;
+            case Poll:		   handlePollReq();	flag = true;     break;
+            case PollAck:	   handlePollAck();	flag = true;     break;
             case Terminate:	     quit = true;break;
         }
         if(flag) // if message proccessed successfully
@@ -220,6 +222,40 @@ public class PayMachineHandler extends AppThread {
             log.fine(id + ": gate status change: " + oldStatus + " --> " + PMS);
         }
     } // handleStatus
+
+    //------------------------------------------------------------
+    // handlePollReq
+
+    /**
+     * Handle Pool Request
+     * @author Pan Feng
+     */
+    protected final void handlePollReq() {
+        log.info(id + ": poll request received.  Send poll request to hardware.");
+        sendPollReq();
+    } // handlePollReq
+
+    //------------------------------------------------------------
+    // handlePollAck
+
+    /**
+     * Handle Pool Acknowledgement
+     * @author Pan Feng
+     */
+    protected final void handlePollAck() {
+        log.info(id + ": poll ack received.  Send poll ack to PCS Core.");
+        pcsCore.send(new Msg(id, mbox, Msg.Type.PollAck, id + " is up!"));
+    } // handlePollAck
+
+    //------------------------------------------------------------
+    // sendPollReq
+
+    /**
+     * Send Pool Request
+     */
+    protected void sendPollReq() {
+        log.info(id + ": poll request received");
+    } // sendPollReq
 
 
 

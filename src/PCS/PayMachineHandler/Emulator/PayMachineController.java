@@ -27,6 +27,7 @@ public class PayMachineController {
     public TextArea FeeField;
     public TextArea EnterField;
     public TextArea ExitField;
+    public Button autoPollButton;
     private int lineNo = 0;
     private String ticket_id,ticket_fee,ticket_time;
 
@@ -73,6 +74,23 @@ public class PayMachineController {
                 break;
             case "Remove ticket":
                 payMBox.send(new Msg(id, null, Msg.Type.TicketRemoveACK, id + "," + ticket_id)); // send removal ACK
+                break;
+            case "Poll Request":
+                appendTextArea("Send poll request.");
+                payMBox.send(new Msg(id, null, Msg.Type.Poll, ""));
+                break;
+            case "Poll ACK":
+                appendTextArea("Send poll ack.");
+                payMBox.send(new Msg(id, null, Msg.Type.PollAck, ""));
+                break;
+            case "Auto Poll: On":
+                Platform.runLater(() -> autoPollButton.setText("Auto Poll: Off"));
+                payMBox.send(new Msg(id, null, Msg.Type.EmulatorAutoPollToggle, "ToggleAutoPoll"));
+                break;
+
+            case "Auto Poll: Off":
+                Platform.runLater(() -> autoPollButton.setText("Auto Poll: On"));
+                payMBox.send(new Msg(id, null, Msg.Type.EmulatorAutoPollToggle, "ToggleAutoPoll"));
                 break;
 
             default:

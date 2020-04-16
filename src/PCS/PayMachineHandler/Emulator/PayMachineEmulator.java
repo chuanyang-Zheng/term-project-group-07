@@ -1,17 +1,12 @@
 package PCS.PayMachineHandler.Emulator;
 
 import AppKickstarter.misc.*;
-import AppKickstarter.timer.Timer;
-
-import PCS.PCSCore.Ticket;
 import PCS.PCSStarter;
-
 import PCS.PayMachineHandler.PayMachineHandler;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
@@ -28,6 +23,10 @@ public class PayMachineEmulator extends PayMachineHandler {
     private final PCSStarter pcsStarter;
     private final String id;
 
+    /**
+     * Auto Poll
+     */
+    private boolean autoPoll;
 
     //------------------------------------------------------------
     //  PayMachineEmulator
@@ -35,6 +34,7 @@ public class PayMachineEmulator extends PayMachineHandler {
         super(id, pcsStarter);
         this.pcsStarter = pcsStarter;
         this.id = id + "Emulator";
+        this.autoPoll = true;
     } //  PayMachineEmulator
 
 
@@ -60,6 +60,18 @@ public class PayMachineEmulator extends PayMachineHandler {
         myStage.show();
     } //  start
     @Override
+    protected final boolean processMsg(Msg msg) {
+        boolean quit = false;
+
+        switch (msg.getType()) {
+            case EmulatorAutoPollToggle:
+                handlePayMachineEmulatorAutoPollToggle();
+                break;
+            default:
+                quit = super.processMsg(msg);
+        }
+        return quit;
+    } // processMsg
     //------------------------------------------------------------
     // FeeReceive
     /**
@@ -134,6 +146,42 @@ public class PayMachineEmulator extends PayMachineHandler {
         PayMachineController.appendTextArea("Ticket removed!");
         PayMachineController.appendTextArea("Please exit before exit time~"); // Display the reminder in TextBox
     }//RemovalFinished
+    //------------------------------------------------------------
+    // handlePayMachineEmulatorAutoPollToggle:
 
+    /**
+     * Handle Pay Machine Emulator Auto Poll Toggle
+     * @return return autoPoll
+     * @author Pan Feng
+     */
+    public final boolean handlePayMachineEmulatorAutoPollToggle() {
+        autoPoll = !autoPoll;
+        log.info("Auto poll change: " + (autoPoll ? "off --> on" : "on --> off"));
+        return autoPoll;
+    } // handleGateEmulatorAutoPollToggle
+
+    //------------------------------------------------------------
+    // sendPollReq
+    @Override
+    protected void sendPollReq() {
+        logFine("Poll request received.  [autoPoll is " + (autoPoll ? "on]" : "off]"));
+        if (autoPoll) {
+            logFine("Send poll ack.");
+            mbox.send(new Msg(id, mbox, Msg.Type.PollAck, ""));
+        }
+    } // sendPollReq
+
+    //------------------------------------------------------------
+    // logFine
+
+    /**
+     * Log Fine Type Information and add it to Controller
+     * @param logMsg Log Information
+     * @author Pan Feng
+     */
+    private final void logFine(String logMsg) {
+        PayMachineController.appendTextArea("[FINE]: " + logMsg);
+        log.fine(id + ": " + logMsg);
+    } // logFine
 
 } //  PayMachineEmulator
