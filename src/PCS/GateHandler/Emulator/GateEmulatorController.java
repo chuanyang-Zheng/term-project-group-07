@@ -141,12 +141,12 @@ public class GateEmulatorController {
 
 		case "Auto Poll: On":
 			Platform.runLater(() -> autoPollButton.setText("Auto Poll: Off"));
-			gateMBox.send(new Msg(id, null, Msg.Type.GateEmulatorAutoPollToggle, "ToggleAutoPoll"));
+			gateMBox.send(new Msg(id, null, Msg.Type.EmulatorAutoPollToggle, "ToggleAutoPoll"));
 			break;
 
 		case "Auto Poll: Off":
 			Platform.runLater(() -> autoPollButton.setText("Auto Poll: On"));
-			gateMBox.send(new Msg(id, null, Msg.Type.GateEmulatorAutoPollToggle, "ToggleAutoPoll"));
+			gateMBox.send(new Msg(id, null, Msg.Type.EmulatorAutoPollToggle, "ToggleAutoPoll"));
 			break;
 
 	    default:

@@ -1,5 +1,6 @@
 package PCS.CollectorHandler.Emulator;
 
+import AppKickstarter.misc.Msg;
 import PCS.CollectorHandler.CollectorHandler;
 import PCS.PCSStarter;
 import com.sun.org.apache.bcel.internal.generic.INSTANCEOF;
@@ -39,6 +40,11 @@ public class CollectorEmulator extends CollectorHandler {
     private final String id;
 
     /**
+     * Auto Poll
+     */
+    private boolean autoPoll;
+
+    /**
      * Collector Constructor
      * @param id The ID Of Collector Emulator
      * @param pcsStarter PCS Starter Object
@@ -47,6 +53,7 @@ public class CollectorEmulator extends CollectorHandler {
         super(id, pcsStarter);
         this.pcsStarter = pcsStarter;
         this.id = id + "Emulator";
+        this.autoPoll=true;
     }
 
     //------------------------------------------------------------
@@ -77,6 +84,26 @@ public class CollectorEmulator extends CollectorHandler {
         });
         myStage.show();
     } // CollectorEmulator
+
+    /**
+     * Deal with logic
+     * @param msg:a message received
+     * @return if message type is terminated, return false. Else, return true
+     * @author Chuanyang Zheng
+     */
+    protected final boolean processMsg(Msg msg) {
+        boolean quit = false;
+
+        switch (msg.getType()) {
+            case EmulatorAutoPollToggle:
+                handleEmulatorAutoPollToggle();
+                break;
+
+            default:
+                quit = super.processMsg(msg);
+        }
+        return quit;
+    } // processMsg
 
 
 
@@ -111,6 +138,26 @@ public class CollectorEmulator extends CollectorHandler {
     @Override
     protected void sendParseIntFailSignal(String information) {
         logWarning(information);
+    }
+
+    /**
+     * Handle Collector Emulator Auto Poll Toggle
+     * @return return autoPoll
+     * @author Chuanyang Zheng
+     */
+    public final boolean handleEmulatorAutoPollToggle() {
+        autoPoll = !autoPoll;
+        logFine("Auto poll change: " + (autoPoll ? "off --> on" : "on --> off"));
+        return autoPoll;
+    } // handleGateEmulatorAutoPollToggle
+
+    @Override
+    protected void sendPollReq() {
+        logFine("Poll request received.  [autoPoll is " + (autoPoll ? "on]" : "off]"));
+        if (autoPoll) {
+            logFine("Send poll ack.");
+            mbox.send(new Msg(id, mbox, Msg.Type.PollAck, ""));
+        }
     }
 
     /**

@@ -61,6 +61,11 @@ public class CollectorEmulatorController {
     private int lineNo = 0;
 
     /**
+     * Auto Poll Button
+     */
+    public Button autoPollButton;
+
+    /**
      * Initialize Collector Controller GUI
      * @param id:Handler ID
      * @param appKickstarter; AppKickstarter in PCSEmulator Starter
@@ -112,6 +117,15 @@ public class CollectorEmulatorController {
             case "Poll ACK":
                 appendTextArea("Send poll ack.");
                 collectorMBox.send(new Msg(id, null, Msg.Type.PollAck, ""));
+                break;
+            case "Auto Poll: On":
+                Platform.runLater(() -> autoPollButton.setText("Auto Poll: Off"));
+                collectorMBox.send(new Msg(id, null, Msg.Type.EmulatorAutoPollToggle, "ToggleAutoPoll"));
+                break;
+
+            case "Auto Poll: Off":
+                Platform.runLater(() -> autoPollButton.setText("Auto Poll: On"));
+                collectorMBox.send(new Msg(id, null, Msg.Type.EmulatorAutoPollToggle, "ToggleAutoPoll"));
                 break;
 
 

@@ -154,7 +154,7 @@ public class GateEmulator extends GateHandler {
 		handleGateEmulatorAutoCloseToggle();
 		break;
 
-	    case GateEmulatorAutoPollToggle:
+	    case EmulatorAutoPollToggle:
 		handleGateEmulatorAutoPollToggle();
 	        break;
 
