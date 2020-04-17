@@ -1,12 +1,18 @@
 package PCS.PayMachineHandler.Emulator;
 
 import AppKickstarter.misc.*;
+import AppKickstarter.timer.Timer;
+
+import PCS.PCSCore.PCSCore;
+import PCS.PCSCore.Ticket;
 import PCS.PCSStarter;
+
 import PCS.PayMachineHandler.PayMachineHandler;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
@@ -23,10 +29,6 @@ public class PayMachineEmulator extends PayMachineHandler {
     private final PCSStarter pcsStarter;
     private final String id;
 
-    /**
-     * Auto Poll
-     */
-    private boolean autoPoll;
 
     //------------------------------------------------------------
     //  PayMachineEmulator
@@ -34,7 +36,6 @@ public class PayMachineEmulator extends PayMachineHandler {
         super(id, pcsStarter);
         this.pcsStarter = pcsStarter;
         this.id = id + "Emulator";
-        this.autoPoll = true;
     } //  PayMachineEmulator
 
 
@@ -60,18 +61,6 @@ public class PayMachineEmulator extends PayMachineHandler {
         myStage.show();
     } //  start
     @Override
-    protected final boolean processMsg(Msg msg) {
-        boolean quit = false;
-
-        switch (msg.getType()) {
-            case EmulatorAutoPollToggle:
-                handlePayMachineEmulatorAutoPollToggle();
-                break;
-            default:
-                quit = super.processMsg(msg);
-        }
-        return quit;
-    } // processMsg
     //------------------------------------------------------------
     // FeeReceive
     /**
@@ -87,8 +76,8 @@ public class PayMachineEmulator extends PayMachineHandler {
         String []currentTicket = mymsg.split(","); // proccess the protocal;
         float fee = Float.parseFloat(currentTicket[2]); // get the fee from message
         Date nowT = new Date(Long.parseLong(currentTicket[3])); // get the time from message
-        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss"); // set the time format
-        String timestr = sdf.format(nowT); // set the time format
+//        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss"); // set the time format
+        String timestr = PCSCore.getDate(nowT); // set the time format
         parkedTime = fee != 0?(System.currentTimeMillis() - Long.parseLong(currentTicket[3])) / 1000:0; //is the payment is done ,no parking time,otherwise calculate the parking time
         PayMachineController.appendTextArea("You have parked " + Long.toString(parkedTime) + "s and you need to pay $" + fee + "  ($"+parkingFeeCoefficient+"/s)");
         PayMachineController.updateTicket(currentTicket[1],currentTicket[2],timestr); // update the display of upper textArea
@@ -109,8 +98,8 @@ public class PayMachineEmulator extends PayMachineHandler {
         String ticketid = PayMachineController.TicketIDField.getText(); // get the ticket ID
         String PaidFee = PayMachineController.FeeField.getText();// get the Fee
         Date nowT = new Date(Long.parseLong(currentTicket[3])); // get the Exit time
-        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
-        String timestr = sdf.format(nowT); // Date format
+//        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
+        String timestr = PCSCore.getDate(nowT); // Date format
         PayMachineController.appendTextArea("Ticket ID: " + ticketid);
         PayMachineController.appendTextArea("Paid: " + PaidFee);
         PayMachineController.appendTextArea("Please exit before: " + timestr); // Display in textBox
@@ -146,42 +135,6 @@ public class PayMachineEmulator extends PayMachineHandler {
         PayMachineController.appendTextArea("Ticket removed!");
         PayMachineController.appendTextArea("Please exit before exit time~"); // Display the reminder in TextBox
     }//RemovalFinished
-    //------------------------------------------------------------
-    // handlePayMachineEmulatorAutoPollToggle:
 
-    /**
-     * Handle Pay Machine Emulator Auto Poll Toggle
-     * @return return autoPoll
-     * @author Pan Feng
-     */
-    public final boolean handlePayMachineEmulatorAutoPollToggle() {
-        autoPoll = !autoPoll;
-        log.info("Auto poll change: " + (autoPoll ? "off --> on" : "on --> off"));
-        return autoPoll;
-    } // handleGateEmulatorAutoPollToggle
-
-    //------------------------------------------------------------
-    // sendPollReq
-    @Override
-    protected void sendPollReq() {
-        logFine("Poll request received.  [autoPoll is " + (autoPoll ? "on]" : "off]"));
-        if (autoPoll) {
-            logFine("Send poll ack.");
-            mbox.send(new Msg(id, mbox, Msg.Type.PollAck, ""));
-        }
-    } // sendPollReq
-
-    //------------------------------------------------------------
-    // logFine
-
-    /**
-     * Log Fine Type Information and add it to Controller
-     * @param logMsg Log Information
-     * @author Pan Feng
-     */
-    private final void logFine(String logMsg) {
-        PayMachineController.appendTextArea("[FINE]: " + logMsg);
-        log.fine(id + ": " + logMsg);
-    } // logFine
 
 } //  PayMachineEmulator

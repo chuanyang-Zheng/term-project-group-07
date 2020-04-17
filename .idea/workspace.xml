@@ -4,12 +4,8 @@
     <list default="true" id="76c37db4-d153-4079-b307-a865859fe863" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/etc/PCS.PCSEmulatorStarter.log" beforeDir="false" afterPath="$PROJECT_DIR$/etc/PCS.PCSEmulatorStarter.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/Emulator/MotionSensorEmulator.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/Emulator/MotionSensorEmulator.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/Emulator/MotionSensorEmulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/Emulator/MotionSensorEmulator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/Emulator/MotionSensorEmulatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/Emulator/MotionSensorEmulatorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/MotionSensorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/MotionSensorHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PCS/PCSCore/PCSCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/PCSCore/PCSCore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PCS/PCSCore/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/PCSCore/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/DispatcherHandler/Emulator/DispatcherEmulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/DispatcherHandler/Emulator/DispatcherEmulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/PayMachineHandler/Emulator/PayMachineEmulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/PayMachineHandler/Emulator/PayMachineEmulator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +33,6 @@
   <component name="ProjectId" id="1aC6neg5zXNZImSLCbnhWwdqaeW" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -419,13 +414,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update Dispatcher Remove Ticket Response" />
@@ -490,29 +484,29 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="501" y="143" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587038463637" />
-    <state width="1718" height="260" key="GridCell.Tab.0.bottom" timestamp="1587104568251">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1188" height="666" key="GridCell.Tab.0.bottom" timestamp="1587131620979">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1398" height="207" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1586411787081" />
-    <state width="746" height="152" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587038792651" />
+    <state width="1188" height="666" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587131620979" />
     <state width="1718" height="260" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587104568251" />
-    <state width="1718" height="260" key="GridCell.Tab.0.center" timestamp="1587104568251">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1188" height="666" key="GridCell.Tab.0.center" timestamp="1587131620979">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1398" height="207" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1586411787080" />
-    <state width="746" height="152" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587038792651" />
+    <state width="1188" height="666" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587131620979" />
     <state width="1718" height="260" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587104568251" />
-    <state width="1718" height="260" key="GridCell.Tab.0.left" timestamp="1587104568251">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1188" height="666" key="GridCell.Tab.0.left" timestamp="1587131620979">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1398" height="207" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1586411787079" />
-    <state width="746" height="152" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587038792651" />
+    <state width="1188" height="666" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587131620979" />
     <state width="1718" height="260" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587104568251" />
-    <state width="1718" height="260" key="GridCell.Tab.0.right" timestamp="1587104568251">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1188" height="666" key="GridCell.Tab.0.right" timestamp="1587131620979">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1398" height="207" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1586411787080" />
-    <state width="746" height="152" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587038792651" />
+    <state width="1188" height="666" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587131620979" />
     <state width="1718" height="260" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587104568251" />
     <state x="349" y="155" key="IDE.errors.dialog" timestamp="1586327295169">
       <screen x="0" y="0" width="1536" height="824" />
@@ -531,11 +525,11 @@
     </state>
     <state x="208" y="33" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1586229342643" />
     <state x="222" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1586837913813" />
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1587037322904">
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1587116208145">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="338" y="162" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1586413099156" />
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1587037322904" />
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1587116208145" />
     <state x="568" y="298" key="com.intellij.ide.util.TipDialog" timestamp="1587102255802">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -545,10 +539,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1587035748207" />
-    <state x="447" y="214" key="git4idea.merge.GitPullDialog" timestamp="1587035852007">
+    <state x="447" y="214" key="git4idea.merge.GitPullDialog" timestamp="1587116223498">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="447" y="214" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1587035852007" />
+    <state x="447" y="214" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1587116223498" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1586664470780">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
