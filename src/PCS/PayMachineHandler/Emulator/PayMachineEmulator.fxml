@@ -23,6 +23,13 @@
                 <TextArea fx:id="ExitField" editable="false" layoutX="0" layoutY="20" prefHeight="42.0" prefWidth="80.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="280" AnchorPane.topAnchor="30.0" />
             </children>
         </AnchorPane>
-        <TextArea fx:id="gateTextArea" editable="false" layoutX="20.0" layoutY="169.0" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="150" />
+        <TextArea fx:id="gateTextArea" editable="false" layoutX="20.0" layoutY="169.0" AnchorPane.bottomAnchor="60" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="150" />
+        <AnchorPane prefHeight="30.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="425.0">
+            <children>
+                <Button mnemonicParsing="false" onAction="#buttonPressed" prefHeight="30.0" prefWidth="120.0" text="Poll ACK" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" ><font><Font size="12.0" /></font></Button>
+                <Button mnemonicParsing="false" onAction="#buttonPressed" prefHeight="30.0" prefWidth="120.0" text="Auto Poll: On" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="0.0" fx:id="autoPollButton"><font><Font size="12.0" /></font></Button>
+                <Button mnemonicParsing="false" onAction="#buttonPressed" prefHeight="30.0" prefWidth="120.0" text="Poll Request" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="260.0" AnchorPane.topAnchor="0.0" ><font><Font size="12.0" /></font></Button>
+            </children>
+        </AnchorPane>
     </children>
 </AnchorPane>

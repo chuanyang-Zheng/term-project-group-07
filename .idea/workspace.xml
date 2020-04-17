@@ -3,12 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="76c37db4-d153-4079-b307-a865859fe863" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/etc/PCS.PCSEmulatorStarter.log" beforeDir="false" afterPath="$PROJECT_DIR$/etc/PCS.PCSEmulatorStarter.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PCS/DispatcherHandler/Emulator/DispatcherEmulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/DispatcherHandler/Emulator/DispatcherEmulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/Emulator/MotionSensorEmulator.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/Emulator/MotionSensorEmulator.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/Emulator/MotionSensorEmulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/Emulator/MotionSensorEmulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/Emulator/MotionSensorEmulatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/Emulator/MotionSensorEmulatorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/MotionSensorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/MotionsensorHandler/MotionSensorHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PCS/PCSCore/PCSCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/PCSCore/PCSCore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PCS/PayMachineHandler/Emulator/PayMachineEmulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/PayMachineHandler/Emulator/PayMachineEmulator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PCS/VacancyHandler/Emulator/VacancyEmulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/VacancyHandler/Emulator/VacancyEmulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/PCSCore/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/PCSCore/Ticket.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +37,7 @@
   <component name="ProjectId" id="1aC6neg5zXNZImSLCbnhWwdqaeW" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -43,7 +45,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../COMP4057/aws_proj" />
+    <property name="last_opened_file_path" value="$USER_HOME$/COMP4057/aws_proj" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -151,9 +153,8 @@
       <workItem from="1586837929711" duration="1446000" />
       <workItem from="1586842890917" duration="1238000" />
       <workItem from="1586852438148" duration="785000" />
-      <workItem from="1587028830096" duration="6986000" />
-      <workItem from="1587105030169" duration="254000" />
-      <workItem from="1587105309877" duration="1880000" />
+      <workItem from="1587028830096" duration="4879000" />
+      <workItem from="1587102256352" duration="2705000" />
     </task>
     <task id="LOCAL-00003" summary="Update Dispatcher Remove Ticket Response">
       <created>1586242645625</created>
@@ -386,30 +387,45 @@
       <option name="project" value="LOCAL" />
       <updated>1587037320640</updated>
     </task>
-    <task id="LOCAL-00036" summary="Collector update">
-      <created>1587038813781</created>
+    <task id="LOCAL-00036" summary="motionsensor Poll,Poll Ack and Auto Poll Finish">
+      <created>1587066668211</created>
       <option name="number" value="00036" />
       <option name="presentableId" value="LOCAL-00036" />
       <option name="project" value="LOCAL" />
-      <updated>1587038813781</updated>
+      <updated>1587066668211</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="motionsensor Poll,Poll Ack and Auto Poll Finish">
+      <created>1587067381806</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1587067381806</updated>
+    </task>
+    <task id="LOCAL-00038" summary="motionsensor Poll,Poll Ack and Auto Poll Finish">
+      <created>1587067443252</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1587067443252</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update Dispatcher Remove Ticket Response" />
@@ -436,18 +452,14 @@
     <MESSAGE value="Update Collector. Finish Collector Test plan" />
     <MESSAGE value="Update Gate" />
     <MESSAGE value="Collector Poll,Poll Ack and Auto Poll Finish" />
-    <MESSAGE value="Collector update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Collector update" />
+    <MESSAGE value="motionsensor Poll,Poll Ack and Auto Poll Finish" />
+    <option name="LAST_COMMIT_MESSAGE" value="motionsensor Poll,Poll Ack and Auto Poll Finish" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="74" key="#Notifications" timestamp="1586578740715">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="74" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1586578740715" />
-    <state x="361" y="53" key="#Plugins" timestamp="1587114563178">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="361" y="53" key="#Plugins/0.0.1536.824@0.0.1536.824" timestamp="1587114563178" />
     <state x="320" y="117" key="#Project_Structure" timestamp="1586229276413">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -464,39 +476,44 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="520" y="167" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1586771432965" />
-    <state x="275" y="8" key="CommitChangelistDialog2" timestamp="1587038812589">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="344" y="10" key="CommitChangelistDialog2" timestamp="1587067442329">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="258" y="23" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1586413091378" />
-    <state x="275" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1587038812589" />
+    <state x="275" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1587037319679" />
+    <state x="344" y="10" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1587067442329" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1586589847037">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1586589847037" />
-    <state x="501" y="143" key="FileChooserDialogImpl" timestamp="1587105367406">
+    <state x="501" y="143" key="FileChooserDialogImpl" timestamp="1587038463637">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="501" y="143" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587105367406" />
-    <state width="746" height="152" key="GridCell.Tab.0.bottom" timestamp="1587053132510">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="501" y="143" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587038463637" />
+    <state width="1718" height="260" key="GridCell.Tab.0.bottom" timestamp="1587104568251">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1398" height="207" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1586411787081" />
-    <state width="746" height="152" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587053132510" />
-    <state width="746" height="152" key="GridCell.Tab.0.center" timestamp="1587053132510">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="746" height="152" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587038792651" />
+    <state width="1718" height="260" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587104568251" />
+    <state width="1718" height="260" key="GridCell.Tab.0.center" timestamp="1587104568251">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1398" height="207" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1586411787080" />
-    <state width="746" height="152" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587053132510" />
-    <state width="746" height="152" key="GridCell.Tab.0.left" timestamp="1587053132509">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="746" height="152" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587038792651" />
+    <state width="1718" height="260" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587104568251" />
+    <state width="1718" height="260" key="GridCell.Tab.0.left" timestamp="1587104568251">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1398" height="207" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1586411787079" />
-    <state width="746" height="152" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587053132509" />
-    <state width="746" height="152" key="GridCell.Tab.0.right" timestamp="1587053132510">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="746" height="152" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587038792651" />
+    <state width="1718" height="260" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587104568251" />
+    <state width="1718" height="260" key="GridCell.Tab.0.right" timestamp="1587104568251">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1398" height="207" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1586411787080" />
-    <state width="746" height="152" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587053132510" />
+    <state width="746" height="152" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587038792651" />
+    <state width="1718" height="260" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587104568251" />
     <state x="349" y="155" key="IDE.errors.dialog" timestamp="1586327295169">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -514,15 +531,16 @@
     </state>
     <state x="208" y="33" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1586229342643" />
     <state x="222" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1586837913813" />
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1587038816361">
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1587037322904">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="338" y="162" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1586413099156" />
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1587038816361" />
-    <state x="454" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1586852450365">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1587037322904" />
+    <state x="568" y="298" key="com.intellij.ide.util.TipDialog" timestamp="1587102255802">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="454" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1586852450365" />
+    <state x="568" y="298" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587102255802" />
     <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587035748207">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

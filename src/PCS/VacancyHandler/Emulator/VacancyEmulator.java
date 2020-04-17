@@ -1,9 +1,6 @@
 package PCS.VacancyHandler.Emulator;
 
 import AppKickstarter.misc.Msg;
-import PCS.PCSCore.PCSCore;
-import PCS.VacancyHandler.Emulator.VacancyEmulatorController;
-import PCS.VacancyHandler.Emulator.VacancyEmulator;
 import PCS.VacancyHandler.VacancyHandler;
 import PCS.PCSStarter;
 import javafx.application.Platform;
@@ -20,6 +17,7 @@ import java.util.Date;
 /**
  * Vacancy Emulator Combine by Vacancy Handler and Vacancy Controller
  * This class is mainly combined by Vacancy Handler and Vacancy Controller. It is a subclass of Vacancy Handler.
+ *
  * @author Gong Yikai
  */
 public class VacancyEmulator extends VacancyHandler {
@@ -40,23 +38,30 @@ public class VacancyEmulator extends VacancyHandler {
      */
     private final String id;
 
+    /**
+     * Auto pull
+     */
+    private boolean autoPoll;
+
 
     /**
      * Vacancy Constructor
-     * @param id The ID Of Vacancy Emulator
+     *
+     * @param id         The ID Of Vacancy Emulator
      * @param pcsStarter PCS Starter Object
      */
     public VacancyEmulator(String id, PCSStarter pcsStarter) {
         super(id, pcsStarter);
         this.pcsStarter = pcsStarter;
         this.id = id + "Emulator";
-
+        this.autoPoll = true;
     } // VacancyEmulator
 
     /**
      * Start A GUI
      * The method starts a GUI that is interactive with users
-     * @exception  Exception throw Exception
+     *
+     * @throws Exception throw Exception
      * @author Gong Yikai
      */
     public void start() throws Exception {
@@ -79,25 +84,91 @@ public class VacancyEmulator extends VacancyHandler {
         myStage.show();
     } // VacancyEmulator
 
+    /**
+     * Deal with logic
+     *
+     * @param msg:a message received
+     * @return if message type is terminated, return false. Else, return true
+     * @author Gong Yikai
+     */
+    protected final boolean processMsg(Msg msg) {
+        boolean quit = false;
+
+        switch (msg.getType()) {
+            case EmulatorAutoPollToggle:
+                handleEmulatorAutoPollToggle();
+                break;
+
+            default:
+                quit = super.processMsg(msg);
+        }
+        return quit;
+    }
+
+
 
     /**
      * Handle Vacancy Display Update Request
      * Display vacancy information on the text area
+     *
      * @author Gong Yikai
      */
     @Override
-    public void handleVacancyDisUpdateRequest(Msg mymsg){
-        String []str=mymsg.getDetails().split("\\s+");
+    public void handleVacancyDisUpdateRequest(Msg mymsg) {
+        String[] str = mymsg.getDetails().split("\\s+");
         Date nowT = new Date(System.currentTimeMillis());
-//        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
-        String timestr = PCSCore.getDate(nowT);
+        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
+        String timestr = sdf.format(nowT);
         vacancyEmulatorController.appendTextArea("This is a real time vacancy display:\n");
-        StringBuilder floorNumberInformation=new StringBuilder();
-        for(int i=0;i<str.length;i++){
-            floorNumberInformation.append("Floor "+(i+1)+": "+str[i]+"\n");
+        StringBuilder floorNumberInformation = new StringBuilder();
+        for (int i = 0; i < str.length; i++) {
+            floorNumberInformation.append("Floor " + (i + 1) + ": " + str[i] + "\n");
         }
-        floorNumberInformation.append("Last update time: "+timestr);
+        floorNumberInformation.append("Last update time: " + timestr);
         vacancyEmulatorController.appendTextArea(floorNumberInformation.toString());
-        log.info(id+"\n"+floorNumberInformation.toString());
+        log.info(id + "\n" + floorNumberInformation.toString());
     }
+    /**
+     * Handle vacancy Emulator Auto Poll Toggle
+     *
+     * @return return autoPoll
+     * @author Gong Yikai
+     */
+    public final boolean handleEmulatorAutoPollToggle() {
+        autoPoll = !autoPoll;
+        logFine("Auto poll change: " + (autoPoll ? "off --> on" : "on --> off"));
+        return autoPoll;
+    } // handleGateEmulatorAutoPollToggle
+    /**
+     * Send Poll Request
+     * @author Gong Yikai
+     */
+    protected void sendPollReq() {
+        logFine("Poll request received.  [autoPoll is " + (autoPoll ? "on]" : "off]"));
+        if (autoPoll) {
+            logFine("Send poll ack.");
+            mbox.send(new Msg(id, mbox, Msg.Type.PollAck, ""));
+        }
+    }
+    /**
+     * Log Fine Type Information and Add it to Controller
+     *
+     * @param logMsg:Log Msg
+     * @author Gong Yikai
+     */
+    private final void logFine(String logMsg) {
+        vacancyEmulatorController.appendTextArea("[FINE]: " + logMsg);
+        log.fine(id + ": " + logMsg);
+    } // logFine
+
+    /**
+     * Log Info Type Information and Add it to Controller
+     *
+     * @param logMsg:Log Msg
+     * @author Gong Yikai
+     */
+    private final void logInfo(String logMsg) {
+        vacancyEmulatorController.appendTextArea("[INFO]: " + logMsg);
+        log.info(id + ": " + logMsg);
+    } // logInfo
 }

@@ -12,10 +12,11 @@ import java.util.logging.Logger;
 
 /**
  * Motion Sensor Emulator Controller is an emulator of Motion Sensor
- * @author Chuanyang Zheng
+ * @author Chuanyang Zheng, ZHANGYIJIA
  */
 public class MotionSensorEmulatorController {
 
+    public Button autoPollButton;
     /**
      * The ID of Motion Sensor Emulator
      */
@@ -69,7 +70,7 @@ public class MotionSensorEmulatorController {
     /**
      * Receive Button Event from MotionSensorEmulator.fxml and process the messages
      * @param actionEvent ActionEvent from MotionSensorEmulator.fxml
-     * @author Chuanyang Zheng
+     * @author Chuanyang Zheng,ZHANG YIJIA
      */
     public void buttonPressed(ActionEvent actionEvent) {
         Button btn = (Button) actionEvent.getSource();
@@ -79,28 +80,24 @@ public class MotionSensorEmulatorController {
                 motionSensorBox.send(new Msg(id, null, Msg.Type.MotionSensorDetect, "Motion Sensor Detect"));
                 appendTextArea("Motion Sensor Detect");
                 break;
+            case "Poll Request":
+                appendTextArea("Send poll request.");
+                motionSensorBox.send(new Msg(id, null, Msg.Type.Poll, ""));
+                break;
+            case "Poll ACK":
+                appendTextArea("Send poll ack.");
+                motionSensorBox.send(new Msg(id, null, Msg.Type.PollAck, ""));
+                break;
+            case "Auto Poll: On":
+               Platform.runLater(() -> autoPollButton.setText("Auto Poll: Off"));
+               motionSensorBox.send(new Msg(id, null, Msg.Type.EmulatorAutoPollToggle, "ToggleAutoPoll"));
+                break;
 
-//            case "Gate Open Reply":
-//                motionSensorBox.send(new Msg(id, null, Msg.Type.GateOpenReply, "GateOpenReply"));
-//                break;
-//
-//            case "Gate Close Request":
-//                motionSensorBox.send(new Msg(id, null, Msg.Type.GateCloseRequest, "GateCloseReq"));
-//                break;
-//
-//            case "Gate Close Reply":
-//                motionSensorBox.send(new Msg(id, null, Msg.Type.GateCloseReply, "GateCloseReply"));
-//                break;
-//
-//            case "Poll Request":
-//                appendTextArea("Send poll request.");
-//                motionSensorBox.send(new Msg(id, null, Msg.Type.Poll, ""));
-//                break;
-//
-//            case "Poll ACK":
-//                appendTextArea("Send poll ack.");
-//                motionSensorBox.send(new Msg(id, null, Msg.Type.PollAck, ""));
-//                break;
+            case "Auto Poll: Off":
+               Platform.runLater(() -> autoPollButton.setText("Auto Poll: On"));
+                motionSensorBox.send(new Msg(id, null, Msg.Type.EmulatorAutoPollToggle, "ToggleAutoPoll"));
+                break;
+
 
 
             default:
@@ -121,4 +118,5 @@ public class MotionSensorEmulatorController {
     public void appendTextArea(String status) {
         Platform.runLater(() -> motionSensorTextArea.appendText(String.format("[%04d] %s\n", ++lineNo, status)));
     } // appendTextArea
+
 }

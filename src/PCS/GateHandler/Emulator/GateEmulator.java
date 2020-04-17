@@ -190,15 +190,15 @@ public class GateEmulator extends GateHandler {
 
 
     //------------------------------------------------------------
-    // sendPollReq
-    @Override
-    protected void sendPollReq() {
-	logFine("Poll request received.  [autoPoll is " + (autoPoll ? "on]" : "off]"));
-	if (autoPoll) {
-	    logFine("Send poll ack.");
-	    mbox.send(new Msg(id, mbox, Msg.Type.PollAck, ""));
-	}
-    } // sendPollReq
+	// sendPollReq
+	@Override
+	protected void sendPollReq() {
+		logFine("Poll request received.  [autoPoll is " + (autoPoll ? "on]" : "off]"));
+		if (autoPoll) {
+			logFine("Send poll ack.");
+			mbox.send(new Msg(id, mbox, Msg.Type.PollAck, ""));
+		}
+	} // sendPollReq
 
 
     //------------------------------------------------------------
