@@ -121,9 +121,11 @@ Collector Negative|Emulator when valid a false ticket
 Collector Solve Problem|Solve problem when valid an invalid ticket
 
 ###MotionSensor
+
 Button|Description
 --|--
 Detect|Send Detect Signal to PCS
 
 ###Vacancy
+
 No Special Buttons. Receive Signals From PCS
