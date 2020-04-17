@@ -5,7 +5,7 @@ import java.util.logging.*;
 
 /**
  * Ticker Class for Driver to pick, pay fee and exit
- * @author Chuanyang Zheng
+ * @author ZHANG YIJIA
  */
 public class Ticket {
     /**
@@ -59,7 +59,7 @@ public class Ticket {
      * If there is already a PayMachine ID here, which means the driver paid, then the fee is 0
      * Update the parkingFee
      * @return return parking fee
-     * @author Pan Feng
+     * @author Pan Feng ZHANG YIJIA
      */
     public float calculateFee(float coefficient){
         long currentTime = System.currentTimeMillis();
@@ -72,7 +72,7 @@ public class Ticket {
     /**
      * Set Ticket ParyMachine ID
      * @param ID The PayMachine ID of the ticket
-     *           @author Chuanyang Zheng
+     *           @author ZHANG YIJIA
      */
     public void setPayMachineID(String ID){
         payMachineID=ID;
@@ -81,7 +81,7 @@ public class Ticket {
     /**
      * Set Exit Time
      * @param exitTime exit Time
-     *                 @author Chuanyang Zheng
+     *                 @author ZHANG YIJIA
      */
     public void setExitTime(long exitTime){
         this.exitTime=exitTime;
@@ -90,7 +90,7 @@ public class Ticket {
     /**
      * Set parking fee
      * @param parkingFee The parking fee of the Ticket
-     *                   @author Chuanyang Zheng
+     *                   @author ZHANG YIJIA
      */
     public void setParkingFee(float parkingFee) {
         this.parkingFee = parkingFee;
@@ -99,7 +99,7 @@ public class Ticket {
     /**
      * Return Enter Time
      * @return Return Enter Time
-     * @author Chuanyang Zheng
+     * @author ZHANG YIJIA
      */
     public long getEnterTime(){
         return enterTime;
@@ -117,7 +117,7 @@ public class Ticket {
     /**
      * Return Ticket ID
      * @return Return Ticket ID
-     * @author Chuanyang Zheng
+     * @author ZHANG YIJIA
      */
     public int getTicketID() {
         return ticketID;
@@ -126,7 +126,7 @@ public class Ticket {
     /**
      * Return Pay Machine ID
      * @return Pay Machine ID
-     * @author Chuanyang Zheng
+     * @author ZHANG YIJIA
      */
     public String getPayMachineID() {
         return payMachineID;
@@ -135,7 +135,7 @@ public class Ticket {
     /**
      * Return Exit Time
      * @return return Exit Time
-     * @author Chuanyang Zheng
+     * @author ZHANG YIJIA
      */
     public long getExitTime() {
         return exitTime;
@@ -177,7 +177,7 @@ public class Ticket {
     }
 
     /**
-     *set Ticket Information. It will be used after user ging money and pay Machine send the message to PCSCore
+     *set Ticket Information. It will be used after user giving money and pay Machine send the message to PCSCore
      *
      * @param exitTimeCoefficient:used to calculate exitTime=currentTime+exitTimeCoefficient
      * @param payMachineID:set payMachine

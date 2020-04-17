@@ -8,7 +8,7 @@ import PCS.GateHandler.GateHandler;
 
 /**
  * Motion Sensor Class
- * @author Chuanyang Zheng
+ * @author Chuanyang Zheng, ZHANG YIJIA
  */
 public class MotionSensorHandler extends AppThread {
 
@@ -71,19 +71,16 @@ public class MotionSensorHandler extends AppThread {
      * @param msg:a message received
      * @return if message type is terminated, return false. Else, return true
      *
-     * @author Chuanyang Zheng
+     * @author Chuanyang Zheng, ZHANG YIJIA
      */
 
     protected boolean processMsg(Msg msg) {
         boolean quit = false;
 
         switch (msg.getType()) {
-//            case GateOpenRequest:  handleGateOpenRequest();  break;
-//            case GateCloseRequest: handleGateCloseRequest(); break;
-//            case GateOpenReply:	   handleGateOpenReply();    break;
-//            case GateCloseReply:   handleGateCloseReply();   break;
-//            case Poll:		   handlePollReq();	     break;
-//            case PollAck:	   handlePollAck();	     break;
+
+         case Poll:		   handlePollReq();	     break;
+         case PollAck:	   handlePollAck();	     break;
             case MotionSensorDetect:
                 handleMotionSensorDetect(msg);
                 break;
@@ -117,6 +114,32 @@ public class MotionSensorHandler extends AppThread {
                 log.warning(id+" is terminated. Please Check");
         }
     }
+    /**
+     * Handle Pool Request
+     * @author ZHANG YIJIA
+     */
+    protected final void handlePollReq() {
+        log.info(id + ": poll request received.  Send poll request to hardware.");
+        sendPollReq();
+    } // handlePollReq
+    /**
+     * Handle Pool Acknowledgement
+     * @author ZHANG YIJIA
+     */
+    protected final void handlePollAck() {
+        log.info(id + ": poll ack received.  Send poll ack to PCS Core.");
+        pcsCore.send(new Msg(id, mbox, Msg.Type.PollAck, id + " is up!"));
+    } // handlePollAck
+    /**
+     * Send Pool Request
+     * *@author ZHANG YIJIA
+     */
+    protected void sendPollReq() {
+
+        log.info(id + ": poll request received");
+    } // sendPollReq
+
+
     /**
      * MotionSensor Status. Totally Two:running and terminated.
      * @author YiJia Zhang

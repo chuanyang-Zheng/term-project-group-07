@@ -16,6 +16,7 @@ import java.util.Arrays;
  * PCSCore CLass Connected ALL Handlers
  * @author Chuanyang Zheng(17251311)
  * @author Pan Feng (19205945)
+ *  @author ZHANG YIJIA (17251281)
  */
 public class PCSCore extends AppThread {
     /**
@@ -461,6 +462,7 @@ public class PCSCore extends AppThread {
      *Handle Motion Sensor Detect Up
      * @param msg Contain Message From Motion Sensor Detect Up
      * @author Chuanyang Zheng
+     * @author ZHANG YIJIA
      */
     public void handleMotionSensorDetectUp(Msg msg){
         log.info(id+": Begin Handle Detect Up");
@@ -479,7 +481,8 @@ public class PCSCore extends AppThread {
     /**
      * Handle Motion Sensor Detect Down
      * @param msg Msg received from Motion Sensor Detect Down
-     * @author Chuanyang Z
+     * @author Chuanyang Zheng
+     * @author ZHANG YIJIA
      */
     public void handleMotionSensorDetectDown(Msg msg){
         log.info(id+": Begin Handle Detect Down");

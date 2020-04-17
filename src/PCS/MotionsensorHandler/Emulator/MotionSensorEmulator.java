@@ -15,7 +15,7 @@ import javafx.stage.WindowEvent;
 
 /**
  * Motion Sensor Detect Up
- * @author Chuanyang Zheng
+ * @author Chuanyang Zheng, ZHANG YIJIA
  */
 public class MotionSensorEmulator extends MotionSensorHandler {
 
@@ -49,7 +49,7 @@ public class MotionSensorEmulator extends MotionSensorHandler {
      * @param pcsStarter:PCSCore
      * @param floorNumber:floor number. The floor that the motion sensor detecting
      * @param detectUp: If it is true, the motion sensor detects up.
-     * @author Chuanyang Zheng
+     * @author Chuanyang Zheng,ZHANG YIJIA
      */
     public MotionSensorEmulator(String id, PCSStarter pcsStarter,int floorNumber, boolean detectUp) {
         super(id, pcsStarter,floorNumber,detectUp);
@@ -61,7 +61,7 @@ public class MotionSensorEmulator extends MotionSensorHandler {
     /**
      * Start GUI
      * @exception Exception throws Exception
-     * @author Chuanyang ZHeng
+     * @author Chuanyang ZHeng,ZHANG YIJIA
      */
     public void start() throws Exception {
         Parent root;
@@ -83,6 +83,32 @@ public class MotionSensorEmulator extends MotionSensorHandler {
         myStage.show();
     } // MotionSensorEmulator
 
+    /**
+     * Compared to GateHandler processMsg() method, add several new Msg cases
+     * @param msg Msg received from run() method
+     * @return If Msg type is Terminate, return true. ELse, return false
+     */
+    protected final boolean processMsg(Msg msg) {
+        boolean quit = false;
+
+        switch (msg.getType()) {
+
+
+            case EmulatorAutoPollToggle:
+                handleMontionSensorEmulatorAutoPollToggle() ;
+                break;
+
+            default:
+                quit = super.processMsg(msg);
+        }
+        return quit;
+    } // processMsg
+    /**
+     * Handle Gate Emulator Auto Poll Toggle
+     * @return return autoPoll
+     * @author ZHANG YIJIA
+     */
+
    public final boolean handleMontionSensorEmulatorAutoPollToggle() {
         autoPoll = !autoPoll;
         logFine("Auto poll change: " + (autoPoll ? "off --> on" : "on --> off"));
@@ -93,7 +119,7 @@ public class MotionSensorEmulator extends MotionSensorHandler {
     /**
      * Log Info Type Information and Add it to Controller
      * @param logMsg:Log Msg
-     * @author Chuanyang Zheng
+     * @author ZHANG YIJIA
      */
     private final void logInfo(String logMsg) {
         motionSensorEmulatorController.appendTextArea("[INFO]: " + logMsg);
@@ -104,7 +130,7 @@ public class MotionSensorEmulator extends MotionSensorHandler {
     /**
      * Log Warning Type Information and Add it to Controller
      * @param logMsg:Log Msg
-     * @author Chuanyang Zheng
+     * @author ZHANG YIJIA
      */
     private final void logWarning(String logMsg) {
         motionSensorEmulatorController.appendTextArea("[WARNING]: " + logMsg);
@@ -115,12 +141,13 @@ public class MotionSensorEmulator extends MotionSensorHandler {
     /**
      * Log Severe Type Information and Add it to Controller
      * @param logMsg:Log Msg
-     * @author Chuanyang Zheng
+     * @author ZHANG YIJIA
      */
     private final void logSevere(String logMsg) {
         motionSensorEmulatorController.appendTextArea("[SEVERE]: " + logMsg);
         log.severe(id + ": " + logMsg);
     } // logSevere
+
     protected void sendPollReq() {
         logFine("Poll request received.  [autoPoll is " + (autoPoll ? "on]" : "off]"));
         if (autoPoll) {
@@ -128,6 +155,11 @@ public class MotionSensorEmulator extends MotionSensorHandler {
             mbox.send(new Msg(id, mbox, Msg.Type.PollAck, ""));
         }
     } // sendPollReq
+    /**
+     * Log Fine Type Information and add it to Controller
+     * @param logMsg Log Information
+     * @author ZHANG YIJIA
+     */
     private final void logFine(String logMsg) {
         motionSensorEmulatorController.appendTextArea("[FINE]: " + logMsg);
         log.fine(id + ": " + logMsg);
