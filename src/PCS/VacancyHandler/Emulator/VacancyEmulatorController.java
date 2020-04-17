@@ -35,7 +35,7 @@ public class VacancyEmulatorController {
     /**
      * Vacancy Mox. Will be used to send messages
      */
-    private MBox VacancyMBox;
+    private MBox vacancyMBox;
     /**
      * Vacancy Text Area. Vacancy Emulator will add message to here
      */
@@ -44,6 +44,11 @@ public class VacancyEmulatorController {
      * Count How many Messages are added.
      */
     private int lineNo = 0;
+    /**
+     * Auto Poll Button
+     */
+    public Button autoPollButton;
+    
 
 
     /**
@@ -59,7 +64,7 @@ public class VacancyEmulatorController {
         this.appKickstarter = appKickstarter;
         this.log = log;
         this.VacancyEmulator = VacancyEmulator;
-        this.VacancyMBox = appKickstarter.getThread(id).getMBox();
+        this.vacancyMBox = appKickstarter.getThread(id).getMBox();
     } // initialize
 
 
@@ -75,8 +80,26 @@ public class VacancyEmulatorController {
             case "Display Vacancy":
 
 
-                VacancyMBox.send(new Msg(id, null, Msg.Type.DisplayVacancyRequest, id ));
+                vacancyMBox.send(new Msg(id, null, Msg.Type.DisplayVacancyRequest, id ));
                 //VacancyMBox.send(new Msg(id, null, Msg.Type.ReceiveID, id ));
+                break;
+            case "Poll Request":
+                appendTextArea("Send poll request.");
+                vacancyMBox.send(new Msg(id, null, Msg.Type.Poll, ""));
+                break;
+
+            case "Poll ACK":
+                appendTextArea("Send poll ack.");
+                vacancyMBox.send(new Msg(id, null, Msg.Type.PollAck, ""));
+                break;
+            case "Auto Poll: On":
+                Platform.runLater(() -> autoPollButton.setText("Auto Poll: Off"));
+                vacancyMBox.send(new Msg(id, null, Msg.Type.EmulatorAutoPollToggle, "ToggleAutoPoll"));
+                break;
+
+            case "Auto Poll: Off":
+                Platform.runLater(() -> autoPollButton.setText("Auto Poll: On"));
+                vacancyMBox.send(new Msg(id, null, Msg.Type.EmulatorAutoPollToggle, "ToggleAutoPoll"));
                 break;
 
             default:

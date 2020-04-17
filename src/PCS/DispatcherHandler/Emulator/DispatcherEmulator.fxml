@@ -14,8 +14,15 @@
                 <Button layoutX="165.0" layoutY="1.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="40.0" prefWidth="100.0" text="Remove ticket" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="225.0" AnchorPane.topAnchor="1.0"><font><Font size="12.0" /></font></Button>
             </children>
         </AnchorPane>
+        <AnchorPane prefHeight="30.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="60.0">
+            <children>
+                <Button layoutX="65.0" layoutY="1.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="40.0" prefWidth="100.0" text="Poll ACK" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="1.0"><font><Font size="12.0" /></font></Button>
+                <Button layoutX="165.0" layoutY="1.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="40.0" prefWidth="100.0" text="Auto Poll: On" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="1.0" fx:id="autoPollButton"><font><Font size="12.0"/></font></Button>
+                <Button layoutX="165.0" layoutY="1.0" mnemonicParsing="false" onAction="#buttonPressed" prefHeight="40.0" prefWidth="100.0" text="Poll Request" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="1.0"><font><Font size="12.0" /></font></Button>
+            </children>
+        </AnchorPane>
 
-        <AnchorPane prefHeight="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="60.0">
+        <AnchorPane prefHeight="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="100.0">
             <children>
                 <Label layoutX="57.0" layoutY="-1.0" prefHeight="30.0" prefWidth="120.0" AnchorPane.leftAnchor="57.0"> Ticket ID: </Label> <Label layoutX="250.0" layoutY="-1.0" prefHeight="30.0" prefWidth="120.0" AnchorPane.leftAnchor="250.0"> Enter Time: </Label>
                 <TextArea fx:id="TicketIDField" editable="false" layoutX="57.0" layoutY="30.0" prefHeight="42.0" prefWidth="51.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="57.0" AnchorPane.topAnchor="30.0" />
@@ -24,6 +31,6 @@
                 <!--            <TextArea fx:id="DispatcherTextAreaInput" editable="true" layoutX="20.0" layoutY="20" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />-->
             </children>
         </AnchorPane>
-        <TextArea fx:id="DispatcherTextArea" editable="false" layoutX="20.0" layoutY="169.0" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="150" />
+        <TextArea fx:id="DispatcherTextArea" editable="false" layoutX="20.0" layoutY="169.0" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="200" />
     </children>
 </AnchorPane>
