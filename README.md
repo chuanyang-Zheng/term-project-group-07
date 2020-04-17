@@ -81,13 +81,49 @@ Last Update Time: April 17, 2020
 - Stopping: Close any GUIs, or close it by task manager
 
 ##Explanation Of GUI
+
+###Common Button
+Button|Description
+--|--
+Poll Request|Emulator PCSCore send Poll Request
+Poll Ack|Tell PCSCore that Hardware is OK
+AutoPoll|If true, Acknowledge PCSCore when receive Poll Request
+
 ###Gate
+Button|Description
+--|--
+Gate Open Request|Open Gate
+Gate Open Reply|If the gate is open, show that "gate is already open". Else, show "Gate should be open"
+Gate Close Request|Close Gate
+Gate Close Reply|If the gate is closed, show that "gate is already closed". Else, show "Gate should be closed"
+Auto Open|If true, the gate is able to successfully open. Or, the gate will be not opened
+Auto Close|If true, the gate is able to successfully closed. Or, the gate will be not closed
 
+###Dispatcher
+Button|Description
+--|--
+Print A Ticket|Dispatcher A Ticket
+Remove Ticket|Remove A Ticket
 
-姓名|技能|排行
---|:--:|--:
-刘备|哭|大哥
-关羽|打|二哥
-张飞|骂|三弟
+###PayMachine
+Button|Description
+--|--
+Insert A Ticket|Input Ticket ID and send the ID to PCS
+Oct Pay|Pay By Oct
+Remove Ticket|Remove A Ticket
 
+###Collector
+Button|Description
+--|--
+Collector Valid Request|Input A Ticket ID. Then,Collector sends the ID to PCS and valid it.
+Collector Positive|Emulate When Valid a true ticket
+Collector Negative|Emulator when valid a false ticket
+Collector Solve Problem|Solve problem when valid an invalid ticket
 
+###MotionSensor
+Button|Description
+--|--
+Detect|Send Detect Signal to PCS
+
+###Vacancy
+No Special Buttons. Receive Signals From PCS
