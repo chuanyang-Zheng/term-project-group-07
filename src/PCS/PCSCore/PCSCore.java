@@ -5,8 +5,10 @@ import AppKickstarter.misc.*;
 import AppKickstarter.timer.Timer;
 import PCS.PayMachineHandler.Emulator.PayMachineController;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 
 
 //======================================================================
@@ -549,6 +551,12 @@ public class PCSCore extends AppThread {
             tep.append(arrayInformation[i]).append(" ");
         }
         return tep.toString();
+    }
+
+    public static String getDate(Date date){
+        SimpleDateFormat dateFormate=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        return dateFormate.format(date);
+
     }
 
 //    public void resetAvailableParkingSpace(int floorNumebr,int[] )

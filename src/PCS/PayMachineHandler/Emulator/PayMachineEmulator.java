@@ -3,6 +3,7 @@ package PCS.PayMachineHandler.Emulator;
 import AppKickstarter.misc.*;
 import AppKickstarter.timer.Timer;
 
+import PCS.PCSCore.PCSCore;
 import PCS.PCSCore.Ticket;
 import PCS.PCSStarter;
 
@@ -75,8 +76,8 @@ public class PayMachineEmulator extends PayMachineHandler {
         String []currentTicket = mymsg.split(","); // proccess the protocal;
         float fee = Float.parseFloat(currentTicket[2]); // get the fee from message
         Date nowT = new Date(Long.parseLong(currentTicket[3])); // get the time from message
-        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss"); // set the time format
-        String timestr = sdf.format(nowT); // set the time format
+//        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss"); // set the time format
+        String timestr = PCSCore.getDate(nowT); // set the time format
         parkedTime = fee != 0?(System.currentTimeMillis() - Long.parseLong(currentTicket[3])) / 1000:0; //is the payment is done ,no parking time,otherwise calculate the parking time
         PayMachineController.appendTextArea("You have parked " + Long.toString(parkedTime) + "s and you need to pay $" + fee + "  ($"+parkingFeeCoefficient+"/s)");
         PayMachineController.updateTicket(currentTicket[1],currentTicket[2],timestr); // update the display of upper textArea

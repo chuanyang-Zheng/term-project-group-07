@@ -1,6 +1,7 @@
 package PCS.DispatcherHandler.Emulator;
 
 import AppKickstarter.misc.Msg;
+import PCS.PCSCore.PCSCore;
 import PCS.PCSStarter;
 import PCS.DispatcherHandler.DispatcherHandler;
 import javafx.application.Platform;
@@ -96,8 +97,8 @@ public class DispatcherEmulator extends DispatcherHandler {
     protected void ReceiveTicketID(Msg msg){
         String mymsg=msg.getDetails();
         Date nowT = new Date(System.currentTimeMillis());
-        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
-        String timestr = sdf.format(nowT);
+//        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
+        String timestr = PCSCore.getDate(nowT);
         logInfo("Welcome to our parking lot.\n"+"Your ticket ID is "+mymsg+".\n"+"The time now is " + timestr + ".\nThe parking fee is "+parkingFeeCoefficient+"/s.\nHave a good time!");
         dispatcherController.showTicket(mymsg,timestr);
     }
