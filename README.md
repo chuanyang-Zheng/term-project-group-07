@@ -1,4 +1,4 @@
-#COMP4107
+# COMP4107
 
 This is COMP4107 Project
 
@@ -6,7 +6,7 @@ Author:Chuanyang Zheng(17251311@life.hkbu.edu.hk)
 
 Last Update Time: April 17, 2020
 
-##The structure of the project.
+## The structure of the project.
 
     - ect
       - PCS.cfg
@@ -77,20 +77,20 @@ Last Update Time: April 17, 2020
    
 
 
-##Instruction of Compiling,starting and stopping
+## Instruction of Compiling,starting and stopping
 - Compiling and Starting: Go to src.PCSEmulatorStarter and run the class
 - Stopping: Close any GUIs, or close it by task manager
 
-##Explanation Of GUI
+## Explanation Of GUI
 
-###Common Button
+### Common Button
 Button|Description
 --|--
 Poll Request|Emulator PCSCore send Poll Request
 Poll Ack|Tell PCSCore that Hardware is OK
 AutoPoll|If true, Acknowledge PCSCore when receive Poll Request
 
-###Gate
+### Gate
 Button|Description
 --|--
 Gate Open Request|Open Gate
@@ -100,20 +100,20 @@ Gate Close Reply|If the gate is closed, show that "gate is already closed". Else
 Auto Open|If true, the gate is able to successfully open. Or, the gate will be not opened
 Auto Close|If true, the gate is able to successfully closed. Or, the gate will be not closed
 
-###Dispatcher
+### Dispatcher
 Button|Description
 --|--
 Print A Ticket|Dispatcher A Ticket
 Remove Ticket|Remove A Ticket
 
-###PayMachine
+### PayMachine
 Button|Description
 --|--
 Insert A Ticket|Input Ticket ID and send the ID to PCS
 Oct Pay|Pay By Oct
 Remove Ticket|Remove A Ticket
 
-###Collector
+### Collector
 Button|Description
 --|--
 Collector Valid Request|Input A Ticket ID. Then,Collector sends the ID to PCS and valid it.
@@ -121,12 +121,11 @@ Collector Positive|Emulate When Valid a true ticket
 Collector Negative|Emulator when valid a false ticket
 Collector Solve Problem|Solve problem when valid an invalid ticket
 
-###MotionSensor
+### MotionSensor
 
 Button|Description
 --|--
 Detect|Send Detect Signal to PCS
 
-###Vacancy
-
+### Vacancy
 No Special Buttons. Receive Signals From PCS
