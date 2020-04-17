@@ -18,6 +18,7 @@ import java.util.Date;
 /**
  * Dispatcher Emulator Combine by Dispatcher Handler and Dispatcher Controller
  * This class is mainly combined by Dispatcher Handler and Dispatcher Controller. It is a subclass of Dispatcher Handler.
+ *
  * @author Gong Yikai
  */
 public class DispatcherEmulator extends DispatcherHandler {
@@ -37,19 +38,23 @@ public class DispatcherEmulator extends DispatcherHandler {
      * The ID of the Dispatcher Emulator
      */
     private final String id;
-
-
+    /**
+     * Auto pull
+     */
+    private boolean autoPoll;
 
 
     /**
      * Dispatcher Constructor
-     * @param id The ID Of Dispatcher Emulator
+     *
+     * @param id         The ID Of Dispatcher Emulator
      * @param pcsStarter PCS Starter Object
      */
     public DispatcherEmulator(String id, PCSStarter pcsStarter) {
         super(id, pcsStarter);
         this.pcsStarter = pcsStarter;
         this.id = id + "Emulator";
+        this.autoPoll = true;
 
     } // DispatcherEmulator
 
@@ -57,7 +62,8 @@ public class DispatcherEmulator extends DispatcherHandler {
     /**
      * Start A GUI
      * The method starts a GUI that is interactive with users
-     * @exception  Exception throw Exception
+     *
+     * @throws Exception throw Exception
      * @author Gong Yikai
      */
     public void start() throws Exception {
@@ -81,7 +87,29 @@ public class DispatcherEmulator extends DispatcherHandler {
     } // DispatcherEmulator
 
     /**
+     * Deal with logic
+     *
+     * @param msg:a message received
+     * @return if message type is terminated, return false. Else, return true
+     * @author Gong Yikai
+     */
+    protected final boolean processMsg(Msg msg) {
+        boolean quit = false;
+
+        switch (msg.getType()) {
+            case EmulatorAutoPollToggle:
+                handleEmulatorAutoPollToggle();
+                break;
+
+            default:
+                quit = super.processMsg(msg);
+        }
+        return quit;
+    }
+
+    /**
      * Inform PCSCore to add a ticket
+     * @param mymsg: Msg
      * @author Gong Yikai
      */
     @Override
@@ -90,32 +118,58 @@ public class DispatcherEmulator extends DispatcherHandler {
     }
 
     /**
-     * Receive ticket ID from PCSCore and show it on the GUI
+     * Send Poll Request
      * @author Gong Yikai
      */
-    protected void ReceiveTicketID(Msg msg){
-        String mymsg=msg.getDetails();
+    protected void sendPollReq() {
+        logFine("Poll request received.  [autoPoll is " + (autoPoll ? "on]" : "off]"));
+        if (autoPoll) {
+            logFine("Send poll ack.");
+            mbox.send(new Msg(id, mbox, Msg.Type.PollAck, ""));
+        }
+    }
+
+    /**
+     * Receive ticket ID from PCSCore and show it on the GUI
+     * @param msg: Msg
+     * @author Gong Yikai
+     */
+    protected void ReceiveTicketID(Msg msg) {
+        String mymsg = msg.getDetails();
         Date nowT = new Date(System.currentTimeMillis());
         SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
         String timestr = sdf.format(nowT);
-        logInfo("Welcome to our parking lot.\n"+"Your ticket ID is "+mymsg+".\n"+"The time now is " + timestr + ".\nThe parking fee is "+parkingFeeCoefficient+"/s.\nHave a good time!");
-        dispatcherController.showTicket(mymsg,timestr);
+        logInfo("Welcome to our parking lot.\n" + "Your ticket ID is " + mymsg + ".\n" + "The time now is " + timestr + ".\nThe parking fee is " + parkingFeeCoefficient + "/s.\nHave a good time!");
+        dispatcherController.showTicket(mymsg, timestr);
     }
 
     /**
      * Inform PCSCore the ticket is removed
+     *
      * @author Gong Yikai
      */
-    protected void SendRemoveTicket(Msg msg){
+    protected void SendRemoveTicket(Msg msg) {
 
 
-        pcsCore.send(new Msg(id,mbox,Msg.Type.RemoveTicket,"Remove Ticket Now"));
+        pcsCore.send(new Msg(id, mbox, Msg.Type.RemoveTicket, "Remove Ticket Now"));
         logInfo("Ticket removed.\nPlease take care of your ticket.");
 
     }
 
     /**
+     * Handle Collector Emulator Auto Poll Toggle
+     * @return return autoPoll
+     * @author Gong Yikai
+     */
+    public final boolean handleEmulatorAutoPollToggle() {
+        autoPoll = !autoPoll;
+        logFine("Auto poll change: " + (autoPoll ? "off --> on" : "on --> off"));
+        return autoPoll;
+    } // handleGateEmulatorAutoPollToggle
+
+    /**
      * Log Fine Type Information and Add it to Controller
+     *
      * @param logMsg:Log Msg
      * @author Chuanyang Zheng
      */
@@ -126,6 +180,7 @@ public class DispatcherEmulator extends DispatcherHandler {
 
     /**
      * Log Info Type Information and Add it to Controller
+     *
      * @param logMsg:Log Msg
      * @author Chuanyang Zheng
      */
@@ -137,6 +192,7 @@ public class DispatcherEmulator extends DispatcherHandler {
 
     /**
      * Log Warning Type Information and Add it to Controller
+     *
      * @param logMsg:Log Msg
      * @author Chuanyang Zheng
      */
@@ -148,6 +204,7 @@ public class DispatcherEmulator extends DispatcherHandler {
 
     /**
      * Log Severe Type Information and Add it to Controller
+     *
      * @param logMsg:Log Msg
      * @author Chuanyang Zheng
      */
@@ -155,8 +212,6 @@ public class DispatcherEmulator extends DispatcherHandler {
         dispatcherController.appendTextArea("[SEVERE]: " + logMsg);
         log.severe(id + ": " + logMsg);
     } // logSevere
-
-
 
 
 } // DispatcherEmulator

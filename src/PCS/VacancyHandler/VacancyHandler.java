@@ -61,13 +61,17 @@ public class VacancyHandler extends AppThread {
      * @return if message type is terminated, return false. Else, return true
      * @author Gong Yikai
      */
-    public boolean processMsg(Msg msg){
+    protected boolean processMsg(Msg msg){
         boolean quit = false;
 
         switch (msg.getType()) {
             case VacancyDisUpdateRequest:  handleVacancyDisUpdateRequest(msg);  break;
+            case Poll:		   handlePollReq();	     break;
+            case PollAck:	   handlePollAck();	     break;
 
-            case Terminate:	   quit = true;		     break;
+            case Terminate:	     quit = true;break;
+
+
             default:
                 log.warning(id + ": unknown message type: [" + msg + "]");
         }
@@ -104,6 +108,33 @@ public class VacancyHandler extends AppThread {
         log.info(id + ": sending vacancy update signal to hardware.");
 
     }
+    /**
+     * Handle Pool Request
+     * @author Gong Yikai
+     */
+    protected final void handlePollReq() {
+        log.info(id + ": poll request received.  Send poll request to hardware.");
+        sendPollReq();
+    } // handlePollReq
+
+    /**
+     * handler Pool Acknowledgement
+     * @author Gong Yikai
+     */
+    protected final void handlePollAck() {
+        log.info(id + ": poll ack received.  Send poll ack to PCS Core.");
+        pcsCore.send(new Msg(id, mbox, Msg.Type.PollAck, id + " is up!"));
+    } // handlePollAck
+
+    /**
+     * Send Pool Request
+     * @author Gong Yikai
+     */
+    protected void sendPollReq() {
+        // fixme: send gate poll request to hardware
+        log.info(id + ": poll request received");
+    } // sendPollReq
+
     /**
      * Vacancy Status. One in total: VacancyDisRunning
      * @author Gong Yikai

@@ -56,7 +56,10 @@ public class DispatcherController {
      * Record drivers' enter time
      */
     private String ticket_enter;
-
+    /**
+     * Auto Poll Button
+     */
+    public Button autoPollButton;
     /**
      * Initialize Dispatcher Controller GUI
      * @param id:Handler ID
@@ -101,6 +104,25 @@ public class DispatcherController {
                 dispatcherMBox.send(new Msg(id, null, Msg.Type.RemoveTicket, id ));
                 //dispatcherMBox.send(new Msg(id, null, Msg.Type.ReceiveID, id ));
                 break;
+            case "Poll Request":
+                appendTextArea("Send poll request.");
+                dispatcherMBox.send(new Msg(id, null, Msg.Type.Poll, ""));
+                break;
+
+            case "Poll ACK":
+                appendTextArea("Send poll ack.");
+                dispatcherMBox.send(new Msg(id, null, Msg.Type.PollAck, ""));
+                break;
+            case "Auto Poll: On":
+                Platform.runLater(() -> autoPollButton.setText("Auto Poll: Off"));
+                dispatcherMBox.send(new Msg(id, null, Msg.Type.EmulatorAutoPollToggle, "ToggleAutoPoll"));
+                break;
+
+            case "Auto Poll: Off":
+                Platform.runLater(() -> autoPollButton.setText("Auto Poll: On"));
+                dispatcherMBox.send(new Msg(id, null, Msg.Type.EmulatorAutoPollToggle, "ToggleAutoPoll"));
+                break;
+
             default:
                 log.warning(id + ": unknown button: [" + btn.getText() + "]");
                 break;

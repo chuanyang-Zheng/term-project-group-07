@@ -16,6 +16,7 @@ import java.util.Arrays;
  * PCSCore CLass Connected ALL Handlers
  * @author Chuanyang Zheng(17251311)
  * @author Pan Feng (19205945)
+ * @author Gong Yikai (17251567)
  */
 public class PCSCore extends AppThread {
     /**
@@ -350,6 +351,7 @@ public class PCSCore extends AppThread {
 
     /**
      * Add Ticket to ticket List
+     * @author Gong Yikai
      */
     public void AddTicket() {
         //String[] tmp = msg.split(",");
@@ -527,6 +529,7 @@ public class PCSCore extends AppThread {
 
     /**
      * Handle Vacancy Display Request
+     * @author Gong Yikai
      */
     public void handleDisplayVacancyRequest(){
         String vacancyMsg=String.valueOf(availableParkingSpaces[0]);
