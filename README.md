@@ -113,7 +113,7 @@ Auto Close|If true, the gate is able to successfully closed. Or, the gate will b
 ### Dispatcher
 Button|Description
 --|--
-Print A Ticket|Dispatcher A Ticket
+Print A Ticket|Dispatch A Ticket
 Remove Ticket|Remove A Ticket
 
 ### PayMachine

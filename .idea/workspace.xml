@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76c37db4-d153-4079-b307-a865859fe863" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,20 +105,6 @@
     <configuration />
   </component>
   <component name="TaskManager">
-    <task id="LOCAL-00001" summary="Dispatcher can be roughly used now.">
-      <created>1586234773922</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1586234773922</updated>
-    </task>
-    <task id="LOCAL-00002" summary="modify dispatcher tips">
-      <created>1586235700939</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1586235700939</updated>
-    </task>
     <task active="true" id="Default" summary="Default task">
       <changelist id="76c37db4-d153-4079-b307-a865859fe863" name="Default Changelist" comment="" />
       <created>1586240085407</created>
@@ -150,13 +136,7 @@
       <workItem from="1587131638097" duration="868000" />
       <workItem from="1587133512186" duration="4362000" />
       <workItem from="1587172206781" duration="1627000" />
-    </task>
-    <task id="LOCAL-00003" summary="Update Dispatcher Remove Ticket Response">
-      <created>1586242645625</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1586242645625</updated>
+      <workItem from="1587177739650" duration="300000" />
     </task>
     <task id="LOCAL-00004" summary="Update Dispatcher Remove Ticket Response">
       <created>1586243250238</created>
@@ -473,7 +453,35 @@
       <option name="project" value="LOCAL" />
       <updated>1587177511289</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Update README.md">
+      <created>1587177750543</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1587177750543</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Update README.md">
+      <created>1587177890506</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1587177890507</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Update README.md">
+      <created>1587177911709</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1587177911709</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Update README.md">
+      <created>1587177997617</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1587177997617</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
