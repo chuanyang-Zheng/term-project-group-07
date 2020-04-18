@@ -2,7 +2,7 @@
 
 This is COMP4107 Project
 
-#####Author:
+##### Author:
 
     Chuanyang Zheng(17251311@life.hkbu.edu.hk)
 
