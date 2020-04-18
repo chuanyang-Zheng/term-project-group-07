@@ -16,7 +16,7 @@ import javafx.scene.control.TextArea;
 
 /**
  * Gate Emulator Controller is a GateEmulator
- * @author Joje
+ * @author Joe
  */
 public class GateEmulatorController {
 
