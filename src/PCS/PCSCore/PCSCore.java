@@ -145,7 +145,8 @@ public class PCSCore extends AppThread {
         this.pollTime = Integer.parseInt(appKickstarter.getProperty("PCSCore.PollTime"));
         this.openCloseGateTime = Integer.parseInt(appKickstarter.getProperty("PCSCore.OpenCloseGateTime"));        // for demo only!!!
         Ticket trueTicket = new Ticket();
-        trueTicket.setExitInformation(exitTimeCoefficient, "Test1", calculateFeeCoefficient);
+        trueTicket.setExitInformationTmp(exitTimeCoefficient, "Test1", calculateFeeCoefficient);
+        trueTicket.setExitInformation();
         Ticket falseTicket = new Ticket();
         ticketList.add(trueTicket);
         ticketList.add(falseTicket);
@@ -220,6 +221,7 @@ public class PCSCore extends AppThread {
                     case TicketRequest:
                         log.info(id + ":PCS Sent the fee already");
                         SendTicketFee(msg);
+                        log.info(ticketList.toString());
                         break;
                     case TicketExitInfoRequest:
                         log.info(id + ":PCS Sent the Exit Info already");
@@ -238,6 +240,7 @@ public class PCSCore extends AppThread {
                     case PaymentACK:
                         log.info(id + ":Payment ACK received");
                         PayStateUpdate(msg.getSender(), msg.getDetails());
+                        log.info(ticketList.toString());
                         break;
                     case DisplayVacancyRequest:
                         log.info(id + ":Parking space change request received");
@@ -292,7 +295,7 @@ public class PCSCore extends AppThread {
      */
     public void PayStateUpdate(String PID, String TicketID) {
         int z = FindTicketByID(Integer.parseInt(TicketID));
-        ticketList.get(z).setPayMachineID(PID);
+        ticketList.get(z).setExitInformation();
         log.fine(id + ":Payment Updated");
     }//PayStateUpdate
 
@@ -316,7 +319,10 @@ public class PCSCore extends AppThread {
             } else {
                 Ticket targetTicket = ticketList.get(ticketIndexInTicketArrayList);//get ticket
                 if(ticketList.get(ticketIndexInTicketArrayList).getPayMachineID().equals(""))  // the 3rd parameter mapping
-                    msg.getSenderMBox().send(new Msg(id, mbox, Msg.Type.TicketFee, tmp[0] + "," + tmp[1] + "," + Float.toString(targetTicket.calculateFee(calculateFeeCoefficient)) + "," + Long.toString(targetTicket.getEnterTime())));
+                {
+                    targetTicket.setExitInformationTmp(exitTimeCoefficient,tmp[0],targetTicket.calculateFee(calculateFeeCoefficient));
+                    msg.getSenderMBox().send(new Msg(id, mbox, Msg.Type.TicketFee, tmp[0] + "," + tmp[1] + "," + Float.toString(targetTicket.getParkingFeeTmp()) + "," + Long.toString(targetTicket.getEnterTime())));
+                }
                 //SendTicketFee
             }
         }
@@ -342,7 +348,7 @@ public class PCSCore extends AppThread {
                 log.warning(id + ": Find Invalid Ticket [" + Integer.parseInt(tmp[1] + "] When Calculate Fee"));
             } else {
                 Ticket targetTicket = ticketList.get(ticketIndexInTicketArrayList);//get ticket
-                targetTicket.setExitInformation(exitTimeCoefficient, targetTicket.payMachineID, calculateFeeCoefficient);
+                targetTicket.setExitInformationTmp(exitTimeCoefficient, targetTicket.payMachineID, calculateFeeCoefficient);
                 msg.getSenderMBox().send(new Msg(id, mbox, Msg.Type.ExitInfo, tmp[0] + "," + tmp[1] + "," + Float.toString(targetTicket.calculateFee(calculateFeeCoefficient)) + "," + Long.toString(targetTicket.getExitTime())));//send corresponding fee
             }
         }

@@ -1,6 +1,7 @@
 package PCS.PCSCore;
 
 
+import java.util.Date;
 import java.util.logging.*;
 
 /**
@@ -36,6 +37,21 @@ public class Ticket {
     protected String payMachineID = "";
 
     /**
+     * Set exitTime=exitTimeTmp when Oct Pay
+     */
+    protected long exitTimeTmp=-1;
+
+    /**
+     * Set parkingFee=parkingFeeTmp when Oct Pay
+     */
+    protected float parkingFeeTmp=-1;
+
+    /**
+     * Set payMachineID=payMachineIDTmp when Oct Pay
+     */
+    protected String payMachineIDTmp = "";
+
+    /**
      * If true, it meas that the ticket already pay fee
      */
     protected boolean payJudge=false;
@@ -65,8 +81,8 @@ public class Ticket {
         long currentTime = System.currentTimeMillis();
         long time = currentTime-enterTime;//calculate the pay Fee time
         long currentSecond = time /1000 % 60;
-        parkingFee = payMachineID.equals("")? coefficient * currentSecond : 0;
-        return parkingFee;
+        float parkingFeeCalculate = payMachineID.equals("")? coefficient * currentSecond : 0;
+        return parkingFeeCalculate;
     }
 
     /**
@@ -156,7 +172,8 @@ public class Ticket {
         }
         if( System.currentTimeMillis()>exitTime)
         {
-            log.warning(id+": "+"Current time"+System.currentTimeMillis()+" is larger than Exit time: "+exitTime);
+            long currentTime=System.currentTimeMillis();
+            log.warning(id+": "+"Current time"+PCSCore.getDate(new Date(currentTime))+"("+currentTime+") is larger than Exit time: "+PCSCore.getDate(new Date(exitTime))+"("+exitTime+")");
             return false;
         }
         if(payMachineID.equals(""))
@@ -179,19 +196,36 @@ public class Ticket {
     /**
      *set Ticket Information. It will be used after user giving money and pay Machine send the message to PCSCore
      *
-     * @param exitTimeCoefficient:used to calculate exitTime=currentTime+exitTimeCoefficient
-     * @param payMachineID:set payMachine
-     * @param parkingFee:calculate Parking fee
-     *
      * @author Chuanyang Zheng
      */
-    public void setExitInformation(long exitTimeCoefficient,String payMachineID, float parkingFee){
-        this.exitTime=System.currentTimeMillis()+exitTimeCoefficient;
-        this.payMachineID=payMachineID;
-        this.parkingFee=parkingFee;
+    public void setExitInformation(){
+        this.exitTime=this.exitTimeTmp;
+        this.payMachineID=this.payMachineIDTmp;
+        this.parkingFee=this.parkingFeeTmp;
+    }
+
+    /**
+     * Store Tmp value when insert the ticket
+     * @param exitTimeCoefficientTmp used to calculate exitTime=currentTime+exitTimeCoefficient Set exitTime=exitTimeTmp when Oct Pay
+     * @param payMachineIDTmp set payMachine ID. Set payMachineID=payMachineIDTmp when Oct Pay
+     * @param parkingFeeTmp calculated Parking fee. Set parkingFee=parkingFeeTmp when Oct Pay
+     * @author Chuanyang Zheng
+     */
+    public void setExitInformationTmp(long exitTimeCoefficientTmp,String payMachineIDTmp, float parkingFeeTmp){
+        this.exitTimeTmp=System.currentTimeMillis()+exitTimeCoefficientTmp;
+        this.payMachineIDTmp=payMachineIDTmp;
+        this.parkingFeeTmp=parkingFeeTmp;
+    }
+
+    /**
+     * Get Parking Fee Tmp
+     * @return parkingFeeTmp
+     */
+    public float getParkingFeeTmp(){
+        return parkingFeeTmp;
     }
 
     public String toString(){
-        return this.ticketID+" "+exitTime+" "+parkingFee+" "+payMachineID+"\n";
+        return this.ticketID+" "+PCSCore.getDate(new Date(exitTime))+" "+parkingFee+" "+payMachineID+"\n";
     }
 }
