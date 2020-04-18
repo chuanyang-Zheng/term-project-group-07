@@ -113,7 +113,7 @@ public class CollectorEmulator extends CollectorHandler {
      * @author Chuanyang Zheng
      */
     protected void sendStartAlarmSignal() {
-        logWarning("The Ticket Is Wrong. Ring Alarm!");
+        logWarning("The Ticket Is Wrong. Ring Alarm And Tell Staff!");
     }
 
 
