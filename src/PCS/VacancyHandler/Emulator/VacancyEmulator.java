@@ -1,6 +1,7 @@
 package PCS.VacancyHandler.Emulator;
 
 import AppKickstarter.misc.Msg;
+import PCS.PCSCore.PCSCore;
 import PCS.VacancyHandler.VacancyHandler;
 import PCS.PCSStarter;
 import javafx.application.Platform;
@@ -117,8 +118,8 @@ public class VacancyEmulator extends VacancyHandler {
     public void handleVacancyDisUpdateRequest(Msg mymsg) {
         String[] str = mymsg.getDetails().split("\\s+");
         Date nowT = new Date(System.currentTimeMillis());
-        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
-        String timestr = sdf.format(nowT);
+//        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
+        String timestr = PCSCore.getDate(nowT);
         vacancyEmulatorController.appendTextArea("This is a real time vacancy display:\n");
         StringBuilder floorNumberInformation = new StringBuilder();
         for (int i = 0; i < str.length; i++) {
