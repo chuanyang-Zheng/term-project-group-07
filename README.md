@@ -14,6 +14,8 @@ This is COMP4107 Project
 
 Website:https://github.com/hkbucs/term-project-group-07
 
+Demonstration Link:https://hkbu.zoom.us/rec/share/3fR1NJz28nxITo3NzWXdd_AmXa_Ceaa80CgWrvBfmEm24s6a45jBBtoyyIJw_00m?startTime=1587193012000 (Please Mute THe Voice Of the Video)
+
 Last Update Time: April 18, 2020
 
 ## The structure of the project.
