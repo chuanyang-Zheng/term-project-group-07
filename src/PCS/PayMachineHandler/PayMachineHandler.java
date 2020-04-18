@@ -52,6 +52,7 @@ public class PayMachineHandler extends AppThread {
      * Switch the message type to different cases
      *  Handle it case by case
      * @param msg:The received message
+     * @return Return true when Msg is not Terminated
      * @author Pan Feng
      */
     protected boolean processMsg(Msg msg) {

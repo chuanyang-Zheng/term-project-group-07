@@ -174,20 +174,25 @@ public class DispatcherHandler extends AppThread {
 
     /**
      * Inform PCSCore to add a ticket
+     * @param mymsg information print
      * @author Gong Yikai
      */
     protected void SendAddTicket(String mymsg){
         log.info("Creating new Ticket");
     }
+
     /**
      * Get ticket ID to show on the emulator
+     * @param  msg recieve
      * @author Gong Yikai
      */
     protected void ReceiveTicketID(Msg msg){
         log.info(msg.getDetails());
     }
+
     /**
      * Inform PCSCore the ticket is removed
+     * @param msg receive
      * @author Gong Yikai
      */
     protected void SendRemoveTicket(Msg msg){
