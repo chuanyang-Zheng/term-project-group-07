@@ -11,6 +11,10 @@ import javafx.scene.control.Alert;
 
 //======================================================================
 // PayMachineHandler
+
+/**
+ * Pan Feng
+ */
 public class PayMachineHandler extends AppThread {
     protected final MBox pcsCore;
     private PayMachineStatus PMS;
