@@ -95,6 +95,7 @@ public class PayMachineEmulator extends PayMachineHandler {
     protected void FeeReceive(String mymsg){
         Long parkedTime = 0L; // initialization
         String []currentTicket = mymsg.split(","); // proccess the protocal;
+//        System.out.println(currentTicket.length);
         if(currentTicket.length==4) {
             float fee = Float.parseFloat(currentTicket[2]); // get the fee from message
             Date nowT = new Date(Long.parseLong(currentTicket[3])); // get the time from message
