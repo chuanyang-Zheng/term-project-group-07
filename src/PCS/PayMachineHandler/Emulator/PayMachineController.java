@@ -50,7 +50,7 @@ public class PayMachineController {
     /**
      * Text Area
      */
-    public TextArea gateTextArea;
+    public TextArea payTextArea;
 
     /**
      * For Input Ticket ID
@@ -151,7 +151,7 @@ public class PayMachineController {
     //------------------------------------------------------------
     // appendTextArea
     public void appendTextArea(String status) {
-        Platform.runLater(() -> gateTextArea.appendText(String.format("[%04d] %s\n", ++lineNo, status)));
+        Platform.runLater(() -> payTextArea.appendText(String.format("[%04d] %s\n", ++lineNo, status)));
     } // appendTextArea
     //------------------------------------------------------------
     // updateTicket
