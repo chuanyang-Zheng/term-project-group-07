@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76c37db4-d153-4079-b307-a865859fe863" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/etc/PCS.PCSEmulatorStarter.log" beforeDir="false" afterPath="$PROJECT_DIR$/etc/PCS.PCSEmulatorStarter.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/PCSCore/PCSCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/PCSCore/PCSCore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/PayMachineHandler/Emulator/PayMachineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/PayMachineHandler/Emulator/PayMachineController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/PayMachineHandler/Emulator/PayMachineEmulator.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/PayMachineHandler/Emulator/PayMachineEmulator.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/PayMachineHandler/Emulator/PayMachineEmulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/PayMachineHandler/Emulator/PayMachineEmulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PCS/PayMachineHandler/PayMachineHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PCS/PayMachineHandler/PayMachineHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,6 +146,8 @@
       <workItem from="1587177739650" duration="1706000" />
       <workItem from="1587185993137" duration="8172000" />
       <workItem from="1587213024812" duration="1908000" />
+      <workItem from="1587301329840" duration="38000" />
+      <workItem from="1587301934872" duration="845000" />
     </task>
     <task id="LOCAL-00011" summary="modify PCS core">
       <created>1586277994458</created>
@@ -487,7 +496,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -504,12 +513,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="modify PCS core" />
@@ -556,9 +566,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="162" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1586489242753" />
-    <state x="273" y="137" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1587193046294">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="256" y="150" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1587302245575">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="256" y="150" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1440.900@0.0.1440.900" timestamp="1587302245575" />
     <state x="273" y="137" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1587193046294" />
     <state x="135" y="0" key="CommitChangelistDialog2" timestamp="1587213120966">
       <screen x="0" y="0" width="1536" height="824" />
@@ -574,28 +585,28 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="508" y="252" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587177584172" />
-    <state width="1186" height="253" key="GridCell.Tab.0.bottom" timestamp="1587195220405">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1398" height="240" key="GridCell.Tab.0.bottom" timestamp="1587302976203">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="207" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1586411787081" />
+    <state width="1398" height="240" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1587302976203" />
     <state width="1186" height="253" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587195220405" />
     <state width="1718" height="260" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587104568251" />
-    <state width="1186" height="253" key="GridCell.Tab.0.center" timestamp="1587195220404">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1398" height="240" key="GridCell.Tab.0.center" timestamp="1587302976202">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="207" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1586411787080" />
+    <state width="1398" height="240" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1587302976202" />
     <state width="1186" height="253" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587195220404" />
     <state width="1718" height="260" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587104568251" />
-    <state width="1186" height="253" key="GridCell.Tab.0.left" timestamp="1587195220404">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1398" height="240" key="GridCell.Tab.0.left" timestamp="1587302976201">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="207" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1586411787079" />
+    <state width="1398" height="240" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1587302976201" />
     <state width="1186" height="253" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587195220404" />
     <state width="1718" height="260" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587104568251" />
-    <state width="1186" height="253" key="GridCell.Tab.0.right" timestamp="1587195220404">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1398" height="240" key="GridCell.Tab.0.right" timestamp="1587302976203">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="207" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1586411787080" />
+    <state width="1398" height="240" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1587302976203" />
     <state width="1186" height="253" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587195220404" />
     <state width="1718" height="260" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587104568251" />
     <state x="349" y="155" key="IDE.errors.dialog" timestamp="1586327295169">

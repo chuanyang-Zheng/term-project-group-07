@@ -26,6 +26,7 @@ import java.util.Date;
 
 /**
  * Pay Machine
+ * @author Pan Feng
  */
 public class PayMachineEmulator extends PayMachineHandler {
     private Stage myStage;

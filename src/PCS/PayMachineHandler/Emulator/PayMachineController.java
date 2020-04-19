@@ -16,13 +16,17 @@ import javax.swing.*;
 
 //======================================================================
 // PayMachineController
+
+/**
+ * @author Pan Feng
+ */
 public class PayMachineController {
     private String id;
     private AppKickstarter appKickstarter;
     private Logger log;
     private PayMachineEmulator PayMachineEmulator;
     private MBox payMBox;
-    public TextArea gateTextArea;
+    public TextArea payTextArea;
     public TextArea TicketIDField;
     public TextArea FeeField;
     public TextArea EnterField;
@@ -103,7 +107,7 @@ public class PayMachineController {
     //------------------------------------------------------------
     // appendTextArea
     public void appendTextArea(String status) {
-        Platform.runLater(() -> gateTextArea.appendText(String.format("[%04d] %s\n", ++lineNo, status)));
+        Platform.runLater(() -> payTextArea.appendText(String.format("[%04d] %s\n", ++lineNo, status)));
     } // appendTextArea
     //------------------------------------------------------------
     // updateTicket

@@ -315,7 +315,7 @@ public class PCSCore extends AppThread {
         try {
             int ticketIndexInTicketArrayList = FindTicketByID(Integer.parseInt(tmp[1]));//get ticket index in the ticket array list
             if (ticketIndexInTicketArrayList < 0) {
-                log.warning(id + ": Find Invalid Ticket [" + Integer.parseInt(tmp[1] + "] When Calculate Fee"));
+                log.warning(id + ": Find Invalid Ticket ");
             } else {
                 Ticket targetTicket = ticketList.get(ticketIndexInTicketArrayList);//get ticket
                 if(ticketList.get(ticketIndexInTicketArrayList).getPayMachineID().equals(""))  // the 3rd parameter mapping
