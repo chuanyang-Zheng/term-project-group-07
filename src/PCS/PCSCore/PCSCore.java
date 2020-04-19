@@ -329,6 +329,7 @@ public class PCSCore extends AppThread {
         catch (Exception e){
             e.printStackTrace();
             log.warning(id+": Calculate Fee Fail");
+            msg.getSenderMBox().send(new Msg(id, mbox, Msg.Type.TicketFee, tmp[0] + "," + tmp[1] + "," + -1 + "," + Long.toString(-1)+",fail"));
         }
     }
     //------------------------------------------------------------

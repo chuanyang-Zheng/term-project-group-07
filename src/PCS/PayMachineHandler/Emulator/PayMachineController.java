@@ -16,19 +16,67 @@ import javax.swing.*;
 
 //======================================================================
 // PayMachineController
+
+/**
+ * Pay Machine Handler
+ * @author Pan Feng
+ */
 public class PayMachineController {
+    /**
+     * ID of the Controller
+     */
     private String id;
+
+    /**
+     * Appkicsstarter
+     */
     private AppKickstarter appKickstarter;
+
+    /**
+     * Logger
+     */
     private Logger log;
+
+    /**
+     * Pay Machine Emulator
+     */
     private PayMachineEmulator PayMachineEmulator;
+
+    /**
+     * Pay Machine Box
+     */
     private MBox payMBox;
+
+    /**
+     * Text Area
+     */
     public TextArea gateTextArea;
+
+    /**
+     * For Input Ticket ID
+     */
     public TextArea TicketIDField;
+
+    /**
+     * Show Fee
+     */
     public TextArea FeeField;
+
+    /**
+     * Enter Timer
+     */
     public TextArea EnterField;
+
+    /**
+     * Exit Tiime
+     */
     public TextArea ExitField;
     public Button autoPollButton;
     private int lineNo = 0;
+
+    /**
+     * Store ticker_id,ticker_fee,ticket_time
+     */
     private String ticket_id,ticket_fee,ticket_time;
 
     //------------------------------------------------------------

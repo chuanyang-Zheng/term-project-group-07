@@ -13,11 +13,12 @@ import javafx.scene.control.Alert;
 // PayMachineHandler
 
 /**
- * Pan Feng
+ * Pay Machine Handler
+ * @author Pan Feng
  */
 public class PayMachineHandler extends AppThread {
     protected final MBox pcsCore;
-    private PayMachineStatus PMS;
+    protected PayMachineStatus PMS;
     protected int parkingFeeCoefficient;
 
     //------------------------------------------------------------
@@ -74,7 +75,7 @@ public class PayMachineHandler extends AppThread {
             case TicketFee:
                 if(PMS == PayMachineStatus.WaitPaymentReply) {
                     FeeReceive(msg.getDetails()); // Handle the message of Fee information for display
-                    PMS = PayMachineStatus.WaitDriver; // Update status
+//                    PMS = PayMachineStatus.WaitDriver; // Update status
                     flag = true;
                 }
             break;
@@ -163,6 +164,7 @@ public class PayMachineHandler extends AppThread {
      */
     protected void FeeReceive(String mymsg){
         String []str = mymsg.split(",");
+        PMS = PayMachineStatus.WaitDriver; // Update status
     }
     //FeeReceive
 
@@ -267,7 +269,7 @@ public class PayMachineHandler extends AppThread {
 
     //------------------------------------------------------------
     // PayMachineStatus
-    private enum PayMachineStatus {
+    protected enum PayMachineStatus {
         idle,
         WaitPaymentReply,
         WaitDriver,
