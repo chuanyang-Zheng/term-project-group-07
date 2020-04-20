@@ -166,5 +166,5 @@ public class PayMachineEmulator extends PayMachineHandler {
         PayMachineController.appendTextArea("Ticket removed!");
         PayMachineController.appendTextArea("Please exit before exit time~"); // Display the reminder in TextBox
     }//RemovalFinished
-    
+
 } //  PayMachineEmulator
