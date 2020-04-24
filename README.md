@@ -2,7 +2,7 @@
 
 This is COMP4107 Project
 
-Run the project by PCSEmulatorStarter 
+Start the project by running PCSEmulatorStarter 
 
 ##### Author:
 
