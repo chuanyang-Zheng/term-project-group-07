@@ -532,7 +532,7 @@ public class PCSCore extends AppThread {
             log.warning("now in array is "+now+". But Total Number is "+totalFloorNumber);
         }
         else {
-            availableParkingSpaces[now]=Math.max(availableParkingSpaces[now]-1,0);
+            availableParkingSpaces[now]=availableParkingSpaces[now]-1;
         }
     }
 
@@ -558,7 +558,7 @@ public class PCSCore extends AppThread {
     public String arrayToString(int[] arrayInformation){
         StringBuilder tep= new StringBuilder();
         for(int i=0;i<arrayInformation.length;i++){
-            tep.append(arrayInformation[i]).append(" ");
+            tep.append(Math.max(arrayInformation[i],0)).append(" ");
         }
         return tep.toString();
     }
